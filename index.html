@@ -8,6 +8,10 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
 
+  html, body, * {
+    user-select: none;
+  }
+
   /* Creates outer background color */
   body {
     margin: 0;
@@ -75,7 +79,7 @@
   }
   .container3 { /* Middle Bottom */
       position: absolute;
-      bottom: 10%;
+      bottom: 5%;
       left: 50%;
       transform: translate(-50%, -50%);
       border-radius: 50%;
@@ -131,6 +135,9 @@
     background-position: center;
     background-repeat: no-repeat;
     z-index: 2;
+  }
+  #button {
+    border-radius: 50%;
   }
   #button:hover {
     filter:brightness(0.8);
@@ -213,19 +220,55 @@
     height: 450px;
     border-radius: 8px;
   }
+  .character-button.selected::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid white;
+    border-radius: 8px;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
   .character-button:hover img {
     filter:brightness(0.8);
     transition: all 0.3s ease-in-out;
-  }
-  .character-button.selected img {
-    border: 2px solid white;
   }
   #nameInput {
     margin-top: 10px;
   }
   #doneButton {
-    margin-top: 10px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    border-radius: 8px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #8d6e5d;
+    border: 4px solid black;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 20px;
+    font-family: "Cherry Bomb One", sans-serif;
+    color: #ffffff;
+    text-shadow:    0 1px 0 var(--color-heading-shadow),
+                    0 2px 0 var(--color-heading-shadow),
+                    0 3px 0 var(--color-heading-shadow),
+                    0 4px 0 var(--color-heading-shadow),
+
+                    0 0 5px rgba(10,0,0,.05),
+                    0 1px 3px rgba(10,0,0,.2),
+                    0 3px 5px rgba(10,0,0,.2),
+                    0 5px 10px rgba(10,0,0,.2),
+                    0 10px 10px rgba(10,0,0,.2),
+                    0 20px 20px rgba(10,0,0,.3);
+  }
+  #doneButton:hover {
+    filter:brightness(0.8);
   }
 
 </style>
@@ -293,9 +336,12 @@
     }
     document.addEventListener("click", function() {
       var audio = document.getElementById("backgroundMusic")
-      audio.muted = false;
-      audio.play();
-      document.removeEventListener("click", arguments.callee);
+      var musicToggle = document.getElementById("musicToggle");
+        if (event.target !== musicToggle) {
+            audio.muted = false;
+            audio.play();
+            document.removeEventListener("click", arguments.callee);
+        }
     }); 
 
     // Screen Toggler
@@ -305,6 +351,8 @@
       }
 
     // Character Selection
+    var selectedCharacter = "";
+    var playerName = "";
     function selectCharacter(character) {
         var characterButtons = document.querySelectorAll('.character-button');
         characterButtons.forEach(button => button.classList.remove('selected'));
