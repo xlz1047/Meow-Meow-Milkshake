@@ -310,13 +310,17 @@
   <div id="musicToggle" onclick="toggleMusic()">Music: <span id="musicStatus">On</span>
   </div>
   <audio id="backgroundMusic" autoplay loop>
-    <source src="./BackgroundMusic/Cozy-Place(Loading).mp3" type="audio/mp3"
+    <source src="./BackgroundMusic/Cozy-Place(Loading).mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
 
-  <!-- Cat Selection Meow -->
+  <!-- Sound Effects -->
   <audio id="catSelect">
     <source src="./SoundEffects/catSelect.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  <audio id="buttonClick">
+    <source src="./SoundEffects/buttonClick.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>  
 
@@ -349,6 +353,13 @@
       document.getElementById("loadingScene").style.display = "none";
         document.getElementById("selectionScene").style.display = "block";
       }
+
+    // Button Sound Effects
+    function playButtonClickSound() {
+      var buttonClickSound = document.getElementById("buttonClick");
+      buttonClickSound.play();
+    }
+    document.getElementById("button").addEventListener("click", playButtonClickSound);
 
     // Character Selection
     var selectedCharacter = "";
