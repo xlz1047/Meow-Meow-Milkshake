@@ -8,6 +8,10 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
 
+  html, body, * {
+    user-select: none;
+  }
+
   /* Creates outer background color */
   body {
     margin: 0;
@@ -256,9 +260,15 @@
   <div id="musicToggle" onclick="toggleMusic()">Music: <span id="musicStatus">On</span>
   </div>
   <audio id="backgroundMusic" autoplay loop>
-    <source src="./BackgroundMusic/Colorful-Flowers(Cafe).mp3" type="audio/mp3"
+    <source src="./BackgroundMusic/Colorful-Flowers(Cafe).mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
+
+  <!-- Sound Effects -->
+  <audio id="buttonClick">
+    <source src="./SoundEffects/buttonClick.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio> 
 
   <script>
 
@@ -289,6 +299,16 @@
         scene.style.display = scenes[i] === sceneId ? "block" : "none";
       }
     }
+
+    // Button Sound Effects
+    function playButtonClickSound() {
+      var buttonClickSound = document.getElementById("buttonClick");
+      buttonClickSound.play();
+    }
+    document.getElementById("toKitchenButton").addEventListener("click", playButtonClickSound);
+    document.getElementById("toCafeButton").addEventListener("click", playButtonClickSound);
+    document.getElementById("toMixingButton").addEventListener("click", playButtonClickSound);
+    document.getElementById("toToppingButton").addEventListener("click", playButtonClickSound);
 
   </script>
 </body>
