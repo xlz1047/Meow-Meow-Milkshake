@@ -144,6 +144,15 @@
     background-position: center;
     background-repeat: no-repeat;
   }
+  #player {
+    position: absolute;
+    top: 250px;
+    left: 185px;
+  }
+  #player img {
+  width: 129px;
+  height: 200px;
+  }
 
   /* Mixing Scene */
   #mixingScene {
@@ -226,6 +235,9 @@
   <!-- Cafe Scene -->
   <canvas id="canvas"></canvas>
   <div id="cafeScene">
+    <div id="player">
+      <img id="characterImage">
+    </div>
     <div class="container">
       <div class="button" id="toKitchenButton" onclick="toggleScreen('mixingScene')">To Kitchen</div>
     </div>
@@ -309,6 +321,43 @@
     document.getElementById("toCafeButton").addEventListener("click", playButtonClickSound);
     document.getElementById("toMixingButton").addEventListener("click", playButtonClickSound);
     document.getElementById("toToppingButton").addEventListener("click", playButtonClickSound);
+
+    // Chosen Player Character
+    function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return "";
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+    function setCharacterImage() {
+      var characterParam = getParameterByName("character");
+      if (characterParam) {
+        var characterImage = document.getElementById("characterImage");
+        var imagePath = "./CatSelection/";
+
+        switch (characterParam) {
+          case "Character1":
+            imagePath += "calicoCatSelection.png";
+            break;
+          case "Character2":
+            imagePath += "blackCatSelection.png";
+            break;
+          case "Character3":
+            imagePath += "orangeCatSelection.png";
+            break;
+          case "Character4":
+            imagePath += "siameseCatSelection.png";
+            break;
+          default:
+            break;
+        }
+        characterImage.src = imagePath;
+      }
+    }
+    window.onload = setCharacterImage;
 
   </script>
 </body>
