@@ -55,50 +55,6 @@
                       0 10px 10px rgba(10,0,0,.2),
                       0 20px 20px rgba(10,0,0,.3);
   }
-  .container2 { /* Middle Right */
-      position: absolute;
-      top: 50%;
-      bottom: 50%;
-      right: 0px;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      text-align: center;
-      font-family: "Cherry Bomb One", sans-serif;
-      color: #ffffff;
-      text-shadow:    0 1px 0 var(--color-heading-shadow),
-                      0 2px 0 var(--color-heading-shadow),
-                      0 3px 0 var(--color-heading-shadow),
-                      0 4px 0 var(--color-heading-shadow),
-
-                      0 0 5px rgba(10,0,0,.05),
-                      0 1px 3px rgba(10,0,0,.2),
-                      0 3px 5px rgba(10,0,0,.2),
-                      0 5px 10px rgba(10,0,0,.2),
-                      0 10px 10px rgba(10,0,0,.2),
-                      0 20px 20px rgba(10,0,0,.3);
-  }
-  .container3 { /* Middle Left */
-      position: absolute;
-      top: 50%;
-      bottom: 50%;
-      left: 45px;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      text-align: center;
-      font-family: "Cherry Bomb One", sans-serif;
-      color: #ffffff;
-      text-shadow:    0 1px 0 var(--color-heading-shadow),
-                      0 2px 0 var(--color-heading-shadow),
-                      0 3px 0 var(--color-heading-shadow),
-                      0 4px 0 var(--color-heading-shadow),
-
-                      0 0 5px rgba(10,0,0,.05),
-                      0 1px 3px rgba(10,0,0,.2),
-                      0 3px 5px rgba(10,0,0,.2),
-                      0 5px 10px rgba(10,0,0,.2),
-                      0 10px 10px rgba(10,0,0,.2),
-                      0 20px 20px rgba(10,0,0,.3);
-  }
   .button {
       display: inline-block;
       position: relative;
@@ -289,8 +245,6 @@
     }
     document.getElementById("toKitchenButton").addEventListener("click", playButtonClickSound);
     document.getElementById("toCafeButton").addEventListener("click", playButtonClickSound);
-    document.getElementById("toMixingButton").addEventListener("click", playButtonClickSound);
-    document.getElementById("toToppingButton").addEventListener("click", playButtonClickSound);
 
     // Chosen Player Character
     function getParameterByName(name, url) {
