@@ -154,8 +154,8 @@
   height: 200px;
   }
 
-  /* Mixing Scene */
-  #mixingScene {
+  /* Kitchen Scene */
+  #kitchenScene {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -165,24 +165,7 @@
     margin: auto;
     position: absolute;
     z-index: 2;
-    background-image: url(./Assets/sampleMixing.jpg);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  /* Topping Scene */
-  #toppingScene {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1280px;
-    height: 720px;
-    border: 5px solid #000;
-    margin: auto;
-    position: absolute;
-    z-index: 2;
-    background-image: url(./Assets/sampleToppings.jpg);
+    background-image: url(./Kitchen/kitchen.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -239,27 +222,14 @@
       <img id="characterImage">
     </div>
     <div class="container">
-      <div class="button" id="toKitchenButton" onclick="toggleScreen('mixingScene')">To Kitchen</div>
+      <div class="button" id="toKitchenButton" onclick="toggleScreen('kitchenScene')">To Kitchen</div>
     </div>
   </div>
 
-  <!-- Mixing Scene -->
-  <div id="mixingScene" style="display: none;">
+  <!-- Kitchen Scene -->
+  <div id="kitchenScene" style="display: none;">
     <div class="container">
       <div class="button" id="toCafeButton" onclick="toggleScreen('cafeScene')">To Cafe</div>
-    </div>
-    <div class="container2">
-      <div class="button" id="toToppingButton" onclick="toggleScreen('toppingScene')">></div>
-    </div>
-  </div>
-
-  <!-- Topping Scene -->
-  <div id="toppingScene" style="display: none;">
-    <div class="container">
-      <div class="button" id="toCafeButton" onclick="toggleScreen('cafeScene')">To Cafe</div>
-    </div>
-    <div class="container3">
-      <div class="button" id="toMixingButton" onclick="toggleScreen('mixingScene')">&lt;</div>
     </div>
   </div>
 
@@ -305,7 +275,7 @@
 
     // Screen Toggler
     function toggleScreen(sceneId) {
-      var scenes = ["cafeScene", "mixingScene", "toppingScene"];
+      var scenes = ["cafeScene", "kitchenScene"];
       for (var i = 0; i < scenes.length; i++) {
         var scene = document.getElementById(scenes[i]);
         scene.style.display = scenes[i] === sceneId ? "block" : "none";
