@@ -301,6 +301,18 @@
       </div>
   </div>
 
+  <!-- Kitchen Topping Selection -->
+  <div id="toppingSelectionScene">
+    <div class="container2"> Select your milkshake toppings!
+    </div>
+    <div class="topping-buttons">
+        <button class="topping-button" data-character="Topping1" onclick="selectTopping('Topping1')"><img src="./Kitchen/biscoffincontainer.png" alt="Topping 1"></button>
+        <button class="topping-button" data-character="Topping2" onclick="selectTopping('Topping2')"><img src="./Kitchen/sprinklesincontainer2.png" alt="Topping 2"></button>
+      </div>
+      <div class="container3">
+      </div>
+  </div>
+
   <!-- Credits -->
   <div id="credits">
     <p>Made by: Xin Zheng, Christy Tran, Maggie Kocorowski, Armaan Zahid</p>
@@ -360,6 +372,16 @@
       buttonClickSound.play();
     }
     document.getElementById("button").addEventListener("click", playButtonClickSound);
+
+    // Topping Selection
+    var selectedTopping = "";
+    var toppingChoice = "";
+    function selectTopping(topping) {
+        var toppingButtons = document.querySelectorAll('.topping-button');
+        toppingButtons.forEach(button => button.classList.remove('topping'));
+        selectedTopping = topping;
+        document.querySelector(`.topping-button[data-topping="${topping}"]`).classList.add('topping');
+    }
 
     // Character Selection
     var selectedCharacter = "";
