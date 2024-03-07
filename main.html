@@ -69,7 +69,31 @@
   }
   .button:hover {
     filter: brightness(0.8);
-  }
+    .image-button {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+    }
+}
+.image-button {
+  display: flex;
+  margin-top: 20px;
+}
+
+.image-button button {
+  background-color: rgba(0, 0, 0, 0); /* Transparent background */
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.image-button img {
+  object-fit: cover;
+}
+
+.image-button button:focus {
+  outline: none;
+}
   canvas {
     position: absolute;
     top: 50%;
@@ -121,7 +145,7 @@
     margin: auto;
     position: absolute;
     z-index: 2;
-    background-image: url(./Kitchen/kitchen.png);
+    background-image: url(./Kitchen/IMG_2720.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -195,9 +219,9 @@
     <div class="container">
       <div class="button" id="toCafeButton" onclick="toggleScreen('cafeScene')">To Cafe</div>
       </div>
-      <div class="topping-buttons">
-        <button class="topping-button" data-character="Topping1" onclick="selectTopping('Topping1')"><img src="./Kitchen/biscoffincontainer.png" alt="Topping 1"></button>
-        <button class="topping-button" data-character="Topping2" onclick="selectTopping('Topping2')"><img src="./Kitchen/sprinklesincontainer2.png" alt="Topping 2"></button>
+      <div class="image-button">
+        
+        
       </div>
   </div>
 
