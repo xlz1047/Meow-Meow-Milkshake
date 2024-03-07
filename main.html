@@ -168,12 +168,12 @@
                     0 20px 20px rgba(10,0,0,.3);
   }
   .character {
-    width: 200px; /* Width of individual sprite frame */
-    height: 340px; /* Height of individual sprite frame */
-    background-image: url('sprite.png'); /* Path to your sprite sheet */
+    width: 141px; 
+    height: 263px; 
     background-repeat: no-repeat;
     position: absolute;
-    right: 0; /* Align character to the right side of the screen */
+    right: 0; 
+    margin-top: 20%;
   }
 </style>
 <body>
@@ -293,32 +293,49 @@
 
     document.addEventListener("DOMContentLoaded", function() {
     const character = document.getElementById("character");
-    const frameWidth = 180; // Adjust this value according to the measured width of each frame
-    const totalFrames = 5; // Total number of frames in the sprite sheet
-    const animationSpeed = 100; // Milliseconds between each frame change
-    let frameIndex = 5;
-    let posX = window.innerWidth - 200; // Initial X position (adjusted to be on the right side)
-    let targetX = 100; // Target X position (adjust this value according to where you want the character to stop)
-    let animationInterval;
+    const images = [
+      "./CatCustomer/random1.png",
+      "./CatCustomer/random2.png"
+      // Add more image paths as needed
+    ];
 
-    function animate() {
-      frameIndex = (frameIndex - 1) % totalFrames;
-      character.style.backgroundPosition = `-${frameIndex * frameWidth}px 0`;
+    function getRandomImage() {
+      return images[Math.floor(Math.random() * images.length)];
     }
 
-    function moveCharacter() {
-      if (posX <= targetX) {
-        clearInterval(animationInterval);
-      } else {
-        posX -= 20; // Adjust the movement speed (negative value to move towards left)
-        character.style.left = posX + "px";
+    function setRandomCharacterImage() {
+      const randomImage = getRandomImage();
+      character.style.backgroundImage = `url('${randomImage}')`;
+    }
+
+    setRandomCharacterImage();
+
+      const frameWidth = 141; 
+      const totalFrames = 4; 
+      const animationSpeed = 100; 
+      let frameIndex = 0;
+      let posX = window.innerWidth - 400; 
+      let targetX = posX - 600; 
+      let animationInterval;
+
+      function animate() {
+        frameIndex = (frameIndex + 1) % totalFrames;
+        character.style.backgroundPosition = `-${frameIndex * frameWidth}px 0`;
       }
-    }
 
-    // Start animation and movement
-    animationInterval = setInterval(animate, animationSpeed);
-    setInterval(moveCharacter, 120); // Adjust the interval for smoother movement
-  });
+      function moveCharacter() {
+        if (posX <= targetX) {
+          clearInterval(animationInterval);
+        } else {
+          posX -= 5; 
+          character.style.left = posX + "px";
+        }
+      }
+
+      // Start animation and movement
+      animationInterval = setInterval(animate, animationSpeed);
+      setInterval(moveCharacter, 50); // Adjust the interval for smoother movement
+    });
   </script>
 </body>
 
