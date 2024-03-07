@@ -167,7 +167,14 @@
                     0 10px 10px rgba(10,0,0,.2),
                     0 20px 20px rgba(10,0,0,.3);
   }
-
+  .character {
+    width: 200px; /* Width of individual sprite frame */
+    height: 340px; /* Height of individual sprite frame */
+    background-image: url('sprite.png'); /* Path to your sprite sheet */
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0; /* Align character to the right side of the screen */
+  }
 </style>
 <body>
 
@@ -177,6 +184,7 @@
     <div id="player">
       <img id="characterImage">
     </div>
+    <div class="character" id="character"></div>
     <div class="container">
       <div class="button" id="toKitchenButton" onclick="toggleScreen('kitchenScene')">To Kitchen</div>
     </div>
@@ -283,6 +291,34 @@
     }
     window.onload = setCharacterImage;
 
+    document.addEventListener("DOMContentLoaded", function() {
+    const character = document.getElementById("character");
+    const frameWidth = 180; // Adjust this value according to the measured width of each frame
+    const totalFrames = 5; // Total number of frames in the sprite sheet
+    const animationSpeed = 100; // Milliseconds between each frame change
+    let frameIndex = 5;
+    let posX = window.innerWidth - 200; // Initial X position (adjusted to be on the right side)
+    let targetX = 100; // Target X position (adjust this value according to where you want the character to stop)
+    let animationInterval;
+
+    function animate() {
+      frameIndex = (frameIndex - 1) % totalFrames;
+      character.style.backgroundPosition = `-${frameIndex * frameWidth}px 0`;
+    }
+
+    function moveCharacter() {
+      if (posX <= targetX) {
+        clearInterval(animationInterval);
+      } else {
+        posX -= 20; // Adjust the movement speed (negative value to move towards left)
+        character.style.left = posX + "px";
+      }
+    }
+
+    // Start animation and movement
+    animationInterval = setInterval(animate, animationSpeed);
+    setInterval(moveCharacter, 120); // Adjust the interval for smoother movement
+  });
   </script>
 </body>
 
