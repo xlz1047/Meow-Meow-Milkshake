@@ -121,7 +121,7 @@
     margin: auto;
     position: absolute;
     z-index: 2;
-    background-image: url(./Kitchen/kitchen_background.png);
+    background-image: url(./Kitchen/kitchen.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -194,8 +194,15 @@
   <div id="kitchenScene" style="display: none;">
     <div class="container">
       <div class="button" id="toCafeButton" onclick="toggleScreen('cafeScene')">To Cafe</div>
-    </div>
+      </div>
+      <div class="topping-buttons">
+        <button class="topping-button" data-character="Topping1" onclick="selectTopping('Topping1')"><img src="./Kitchen/biscoffincontainer.png" alt="Topping 1"></button>
+        <button class="topping-button" data-character="Topping2" onclick="selectTopping('Topping2')"><img src="./Kitchen/sprinklesincontainer2.png" alt="Topping 2"></button>
+      </div>
   </div>
+
+
+  
 
   <!-- Credits -->
   <div id="credits">
@@ -319,6 +326,18 @@
     animationInterval = setInterval(animate, animationSpeed);
     setInterval(moveCharacter, 120); // Adjust the interval for smoother movement
   });
+
+
+ // Topping Selection
+ var selectedTopping = "";
+    var toppingChoice = "";
+    function selectTopping(topping) {
+        var toppingButtons = document.querySelectorAll('.topping-button');
+        toppingButtons.forEach(button => button.classList.remove('topping'));
+        selectedTopping = topping;
+        document.querySelector(`.topping-button[data-topping="${topping}"]`).classList.add('topping');
+    }
+
   </script>
 </body>
 
