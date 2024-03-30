@@ -361,16 +361,6 @@
     }
     document.getElementById("button").addEventListener("click", playButtonClickSound);
 
-    // Topping Selection
-    var selectedTopping = "";
-    var toppingChoice = "";
-    function selectTopping(topping) {
-        var toppingButtons = document.querySelectorAll('.topping-button');
-        toppingButtons.forEach(button => button.classList.remove('topping'));
-        selectedTopping = topping;
-        document.querySelector(`.topping-button[data-topping="${topping}"]`).classList.add('topping');
-    }
-
     // Character Selection
     var selectedCharacter = "";
     var playerName = "";

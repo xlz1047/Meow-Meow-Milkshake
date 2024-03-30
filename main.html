@@ -225,8 +225,15 @@
       </div>
   </div>
 
-
-  
+  <!-- Topping Selection -->
+  <div id="toppingSelection"></div>
+    <div class="container2"> Select your topping! </div>
+    <div class="character-buttons">
+      <button class="topping-button" data-topping="Biscoff" onclick="selectTopping('Biscoff')"><img src="Kitchen/biscoff1223.png" alt="Biscoff"></button>
+      <button class="topping-button" data-topping="Sprinkles" onclick="selectTopping('Sprinkles')"><img src="Kitchen/sprinkes1223.png" alt="Sprinkles"></button>
+      <button class="topping-button" data-topping="Pocky" onclick="selectTopping('Pocky')"><img src="Kitchen/pocky1223.png" alt="Pocky"></button>
+    </div>
+  </div>
 
   <!-- Credits -->
   <div id="credits">
@@ -368,6 +375,41 @@
       setInterval(moveCharacter, 50); // Adjust the interval for smoother movement
     });
     
+    // Topping Selection
+    var selectedTopping = "";
+    var toppingChoice = "";
+    function selectTopping(topping) {
+        var toppingButtons = document.querySelectorAll('.topping-button');
+        toppingButtons.forEach(button => button.classList.remove('topping'));
+        selectedTopping = topping;
+        document.querySelector(`.topping-button[data-topping="${topping}"]`).classList.add('topping');
+    }
+    function setToppingImage() {
+      var toppingParam = getParameterByName("topping");
+
+      if (toppingParam) {
+        var toppingImage = document.getElementById("toppingImage");
+        varimagePath = "./Kitchen/";
+
+        switch (toppingParam) {
+          case "Biscoff":
+            imagePath += "biscoff1223.png";
+            break;
+          case "Sprinkes":
+            imagePath += "sprinkles1223.png";
+            break;
+          case "Pocky":
+            imagePath += "pocky1223.png";
+            break;
+          default:
+            break;
+        }
+        toppingImage.src = imagePath;
+      }
+
+    }
+    window.onload = setToppingImage
+
   </script>
 </body>
 
