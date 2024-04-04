@@ -199,6 +199,13 @@
     right: 0; 
     margin-top: 20%;
   }
+  .topping-button {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    z-index: 4; /* Increase z-index to bring the buttons in front */
+    bottom: 20px; 
+  }
 </style>
 <body>
 
@@ -227,11 +234,18 @@
 
   <!-- Topping Selection -->
   <div id="toppingSelection"></div>
-    <div class="container2"> Select your topping! </div>
+    <div class="container2">
     <div class="character-buttons">
-      <button class="topping-button" data-topping="Biscoff" onclick="selectTopping('Biscoff')"><img src="Kitchen/biscoff1223.png" alt="Biscoff"></button>
-      <button class="topping-button" data-topping="Sprinkles" onclick="selectTopping('Sprinkles')"><img src="Kitchen/sprinkes1223.png" alt="Sprinkles"></button>
-      <button class="topping-button" data-topping="Pocky" onclick="selectTopping('Pocky')"><img src="Kitchen/pocky1223.png" alt="Pocky"></button>
+      <button class="topping-button" data-topping="Biscoff" onclick="selectTopping('Biscoff')">
+        <img src="Kitchen/biscoff1223.png" alt="Biscoff">
+      </button>
+      <button class="topping-button" data-topping="Sprinkles" onclick="selectTopping('Sprinkles')">
+        <img src="Kitchen/sprinkes1223.png" alt="Sprinkles">
+      </button>
+      <button class="topping-button" data-topping="Pocky" onclick="selectTopping('Pocky')">
+        <img src="Kitchen/pocky1223.png" alt="Pocky">
+      </button>
+    </div>
     </div>
   </div>
 
@@ -333,11 +347,7 @@
     const character = document.getElementById("character");
     const images = [
       "./CatCustomer/random1.png",
-      "./CatCustomer/random2.png",
-      "./CatCustomer/armaancatanimation.png",
-      "./CatCustomer/maggiecatanimation.png",
-      "./CatCustomer/xincatanimation.png",
-      "./CatCustomer/chriscatanimation.png"
+      "./CatCustomer/random2.png"
       // Add more image paths as needed
     ];
 
@@ -382,37 +392,39 @@
     // Topping Selection
     var selectedTopping = "";
     var toppingChoice = "";
-    function selectTopping(topping) {
-        var toppingButtons = document.querySelectorAll('.topping-button');
-        toppingButtons.forEach(button => button.classList.remove('topping'));
-        selectedTopping = topping;
-        document.querySelector(`.topping-button[data-topping="${topping}"]`).classList.add('topping');
-    }
-    function setToppingImage() {
-      var toppingParam = getParameterByName("topping");
 
-      if (toppingParam) {
-        var toppingImage = document.getElementById("toppingImage");
-        varimagePath = "./Kitchen/";
+    // function selectTopping(topping) {
+    //     var toppingButtons = document.querySelectorAll('.topping-button');
+    //     toppingButtons.forEach(button => button.classList.remove('topping'));
+    //     selectedTopping = topping;
+    //     document.querySelector(`.topping-button[data-topping="${topping}"]`).classList.add('topping');
+    // }
 
-        switch (toppingParam) {
-          case "Biscoff":
-            imagePath += "biscoff1223.png";
-            break;
-          case "Sprinkes":
-            imagePath += "sprinkles1223.png";
-            break;
-          case "Pocky":
-            imagePath += "pocky1223.png";
-            break;
-          default:
-            break;
-        }
-        toppingImage.src = imagePath;
-      }
+    // function setToppingImage() {
+    //   var toppingParam = getParameterByName("topping");
 
-    }
-    window.onload = setToppingImage
+    //   if (toppingParam) {
+    //     var toppingImage = document.getElementById("toppingImage");
+    //     varimagePath = "./Kitchen/";
+
+    //     switch (toppingParam) {
+    //       case "Biscoff":
+    //         imagePath += "biscoff1223.png";
+    //         break;
+    //       case "Sprinkes":
+    //         imagePath += "sprinkles1223.png";6
+    //         break;
+    //       case "Pocky":
+    //         imagePath += "pocky1223.png";
+    //         break;
+    //       default:
+    //         break;
+    //     }
+    //     toppingImage.src = imagePath;
+    //   }
+
+    // }
+    // window.onload = setToppingImage
 
   </script>
 </body>
