@@ -217,7 +217,7 @@
     position: absolute;
     height: 100px;
     width: 100px;
-    z-index: 4; /* Increase z-index to bring the buttons in front */
+    z-index: 4;
     bottom: 20px; 
   }
 
@@ -240,29 +240,27 @@
   <div id="kitchenScene" style="display: none;">
     <div class="container">
       <div class="button" id="toCafeButton" onclick="toggleScreen('cafeScene')">To Cafe</div>
+      
+      <!-- Topping Selection -->
+      <div id="toppingSelection"></div>
+      <div class="container2">
+      <div class="character-buttons">
+        <button class="topping-biscoff" data-topping="Biscoff" onclick="selectTopping('Biscoff')">
+          <img src="Kitchen/biscoff1223.png" alt="Biscoff">
+        </button>
+        <button class="topping-sprinkles" data-topping="Sprinkles" onclick="selectTopping('Sprinkles')">
+          <img src="Kitchen/sprinkes1223.png" alt="Sprinkles">
+        </button>
+        <button class="topping-pocky" data-topping="Pocky" onclick="selectTopping('Pocky')">
+          <img src="Kitchen/pocky1223.png" alt="Pocky">
+        </button>
       </div>
-      <div class="image-button">
-        
-        
       </div>
+    </div>
+    </div>
   </div>
 
-  <!-- Topping Selection -->
-  <div id="toppingSelection"></div>
-    <div class="container2">
-    <div class="character-buttons">
-      <button class="topping-button" data-topping="Biscoff" onclick="selectTopping('Biscoff')">
-        <img src="Kitchen/biscoff1223.png" alt="Biscoff">
-      </button>
-      <button class="topping-button" data-topping="Sprinkles" onclick="selectTopping('Sprinkles')">
-        <img src="Kitchen/sprinkes1223.png" alt="Sprinkles">
-      </button>
-      <button class="topping-button" data-topping="Pocky" onclick="selectTopping('Pocky')">
-        <img src="Kitchen/pocky1223.png" alt="Pocky">
-      </button>
-    </div>
-    </div>
-  </div>
+  
 
   <!-- Credits -->
   <div id="credits">
