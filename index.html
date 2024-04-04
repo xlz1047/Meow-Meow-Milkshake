@@ -362,16 +362,27 @@
     document.getElementById("button").addEventListener("click", playButtonClickSound);
 
     // Character Selection
+    // Stores the user input as SelectedCharacter and playerName
     var selectedCharacter = "";
     var playerName = "";
+    // Function selectCharcter takes the parameter (character)
+    // var characterButtons takes all things with the class character-button and stores them in a variable (characterButtons)
+    // CharacterButtons.foreeach basically deselects all unchosen character buttons
+    // selectedCharacter = character assigns character parameter to the varaible selected character
+    // doc.query sleects character button thats the same as character parameter and adds it to the class selected
     function selectCharacter(character) {
         var characterButtons = document.querySelectorAll('.character-button');
         characterButtons.forEach(button => button.classList.remove('selected'));
         selectedCharacter = character;
         document.querySelector(`.character-button[data-character="${character}"]`).classList.add('selected');
+        // cat select sound for when button is clicked it plays cat sound
         var catSelectSound = document.getElementById("catSelect");;
         catSelectSound.play();
     }
+    // Takes name input and reassigns it as playername 
+    // Checks if empty, if it is then alerts 
+    // Checks if there is a selected character, if not then alert
+    // if both conditions meet then moves to URL with character and player as parameters 
     function navigateToLobby() {
       playerName = document.getElementById("nameInput").value;
       if (playerName.trim() === "") {
