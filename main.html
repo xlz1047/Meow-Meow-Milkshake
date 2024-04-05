@@ -199,29 +199,37 @@
     right: 0; 
     margin-top: 20%;
   }
-  .topping-biscoff {
-    background-repeat: no-repeat;
-    background-size: auto;
-    width: 500px;
-    height: 400px;
-    z-index: 4;
-    bottom: -100%;
-    left: 30%; 
-  }
-  .topping-sprinkles {
-    position: absolute;
-    height: -100px;
-    width: -100px;
-    z-index: 4; 
-    bottom: -100%; 
-  }
-  .topping-pocky {
-    position: absolute;
-    height: -100px;
-    width: -100px;
-    z-index: 4;
-    bottom: -100%; 
-  }
+  /* Kitchen Buttons */
+
+  /*Topping Buttons */
+  .kitchen-button-biscoff {
+  position: absolute;
+  cursor: pointer;
+  z-index: 6;
+  top: 15px;
+  left: 935px;
+}
+  .kitchen-button-sprinkles {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 130px;
+  left: 935px;
+}
+  .kitchen-button-pocky {
+  position: absolute;
+  cursor: pointer;
+  z-index: 5;
+  top: 246px;
+  left: 935px;
+}
+
+ /*Topping Buttons */
+ .kitchen-image-biscoff {
+  position: absolute;
+  z-index: 5;
+ }
+
 
 </style>
 <body>
@@ -243,25 +251,22 @@
     <div class="container">
       <div class="button" id="toCafeButton" onclick="toggleScreen('cafeScene')">To Cafe</div>
       
-      <!-- Topping Selection -->
-      <div id="toppingSelection"></div>
-      <div class="container2">
-      <div class="character-buttons">
-        <button class="topping-biscoff" data-topping="Biscoff" onclick="selectTopping('Biscoff')" style="background-image: url('./Kitchen/biscoff1223.png');;">
-        </button>
-        <button class="topping-sprinkles" data-topping="Sprinkles" onclick="selectTopping('Sprinkles')">
-          <img src="Kitchen/sprinkes1223.png" alt="Sprinkles">
-        </button>
-        <button class="topping-pocky" data-topping="Pocky" onclick="selectTopping('Pocky')">
-          <img src="Kitchen/pocky1223.png" alt="Pocky">
-        </button>
-      </div>
-      </div>
+      <!--Kitchen Image Buttons-->
+      <img class="kitchen-button-biscoff" src="./Kitchen/biscoff1223.png" alt="Biscoff button" onclick="displayImage('secondImage1')">
+      <img class="kitchen-button-sprinkles" src="./Kitchen/sprinkes1223.png" alt="Sprinkles button" onclick="displayImage('secondImage2')">
+      <img class="kitchen-button-pocky" src="./Kitchen/pocky1223.png" alt="Pocky button" onclick="displayImage('secondImage3')">
+
+
+      <!--Kitchen Images-->
+      <img id="secondImage1" class="kitchen-image-bsicoff" src="./Kitchen/biscoff1223.png" style="display:none;">
+      <img id="secondImage2" class="kitchen-image-sprinkles" src="./Kitchen/biscoff1223.png" style="display:none;">
+      <img id="secondImage3" class="kitchen-image-pocky" src="./Kitchen/biscoff1223.png" style="display:none;">
+
+      
+
     </div>
     </div>
   </div>
-
-  
 
   <!-- Credits -->
   <div id="credits">
@@ -402,6 +407,16 @@
       animationInterval = setInterval(animate, animationSpeed);
       setInterval(moveCharacter, 50); // Adjust the interval for smoother movement
     });
+
+    //Kitchen button display
+    function displayImage(imageId) {
+        var images = document.getElementsByClassName("secondImage");
+        for (var i = 0; i < images.length; i++) {
+          images[i].style.display = "none";
+        }
+        var image = document.getElementById(imageId);
+        image.style.display = "block";
+      }
     
     // Topping Selection
     var selectedTopping = "";
