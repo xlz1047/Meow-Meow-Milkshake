@@ -145,7 +145,7 @@
     margin: auto;
     position: absolute;
     z-index: 2;
-    background-image: url(./Kitchen/IMG_2720.png);
+    background-image: url(./Kitchen/kitchen.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -202,30 +202,42 @@
   /* Kitchen Buttons */
 
   /*Topping Buttons */
-  .kitchen-button-biscoff {
+  .biscoff {
   position: absolute;
   cursor: pointer;
   z-index: 6;
-  top: 15px;
-  left: 935px;
+  top: 11px;
+  left: 945px;
 }
-  .kitchen-button-sprinkles {
+  .sprinkles {
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 130px;
-  left: 935px;
+  top: 127px;
+  left: 945px;
 }
-  .kitchen-button-pocky {
+  .pocky {
   position: absolute;
   cursor: pointer;
   z-index: 5;
   top: 246px;
-  left: 935px;
+  left: 945px;
 }
 
- /*Topping Buttons */
- .kitchen-image-biscoff {
+  .kitchen-button:hover {
+  filter: brightness(80%); /* Adjust the brightness value as needed */
+}
+
+ /*Topping Images */
+ .ipocky{
+  position: absolute;
+  z-index: 5;
+ }
+ .isprinkles{
+  position: absolute;
+  z-index: 5;
+ }
+ .ipocky{
   position: absolute;
   z-index: 5;
  }
@@ -252,14 +264,14 @@
       <div class="button" id="toCafeButton" onclick="toggleScreen('cafeScene')">To Cafe</div>
       
       <!--Kitchen Image Buttons-->
-      <img class="kitchen-button-biscoff" src="./Kitchen/biscoff1223.png" alt="Biscoff button" onclick="displayImage('secondImage1')">
-      <img class="kitchen-button-sprinkles" src="./Kitchen/sprinkes1223.png" alt="Sprinkles button" onclick="displayImage('secondImage2')">
-      <img class="kitchen-button-pocky" src="./Kitchen/pocky1223.png" alt="Pocky button" onclick="displayImage('secondImage3')">
+      <img class="kitchen-button biscoff" src="./Kitchen/biscoff1223.png" alt="Biscoff button" onclick="displayImage('secondImage1')">
+      <img class="kitchen-button sprinkles" src="./Kitchen/sprinkes1223.png" alt="Sprinkles button" onclick="displayImage('secondImage2')">
+      <img class="kitchen-button pocky" src="./Kitchen/pocky1223.png" alt="Pocky button" onclick="displayImage('secondImage3')">
 
       <!--Kitchen Images-->
-      <img id="secondImage1" class="secondImage" src="./Kitchen/biscoff1223.png" style="display:none;">
-      <img id="secondImage2" class="secondImage" src="./Kitchen/sprinkles1223.png" style="display:none;">
-      <img id="secondImage3" class="secondImage" src="./Kitchen/pocky1223.png" style="display:none;">
+      <img id="secondImage1" class="secondImage ibiscoff" src="./Kitchen/biscoff1223.png" style="display:none;">
+      <img id="secondImage2" class="secondImage isprinkles" src="./Kitchen/sprinkes1223.png" style="display:none;">
+      <img id="secondImage3" class="secondImage ipocky" src="./Kitchen/pocky1223.png" style="display:none;">
 
     </div>
     </div>
