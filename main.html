@@ -205,14 +205,14 @@
   .biscoff {
   position: absolute;
   cursor: pointer;
-  z-index: 6;
+  z-index: 4;
   top: 11px;
   left: 945px;
 }
   .sprinkles {
   position: absolute;
   cursor: pointer;
-  z-index: 4;
+  z-index: 6;
   top: 127px;
   left: 945px;
 }
@@ -223,23 +223,38 @@
   top: 246px;
   left: 945px;
 }
+.marshmellow {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px
+  }
 
   .kitchen-button:hover {
   filter: brightness(80%); /* Adjust the brightness value as needed */
 }
 
  /*Topping Images */
- .ipocky{
+ .ibiscoff{
   position: absolute;
   z-index: 5;
+  top: 100px;
+  left: 100px;
  }
  .isprinkles{
   position: absolute;
   z-index: 5;
+  top: 100px;
+  left: 100px;
  }
  .ipocky{
   position: absolute;
   z-index: 5;
+  top: 100px;
+  left: 100px;
  }
 
 
@@ -264,9 +279,13 @@
       <div class="button" id="toCafeButton" onclick="toggleScreen('cafeScene')">To Cafe</div>
       
       <!--Kitchen Image Buttons-->
-      <img class="kitchen-button biscoff" src="./Kitchen/biscoff1223.png" alt="Biscoff button" onclick="displayImage('secondImage1')">
-      <img class="kitchen-button sprinkles" src="./Kitchen/sprinkes1223.png" alt="Sprinkles button" onclick="displayImage('secondImage2')">
-      <img class="kitchen-button pocky" src="./Kitchen/pocky1223.png" alt="Pocky button" onclick="displayImage('secondImage3')">
+        <!--Kitchen Topping Buttons-->
+        <img class="kitchen-button biscoff" src="./Kitchen/biscoff1223.png" alt="Biscoff button" onclick="displayImage('secondImage1')">
+        <img class="kitchen-button sprinkles" src="./Kitchen/sprinkes1223.png" alt="Sprinkles button" onclick="displayImage('secondImage2')">
+        <img class="kitchen-button pocky" src="./Kitchen/pocky1223.png" alt="Pocky button" onclick="displayImage('secondImage3')">
+        <img class="kitchen-button marshmellow" src="./Kitchen/marshmallow.png" alt="Marshmellow button" onclick="displayImage('secondImage4')">
+        <img class="kitchen-button " src="./Kitchen/marshmallow.png" alt="Marshmellow button" onclick="displayImage('secondImage4')">
+
 
       <!--Kitchen Images-->
       <img id="secondImage1" class="secondImage ibiscoff" src="./Kitchen/biscoff1223.png" style="display:none;">
