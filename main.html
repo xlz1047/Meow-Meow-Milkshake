@@ -291,11 +291,11 @@
       
       <!--Kitchen Image Buttons-->
         <!--Kitchen Topping Buttons-->
-        <img class="kitchen-button biscoff" src="./Kitchen/biscoff1223.png" alt="Biscoff button" onclick="displayImage('secondImage1')">
-        <img class="kitchen-button sprinkles" src="./Kitchen/sprinkes1223.png" alt="Sprinkles button" onclick="displayImage('secondImage2')">
-        <img class="kitchen-button pocky" src="./Kitchen/pocky1223.png" alt="Pocky button" onclick="displayImage('secondImage3')">
-        <img class="kitchen-button marshmellow" src="./Kitchen/marshmallow.png" alt="Marshmellow button" onclick="displayImage('secondImage4')">
-        <img class="kitchen-button graham" src="./Kitchen/graham_crackers.png" alt="Graham crackers button" onclick="displayImage('secondImage5')">
+        <img class="kitchen-button biscoff" src="./Kitchen/biscoff1223.png" alt="Biscoff Button" id="biscoffButton" onclick="displayImage('secondImage1')">
+        <img class="kitchen-button sprinkles" src="./Kitchen/sprinkes1223.png" alt="Sprinkles Button" id="sprinklesButton" onclick="displayImage('secondImage2')">
+        <img class="kitchen-button pocky" src="./Kitchen/pocky1223.png" alt="Pocky button" id="pockyButton" onclick="displayImage('secondImage3')">
+        <img class="kitchen-button marshmellow" src="./Kitchen/marshmallow.png" alt="Marshmellow Button" id="marshmellowButton" onclick="displayImage('secondImage4')">
+        <img class="kitchen-button graham" src="./Kitchen/graham_crackers.png" alt="Graham Crackers Button" id="grahamButton" onclick="displayImage('secondImage5')">
 
       <!--Kitchen Images-->
       <img id="secondImage1" class="secondImage ibiscoff" src="./Kitchen/biscoff1223.png" style="display:none;">
@@ -324,6 +324,10 @@
     <source src="./SoundEffects/buttonClick.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio> 
+  <audio id="toppings">
+    <source src="./SoundEffects/toppings.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
 
   <script>
 
@@ -362,6 +366,17 @@
     }
     document.getElementById("toKitchenButton").addEventListener("click", playButtonClickSound);
     document.getElementById("toCafeButton").addEventListener("click", playButtonClickSound);
+
+    // Kitchen Sound Effects
+    function playToppingClickSound() {
+      var toppingClickSound = document.getElementById("toppings");
+      toppingClickSound.play();
+    }
+    document.getElementById("biscoffButton").addEventListener("click", playToppingClickSound);
+    document.getElementById("sprinklesButton").addEventListener("click", playToppingClickSound);
+    document.getElementById("pockyButton").addEventListener("click", playToppingClickSound);
+    document.getElementById("marshmellowButton").addEventListener("click", playToppingClickSound);
+    document.getElementById("grahamButton").addEventListener("click", playToppingClickSound);
 
     // Chosen Player Character
     function getParameterByName(name, url) {
@@ -450,7 +465,7 @@
       setInterval(moveCharacter, 50); // Adjust the interval for smoother movement
     });
 
-    //Kitchen button display
+    // Kitchen Button Display
     function displayImage(imageId) {
         var images = document.getElementsByClassName("secondImage");
         for (var i = 0; i < images.length; i++) {
