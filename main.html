@@ -147,7 +147,7 @@
     margin: auto;
     position: absolute;
     z-index: 2;
-    background-image: url(./Kitchen/kitchen.png);
+    background-image: url(./Assets/kitchenBackground.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -291,11 +291,11 @@
       
       <!--Kitchen Image Buttons-->
         <!--Kitchen Topping Buttons-->
-        <img class="kitchen-button biscoff" src="./Kitchen/biscoff1223.png" alt="Biscoff Button" id="biscoffButton" onclick="displayImage('secondImage1')">
-        <img class="kitchen-button sprinkles" src="./Kitchen/sprinkes1223.png" alt="Sprinkles Button" id="sprinklesButton" onclick="displayImage('secondImage2')">
-        <img class="kitchen-button pocky" src="./Kitchen/pocky1223.png" alt="Pocky button" id="pockyButton" onclick="displayImage('secondImage3')">
-        <img class="kitchen-button marshmellow" src="./Kitchen/marshmallow.png" alt="Marshmellow Button" id="marshmellowButton" onclick="displayImage('secondImage4')">
-        <img class="kitchen-button graham" src="./Kitchen/graham_crackers.png" alt="Graham Crackers Button" id="grahamButton" onclick="displayImage('secondImage5')">
+        <img class="kitchen-button biscoff" src="./Kitchen/Topping/biscoffContainer.png" alt="Biscoff Button" id="biscoffButton" onclick="displayImage('secondImage1')">
+        <img class="kitchen-button sprinkles" src="./Kitchen/Topping/sprinklesContainer.png" alt="Sprinkles Button" id="sprinklesButton" onclick="displayImage('secondImage2')">
+        <img class="kitchen-button pocky" src="./Kitchen/Topping/pockyContainer.png" alt="Pocky Button" id="pockyButton" onclick="displayImage('secondImage3')">
+        <img class="kitchen-button marshmellow" src="./Kitchen/Topping/marshmallowContainer.png" alt="Marshmellow Button" id="marshmellowButton" onclick="displayImage('secondImage4')">
+        <img class="kitchen-button graham" src="./Kitchen/Topping/grahamContainer.png" alt="Graham Button" id="grahamButton" onclick="displayImage('secondImage5')">
 
       <!--Kitchen Images-->
       <img id="secondImage1" class="secondImage ibiscoff" src="./Kitchen/biscoff1223.png" style="display:none;">
@@ -305,10 +305,10 @@
     </div>
     <div>
       <!--Syrup Image Buttons-->
-        <img class="syrup-button chocolate" src="./Kitchen/Syrup/chocolate.png" alt="Chocolate Button" id="sprinklesButton" onclick="displayImage('secondImage2')">
-        <img class="syrup-button peanutbutter" src="./Kitchen/Syrup/peanutbutter.png" alt="Peanutbutter button" id="pockyButton" onclick="displayImage('secondImage3')">
-        <img class="syrup-button stawberry" src="./Kitchen/Syrup/strawberry.png" alt="Strawberry Button" id="marshmellowButton" onclick="displayImage('secondImage4')">
-        <img class="syrup-button caramel" src="./Kitchen/Syrup/caramel.png" alt="Caramel Button" id="biscoffButton" onclick="displayImage('secondImage1')">
+        <img class="syrup-button chocolate" src="./Kitchen/Syrup/chocolateSyrup.png" alt="Chocolate Syrup Button" id="chocolateSyrupButton" onclick="displayImage('secondImage2')">
+        <img class="syrup-button peanutbutter" src="./Kitchen/Syrup/peanutButterSyrup.png" alt="Peanut Butter Syrup button" id="peanutButterSyrupButton" onclick="displayImage('secondImage3')">
+        <img class="syrup-button stawberry" src="./Kitchen/Syrup/strawberrySyrup.png" alt="Strawberry Syrup Button" id="strawberrySyrupButton" onclick="displayImage('secondImage4')">
+        <img class="syrup-button caramel" src="./Kitchen/Syrup/caramelSyrup.png" alt="Caramel Syrup Button" id="caramelSyrupButton" onclick="displayImage('secondImage1')">
         
       <!--Syrup Display-->
       <img id="secondImage1" class="secondImage1 " src="./Kitchen/Syrup/.png" style="display:none;">
@@ -319,9 +319,9 @@
     </div>
     <div>
       <!--Milk Image Buttons-->
-        <img class="milk-button chocolate" src="./Kitchen/Milk/wholemilk.png" alt="Wholemilk Button" id="sprinklesButton" onclick="displayImage('secondImage2')">
-        <img class="milk-button peanutbutter" src="./Kitchen/Milk/oatmilk.png" alt="Oatmilk button" id="pockyButton" onclick="displayImage('secondImage3')">
-        <img class="milk-button stawberry" src="./Kitchen/Milk/almondmilk.png" alt="Almondmilk Button" id="marshmellowButton" onclick="displayImage('secondImage4')">
+        <img class="milk-button chocolate" src="./Kitchen/Milk/wholeMilk.png" alt="Whole Milk Button" id="sprinklesButton" onclick="displayImage('secondImage2')">
+        <img class="milk-button peanutbutter" src="./Kitchen/Milk/oatMilk.png" alt="Oat Milk Button" id="pockyButton" onclick="displayImage('secondImage3')">
+        <img class="milk-button stawberry" src="./Kitchen/Milk/almondMilk.png" alt="Almond Milk Button" id="marshmellowButton" onclick="displayImage('secondImage4')">
         
       <!--Milk Display-->
       <img id="secondImage1" class="secondImage1 " src="./Kitchen/Milk/" style="display:none;">
@@ -444,12 +444,12 @@
     document.addEventListener("DOMContentLoaded", function() {
     const character = document.getElementById("character");
     const images = [
-      "./CatCustomer/armaancatanimation.png",
-      "./CatCustomer/maggiecatanimation.png",
-      "./CatCustomer/chriscatanimation.png",
-      "./CatCustomer/xincatanimation.png",
-      "./CatCustomer/random1.png",
-      "./CatCustomer/random2.png"
+      "./CatCustomer/armaanWalk.png",
+      "./CatCustomer/maggieWalk.png",
+      "./CatCustomer/christyWalk.png",
+      "./CatCustomer/xinWalk.png",
+      "./CatCustomer/randomWalk1.png",
+      "./CatCustomer/randomWalk2.png"
       // Add more image paths as needed
     ];
 
