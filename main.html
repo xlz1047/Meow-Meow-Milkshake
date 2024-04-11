@@ -4,274 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>Meow Meow Milkshakes</title>
+  <link rel="stylesheet" href="main.css">
 </head>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
-
-  html, body, * {
-    user-select: none;
-  }
-
-  /* Creates outer background color */
-  body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #8d6e5d;
-    font-family: 'Cormorant Garamond', serif;
-  }
-
-  /* Creates reusable variables */
-  :root {
-      --color-text: #433218;
-      --color-heading: #8d6e5d;
-      --color-heading-shadow: #321d08;
-      --color-button: cyan;
-      --color-button-active: rgba(255,255,255,0.6);
-  }
-
-  /* Reusable containers */
-  .container { /* Top Left */
-      position: absolute;
-      top: 50px;
-      left: 75px;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      text-align: center;
-      font-family: "Cherry Bomb One", sans-serif;
-      color: #ffffff;
-      text-shadow:    0 1px 0 var(--color-heading-shadow),
-                      0 2px 0 var(--color-heading-shadow),
-                      0 3px 0 var(--color-heading-shadow),
-                      0 4px 0 var(--color-heading-shadow),
-
-                      0 0 5px rgba(10,0,0,.05),
-                      0 1px 3px rgba(10,0,0,.2),
-                      0 3px 5px rgba(10,0,0,.2),
-                      0 5px 10px rgba(10,0,0,.2),
-                      0 10px 10px rgba(10,0,0,.2),
-                      0 20px 20px rgba(10,0,0,.3);
-  }
-  /*styling for buttons*/
-  .button {
-      display: inline-block;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-      border-radius: 8px;
-      padding: 15px;
-      background-color: #645043;
-      border: 4px solid black;
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-  }
-  /*button hover effect*/
-  .button:hover {
-    filter: brightness(0.8);
-    .image-button {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-    }
-}
-.image-button {
-  display: flex;
-  margin-top: 20px;
-}
-
-.image-button button {
-  background-color: rgba(0, 0, 0, 0); /* Transparent background */
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.image-button img {
-  object-fit: cover;
-}
-
-.image-button button:focus {
-  outline: none;
-}
-  canvas {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    margin: auto;
-    width: 1280px;
-    height: 720px;
-    border: 5px solid #000;
-    z-index: 1;
-    background-color: #647F9A
-  }
-
-  /* Cafe Scene */
-  #cafeScene {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1280px;
-    height: 720px;
-    border: 5px solid #000;
-    margin: auto;
-    position: absolute;
-    z-index: 2;
-    background-image: url(./Assets/cafeDay.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  #player {
-    position: absolute;
-    top: 250px;
-    left: 185px;
-  }
-  #player img {
-  width: 129px;
-  height: 200px;
-  }
-
-  /* Kitchen Scene */
-  #kitchenScene {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1280px;
-    height: 720px;
-    border: 5px solid #000;
-    margin: auto;
-    position: absolute;
-    z-index: 2;
-    background-image: url(./Assets/kitchenBackground.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  /* Music Toggle */
-  #musicToggle{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-family: "Cherry Bomb One", sans-serif;
-    color: #ffffff;
-    text-shadow:    0 1px 0 var(--color-heading-shadow),
-                    0 2px 0 var(--color-heading-shadow),
-                    0 3px 0 var(--color-heading-shadow),
-                    0 4px 0 var(--color-heading-shadow),
-
-                    0 0 5px rgba(10,0,0,.05),
-                    0 1px 3px rgba(10,0,0,.2),
-                    0 3px 5px rgba(10,0,0,.2),
-                    0 5px 10px rgba(10,0,0,.2),
-                    0 10px 10px rgba(10,0,0,.2),
-                    0 20px 20px rgba(10,0,0,.3);
-  }
-
-  /* Credits */
-  #credits{
-    position: absolute;
-    bottom: 0px;
-    right: 10px;
-    font-family: "Cherry Bomb One", sans-serif;
-    color: #ffffff;
-    text-shadow:    0 1px 0 var(--color-heading-shadow),
-                    0 2px 0 var(--color-heading-shadow),
-                    0 3px 0 var(--color-heading-shadow),
-                    0 4px 0 var(--color-heading-shadow),
-
-                    0 0 5px rgba(10,0,0,.05),
-                    0 1px 3px rgba(10,0,0,.2),
-                    0 3px 5px rgba(10,0,0,.2),
-                    0 5px 10px rgba(10,0,0,.2),
-                    0 10px 10px rgba(10,0,0,.2),
-                    0 20px 20px rgba(10,0,0,.3);
-  }
-  .character {
-    width: 141px; 
-    height: 263px; 
-    background-repeat: no-repeat;
-    position: absolute;
-    right: 0; 
-    margin-top: 20%;
-  }
-  /* Kitchen Buttons */
-
-  /*Topping Buttons */
-  .biscoff {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
-  top: 11px;
-  left: 945px;
-}
-  .sprinkles {
-  position: absolute;
-  cursor: pointer;
-  z-index: 6;
-  top: 127px;
-  left: 945px;
-}
-  .pocky {
-  position: absolute;
-  cursor: pointer;
-  z-index: 5;
-  top: 246px;
-  left: 945px;
-}
-.marshmellow {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px
-  }
-.graham {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
-  top: 508px;
-  left: 932px;
-  width: 150px;
-  height: 130px;
-  }
-
-  .kitchen-button:hover {
-  filter: brightness(80%); /* Adjust the brightness value as needed */
-}
-
- /*Topping Images */
- .ibiscoff{
-  position: absolute;
-  z-index: 5;
-  top: 100px;
-  left: 100px;
- }
- .isprinkles{
-  position: absolute;
-  z-index: 5;
-  top: 100px;
-  left: 100px;
- }
- .ipocky{
-  position: absolute;
-  z-index: 5;
-  top: 100px;
-  left: 100px;
- }
-
-
-</style>
 <body>
-
   <!-- Cafe Scene -->
   <canvas id="canvas"></canvas>
   <div id="cafeScene">
@@ -288,47 +23,85 @@
   <div id="kitchenScene" style="display: none;">
     <div class="container">
       <div class="button" id="toCafeButton" onclick="toggleScreen('cafeScene')">To Cafe</div>
-      
-      <!--Kitchen Image Buttons-->
-        <!--Kitchen Topping Buttons-->
-        <img class="kitchen-button biscoff" src="./Kitchen/Topping/biscoffContainer.png" alt="Biscoff Button" id="biscoffButton" onclick="displayImage('secondImage1')">
-        <img class="kitchen-button sprinkles" src="./Kitchen/Topping/sprinklesContainer.png" alt="Sprinkles Button" id="sprinklesButton" onclick="displayImage('secondImage2')">
-        <img class="kitchen-button pocky" src="./Kitchen/Topping/pockyContainer.png" alt="Pocky Button" id="pockyButton" onclick="displayImage('secondImage3')">
-        <img class="kitchen-button marshmellow" src="./Kitchen/Topping/marshmallowContainer.png" alt="Marshmellow Button" id="marshmellowButton" onclick="displayImage('secondImage4')">
-        <img class="kitchen-button graham" src="./Kitchen/Topping/grahamContainer.png" alt="Graham Button" id="grahamButton" onclick="displayImage('secondImage5')">
-
-      <!--Kitchen Images-->
-      <img id="secondImage1" class="secondImage ibiscoff" src="./Kitchen/biscoffContainer.png" style="display:none;">
-      <img id="secondImage2" class="secondImage isprinkles" src="./Kitchen/sprinkesContainer.png" style="display:none;">
-      <img id="secondImage3" class="secondImage ipocky" src="./Kitchen/pockyContainer.png" style="display:none;">
-
     </div>
     <div>
-      <!--Syrup Image Buttons-->
-        <img class="syrup-button chocolate" src="./Kitchen/Syrup/chocolateSyrup.png" alt="Chocolate Syrup Button" id="chocolateSyrupButton" onclick="displayImage('secondImage2')">
-        <img class="syrup-button peanutbutter" src="./Kitchen/Syrup/peanutButterSyrup.png" alt="Peanut Butter Syrup button" id="peanutButterSyrupButton" onclick="displayImage('secondImage3')">
-        <img class="syrup-button stawberry" src="./Kitchen/Syrup/strawberrySyrup.png" alt="Strawberry Syrup Button" id="strawberrySyrupButton" onclick="displayImage('secondImage4')">
-        <img class="syrup-button caramel" src="./Kitchen/Syrup/caramelSyrup.png" alt="Caramel Syrup Button" id="caramelSyrupButton" onclick="displayImage('secondImage1')">
-        
-      <!--Syrup Display-->
-      <img id="secondImage1" class="secondImage1" src="./Kitchen/Syrup/chocolateDisplay.png" style="display:none;">
-      <img id="secondImage2" class="secondImage2" src="./Kitchen/Syrup/peanutButterDisplay.png" style="display:none;">
-      <img id="secondImage3" class="secondImage3" src="./Kitchen/Syrup/strawberryDisplay.png" style="display:none;">
-      <img id="secondImage3" class="secondImage4" src="./Kitchen/Syrup/caramelDisplay.png" style="display:none;">
+      <!-- Topping Image Buttons -->
+      <img class="topping-button biscoff" id="topping_iscoff" src="./Kitchen/Topping/biscoffContainer.png" alt="Biscoff Button" onclick="displayImage('secondImage1')">
+      <img class="topping-button pocky" id="topping_pocky" src="./Kitchen/Topping/pockyContainer.png" alt="Pocky Button" onclick="displayImage('secondImage2')">
+      <img class="topping-button stawberry" id="topping_stawberry" src="./Kitchen/Topping/strawberryContainer.png" alt="Strawberry Button" onclick="displayImage('secondImage3')">
+      <img class="topping-button blueberry" id="topping_blueberry" src="./Kitchen/Topping/blueberryContainer.png" alt="Blueberry Button" onclick="displayImage('secondImage4')">
+      <img class="topping-button cherry" id="topping_cherry" src="./Kitchen/Topping/cherryContainer.png" alt="Cherry Button" onclick="displayImage('secondImage5')">
+      <img class="topping-button sprinkles" id="topping_sprinkles" src="./Kitchen/Topping/sprinklesContainer.png" alt="Sprinkles Button" onclick="displayImage('secondImage6')">
+      <img class="topping-button graham" id="topping_graham" src="./Kitchen/Topping/grahamContainer.png" alt="Graham Button" onclick="displayImage('secondImage7')">
+      <img class="topping-button oreo" id="topping_oreo" src="./Kitchen/Topping/oreocontainer.png" alt="Oreo Button" onclick="displayImage('secondImage8')">
+      <img class="topping-button marshmellow" id="topping_marshmellow" src="./Kitchen/Topping/marshmallowContainer.png" alt="Marshmallow Button" onclick="displayImage('secondImage9')">
+      <img class="topping-button choloatechips" id="topping_choloatechips" src="./Kitchen/Topping/chocolatechipsContainer.png" alt="Chocolate Chips Button" onclick="displayImage('secondImage10')">
 
+      <!-- Topping Display Images -->
+      <img id="secondImage1" class="secondImage" src="./Kitchen/" style="display:none;">
+      <img id="secondImage2" class="secondImage" src="./Kitchen/" style="display:none;">
+      <img id="secondImage3" class="secondImage" src="./Kitchen/Display/strawberry.png" style="display:none;">
+      <img id="secondImage4" class="secondImage" src="./Kitchen/Display/blueberry.png" style="display:none;">
+      <img id="secondImage5" class="secondImage" src="./Kitchen/Display/cherry.png" style="display:none;">
+      <img id="secondImage6" class="secondImage" src="./Kitchen/" style="display:none;">
+      <img id="secondImage7" class="secondImage" src="./Kitchen/" style="display:none;">
+      <img id="secondImage8" class="secondImage" src="./Kitchen/" style="display:none;">
+      <img id="secondImage9" class="secondImage" src="./Kitchen/Display/marshmallow.png" style="display:none;">
+      <img id="secondImage10" class="secondImage" src="./Kitchen/" style="display:none;">
     </div>
     <div>
-      <!--Milk Image Buttons-->
-        <img class="milk-button chocolate" src="./Kitchen/Milk/wholeMilk.png" alt="Whole Milk Button" id="sprinklesButton" onclick="displayImage('secondImage2')">
-        <img class="milk-button peanutbutter" src="./Kitchen/Milk/oatMilk.png" alt="Oat Milk Button" id="pockyButton" onclick="displayImage('secondImage3')">
-        <img class="milk-button stawberry" src="./Kitchen/Milk/almondMilk.png" alt="Almond Milk Button" id="marshmellowButton" onclick="displayImage('secondImage4')">
-        
-      <!--Milk Display-->
-      <img id="secondImage1" class="secondImage1 " src="./Kitchen/Milk/" style="display:none;">
-      <img id="secondImage2" class="secondImage2 " src="./Kitchen/Milk/" style="display:none;">
-      <img id="secondImage3" class="secondImage3 " src="./Kitchen/Milk/" style="display:none;">
-      
+      <!-- Syrup Image Buttons -->
+      <img class="syrup-button peanutbutter" id="syrup_peanutbutter" src="./Kitchen/Syrup/peanutButterSyrup.png" alt="Peanut Butter Syrup button" onclick="displayImage('secondImage11')">
+      <img class="syrup-button chocolate" id="syrup_chocolate" src="./Kitchen/Syrup/chocolateSyrup.png" alt="Chocolate Syrup Button"  onclick="displayImage('secondImage12')">
+      <img class="syrup-button caramel" id="syrup_caramel" src="./Kitchen/Syrup/caramelSyrup.png" alt="Caramel Syrup Button" onclick="displayImage('secondImage13')">
+      <img class="syrup-button stawberry" id="syrup_stawberry" src="./Kitchen/Syrup/strawberrySyrup.png" alt="Strawberry Syrup Button" onclick="displayImage('secondImage14')">
+
+      <!-- Syrup Display -->
+      <img id="secondImage11" class="secondImage" src="./Kitchen/" style="display:none;">
+      <img id="secondImage12" class="secondImage" src="./Kitchen/" style="display:none;">
+      <img id="secondImage13" class="secondImage" src="./Kitchen/" style="display:none;">
+      <img id="secondImage14" class="secondImage" src="./Kitchen/" style="display:none;">
     </div>
+    <div>
+      <!-- Milk Image Buttons -->
+      <img class="milk-button whole" id="milk_whole" src="./Kitchen/Milk/wholeMilk.png" alt="Whole Milk Button" onclick="displayImage('secondImage15')">
+      <img class="milk-button oat" id="milk_oat" src="./Kitchen/Milk/oatMilk.png" alt="Oat Milk Button" onclick="displayImage('secondImage16')">
+      <img class="milk-button almond" id="milk_almond" src="./Kitchen/Milk/almondMilk.png" alt="Almond Milk Button" onclick="displayImage('secondImage17')">
+    
+      <!-- Milk Display -->
+      <img id="secondImage15" class="secondImage" src="./Kitchen/Milk/" style="display:none;">
+      <img id="secondImage16" class="secondImage" src="./Kitchen/Milk/" style="display:none;">
+      <img id="secondImage17" class="secondImage" src="./Kitchen/Milk/" style="display:none;">
+    </div>
+    <div>
+      <!-- Ice Cream Image Buttons -->
+      <img class="icecream-button vanilla" src="./Kitchen/IceCream/cookie_dough_ice_cream.png" alt="Vanilla Ice Cream Button" onclick="displayImage('secondImage18')">
+      <img class="icecream-button strawberry" id="icecream_strawberry" src="./Kitchen/IceCream/birthdaycakeContainer.png" alt="Strawberry Ice Cream Button" onclick="displayImage('secondImage19')">
+      <img class="icecream-button matcha" id="icecream_matcha" src="./Kitchen/IceCream/chocolateContainer.png" alt="Matcha Ice Cream Button" onclick="displayImage('secondImage20')">
+      <img class="icecream-button brithdaycake" id="icecream_brithdaycake" src="./Kitchen/IceCream/coffeeContainer.png" alt="Birthday Cake Ice Cream Button" onclick="displayImage('secondImage21')">
+      <img class="icecream-button chocolate" id="icecream_chocolate" src="./Kitchen/IceCream/mangoContainer.png" alt="Chocolate Ice Cream Button" onclick="displayImage('secondImage22')">
+      <img class="icecream-button coffee" id="icecream_coffee" src="./Kitchen/IceCream/matchaContainer.png" alt="Coffee Ice Cream Button" onclick="displayImage('secondImage23')">
+      <img class="icecream-button mango" id="icecream_mango" src="./Kitchen/IceCream/strawberryContainer.png" alt="Mango Ice Cream Button" onclick="displayImage('secondImage24')">
+      <img class="icecream-button cookiedough" id="icecream_cookiedough" src="./Kitchen/IceCream/vanillaContainer.png" alt="Cookie Dough Ice Cream Button" onclick="displayImage('secondImage25')">
+    
+      <!-- Ice Cream Display -->
+      <img id="secondImage18" class="secondImage" src="./Kitchen/" style="display:none;">
+      <img id="secondImage19" class="secondImage" src="./Kitchen/" style="display:none;">
+      <img id="secondImage20" class="secondImage" src="./Kitchen/" style="display:none;">
+      <img id="secondImage21" class="secondImage" src="./Kitchen/" style="display:none;">
+      <img id="secondImage22" class="secondImage" src="./Kitchen/Display/chocolateCup.png" style="display:none;">
+      <img id="secondImage23" class="secondImage" src="./Kitchen/Display/coffeeCup.png" style="display:none;">
+      <img id="secondImage24" class="secondImage" src="./Kitchen/Display/mangoCup.png" style="display:none;">
+      <img id="secondImage25" class="secondImage" src="./Kitchen/" style="display:none;">
+    </div>
+    <div>
+      <!-- Whipped Cream Image Buttons -->
+      <img class="cream-button chocolate" src="./Kitchen/WhippedCream/chocolateCream.png" alt="Chocolate Whipped Cream Button" onclick="displayImage('secondImage26')">
+      <img class="cream-button whisked" src="./Kitchen/WhippedCream/whiskedCream.png" alt="Whisked Cream Button" onclick="displayImage('secondImage27')">
+
+      <!-- Whipped Cream Display -->
+      <img id="secondImage26" class="secondImage" src="./Kitchen/Display/chocolateCream.png" style="display:none;">
+      <img id="secondImage27" class="secondImage" src="./Kitchen/Display/whiskedCream.png" style="display:none;">
     </div>
   </div>
 
@@ -355,190 +128,7 @@
     Your browser does not support the audio element.
   </audio>
 
-  <script>
-
-    // Music Toggler
-    function toggleMusic() {
-        var music = document.getElementById("backgroundMusic");
-        var musicStatus = document.getElementById("musicStatus");
-        if(music.paused) {
-            music.play();
-            musicStatus.innerText = "On";
-        } else {
-            music.pause();
-            musicStatus.innerText = "Off";
-        }
-    }
-    document.addEventListener("click", function() {
-      var audio = document.getElementById("backgroundMusic")
-      audio.muted = false;
-      audio.play();
-      document.removeEventListener("click", arguments.callee);
-    }); 
-
-    // Screen Toggler
-    function toggleScreen(sceneId) {
-      var scenes = ["cafeScene", "kitchenScene"];
-      for (var i = 0; i < scenes.length; i++) {
-        var scene = document.getElementById(scenes[i]);
-        scene.style.display = scenes[i] === sceneId ? "block" : "none";
-      }
-    }
-
-    // Button Sound Effects
-    function playButtonClickSound() {
-      var buttonClickSound = document.getElementById("buttonClick");
-      buttonClickSound.play();
-    }
-    document.getElementById("toKitchenButton").addEventListener("click", playButtonClickSound);
-    document.getElementById("toCafeButton").addEventListener("click", playButtonClickSound);
-
-    // Kitchen Sound Effects
-    function playToppingClickSound() {
-      var toppingClickSound = document.getElementById("toppings");
-      toppingClickSound.play();
-    }
-    document.getElementById("biscoffButton").addEventListener("click", playToppingClickSound);
-    document.getElementById("sprinklesButton").addEventListener("click", playToppingClickSound);
-    document.getElementById("pockyButton").addEventListener("click", playToppingClickSound);
-    document.getElementById("marshmellowButton").addEventListener("click", playToppingClickSound);
-    document.getElementById("grahamButton").addEventListener("click", playToppingClickSound);
-
-    // Chosen Player Character
-    function getParameterByName(name, url) {
-      if (!url) url = window.location.href;
-      name = name.replace(/[\[\]]/g, "\\$&");
-      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-      if (!results) return null;
-      if (!results[2]) return "";
-      return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
-    function setCharacterImage() {
-      var characterParam = getParameterByName("character");
-      if (characterParam) {
-        var characterImage = document.getElementById("characterImage");
-        var imagePath = "./CatSelection/";
-
-        switch (characterParam) {
-          case "Character1":
-            imagePath += "calicoCatSelection.png";
-            break;
-          case "Character2":
-            imagePath += "blackCatSelection.png";
-            break;
-          case "Character3":
-            imagePath += "orangeCatSelection.png";
-            break;
-          case "Character4":
-            imagePath += "siameseCatSelection.png";
-            break;
-          default:
-            break;
-        }
-        characterImage.src = imagePath;
-      }
-    }
-    window.onload = setCharacterImage;
-
-    document.addEventListener("DOMContentLoaded", function() {
-    const character = document.getElementById("character");
-    const images = [
-      "./CatCustomer/armaanWalk.png",
-      "./CatCustomer/maggieWalk.png",
-      "./CatCustomer/christyWalk.png",
-      "./CatCustomer/xinWalk.png",
-      "./CatCustomer/randomWalk1.png",
-      "./CatCustomer/randomWalk2.png"
-      // Add more image paths as needed
-    ];
-
-    function getRandomImage() {
-      return images[Math.floor(Math.random() * images.length)];
-    }
-
-    function setRandomCharacterImage() {
-      const randomImage = getRandomImage();
-      character.style.backgroundImage = `url('${randomImage}')`;
-    }
-
-    setRandomCharacterImage();
-
-      const frameWidth = 141; 
-      const totalFrames = 4; 
-      const animationSpeed = 100; 
-      let frameIndex = 0;
-      let posX = window.innerWidth - 400; 
-      let targetX = posX - 600; 
-      let animationInterval;
-
-      function animate() {
-        frameIndex = (frameIndex + 1) % totalFrames;
-        character.style.backgroundPosition = `-${frameIndex * frameWidth}px 0`;
-      }
-
-      function moveCharacter() {
-        if (posX <= targetX) {
-          clearInterval(animationInterval);
-        } else {
-          posX -= 5; 
-          character.style.left = posX + "px";
-        }
-      }
-
-      // Start animation and movement
-      animationInterval = setInterval(animate, animationSpeed);
-      setInterval(moveCharacter, 50); // Adjust the interval for smoother movement
-    });
-
-    // Kitchen Button Display
-    function displayImage(imageId) {
-        var images = document.getElementsByClassName("secondImage");
-        for (var i = 0; i < images.length; i++) {
-          images[i].style.display = "none";
-        }
-        var image = document.getElementById(imageId);
-        image.style.display = "block";
-      }
-    
-    // Topping Selection
-    var selectedTopping = "";
-    var toppingChoice = "";
-
-    // function selectTopping(topping) {
-    //     var toppingButtons = document.querySelectorAll('.topping-button');
-    //     toppingButtons.forEach(button => button.classList.remove('topping'));
-    //     selectedTopping = topping;
-    //     document.querySelector(`.topping-button[data-topping="${topping}"]`).classList.add('topping');
-    // }
-
-    // function setToppingImage() {
-    //   var toppingParam = getParameterByName("topping");
-
-    //   if (toppingParam) {
-    //     var toppingImage = document.getElementById("toppingImage");
-    //     varimagePath = "./Kitchen/";
-
-    //     switch (toppingParam) {
-    //       case "Biscoff":
-    //         imagePath += "biscoff1223.png";
-    //         break;
-    //       case "Sprinkes":
-    //         imagePath += "sprinkles1223.png";6
-    //         break;
-    //       case "Pocky":
-    //         imagePath += "pocky1223.png";
-    //         break;
-    //       default:
-    //         break;
-    //     }
-    //     toppingImage.src = imagePath;
-    //   }
-
-    // }
-    // window.onload = setToppingImage
-
-  </script>
+  
 </body>
-
+<script src="main.js"></script>
 </html>

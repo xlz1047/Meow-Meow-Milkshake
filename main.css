@@ -1,0 +1,692 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
+
+  html, body, * {
+    user-select: none;
+  }
+
+  /* Creates outer background color */
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #8d6e5d;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* Creates reusable variables */
+  :root {
+      --color-text: #433218;
+      --color-heading: #8d6e5d;
+      --color-heading-shadow: #321d08;
+      --color-button: cyan;
+      --color-button-active: rgba(255,255,255,0.6);
+  }
+
+  /* Reusable containers */
+  .container { /* Top Left */
+      position: absolute;
+      top: 50px;
+      left: 75px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      text-align: center;
+      font-family: "Cherry Bomb One", sans-serif;
+      color: #ffffff;
+      text-shadow:    0 1px 0 var(--color-heading-shadow),
+                      0 2px 0 var(--color-heading-shadow),
+                      0 3px 0 var(--color-heading-shadow),
+                      0 4px 0 var(--color-heading-shadow),
+
+                      0 0 5px rgba(10,0,0,.05),
+                      0 1px 3px rgba(10,0,0,.2),
+                      0 3px 5px rgba(10,0,0,.2),
+                      0 5px 10px rgba(10,0,0,.2),
+                      0 10px 10px rgba(10,0,0,.2),
+                      0 20px 20px rgba(10,0,0,.3);
+  }
+  /*styling for buttons*/
+  .button {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+      border-radius: 8px;
+      padding: 15px;
+      background-color: #645043;
+      border: 4px solid black;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+  }
+  /*button hover effect*/
+  .button:hover {
+    filter: brightness(0.8);
+    .image-button {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+    }
+}
+.image-button {
+  display: flex;
+  margin-top: 20px;
+}
+
+.image-button button {
+  background-color: rgba(0, 0, 0, 0); /* Transparent background */
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.image-button img {
+  object-fit: cover;
+}
+
+.image-button button:focus {
+  outline: none;
+}
+  canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    margin: auto;
+    width: 1280px;
+    height: 720px;
+    border: 5px solid #000;
+    z-index: 1;
+    background-color: #647F9A
+  }
+
+  /* Cafe Scene */
+  #cafeScene {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1280px;
+    height: 720px;
+    border: 5px solid #000;
+    margin: auto;
+    position: absolute;
+    z-index: 2;
+    background-image: url(./Assets/cafeDay.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #player {
+    position: absolute;
+    top: 250px;
+    left: 185px;
+  }
+  #player img {
+  width: 129px;
+  height: 200px;
+  }
+
+  /* Kitchen Scene */
+  #kitchenScene {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1280px;
+    height: 720px;
+    border: 5px solid #000;
+    margin: auto;
+    position: absolute;
+    z-index: 2;
+    background-image: url(./Assets/kitchenBackground.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Music Toggle */
+  #musicToggle{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-family: "Cherry Bomb One", sans-serif;
+    color: #ffffff;
+    text-shadow:    0 1px 0 var(--color-heading-shadow),
+                    0 2px 0 var(--color-heading-shadow),
+                    0 3px 0 var(--color-heading-shadow),
+                    0 4px 0 var(--color-heading-shadow),
+
+                    0 0 5px rgba(10,0,0,.05),
+                    0 1px 3px rgba(10,0,0,.2),
+                    0 3px 5px rgba(10,0,0,.2),
+                    0 5px 10px rgba(10,0,0,.2),
+                    0 10px 10px rgba(10,0,0,.2),
+                    0 20px 20px rgba(10,0,0,.3);
+  }
+
+  /* Credits */
+  #credits{
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    font-family: "Cherry Bomb One", sans-serif;
+    color: #ffffff;
+    text-shadow:    0 1px 0 var(--color-heading-shadow),
+                    0 2px 0 var(--color-heading-shadow),
+                    0 3px 0 var(--color-heading-shadow),
+                    0 4px 0 var(--color-heading-shadow),
+
+                    0 0 5px rgba(10,0,0,.05),
+                    0 1px 3px rgba(10,0,0,.2),
+                    0 3px 5px rgba(10,0,0,.2),
+                    0 5px 10px rgba(10,0,0,.2),
+                    0 10px 10px rgba(10,0,0,.2),
+                    0 20px 20px rgba(10,0,0,.3);
+  }
+  .character {
+    width: 141px; 
+    height: 263px; 
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0; 
+    margin-top: 20%;
+  }
+  /* Kitchen Buttons */
+
+  @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
+
+html, body, * {
+    user-select: none;
+}
+
+/* Creates outer background color */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #8d6e5d;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Creates reusable variables */
+:root {
+    --color-text: #433218;
+    --color-heading: #8d6e5d;
+    --color-heading-shadow: #321d08;
+    --color-button: cyan;
+    --color-button-active: rgba(255,255,255,0.6);
+}
+
+/* Reusable containers */
+.container { /* Top Left */
+    position: absolute;
+    top: 50px;
+    left: 75px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    text-align: center;
+    font-family: "Cherry Bomb One", sans-serif;
+    color: #ffffff;
+    text-shadow:    0 1px 0 var(--color-heading-shadow),
+                    0 2px 0 var(--color-heading-shadow),
+                    0 3px 0 var(--color-heading-shadow),
+                    0 4px 0 var(--color-heading-shadow),
+
+                    0 0 5px rgba(10,0,0,.05),
+                    0 1px 3px rgba(10,0,0,.2),
+                    0 3px 5px rgba(10,0,0,.2),
+                    0 5px 10px rgba(10,0,0,.2),
+                    0 10px 10px rgba(10,0,0,.2),
+                    0 20px 20px rgba(10,0,0,.3);
+}
+/*styling for buttons*/
+.button {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #645043;
+    border: 4px solid black;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+/*button hover effect*/
+.button:hover {
+    filter: brightness(0.8);
+    .image-button {
+display: flex;
+justify-content: space-around;
+margin-top: 20px;
+}
+}
+.image-button {
+  display: flex;
+  margin-top: 20px;
+}
+
+.image-button button {
+  background-color: rgba(0, 0, 0, 0); /* Transparent background */
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.image-button img {
+  object-fit: cover;
+}
+
+.image-button button:focus {
+  outline: none;
+}
+canvas {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+display: block;
+margin: auto;
+width: 1280px;
+height: 720px;
+border: 5px solid #000;
+z-index: 1;
+background-color: #647F9A
+}
+
+/* Cafe Scene */
+#cafeScene {
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 1280px;
+height: 720px;
+border: 5px solid #000;
+margin: auto;
+position: absolute;
+z-index: 2;
+background-image: url(./Assets/cafeDay.png);
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+}
+#player {
+position: absolute;
+top: 250px;
+left: 185px;
+}
+#player img {
+width: 129px;
+height: 200px;
+}
+
+/* Kitchen Scene */
+#kitchenScene {
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 1280px;
+height: 720px;
+border: 5px solid #000;
+margin: auto;
+position: absolute;
+z-index: 2;
+background-image: url(./Assets/kitchenBackground.png);
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+}
+
+/* Music Toggle */
+#musicToggle{
+position: absolute;
+top: 10px;
+right: 10px;
+cursor: pointer;
+font-family: "Cherry Bomb One", sans-serif;
+color: #ffffff;
+text-shadow:    0 1px 0 var(--color-heading-shadow),
+                0 2px 0 var(--color-heading-shadow),
+                0 3px 0 var(--color-heading-shadow),
+                0 4px 0 var(--color-heading-shadow),
+
+                0 0 5px rgba(10,0,0,.05),
+                0 1px 3px rgba(10,0,0,.2),
+                0 3px 5px rgba(10,0,0,.2),
+                0 5px 10px rgba(10,0,0,.2),
+                0 10px 10px rgba(10,0,0,.2),
+                0 20px 20px rgba(10,0,0,.3);
+}
+
+/* Credits */
+#credits{
+position: absolute;
+bottom: 0px;
+right: 10px;
+font-family: "Cherry Bomb One", sans-serif;
+color: #ffffff;
+text-shadow:    0 1px 0 var(--color-heading-shadow),
+                0 2px 0 var(--color-heading-shadow),
+                0 3px 0 var(--color-heading-shadow),
+                0 4px 0 var(--color-heading-shadow),
+
+                0 0 5px rgba(10,0,0,.05),
+                0 1px 3px rgba(10,0,0,.2),
+                0 3px 5px rgba(10,0,0,.2),
+                0 5px 10px rgba(10,0,0,.2),
+                0 10px 10px rgba(10,0,0,.2),
+                0 20px 20px rgba(10,0,0,.3);
+}
+.character {
+width: 141px; 
+height: 263px; 
+background-repeat: no-repeat;
+position: absolute;
+right: 0; 
+margin-top: 20%;
+}
+  /* Kitchen Buttons */
+
+  /*Topping Buttons */
+  .biscoff {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 11px;
+  left: 945px;
+}
+  .sprinkles {
+  position: absolute;
+  cursor: pointer;
+  z-index: 6;
+  top: 127px;
+  left: 945px;
+}
+  .pocky {
+  position: absolute;
+  cursor: pointer;
+  z-index: 5;
+  top: 246px;
+  left: 945px;
+}
+.marshmellow {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px
+  }
+.graham {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 508px;
+  left: 932px;
+  width: 150px;
+  height: 130px;
+  }
+
+  .kitchen-button:hover {
+  filter: brightness(80%); /* Adjust the brightness value as needed */
+}
+
+/*Topping Buttons */
+.topping_biscoff {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 11px;
+  left: 945px;
+}
+.topping_pocky {
+  position: absolute;
+  cursor: pointer;
+  z-index: 5;
+  top: 246px;
+  left: 945px;
+}
+.topping_strawberry {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 500px;
+  width: 50px;
+  height: 50px;
+}
+.topping_blueberry {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+.topping_cherry {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+
+.topping_sprinkles {
+  position: absolute;
+  cursor: pointer;
+  z-index: 6;
+  top: 127px;
+  left: 945px;
+}
+.topping_graham {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 508px;
+  left: 932px;
+  width: 150px;
+  height: 130px;
+}
+.topping_oreo {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+.topping_marshmallow {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px
+}
+.topping_chocolatechips {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+
+/*Syrup Buttons */
+.syrup_peanutbutter {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+.syrup_chocolate {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+.syrup_caramel {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+.syrup_strawberry {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+
+/*Milk Buttons */
+.milk_whole {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+.milk_oat {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+.milk_almond {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+
+/*Topping Buttons */
+.icecream_vanilla {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+.icecream_strawberry {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+.icecream_matcha {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+.icecream_birthdaycake {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+
+.icecream_chocolate {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+.icecream_coffee {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+.icecream_mango {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+.icecream_cookiedough {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+
+/*Cream Buttons */
+.cream_chocolate {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+.cream_whisked {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 381px;
+  left: 941px;
+  width: 134px;
+  height: 157px;
+}
+
+
+  .kitchen-button:hover {
+  filter: brightness(80%); /* Adjust the brightness value as needed */
+  }
