@@ -144,6 +144,23 @@
     background-repeat: no-repeat;
   }
 
+  /* Ordering Scene */
+  #orderingScene {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1280px;
+    height: 720px;
+    border: 5px solid #000;
+    margin: auto;
+    position: absolute;
+    z-index: 2;
+    background-image: url(./Assets/servingDay.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   /* Music Toggle */
   #musicToggle{
     position: absolute;
