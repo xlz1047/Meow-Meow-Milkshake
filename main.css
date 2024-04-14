@@ -412,55 +412,58 @@ margin-top: 20%;
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 16px;
-  left: 1000px;
+  top: 28px;
+  left: 973px;
 }
 .pocky {
   position: absolute;
   cursor: pointer;
   z-index: 5;
-  top: 246px;
-  left: 945px;
+  top: 261px;
+  left: 972px;
 }
 .strawberry {
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
+  height: 132px;
+  width: 147px;
+  top: 168px;
+  left: 1100px;
 }
 .blueberry {
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  top: 403px;
+  left: 1109px;
+  width: 139px;
+  height: 135px;
 }
 .cherry {
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  top: 42px;
+  left: 1102px;
+  width: 144px;
+  height: 142px;
 }
 
 .sprinkles {
   position: absolute;
   cursor: pointer;
   z-index: 6;
-  top: 127px;
-  left: 945px;
+  height: 144px;
+  top: 143px;
+  left: 972px;
 }
 .graham {
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 508px;
-  left: 932px;
+  top: 525px;
+  left: 959px;
   width: 150px;
   height: 130px;
 }
@@ -468,17 +471,17 @@ margin-top: 20%;
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  top: 390px;
+  left: 965px;
+  width: 137px;
+  height: 164px;
 }
 .marshmallow {
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
+  top: 278px;
+  left: 1108px;
   width: 134px;
   height: 157px
 }
@@ -486,8 +489,8 @@ margin-top: 20%;
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
+  top: 515px;
+  left: 1110px;
   width: 134px;
   height: 157px;
 }
@@ -497,66 +500,66 @@ margin-top: 20%;
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  top: 80px;
+  left: 830px;
+  width: 146px;
+  height: 172px;
 }
 .syrup_chocolate {
   position: absolute;
   cursor: pointer;
-  z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  z-index: 5;
+  top: 203px;
+  left: 830px;
+  width: 146px;
+  height: 172px;
 }
 .syrup_caramel {
   position: absolute;
   cursor: pointer;
-  z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  z-index: 6;
+  top: 333px;
+  left: 839px;
+  width: 146px;
+  height: 172px;
 }
 .syrup_strawberry {
   position: absolute;
   cursor: pointer;
-  z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  z-index: 7;
+  top: 460px;
+  left: 831px;
+  width: 146px;
+  height: 172px;
 }
 
 /*Milk Buttons */
-.milk_whole {
+.whole {
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  top: 70px;
+  left: 370px;
+  width: 160px;
+  height: 190px;
 }
-.milk_oat {
+.oat {
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  top: 260px;
+  left: 370px;
+  width: 160px;
+  height: 190px;
 }
-.milk_almond {
+.almond {
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  top: 448px;
+  left: 370px;
+  width: 160px;
+  height: 190px;
 }
 
 /*Topping Buttons */
@@ -564,74 +567,74 @@ margin-top: 20%;
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  top: 60px;
+  left: 35px;
+  width: 174px;
+  height: 190px;
 }
 .icecream_strawberry {
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  top: 184px;
+  left: 33px;
+  width: 174px;
+  height: 205px;
 }
 .icecream_matcha {
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  top: 340px;
+  left: 33px;
+  width: 174px;
+  height: 200px;
 }
-.icecream_birthdaycake {
+.icecream_bithdaycake {
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  top: 474px;
+  left: 33px;
+  width: 174px;
+  height: 200px;
 }
 
 .icecream_chocolate {
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  top: 46px;
+  left: 195px;
+  width: 176px;
+  height: 166px;
 }
 .icecream_coffee {
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
+  top: 200px;
+  left: 196px;
+  width: 174px;
   height: 157px;
 }
 .icecream_mango {
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  top: 332px;
+  left: 205px;
+  width: 167px;
+  height: 170px;
 }
 .icecream_cookiedough {
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  top: 488px;
+  left: 217px;
+  width: 154px;
+  height: 143px;
 }
 
 /*Cream Buttons */
@@ -639,19 +642,19 @@ margin-top: 20%;
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  top: 83px;
+  left: 748px;
+  width: 113px;
+  height: 195px;
 }
 .cream_whisked {
   position: absolute;
   cursor: pointer;
   z-index: 4;
-  top: 381px;
-  left: 941px;
-  width: 134px;
-  height: 157px;
+  top: 255px;
+  left: 751px;
+  width: 117px;
+  height: 195px;
 }
 
 
