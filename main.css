@@ -658,6 +658,8 @@ margin-top: 20%;
 }
 
 
-.topping-button:hover {
-  filter: brightness(80%); /* Adjust the brightness value as needed */
+.topping-button:hover, .syrup-button:hover, .milk-button:hover, .icecream-button:hover, .cream-button:hover{
+  filter: brightness(80%);
 }
+
+
