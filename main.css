@@ -407,6 +407,22 @@ right: 0;
 margin-top: 20%;
 }
 
+/*Blender + Cup Styling */
+.blender-button {
+  position: absolute;
+  cursor: pointer;
+  z-index: 4;
+  top: 5px;
+  left: 545px;
+}
+
+.cup-button {
+  position: absolute;
+  z-index: 7;
+  top: 300px;
+  left: 350px;
+}
+
 /*Topping Buttons */
 .biscoff {
   position: absolute;
@@ -658,7 +674,7 @@ margin-top: 20%;
 }
 
 
-.topping-button:hover, .syrup-button:hover, .milk-button:hover, .icecream-button:hover, .cream-button:hover{
+.blender-button:hover, .topping-button:hover, .syrup-button:hover, .milk-button:hover, .icecream-button:hover, .cream-button:hover{
   filter: brightness(80%);
 }
 
