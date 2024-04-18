@@ -27,6 +27,7 @@ function toggleScreen(sceneId) {
   }
 }
 
+//Xin coded this section, randomized order function
 document.addEventListener("DOMContentLoaded", function () {
   // Chosen Player Character
   function getParameterByName(name, url) {
