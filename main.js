@@ -10,6 +10,7 @@ function toggleMusic() {
     musicStatus.innerText = "Off";
   }
 }
+
 document.addEventListener("click", function() {
   var audio = document.getElementById("backgroundMusic")
   audio.muted = false;
@@ -26,90 +27,202 @@ function toggleScreen(sceneId) {
   }
 }
 
-// Chosen Player Character
-function getParameterByName(name, url) {
-  if (!url) url = window.location.href;
-  name = name.replace(/[\[\]]/g, "\\$&");
-  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-    results = regex.exec(url);
-  if (!results) return null;
-  if (!results[2]) return "";
-  return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-function setCharacterImage() {
-  var characterParam = getParameterByName("character");
-  if (characterParam) {
-    var characterImage = document.getElementById("characterImage");
-    var imagePath = "./CatSelection/";
-
-    switch (characterParam) {
-      case "Character1":
-        imagePath += "calicoCatSelection.png";
-        break;
-      case "Character2":
-        imagePath += "blackCatSelection.png";
-        break;
-      case "Character3":
-        imagePath += "orangeCatSelection.png";
-        break;
-      case "Character4":
-        imagePath += "siameseCatSelection.png";
-        break;
-      default:
-        break;
-    }
-    characterImage.src = imagePath;
-  }
-}
-window.onload = setCharacterImage;
-
 document.addEventListener("DOMContentLoaded", function() {
-  const character = document.getElementById("character");
-  const images = [
-    "./CatCustomer/armaanWalk.png",
-    "./CatCustomer/maggieWalk.png",
-    "./CatCustomer/christyWalk.png",
-    "./CatCustomer/xinWalk.png",
-    "./CatCustomer/randomWalk1.png"
-    // Add more image paths as needed
-  ];
-
-  function getRandomImage() {
-    return images[Math.floor(Math.random() * images.length)];
+  // Chosen Player Character
+  function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return "";
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
   }
+  function setCharacterImage() {
+    var characterParam = getParameterByName("character");
+    if (characterParam) {
+      var characterImage = document.getElementById("characterImage");
+      var imagePath = "./CatSelection/";
 
-  function setRandomCharacterImage() {
-    const randomImage = getRandomImage();
-    character.style.backgroundImage = `url('${randomImage}')`;
-  }
-
-  setRandomCharacterImage();
-
-  const frameWidth = 141;
-  const totalFrames = 4;
-  const animationSpeed = 100;
-  let frameIndex = 0;
-  let posX = window.innerWidth - 400;
-  let targetX = posX - 600;
-  let animationInterval;
-
-  function animate() {
-    frameIndex = (frameIndex + 1) % totalFrames;
-    character.style.backgroundPosition = `-${frameIndex * frameWidth}px 0`;
-  }
-
-  function moveCharacter() {
-    if (posX <= targetX) {
-      clearInterval(animationInterval);
-    } else {
-      posX -= 5;
-      character.style.left = posX + "px";
+      switch (characterParam) {
+        case "Character1":
+          imagePath += "calicoCatSelection.png";
+          break;
+        case "Character2":
+          imagePath += "blackCatSelection.png";
+          break;
+        case "Character3":
+          imagePath += "orangeCatSelection.png";
+          break;
+        case "Character4":
+          imagePath += "siameseCatSelection.png";
+          break;
+        default:
+          break;
+      }
+      characterImage.src = imagePath;
     }
   }
+  window.onload = setCharacterImage;
 
-  // Start animation and movement
-  animationInterval = setInterval(animate, animationSpeed);
-  setInterval(moveCharacter, 50); // Adjust the interval for smoother movement
+  // Function to animate the customer
+  function animateCustomer() {
+    const character = document.getElementById("character");
+    const speakBubble = document.getElementById("speakBubble");
+    const orderButton = document.getElementById("foodOrderButton");
+
+    // Array of customer images
+    const customerImages = [
+      "./CatCustomer/armaanWalk.png",
+      "./CatCustomer/maggieWalk.png",
+      "./CatCustomer/christyWalk.png",
+      "./CatCustomer/xinWalk.png",
+      "./CatCustomer/randomWalk1.png"
+      // Add more image paths as needed
+    ];
+
+    // Function to get a random customer image
+    function getRandomCustomerImage() {
+      return customerImages[Math.floor(Math.random() * customerImages.length)];
+    }
+
+    // Set initial customer image
+    character.style.backgroundImage = `url('${getRandomCustomerImage()}')`;
+
+    // Animation parameters
+    const frameWidth = 141;
+    const totalFrames = 4;
+    const animationSpeed = 100;
+    let frameIndex = 0;
+    let posX = window.innerWidth - 400;
+    let targetX = posX - 600;
+    let animationInterval;
+
+    // Function to animate the character
+    function animate() {
+      frameIndex = (frameIndex + 1) % totalFrames;
+      character.style.backgroundPosition = `-${frameIndex * frameWidth}px 0`;
+    }
+
+    // Function to move the character
+    function moveCharacter() {
+      if (posX <= targetX) {
+        clearInterval(animationInterval);
+        // Display the speak bubble image and food order button when animation ends
+        speakBubble.style.display = "block";
+        orderButton.style.display = "block";
+        // After displaying the speak bubble, call the function to randomize selections and display images
+        randomizeSelections();
+      } else {
+        posX -= 5;
+        character.style.left = posX + "px";
+      }
+    }
+
+    // Start animation and movement
+    animationInterval = setInterval(animate, animationSpeed);
+    setInterval(moveCharacter, 50); // Adjust the interval for smoother movement
+  }
+
+  animateCustomer();
+});
+
+const character = document.getElementById("character");
+const speakBubble = document.getElementById("speakBubble");
+const orderButton = document.getElementById("foodOrderButton");
+
+// Function to randomly select an item from an array
+function getRandomItem(items) {
+  return items[Math.floor(Math.random() * items.length)];
+}
+
+const iceCreamOptions = [
+  "vanilla",
+  "strawberry",
+  "chocolate",
+  // Add more ice cream options as needed
+];
+
+const milkOptions = [
+  "whole",
+  "oat",
+  "almond",
+  // Add more milk options as needed
+];
+
+const whippedCreamOptions = [
+  "chocolate",
+  "whisked",
+  // Add more whipped cream options as needed
+];
+
+const toppingOptions = [
+  "biscoff",
+  "pocky",
+  "strawberry",
+  // Add more topping options as needed
+];
+
+const syrupOptions = [
+  "peanutbutter",
+  "chocolate",
+  "caramel",
+  // Add more syrup options as needed
+];
+
+// Function to randomly select options for ice cream, milk, whipped cream, topping, and syrup
+function randomizeSelections() {
+  const iceCream = getRandomItem(iceCreamOptions);
+  const milk = getRandomItem(milkOptions);
+  const whippedCream = getRandomItem(whippedCreamOptions);
+  const topping = getRandomItem(toppingOptions);
+  const syrup = getRandomItem(syrupOptions);
+
+  // Display selected images
+  const speakButton = document.getElementById("F");
+  speakButton.style.backgroundImage = `url('./IceCreamOptions/${iceCream}.png'), url('./MilkOptions/${milk}.png'), url('./WhippedCreamOptions/${whippedCream}.png'), url('./ToppingOptions/${topping}.png'), url('./SyrupOptions/${syrup}.png')`;
+}
+
+// Function to display selected images with a delay between each image
+function displayImages(images) {
+  let index = 0;
+  const interval = setInterval(function() {
+    if (index < images.length) {
+      displayImage(images[index]);
+      index++;
+    } else {
+      clearInterval(interval);
+    }
+  }, 2000); // Adjust the delay between images as needed (currently set to 2 seconds)
+}
+
+// Function to display a specific image
+function displayImage(imageId) {
+  // Hide all images
+  const images = document.getElementsByClassName("secondImage");
+  for (let i = 0; i < images.length; i++) {
+    images[i].style.display = "none";
+  }
+  // Display the selected image
+  const image = document.getElementById(imageId);
+  image.style.display = "block";
+}
+
+// Event listener for the animation end
+character.addEventListener("animationend", function() {
+  // Display the speak bubble image
+  speakBubble.style.display = "block";
+  // Display the food order button
+  orderButton.style.display = "block";
+});
+
+// Event listener for the food order button click
+orderButton.addEventListener("click", function() {
+  // Hide the speak bubble image and food order button
+  speakBubble.style.display = "none";
+  orderButton.style.display = "none";
+  // Randomize selections and display images
+  randomizeSelections();
 });
 
 

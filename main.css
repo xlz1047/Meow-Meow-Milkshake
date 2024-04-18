@@ -302,7 +302,7 @@ canvas {
 
 #player {
   position: absolute;
-  top: 250px;
+  top: 252px;
   left: 185px;
 }
 
@@ -372,6 +372,15 @@ canvas {
 .character {
   width: 141px;
   height: 263px;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  margin-top: 20%;
+}
+
+#speakBubble {
+  width: 80px;
+  height: 80px;
   background-repeat: no-repeat;
   position: absolute;
   right: 0;
