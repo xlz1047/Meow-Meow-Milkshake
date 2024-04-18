@@ -141,34 +141,37 @@ const iceCreamOptions = [
   "vanilla",
   "strawberry",
   "chocolate",
-  // Add more ice cream options as needed
+//add rest of ice cream
 ];
 
 const milkOptions = [
   "whole",
   "oat",
   "almond",
-  // Add more milk options as needed
 ];
 
 const whippedCreamOptions = [
   "chocolate",
   "whisked",
-  // Add more whipped cream options as needed
 ];
 
 const toppingOptions = [
   "biscoff",
   "pocky",
   "strawberry",
-  // Add more topping options as needed
+  "blueberry",
+  "cherry",
+  "sprinkles",
+  "graham",
+  "oreo",
+  "marshmallow",
 ];
 
 const syrupOptions = [
   "peanutbutter",
   "chocolate",
   "caramel",
-  // Add more syrup options as needed
+  "strawberry",
 ];
 
 // Function to randomly select options for ice cream, milk, whipped cream, topping, and syrup
