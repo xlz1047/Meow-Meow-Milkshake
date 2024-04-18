@@ -89,8 +89,7 @@ const images = [
   "./CatCustomer/maggieWalk.png",
   "./CatCustomer/christyWalk.png",
   "./CatCustomer/xinWalk.png",
-  "./CatCustomer/randomWalk1.png",
-  "./CatCustomer/randomWalk2.png"
+  "./CatCustomer/randomWalk1.png"
   // Add more image paths as needed
 ];
 
