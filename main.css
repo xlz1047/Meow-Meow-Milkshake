@@ -416,6 +416,13 @@ margin-top: 20%;
   left: 545px;
 }
 
+.cup-button {
+  position: absolute;
+  z-index: 5;
+  top: 430px;
+  left: 600px;
+}
+
 /*Topping Buttons */
 .biscoff {
   position: absolute;
@@ -672,3 +679,57 @@ margin-top: 20%;
 }
 
 
+
+.secondImage21 {
+  position: absolute;
+  z-index: 5;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
+}
+
+.secondImage16 {
+  position: absolute;
+  z-index: 6;
+  top: 432px;
+  left: 571px;
+  width: 164px;
+  height: 193px;
+}
+
+.blended-birthday-cake{
+  position: absolute;
+  z-index: 7;
+  top: 432px;
+  left: 569px;
+  width: 164px;
+  height: 197px;
+}
+
+.secondImage27{
+  position: absolute;
+  z-index: 7;
+  top: 381px;
+  left: 600px;
+  width: 97px;
+  height: 112px;
+}
+
+.secondImage12{
+  position: absolute;
+  z-index: 8;
+  top: 381px;
+  left: 600px;
+  width: 97px;
+  height: 112px;
+}
+
+.secondImage1{
+  position: absolute;
+  z-index: 9;
+  top: 385px;
+  left: 647px;
+  width: 60px;
+  height: 70px;
+}
