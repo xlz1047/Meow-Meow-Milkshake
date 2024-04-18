@@ -379,11 +379,11 @@ canvas {
 }
 
 #speakBubble {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   background-repeat: no-repeat;
   position: absolute;
-  right: 0;
+  right: 50%;
   margin-top: 20%;
 }
 

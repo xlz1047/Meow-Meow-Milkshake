@@ -27,7 +27,7 @@ function toggleScreen(sceneId) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Chosen Player Character
   function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -178,53 +178,19 @@ function randomizeSelections() {
   const topping = getRandomItem(toppingOptions);
   const syrup = getRandomItem(syrupOptions);
 
-  // Display selected images
-  const speakButton = document.getElementById("F");
-  speakButton.style.backgroundImage = `url('./IceCreamOptions/${iceCream}.png'), url('./MilkOptions/${milk}.png'), url('./WhippedCreamOptions/${whippedCream}.png'), url('./ToppingOptions/${topping}.png'), url('./SyrupOptions/${syrup}.png')`;
+  // Display selected images in the speak button
+  const speakButton = document.getElementById("speakBubble");
+  speakButton.style.backgroundImage = `url('./kitchen/IceCream/${iceCream}Container.png'), url('./kitchen/Milk/${milk}milk.png'), url('./kitchen/WhippedCream/${whippedCream}Cream.png'), url('./kitchen/Topping/${topping}Container.png'), url('./kitchen/Syrup/${syrup}Syrup.png')`;
 }
-
-// Function to display selected images with a delay between each image
-function displayImages(images) {
-  let index = 0;
-  const interval = setInterval(function() {
-    if (index < images.length) {
-      displayImage(images[index]);
-      index++;
-    } else {
-      clearInterval(interval);
-    }
-  }, 2000); // Adjust the delay between images as needed (currently set to 2 seconds)
-}
-
-// Function to display a specific image
-function displayImage(imageId) {
-  // Hide all images
-  const images = document.getElementsByClassName("secondImage");
-  for (let i = 0; i < images.length; i++) {
-    images[i].style.display = "none";
-  }
-  // Display the selected image
-  const image = document.getElementById(imageId);
-  image.style.display = "block";
-}
-
-// Event listener for the animation end
-character.addEventListener("animationend", function() {
-  // Display the speak bubble image
-  speakBubble.style.display = "block";
-  // Display the food order button
-  orderButton.style.display = "block";
-});
 
 // Event listener for the food order button click
-orderButton.addEventListener("click", function() {
+orderButton.addEventListener("click", function () {
   // Hide the speak bubble image and food order button
   speakBubble.style.display = "none";
   orderButton.style.display = "none";
   // Randomize selections and display images
   randomizeSelections();
 });
-
 
 // Button Sound Effects
 function playButtonClickSound() {
