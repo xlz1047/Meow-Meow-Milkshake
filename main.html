@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang ="en">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>Meow Meow Milkshakes</title>
   <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
   <!-- Cafe Scene -->
   <canvas id="canvas"></canvas>
@@ -30,87 +32,147 @@
       <img class="cup-button" src="./Kitchen/Display/cups/milkshakecupbase2.png" alt="Cup">
 
       <!-- Blender Image Button -->
-      <img class="blender-button" id="blender" src="./Kitchen/Display/blender.png" alt="Blender Button" onclick="displayImage('blended birthday cake')">
-      <img id="blended birthday cake" class="blended-birthday-cake" src="./Kitchen/Display/cups/icecreamCups/birthdaycakeCupFull.png" style="display:none;">
+      <img class="blender-button" id="blender" src="./Kitchen/Display/blender.png" alt="Blender Button"
+        onclick="displayImage('blended birthday cake')">
+      <img id="blended birthday cake" class="blended-birthday-cake"
+        src="./Kitchen/Display/cups/icecreamCups/birthdaycakeCupFull.png" style="display:none;">
 
       <!-- Topping Image Buttons -->
-      <img class="topping-button biscoff" id="topping_biscoff" src="./Kitchen/Topping/biscoffContainer.png" alt="Biscoff Button" onclick="displayImage('secondImage1')">
-      <img class="topping-button pocky" id="topping_pocky" src="./Kitchen/Topping/pockyContainer.png" alt="Pocky Button" onclick="displayImage('secondImage2')">
-      <img class="topping-button strawberry" id="topping_stawberry" src="./Kitchen/Topping/strawberryContainer.png" alt="Strawberry Button" onclick="displayImage('secondImage3')" width="122px" height="122px">
-      <img class="topping-button blueberry" id="topping_blueberry" src="./Kitchen/Topping/blueberryContainer.png" alt="Blueberry Button" onclick="displayImage('secondImage4')" width="122px" height="122px">
-      <img class="topping-button cherry" id="topping_cherry" src="./Kitchen/Topping/cherryContainer.png" alt="Cherry Button" onclick="displayImage('secondImage5')" width="122px" height="122px">
-      <img class="topping-button sprinkles" id="topping_sprinkles" src="./Kitchen/Topping/sprinklesContainer.png" alt="Sprinkles Button" onclick="displayImage('secondImage6')" width="122px" height="122px">
-      <img class="topping-button graham" id="topping_graham" src="./Kitchen/Topping/grahamContainer.png" alt="Graham Button" onclick="displayImage('secondImage7')" width="122px" height="122px">
-      <img class="topping-button oreo" id="topping_oreo" src="./Kitchen/Topping/oreocontainer.png" alt="Oreo Button" onclick="displayImage('secondImage8')">
-      <img class="topping-button marshmallow" id="topping_marshmellow" src="./Kitchen/Topping/marshmallowContainer.png" alt="Marshmallow Button" onclick="displayImage('secondImage9')">
-      <img class="topping-button chocolatechips" id="topping_choloatechips" src="./Kitchen/Topping/chocolatechipsContainer.png" alt="Chocolate Chips Button" onclick="displayImage('secondImage10')" width="122px" height="122px">
+      <img class="topping-button biscoff" id="topping_biscoff" src="./Kitchen/Topping/biscoffContainer.png"
+        alt="Biscoff Button" onclick="displayImage('secondImage1')">
+      <img class="topping-button pocky" id="topping_pocky" src="./Kitchen/Topping/pockyContainer.png" alt="Pocky Button"
+        onclick="displayImage('secondImage2')">
+      <img class="topping-button strawberry" id="topping_stawberry" src="./Kitchen/Topping/strawberryContainer.png"
+        alt="Strawberry Button" onclick="displayImage('secondImage3')" width="122px" height="122px">
+      <img class="topping-button blueberry" id="topping_blueberry" src="./Kitchen/Topping/blueberryContainer.png"
+        alt="Blueberry Button" onclick="displayImage('secondImage4')" width="122px" height="122px">
+      <img class="topping-button cherry" id="topping_cherry" src="./Kitchen/Topping/cherryContainer.png"
+        alt="Cherry Button" onclick="displayImage('secondImage5')" width="122px" height="122px">
+      <img class="topping-button sprinkles" id="topping_sprinkles" src="./Kitchen/Topping/sprinklesContainer.png"
+        alt="Sprinkles Button" onclick="displayImage('secondImage6')" width="122px" height="122px">
+      <img class="topping-button graham" id="topping_graham" src="./Kitchen/Topping/grahamContainer.png"
+        alt="Graham Button" onclick="displayImage('secondImage7')" width="122px" height="122px">
+      <img class="topping-button oreo" id="topping_oreo" src="./Kitchen/Topping/oreocontainer.png" alt="Oreo Button"
+        onclick="displayImage('secondImage8')">
+      <img class="topping-button marshmallow" id="topping_marshmellow" src="./Kitchen/Topping/marshmallowContainer.png"
+        alt="Marshmallow Button" onclick="displayImage('secondImage9')">
+      <img class="topping-button chocolatechips" id="topping_choloatechips"
+        src="./Kitchen/Topping/chocolatechipsContainer.png" alt="Chocolate Chips Button"
+        onclick="displayImage('secondImage10')" width="122px" height="122px">
 
       <!-- Topping Display Images -->
-      <img id="secondImage1" class="secondImage1" src="./Kitchen/Display/toppingsDisplay/biscoff_on_shake.png" style="display:none;">
-      <img id="secondImage2" class="secondImage" src="./Kitchen/Display/toppingsDisplay/pocky_on_shake.png" style="display:none;">
-      <img id="secondImage3" class="secondImage" src="./Kitchen/Display/toppingsDisplay/strawberry.png" style="display:none;">
-      <img id="secondImage4" class="secondImage" src="./Kitchen/Display/toppingsDisplay/blueberry.png" style="display:none;">
-      <img id="secondImage5" class="secondImage" src="./Kitchen/Display/toppingsDisplay/cherry.png" style="display:none;">
-      <img id="secondImage6" class="secondImage" src="./Kitchen/Display/toppingsDisplay/sprinkles_on_shake.png" style="display:none;">
-      <img id="secondImage7" class="secondImage" src="./Kitchen/Display/toppingsDisplay/grahamCrackerDisplay.png" style="display:none;">
-      <img id="secondImage8" class="secondImage" src="./Kitchen/Display/toppingsDisplay/oreoCrumbsDisplay.png" style="display:none;">
-      <img id="secondImage9" class="secondImage" src="./Kitchen/Display/toppingsDisplay/marshmallow.png" style="display:none;">
-      <img id="secondImage10" class="secondImage" src="./Kitchen/Display/toppingsDisplay/chocolateChipsDisplay.png" style="display:none;">
+      <img id="secondImage1" class="secondImage1" src="./Kitchen/Display/toppingsDisplay/biscoff_on_shake.png"
+        style="display:none;">
+      <img id="secondImage2" class="secondImage" src="./Kitchen/Display/toppingsDisplay/pocky_on_shake.png"
+        style="display:none;">
+      <img id="secondImage3" class="secondImage" src="./Kitchen/Display/toppingsDisplay/strawberry.png"
+        style="display:none;">
+      <img id="secondImage4" class="secondImage" src="./Kitchen/Display/toppingsDisplay/blueberry.png"
+        style="display:none;">
+      <img id="secondImage5" class="secondImage" src="./Kitchen/Display/toppingsDisplay/cherry.png"
+        style="display:none;">
+      <img id="secondImage6" class="secondImage" src="./Kitchen/Display/toppingsDisplay/sprinkles_on_shake.png"
+        style="display:none;">
+      <img id="secondImage7" class="secondImage" src="./Kitchen/Display/toppingsDisplay/grahamCrackerDisplay.png"
+        style="display:none;">
+      <img id="secondImage8" class="secondImage" src="./Kitchen/Display/toppingsDisplay/oreoCrumbsDisplay.png"
+        style="display:none;">
+      <img id="secondImage9" class="secondImage" src="./Kitchen/Display/toppingsDisplay/marshmallow.png"
+        style="display:none;">
+      <img id="secondImage10" class="secondImage" src="./Kitchen/Display/toppingsDisplay/chocolateChipsDisplay.png"
+        style="display:none;">
     </div>
     <div>
       <!-- Syrup Image Buttons -->
-      <img class="syrup-button syrup_peanutbutter" id="syrup_peanutbutter" src="./Kitchen/Syrup/peanutButterSyrup.png" alt="Peanut Butter Syrup button" onclick="displayImage('secondImage11')" width="80px" height="122px">
-      <img class="syrup-button syrup_chocolate" id="syrup_chocolate" src="./Kitchen/Syrup/chocolateSyrup.png" alt="Chocolate Syrup Button"  onclick="displayImage('secondImage12')" width="80px" height="122px">
-      <img class="syrup-button syrup_caramel" id="syrup_caramel" src="./Kitchen/Syrup/caramelSyrup.png" alt="Caramel Syrup Button" onclick="displayImage('secondImage13')" width="80px" height="122px">
-      <img class="syrup-button syrup_strawberry" id="syrup_stawberry" src="./Kitchen/Syrup/strawberrySyrup.png" alt="Strawberry Syrup Button" onclick="displayImage('secondImage14')" width="80px" height="122px">
+      <img class="syrup-button syrup_peanutbutter" id="syrup_peanutbutter" src="./Kitchen/Syrup/peanutButterSyrup.png"
+        alt="Peanut Butter Syrup button" onclick="displayImage('secondImage11')" width="80px" height="122px">
+      <img class="syrup-button syrup_chocolate" id="syrup_chocolate" src="./Kitchen/Syrup/chocolateSyrup.png"
+        alt="Chocolate Syrup Button" onclick="displayImage('secondImage12')" width="80px" height="122px">
+      <img class="syrup-button syrup_caramel" id="syrup_caramel" src="./Kitchen/Syrup/caramelSyrup.png"
+        alt="Caramel Syrup Button" onclick="displayImage('secondImage13')" width="80px" height="122px">
+      <img class="syrup-button syrup_strawberry" id="syrup_stawberry" src="./Kitchen/Syrup/strawberrySyrup.png"
+        alt="Strawberry Syrup Button" onclick="displayImage('secondImage14')" width="80px" height="122px">
 
       <!-- Syrup Display -->
-      <img id="secondImage11" class="secondImage" src="./Kitchen/Display/syrup/peanutButterSyrup.png" style="display:none;">
-      <img id="secondImage12" class="secondImage12" src="./Kitchen/Display/syrup/chocolateSyrup.png" style="display:none;">
+      <img id="secondImage11" class="secondImage" src="./Kitchen/Display/syrup/peanutButterSyrup.png"
+        style="display:none;">
+      <img id="secondImage12" class="secondImage12" src="./Kitchen/Display/syrup/chocolateSyrup.png"
+        style="display:none;">
       <img id="secondImage13" class="secondImage" src="./Kitchen/Display/syrup/caramelSyrup.png" style="display:none;">
-      <img id="secondImage14" class="secondImage" src="./Kitchen/Display/syrup/strawberrySyrup.png" style="display:none;">
+      <img id="secondImage14" class="secondImage" src="./Kitchen/Display/syrup/strawberrySyrup.png"
+        style="display:none;">
     </div>
     <div>
       <!-- Milk Image Buttons -->
-      <img class="milk-button whole" id="milk_whole" src="./Kitchen/Milk/wholeMilk.png" alt="Whole Milk Button" onclick="displayImage('secondImage15')" width="122px" height="122px">
-      <img class="milk-button oat" id="milk_oat" src="./Kitchen/Milk/oatMilk.png" alt="Oat Milk Button" onclick="displayImage('secondImage16')" width="122px" height="122px">
-      <img class="milk-button almond" id="milk_almond" src="./Kitchen/Milk/almondMilk.png" alt="Almond Milk Button" onclick="displayImage('secondImage17')" width="122px" height="122px">
-    
+      <img class="milk-button whole" id="milk_whole" src="./Kitchen/Milk/wholeMilk.png" alt="Whole Milk Button"
+        onclick="displayImage('secondImage15')" width="122px" height="122px">
+      <img class="milk-button oat" id="milk_oat" src="./Kitchen/Milk/oatMilk.png" alt="Oat Milk Button"
+        onclick="displayImage('secondImage16')" width="122px" height="122px">
+      <img class="milk-button almond" id="milk_almond" src="./Kitchen/Milk/almondMilk.png" alt="Almond Milk Button"
+        onclick="displayImage('secondImage17')" width="122px" height="122px">
+
       <!-- Milk Display -->
-      <img id="secondImage15" class="secondImage" src="./Kitchen/Display/cups/milkCups/milkCupHalf.png" style="display:none;">
-      <img id="secondImage16" class="secondImage16" src="./Kitchen/Display/cups/milkCups/oatmilkhalf.png" style="display:none;">
-      <img id="secondImage17" class="secondImage" src="./Kitchen/Display/cups/milkCups/almondMilkHalf.png" style="display:none;">
+      <img id="secondImage15" class="secondImage" src="./Kitchen/Display/cups/milkCups/milkCupHalf.png"
+        style="display:none;">
+      <img id="secondImage16" class="secondImage16" src="./Kitchen/Display/cups/milkCups/oatmilkhalf.png"
+        style="display:none;">
+      <img id="secondImage17" class="secondImage" src="./Kitchen/Display/cups/milkCups/almondMilkHalf.png"
+        style="display:none;">
     </div>
     <div>
 
       <!-- Ice Cream Image Buttons -->
-      <img class="icecream-button icecream_vanilla" src="./Kitchen/IceCream/vanillaContainer.png" alt="Vanilla Ice Cream Button" onclick="displayImage('secondImage18')" width="122px" height="122px">
-      <img class="icecream-button icecream_strawberry" id="icecream_strawberry" src="./Kitchen/IceCream/strawberryContainer.png" alt="Strawberry Ice Cream Button" onclick="displayImage('secondImage19')" width="122px" height="122px">
-      <img class="icecream-button icecream_matcha" id="icecream_matcha" src="./Kitchen/IceCream/matchaContainer.png" alt="Matcha Ice Cream Button" onclick="displayImage('secondImage20')" width="122px" height="122px">
-      <img class="icecream-button icecream_bithdaycake" id="icecream_bithdaycake" src="./Kitchen/IceCream/birthdaycakeContainer.png" alt="Birthday Cake Ice Cream Button" onclick="displayImage('secondImage21')" width="122px" height="122px">
-      <img class="icecream-button icecream_chocolate" id="icecream_chocolate" src="./Kitchen/IceCream/chocolateContainer.png" alt="Chocolate Ice Cream Button" onclick="displayImage('secondImage22')" width="122px" height="122px">
-      <img class="icecream-button icecream_coffee" id="icecream_coffee" src="./Kitchen/IceCream/coffeeContainer.png" alt="Coffee Ice Cream Button" onclick="displayImage('secondImage23')" width="122px" height="122px">
-      <img class="icecream-button icecream_mango" id="icecream_mango" src="./Kitchen/IceCream/mangoContainer.png" alt="Mango Ice Cream Button" onclick="displayImage('secondImage24')" width="122px" height="122px">
-      <img class="icecream-button icecream_cookiedough" id="icecream_cookiedough" src="./Kitchen/IceCream/cookieDoughContainer.png" alt="Cookie Dough Ice Cream Button" onclick="displayImage('secondImage25')" width="122px" height="122px">
-    
+      <img class="icecream-button icecream_vanilla" src="./Kitchen/IceCream/vanillaContainer.png"
+        alt="Vanilla Ice Cream Button" onclick="displayImage('secondImage18')" width="122px" height="122px">
+      <img class="icecream-button icecream_strawberry" id="icecream_strawberry"
+        src="./Kitchen/IceCream/strawberryContainer.png" alt="Strawberry Ice Cream Button"
+        onclick="displayImage('secondImage19')" width="122px" height="122px">
+      <img class="icecream-button icecream_matcha" id="icecream_matcha" src="./Kitchen/IceCream/matchaContainer.png"
+        alt="Matcha Ice Cream Button" onclick="displayImage('secondImage20')" width="122px" height="122px">
+      <img class="icecream-button icecream_bithdaycake" id="icecream_bithdaycake"
+        src="./Kitchen/IceCream/birthdaycakeContainer.png" alt="Birthday Cake Ice Cream Button"
+        onclick="displayImage('secondImage21')" width="122px" height="122px">
+      <img class="icecream-button icecream_chocolate" id="icecream_chocolate"
+        src="./Kitchen/IceCream/chocolateContainer.png" alt="Chocolate Ice Cream Button"
+        onclick="displayImage('secondImage22')" width="122px" height="122px">
+      <img class="icecream-button icecream_coffee" id="icecream_coffee" src="./Kitchen/IceCream/coffeeContainer.png"
+        alt="Coffee Ice Cream Button" onclick="displayImage('secondImage23')" width="122px" height="122px">
+      <img class="icecream-button icecream_mango" id="icecream_mango" src="./Kitchen/IceCream/mangoContainer.png"
+        alt="Mango Ice Cream Button" onclick="displayImage('secondImage24')" width="122px" height="122px">
+      <img class="icecream-button icecream_cookiedough" id="icecream_cookiedough"
+        src="./Kitchen/IceCream/cookieDoughContainer.png" alt="Cookie Dough Ice Cream Button"
+        onclick="displayImage('secondImage25')" width="122px" height="122px">
+
       <!-- Ice Cream Display -->
-      <img id="secondImage18" class="secondImage" src="./Kitchen/Display/cups/icecreamCups/vanillaCup.png" style="display:none;">
-      <img id="secondImage19" class="secondImage" src="./Kitchen/Display/cups/icecreamCups/strawberryCup.png" style="display:none;">
-      <img id="secondImage20" class="secondImage" src="./Kitchen/Display/cups/icecreamCups/matchaCup.png" style="display:none;">
-      <img id="secondImage21" class="secondImage21" src="./Kitchen/Display/cups/icecreamCups/birthdaycakeCup.png" style="display:none;">
-      <img id="secondImage22" class="secondImage" src="./Kitchen/Display/cups/icecreamCups/chocolateCup.png" style="display:none;">
-      <img id="secondImage23" class="secondImage" src="./Kitchen/Display/cups/icecreamCups/coffeeCup.png" style="display:none;">
-      <img id="secondImage24" class="secondImage" src="./Kitchen/Display/cups/icecreamCups/mangoCup.png" style="display:none;">
-      <img id="secondImage25" class="secondImage" src="./Kitchen/Display/cups/icecreamCups/cookie_dough_half_display.png" style="display:none;">
+      <img id="secondImage18" class="secondImage" src="./Kitchen/Display/cups/icecreamCups/vanillaCup.png"
+        style="display:none;">
+      <img id="secondImage19" class="secondImage" src="./Kitchen/Display/cups/icecreamCups/strawberryCup.png"
+        style="display:none;">
+      <img id="secondImage20" class="secondImage" src="./Kitchen/Display/cups/icecreamCups/matchaCup.png"
+        style="display:none;">
+      <img id="secondImage21" class="secondImage21" src="./Kitchen/Display/cups/icecreamCups/birthdaycakeCup.png"
+        style="display:none;">
+      <img id="secondImage22" class="secondImage" src="./Kitchen/Display/cups/icecreamCups/chocolateCup.png"
+        style="display:none;">
+      <img id="secondImage23" class="secondImage" src="./Kitchen/Display/cups/icecreamCups/coffeeCup.png"
+        style="display:none;">
+      <img id="secondImage24" class="secondImage" src="./Kitchen/Display/cups/icecreamCups/mangoCup.png"
+        style="display:none;">
+      <img id="secondImage25" class="secondImage"
+        src="./Kitchen/Display/cups/icecreamCups/cookie_dough_half_display.png" style="display:none;">
     </div>
     <div>
       <!-- Whipped Cream Image Buttons -->
-      <img class="cream-button cream_chocolate" src="./Kitchen/WhippedCream/chocolateCream.png" alt="Chocolate Whipped Cream Button" onclick="displayImage('secondImage26')" width="122px" height="122px">
-      <img class="cream-button cream_whisked" src="./Kitchen/WhippedCream/whiskedCream.png" alt="Whisked Cream Button" onclick="displayImage('secondImage27')" width="122px" height="122px">
+      <img class="cream-button cream_chocolate" src="./Kitchen/WhippedCream/chocolateCream.png"
+        alt="Chocolate Whipped Cream Button" onclick="displayImage('secondImage26')" width="122px" height="122px">
+      <img class="cream-button cream_whisked" src="./Kitchen/WhippedCream/whiskedCream.png" alt="Whisked Cream Button"
+        onclick="displayImage('secondImage27')" width="122px" height="122px">
 
       <!-- Whipped Cream Display -->
-      <img id="secondImage26" class="secondImage" src="./Kitchen/Display/cream/chocolateCream.png" style="display:none;">
-      <img id="secondImage27" class="secondImage27" src="./Kitchen/Display/cream/whiskedCream.png" style="display:none;">
+      <img id="secondImage26" class="secondImage" src="./Kitchen/Display/cream/chocolateCream.png"
+        style="display:none;">
+      <img id="secondImage27" class="secondImage27" src="./Kitchen/Display/cream/whiskedCream.png"
+        style="display:none;">
     </div>
   </div>
 
@@ -135,7 +197,7 @@
   <audio id="buttonClick">
     <source src="./SoundEffects/buttonClick.mp3" type="audio/mp3">
     Your browser does not support the audio element.
-  </audio> 
+  </audio>
   <audio id="toppings">
     <source src="./SoundEffects/toppings.mp3" type="audio/mp3">
     Your browser does not support the audio element.
@@ -143,4 +205,5 @@
 
 </body>
 <script src="main.js"></script>
+
 </html>

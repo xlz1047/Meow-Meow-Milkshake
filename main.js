@@ -1,21 +1,21 @@
 // Music Toggler
 function toggleMusic() {
-    var music = document.getElementById("backgroundMusic");
-    var musicStatus = document.getElementById("musicStatus");
-    if(music.paused) {
-        music.play();
-        musicStatus.innerText = "On";
-    } else {
-        music.pause();
-        musicStatus.innerText = "Off";
-    }
+  var music = document.getElementById("backgroundMusic");
+  var musicStatus = document.getElementById("musicStatus");
+  if (music.paused) {
+    music.play();
+    musicStatus.innerText = "On";
+  } else {
+    music.pause();
+    musicStatus.innerText = "Off";
+  }
 }
 document.addEventListener("click", function() {
   var audio = document.getElementById("backgroundMusic")
   audio.muted = false;
   audio.play();
   document.removeEventListener("click", arguments.callee);
-}); 
+});
 
 // Screen Toggler
 function toggleScreen(sceneId) {
@@ -83,33 +83,33 @@ function setCharacterImage() {
 window.onload = setCharacterImage;
 
 document.addEventListener("DOMContentLoaded", function() {
-const character = document.getElementById("character");
-const images = [
-  "./CatCustomer/armaanWalk.png",
-  "./CatCustomer/maggieWalk.png",
-  "./CatCustomer/christyWalk.png",
-  "./CatCustomer/xinWalk.png",
-  "./CatCustomer/randomWalk1.png"
-  // Add more image paths as needed
-];
+  const character = document.getElementById("character");
+  const images = [
+    "./CatCustomer/armaanWalk.png",
+    "./CatCustomer/maggieWalk.png",
+    "./CatCustomer/christyWalk.png",
+    "./CatCustomer/xinWalk.png",
+    "./CatCustomer/randomWalk1.png"
+    // Add more image paths as needed
+  ];
 
-function getRandomImage() {
-  return images[Math.floor(Math.random() * images.length)];
-}
+  function getRandomImage() {
+    return images[Math.floor(Math.random() * images.length)];
+  }
 
-function setRandomCharacterImage() {
-  const randomImage = getRandomImage();
-  character.style.backgroundImage = `url('${randomImage}')`;
-}
+  function setRandomCharacterImage() {
+    const randomImage = getRandomImage();
+    character.style.backgroundImage = `url('${randomImage}')`;
+  }
 
-setRandomCharacterImage();
+  setRandomCharacterImage();
 
-  const frameWidth = 141; 
-  const totalFrames = 4; 
-  const animationSpeed = 100; 
+  const frameWidth = 141;
+  const totalFrames = 4;
+  const animationSpeed = 100;
   let frameIndex = 0;
-  let posX = window.innerWidth - 400; 
-  let targetX = posX - 600; 
+  let posX = window.innerWidth - 400;
+  let targetX = posX - 600;
   let animationInterval;
 
   function animate() {
@@ -121,7 +121,7 @@ setRandomCharacterImage();
     if (posX <= targetX) {
       clearInterval(animationInterval);
     } else {
-      posX -= 5; 
+      posX -= 5;
       character.style.left = posX + "px";
     }
   }
@@ -133,11 +133,11 @@ setRandomCharacterImage();
 
 // Kitchen Button Display
 function displayImage(imageId) {
-    var images = document.getElementsByClassName("secondImage");
-    for (var i = 0; i < images.length; i++) {
-      images[i].style.display = "none";
-    }
-    var image = document.getElementById(imageId);
-    image.style.display = "block";
+  var images = document.getElementsByClassName("secondImage");
+  for (var i = 0; i < images.length; i++) {
+    images[i].style.display = "none";
   }
+  var image = document.getElementById(imageId);
+  image.style.display = "block";
+}
 
