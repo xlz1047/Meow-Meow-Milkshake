@@ -383,8 +383,9 @@ canvas {
   height: 100px;
   background-repeat: no-repeat;
   position: absolute;
-  right: 50%;
-  margin-top: 20%;
+  right: 40%;
+  margin-top: 15%;
+  z-index: 2;
 }
 
 /*Blender + Cup Styling */
