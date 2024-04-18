@@ -26,25 +26,6 @@ function toggleScreen(sceneId) {
   }
 }
 
-// Button Sound Effects
-function playButtonClickSound() {
-  var buttonClickSound = document.getElementById("buttonClick");
-  buttonClickSound.play();
-}
-document.getElementById("toKitchenButton").addEventListener("click", playButtonClickSound);
-document.getElementById("toCafeButton").addEventListener("click", playButtonClickSound);
-
-// Kitchen Sound Effects
-function playToppingClickSound() {
-  var toppingClickSound = document.getElementById("toppings");
-  toppingClickSound.play();
-}
-document.getElementById("biscoffButton").addEventListener("click", playToppingClickSound);
-document.getElementById("sprinklesButton").addEventListener("click", playToppingClickSound);
-document.getElementById("pockyButton").addEventListener("click", playToppingClickSound);
-document.getElementById("marshmellowButton").addEventListener("click", playToppingClickSound);
-document.getElementById("grahamButton").addEventListener("click", playToppingClickSound);
-
 // Chosen Player Character
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;
@@ -130,6 +111,27 @@ document.addEventListener("DOMContentLoaded", function() {
   animationInterval = setInterval(animate, animationSpeed);
   setInterval(moveCharacter, 50); // Adjust the interval for smoother movement
 });
+
+
+// Button Sound Effects
+function playButtonClickSound() {
+  var buttonClickSound = document.getElementById("buttonClick");
+  buttonClickSound.play();
+}
+document.getElementById("toKitchenButton").addEventListener("click", playButtonClickSound);
+document.getElementById("toCafeButton").addEventListener("click", playButtonClickSound);
+
+// Kitchen Sound Effects
+function playToppingClickSound() {
+  var toppingClickSound = document.getElementById("toppings");
+  toppingClickSound.play();
+}
+document.getElementById("biscoffButton").addEventListener("click", playToppingClickSound);
+document.getElementById("sprinklesButton").addEventListener("click", playToppingClickSound);
+document.getElementById("pockyButton").addEventListener("click", playToppingClickSound);
+document.getElementById("marshmellowButton").addEventListener("click", playToppingClickSound);
+document.getElementById("grahamButton").addEventListener("click", playToppingClickSound);
+
 
 // Kitchen Button Display
 function displayImage(imageId) {
