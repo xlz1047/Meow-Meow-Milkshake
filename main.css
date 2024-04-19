@@ -684,9 +684,49 @@ canvas {
   filter: brightness(80%);
 }
 
+/*Display Styling*/
+/*Whipped Cream Display Styling*/
+.white-cream-display,
+.choc-cream-display {
+  position: absolute;
+  z-index: 7;
+  top: 381px;
+  left: 600px;
+  width: 97px;
+  height: 112px;
+}
 
+/*Milks Dispaly Styling*/
+.oat-milk-display,
+.whole-milk-display,
+.almond-milk-display {
+  position: absolute;
+  z-index: 6;
+  top: 432px;
+  left: 571px;
+  width: 164px;
+  height: 193px;
+  }
 
-.secondImage21 {
+/*Syrup Display Styling*/
+.strawberry-syrup-dis,
+.choc-syrup-dis,
+.caramel-syrup-dis,
+.peanut-syrup-dis {
+  position: absolute;
+  z-index: 8;
+  top: 381px;
+  left: 600px;
+  width: 97px;
+  height: 112px;
+  }
+
+/*Ice Cream Half Display Styling*/
+.vanilla-half-dis,
+.strawberry-half-dis,
+.matcha-half-dis,
+.cookie-half-dis,
+.bday-half-dis {
   position: absolute;
   z-index: 5;
   top: 430px;
@@ -694,48 +734,57 @@ canvas {
   width: 165px;
   height: 200px;
 }
-
-.secondImage16 {
+  /*FIXME*/
+.choc-half-dis,
+.mango-half-dis,
+.coffee-half-dis {
   position: absolute;
-  z-index: 6;
-  top: 432px;
-  left: 571px;
-  width: 164px;
-  height: 193px;
-}
-
-.blended-birthday-cake {
-  position: absolute;
-  z-index: 7;
-  top: 432px;
+  z-index: 5;
+  top: 430px;
   left: 569px;
-  width: 164px;
-  height: 197px;
 }
 
-.secondImage27 {
+  /*Topping Dispaly Styling*/
+.biscoff-dis {
   position: absolute;
-  z-index: 7;
-  top: 381px;
-  left: 600px;
-  width: 97px;
-  height: 112px;
-}
-
-.secondImage12 {
-  position: absolute;
-  z-index: 8;
-  top: 381px;
-  left: 600px;
-  width: 97px;
-  height: 112px;
-}
-
-.secondImage1 {
-  position: absolute;
-  z-index: 9;
+  z-index: 10;
   top: 385px;
   left: 647px;
   width: 60px;
   height: 70px;
+}
+
+.pocky-dis {
+  position: absolute;
+  z-index: 10;
+  top: 385px;
+  left: 647px;
+  width: 60px;
+  height: 70px;
+}
+
+.sprinkles-dis {
+  position: absolute;
+  z-index: 9;
+  top: 385px;
+  left: 599px;
+  width: 110px;
+  height: 90px;
+}
+
+
+
+
+
+
+
+
+
+.blended-birthday-cake {
+  position: absolute;
+  z-index: 7;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
 }
