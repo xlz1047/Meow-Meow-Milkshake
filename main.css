@@ -772,6 +772,42 @@ canvas {
   height: 90px;
 }
 
+.graham-dis {
+  position: absolute;
+  z-index: 9;
+  top: 385px;
+  left: 592px;
+  width: 110px;
+  height: 90px;
+}
+
+.oreo-dis {
+  position: absolute;
+  z-index: 9;
+  top: 385px;
+  left: 595px;
+  width: 115px;
+  height: 93px;
+}
+
+.marsh-dis {
+  position: absolute;
+  z-index: 9;
+  top: 385px;
+  left: 595px;
+  width: 108px;
+  height: 106px;
+}
+
+.choc-dis {
+  position: absolute;
+  z-index: 9;
+  top: 392px;
+  left: 620px;
+  width: 60px;
+  height: 55px;
+}
+
 
 
 
