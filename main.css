@@ -726,15 +726,7 @@ canvas {
 .strawberry-half-dis,
 .matcha-half-dis,
 .cookie-half-dis,
-.bday-half-dis {
-  position: absolute;
-  z-index: 5;
-  top: 430px;
-  left: 569px;
-  width: 165px;
-  height: 200px;
-}
-  /*FIXME*/
+.bday-half-dis,
 .choc-half-dis,
 .mango-half-dis,
 .coffee-half-dis {
@@ -742,6 +734,8 @@ canvas {
   z-index: 5;
   top: 430px;
   left: 569px;
+  width: 165px;
+  height: 200px;
 }
 
   /*Topping Dispaly Styling*/
