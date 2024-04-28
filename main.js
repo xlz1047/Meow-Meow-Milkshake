@@ -226,3 +226,20 @@ function displayImage(imageId) {
   image.style.display = "block";
 }
 
+// Blender Button Functionality
+let selectedIceCream = "";
+
+function selectIceCream(flavor) {
+  selectedIceCream = flavor;
+}
+
+function displayBlendedIceCream () {
+  if (selectedIceCream) {
+    document.querySelectorAll('.icecream-display').forEach(img => img.style.display = 'none');
+
+    document.getElementById('blended_' + selectedIceCream).style.display = 'block';
+  } else {
+    alert('Please select and ice cream flavor first.');
+  }
+}
+

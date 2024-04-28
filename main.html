@@ -37,9 +37,10 @@
 
       <!-- Blender Image Button -->
       <img class="blender-button" id="blender" src="./Kitchen/Display/blender.png" alt="Blender Button"
-        onclick="displayImage('blended birthday cake')">
+        onclick="displayBlendedIceCream()">
       <img id="blended birthday cake" class="blended-birthday-cake"
         src="./Kitchen/Display/cups/icecreamCups/birthdaycakeCupFull.png" style="display:none;">
+      <img id="blended_vanilla" class="icecream-display" src="./Kitchen/Display/cups/icecreamCups/vanillaCupFull.png" style="display:none;">
 
       <!-- Topping Image Buttons, coded by Maggie Kocorowksi--> 
       <img class="topping-button biscoff" id="topping_biscoff" src="./Kitchen/Topping/biscoffContainer.png"
@@ -127,7 +128,7 @@
 
       <!-- Ice Cream Image Buttons -->
       <img class="icecream-button icecream_vanilla" src="./Kitchen/IceCream/vanillaContainer.png"
-        alt="Vanilla Ice Cream Button" onclick="displayImage('secondImage18')" width="122px" height="122px">
+        alt="Vanilla Ice Cream Button" onclick="displayImage('secondImage18'); selectIceCream('vanilla')" width="122px" height="122px">
       <img class="icecream-button icecream_strawberry" id="icecream_strawberry"
         src="./Kitchen/IceCream/strawberryContainer.png" alt="Strawberry Ice Cream Button"
         onclick="displayImage('secondImage19')" width="122px" height="122px">
