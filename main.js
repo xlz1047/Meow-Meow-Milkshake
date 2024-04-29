@@ -233,11 +233,13 @@ function selectIceCream(flavor) {
   selectedIceCream = flavor;
 }
 
-function displayBlendedIceCream () {
+function displayBlendedIceCream() {
   if (selectedIceCream) {
     document.querySelectorAll('.icecream-display').forEach(img => img.style.display = 'none');
 
     document.getElementById('blended_' + selectedIceCream).style.display = 'block';
+    
+    displayImage(imageId)
   } else {
     alert('Please select and ice cream flavor first.');
   }
