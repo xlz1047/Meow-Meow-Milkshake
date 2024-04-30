@@ -829,8 +829,7 @@ canvas {
   height: 50px;
 }
 
-
-
+/*Blended Shakes Display Styling*/
 .blended-vanilla {
   position: absolute;
   z-index: 7;
