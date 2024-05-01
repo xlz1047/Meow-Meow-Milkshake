@@ -63,6 +63,17 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       characterImage.src = imagePath;
     }
+    // Event listener for the food order button click
+    orderButton.addEventListener("click", function () {
+      // Hide the speak bubble image and food order button
+      speakBubble.style.display = "none";
+      orderButton.style.display = "none";
+      // Hide the cafe scene and show the ordering scene
+      document.getElementById("cafeScene").style.display = "none";
+      document.getElementById("orderingScene").style.display = "block";
+      // Randomize selections and display images for ordering
+      randomizeSelections();
+    });
   }
   window.onload = setCharacterImage;
 

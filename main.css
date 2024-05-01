@@ -388,6 +388,11 @@ canvas {
   z-index: 2;
 }
 
+#speakBubble:hover {
+  filter:brightness(0.8);
+  transition: all 0.3s ease-in-out;
+}
+
 /*Blender + Cup Styling */
 .blender-button {
   position: absolute;
