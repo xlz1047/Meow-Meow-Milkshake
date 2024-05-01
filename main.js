@@ -117,6 +117,10 @@ document.addEventListener("DOMContentLoaded", function () {
         // Display the speak bubble image and food order button when animation ends
         speakBubble.style.display = "block";
         orderButton.style.display = "block";
+        // Set the speak bubble position above the final position of the customer
+        const characterRect = character.getBoundingClientRect();
+        speakBubble.style.left = (characterRect.left - 275) + "px"; // Adjust the horizontal position as needed
+        speakBubble.style.top = (characterRect.top - 200) + "px"; // Adjust the vertical position as needed
         // After displaying the speak bubble, call the function to randomize selections and display images
         randomizeSelections();
       } else {
