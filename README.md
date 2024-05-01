@@ -1,19 +1,18 @@
 # CI-102 Lab 62 11
 Armaan Zahid, Xin Zheng, Maggie Kocorowski, Christy Tran
 
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
 ## Meow Meow Milkshake
-"Meow Meow Milshake" is a browser game created using HTML, Javascript, and CSS. As new coders, we wanted to challenge ourselves with a game and we decided that we should make a cozy cooking simulator. 
+"Meow Meow Milshake" is a browser game created using HTML, Javascript, and CSS. As new coders, we wanted to challenge ourselves with a game and we decided that we should make a cozy cooking simulator. Our original idea was to create a world where all humans were gone and cats had taken over. Now you work as a pawrista at a local milkshake bar. We planned to add a story but we wanted functionality and gameplay before anything else. 
 
 ## Description
-Our project focuses on 
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+Our project focuses on creating orders based on a randomized milkshake order. 
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+We organized and propitized certain interfaces like the Loading Screen, Selection Screen, Cafe Screen, and Serving Screen while creating user stories. We sorted the user stories by their priority level and amount of work (Small, Medium, Large task and a Must/Should/Could/Wont.
+For each US we wrote acceptable criteria and broke them into sprint tasks. Each sprint, a period of three weeks we would focus on  
+
+
+
+Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
 
 ## Visuals
 Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
@@ -25,7 +24,11 @@ Within a particular ecosystem, there may be a common way of installing things, s
 Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
 ## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+Please email us if you have any questions!
+Christy Tran : ctt57@drexel.edu
+Xin Zheng : xlz23@drexel.edu
+Armaan Zahid : az598@drexel.edu
+Maggie Kocorowski : mjk488@drexel.edu
 
 ## Roadmap
 If you have ideas for releases in the future, it is a good idea to list them in the README.
@@ -149,4 +152,5 @@ Show your appreciation to those who have contributed to the project.
 For open source projects, say how it is licensed.
 
 ## Project status
+The project is 
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
