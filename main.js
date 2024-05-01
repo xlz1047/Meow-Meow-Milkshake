@@ -95,8 +95,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalFrames = 4;
     const animationSpeed = 100;
     let frameIndex = 0;
-    let posX = window.innerWidth - 400;
-    let targetX = posX - 600;
+
+    // Get the width of the cafe scene container
+    const cafeSceneWidth = document.getElementById("cafeScene").offsetWidth;
+
+    // Set posX relative to the width of the cafe scene container
+    let posX = cafeSceneWidth - 150; // Adjust the value as needed
+    let targetX = posX - 650;
     let animationInterval;
 
     // Function to animate the character
