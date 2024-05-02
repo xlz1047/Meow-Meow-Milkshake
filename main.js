@@ -26,6 +26,13 @@ function toggleScreen(sceneId) {
     scene.style.display = scenes[i] === sceneId ? "block" : "none";
   }
 }
+// Check order button event listener
+document.getElementById("checkOrderButton").addEventListener("click", function() {
+  // Hide the cafe scene and show the ordering scene
+  document.getElementById("cafeScene").style.display = "none";
+  document.getElementById("orderingScene").style.display = "block";
+});
+
 
 //Xin coded this section, randomized order function
 document.addEventListener("DOMContentLoaded", function () {
