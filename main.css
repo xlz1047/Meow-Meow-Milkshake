@@ -26,29 +26,6 @@ body {
   --color-heading-shadow: #321d08;
 }
 
-/* Reusable container styles */
-.container {
-  position: absolute;
-  top: 50px;
-  left: 75px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  text-align: center;
-  font-family: 'Cherry Bomb One', sans-serif;
-  color: #ffffff;
-  text-shadow:
-    0 1px 0 var(--color-heading-shadow),
-    0 2px 0 var(--color-heading-shadow),
-    0 3px 0 var(--color-heading-shadow),
-    0 4px 0 var(--color-heading-shadow),
-    0 0 5px rgba(10, 0, 0, .05),
-    0 1px 3px rgba(10, 0, 0, .2),
-    0 3px 5px rgba(10, 0, 0, .2),
-    0 5px 10px rgba(10, 0, 0, .2),
-    0 10px 10px rgba(10, 0, 0, .2),
-    0 20px 20px rgba(10, 0, 0, .3);
-}
-
 /* Button styles */
 .button {
   display: inline-block;
@@ -67,29 +44,7 @@ body {
   filter: brightness(0.8);
 }
 
-/* Image button styles */
-.image-button {
-  display: flex;
-  margin-top: 20px;
-}
-
-.image-button button {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.image-button img {
-  object-fit: cover;
-}
-
-.image-button button:focus {
-  outline: none;
-}
-
 /* Scene styles */
-canvas,
 #cafeScene,
 #kitchenScene,
 #orderingScene {
@@ -102,11 +57,6 @@ canvas,
   border: 5px solid #000;
   margin: auto;
   z-index: 2;
-}
-
-#cafeScene,
-#kitchenScene,
-#orderingScene {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -125,6 +75,7 @@ canvas,
 }
 
 /* Music toggle and credits */
+.container,
 #musicToggle,
 #credits {
   position: absolute;
@@ -141,6 +92,14 @@ canvas,
     0 5px 10px rgba(10, 0, 0, .2),
     0 10px 10px rgba(10, 0, 0, .2),
     0 20px 20px rgba(10, 0, 0, .3);
+}
+/* To cafe/kitchen button container */
+.container {
+  top: 50px;
+  left: 75px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  text-align: center;
 }
 
 #musicToggle {
@@ -164,142 +123,6 @@ canvas,
   margin-top: 20%;
 }
 
-
-
-
-/* Kitchen Buttons */
-
-@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
-
-html,
-body,
-* {
-  user-select: none;
-}
-
-/* Creates outer background color */
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #8d6e5d;
-  font-family: 'Cormorant Garamond', serif;
-}
-
-/* Creates reusable variables */
-:root {
-  --color-text: #433218;
-  --color-heading: #8d6e5d;
-  --color-heading-shadow: #321d08;
-  --color-button: cyan;
-  --color-button-active: rgba(255, 255, 255, 0.6);
-}
-
-/* Reusable containers */
-.container {
-  /* Top Left */
-  position: absolute;
-  top: 50px;
-  left: 75px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  text-align: center;
-  font-family: "Cherry Bomb One", sans-serif;
-  color: #ffffff;
-  text-shadow: 0 1px 0 var(--color-heading-shadow),
-    0 2px 0 var(--color-heading-shadow),
-    0 3px 0 var(--color-heading-shadow),
-    0 4px 0 var(--color-heading-shadow),
-
-    0 0 5px rgba(10, 0, 0, .05),
-    0 1px 3px rgba(10, 0, 0, .2),
-    0 3px 5px rgba(10, 0, 0, .2),
-    0 5px 10px rgba(10, 0, 0, .2),
-    0 10px 10px rgba(10, 0, 0, .2),
-    0 20px 20px rgba(10, 0, 0, .3);
-}
-
-/*styling for buttons*/
-.button {
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  /* Shadow effect */
-  border-radius: 8px;
-  padding: 15px;
-  background-color: #645043;
-  border: 4px solid black;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-/*button hover effect*/
-.button:hover {
-  filter: brightness(0.8);
-
-  .image-button {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-  }
-}
-
-.image-button {
-  display: flex;
-  margin-top: 20px;
-}
-
-.image-button button {
-  background-color: rgba(0, 0, 0, 0);
-  /* Transparent background */
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.image-button img {
-  object-fit: cover;
-}
-
-.image-button button:focus {
-  outline: none;
-}
-
-canvas {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
-  margin: auto;
-  width: 1280px;
-  height: 720px;
-  border: 5px solid #000;
-  z-index: 1;
-  background-color: #647F9A
-}
-
-/* Cafe Scene */
-#cafeScene {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1280px;
-  height: 720px;
-  border: 5px solid #000;
-  margin: auto;
-  position: absolute;
-  z-index: 2;
-  background-image: url(./Assets/cafeDay.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 #player {
   position: absolute;
   top: 252px;
@@ -309,73 +132,6 @@ canvas {
 #player img {
   width: 129px;
   height: 200px;
-}
-
-/* Kitchen Scene */
-#kitchenScene {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1280px;
-  height: 720px;
-  border: 5px solid #000;
-  margin: auto;
-  position: absolute;
-  z-index: 2;
-  background-image: url(./Assets/kitchenBackground.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Music Toggle */
-#musicToggle {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-family: "Cherry Bomb One", sans-serif;
-  color: #ffffff;
-  text-shadow: 0 1px 0 var(--color-heading-shadow),
-    0 2px 0 var(--color-heading-shadow),
-    0 3px 0 var(--color-heading-shadow),
-    0 4px 0 var(--color-heading-shadow),
-
-    0 0 5px rgba(10, 0, 0, .05),
-    0 1px 3px rgba(10, 0, 0, .2),
-    0 3px 5px rgba(10, 0, 0, .2),
-    0 5px 10px rgba(10, 0, 0, .2),
-    0 10px 10px rgba(10, 0, 0, .2),
-    0 20px 20px rgba(10, 0, 0, .3);
-}
-
-/* Credits */
-#credits {
-  position: absolute;
-  bottom: 0px;
-  right: 10px;
-  font-family: "Cherry Bomb One", sans-serif;
-  color: #ffffff;
-  text-shadow: 0 1px 0 var(--color-heading-shadow),
-    0 2px 0 var(--color-heading-shadow),
-    0 3px 0 var(--color-heading-shadow),
-    0 4px 0 var(--color-heading-shadow),
-
-    0 0 5px rgba(10, 0, 0, .05),
-    0 1px 3px rgba(10, 0, 0, .2),
-    0 3px 5px rgba(10, 0, 0, .2),
-    0 5px 10px rgba(10, 0, 0, .2),
-    0 10px 10px rgba(10, 0, 0, .2),
-    0 20px 20px rgba(10, 0, 0, .3);
-}
-
-.character {
-  width: 141px;
-  height: 263px;
-  background-repeat: no-repeat;
-  position: absolute;
-  right: 0;
-  margin-top: 20%;
 }
 
 #speakBubble {
@@ -410,36 +166,38 @@ canvas {
 }
 
 /*Topping Buttons */
-.biscoff {
+.biscoff,
+.pocky,
+.strawberry,
+.blueberry,
+.cherry,
+.sprinkles,
+.graham,
+.oreo,
+.marshmallow,
+.chocolatechips {
   position: absolute;
   cursor: pointer;
-  z-index: 4;
+}
+
+.biscoff {
   top: 28px;
   left: 973px;
 }
 
 .pocky {
-  position: absolute;
-  cursor: pointer;
-  z-index: 5;
   top: 261px;
   left: 972px;
 }
 
 .strawberry {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
-  height: 132px;
-  width: 147px;
   top: 168px;
   left: 1100px;
+  height: 132px;
+  width: 147px;
 }
 
 .blueberry {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
   top: 403px;
   left: 1109px;
   width: 139px;
@@ -447,9 +205,6 @@ canvas {
 }
 
 .cherry {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
   top: 42px;
   left: 1102px;
   width: 144px;
@@ -457,18 +212,12 @@ canvas {
 }
 
 .sprinkles {
-  position: absolute;
-  cursor: pointer;
-  z-index: 6;
   height: 144px;
   top: 143px;
   left: 972px;
 }
 
 .graham {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
   top: 525px;
   left: 959px;
   width: 150px;
@@ -476,9 +225,6 @@ canvas {
 }
 
 .oreo {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
   top: 390px;
   left: 965px;
   width: 137px;
@@ -486,9 +232,6 @@ canvas {
 }
 
 .marshmallow {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
   top: 278px;
   left: 1108px;
   width: 134px;
@@ -496,9 +239,6 @@ canvas {
 }
 
 .chocolatechips {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
   top: 515px;
   left: 1110px;
   width: 134px;
@@ -506,10 +246,15 @@ canvas {
 }
 
 /*Syrup Buttons */
-.syrup_peanutbutter {
+.syrup_peanutbutter,
+.syrup_chocolate,
+.syrup_caramel,
+.syrup_strawberry {
   position: absolute;
   cursor: pointer;
-  z-index: 4;
+}
+
+.syrup_peanutbutter {
   top: 80px;
   left: 830px;
   width: 146px;
@@ -517,9 +262,6 @@ canvas {
 }
 
 .syrup_chocolate {
-  position: absolute;
-  cursor: pointer;
-  z-index: 5;
   top: 203px;
   left: 830px;
   width: 146px;
@@ -527,9 +269,6 @@ canvas {
 }
 
 .syrup_caramel {
-  position: absolute;
-  cursor: pointer;
-  z-index: 6;
   top: 333px;
   left: 839px;
   width: 146px;
@@ -537,9 +276,6 @@ canvas {
 }
 
 .syrup_strawberry {
-  position: absolute;
-  cursor: pointer;
-  z-index: 7;
   top: 460px;
   left: 831px;
   width: 146px;
@@ -547,10 +283,14 @@ canvas {
 }
 
 /*Milk Buttons */
-.whole {
+.whole,
+.oat,
+.almond {
   position: absolute;
   cursor: pointer;
-  z-index: 4;
+}
+
+.whole {
   top: 70px;
   left: 370px;
   width: 160px;
@@ -558,9 +298,6 @@ canvas {
 }
 
 .oat {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
   top: 260px;
   left: 370px;
   width: 160px;
@@ -568,20 +305,26 @@ canvas {
 }
 
 .almond {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
   top: 448px;
   left: 370px;
   width: 160px;
   height: 190px;
 }
 
-/*Topping Buttons */
-.icecream_vanilla {
+/*Ice Cream Buttons */
+.icecream_vanilla,
+.icecream_strawberry,
+.icecream_matcha,
+.icecream_bithdaycake,
+.icecream_chocolate,
+.icecream_coffee,
+.icecream_mango,
+.icecream_cookiedough {
   position: absolute;
   cursor: pointer;
-  z-index: 4;
+}
+
+.icecream_vanilla {
   top: 60px;
   left: 35px;
   width: 174px;
@@ -589,9 +332,6 @@ canvas {
 }
 
 .icecream_strawberry {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
   top: 184px;
   left: 33px;
   width: 174px;
@@ -599,9 +339,6 @@ canvas {
 }
 
 .icecream_matcha {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
   top: 340px;
   left: 33px;
   width: 174px;
@@ -609,9 +346,6 @@ canvas {
 }
 
 .icecream_bithdaycake {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
   top: 474px;
   left: 33px;
   width: 174px;
@@ -619,9 +353,6 @@ canvas {
 }
 
 .icecream_chocolate {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
   top: 46px;
   left: 195px;
   width: 176px;
@@ -629,9 +360,6 @@ canvas {
 }
 
 .icecream_coffee {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
   top: 200px;
   left: 196px;
   width: 174px;
@@ -639,9 +367,6 @@ canvas {
 }
 
 .icecream_mango {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
   top: 332px;
   left: 205px;
   width: 167px;
@@ -649,9 +374,6 @@ canvas {
 }
 
 .icecream_cookiedough {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
   top: 488px;
   left: 217px;
   width: 154px;
@@ -659,10 +381,13 @@ canvas {
 }
 
 /*Cream Buttons */
-.cream_chocolate {
+.cream_chocolate,
+.cream_whisked {
   position: absolute;
   cursor: pointer;
-  z-index: 4;
+}
+
+.cream_chocolate {
   top: 83px;
   left: 748px;
   width: 113px;
@@ -670,9 +395,6 @@ canvas {
 }
 
 .cream_whisked {
-  position: absolute;
-  cursor: pointer;
-  z-index: 4;
   top: 255px;
   left: 751px;
   width: 117px;
