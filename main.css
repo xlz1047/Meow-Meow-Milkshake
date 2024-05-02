@@ -854,6 +854,17 @@ canvas {
   height: 90px;
 }
 
-.checkOrderButton:hover {
+/*Trash Order Buton*/
+.trashButton {
+  position: absolute;
+  z-index: 5;
+  top: 648px;
+  left: 131px;
+  width: 170px;
+  height: 85px;
+}
+
+.checkOrderButton:hover,
+.trashButton:hover {
   filter: brightness(80%);
 }
