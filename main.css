@@ -37,11 +37,6 @@ body {
   background-color: #645043;
   border: 4px solid black;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.button:hover {
-  filter: brightness(0.8);
 }
 
 /* Scene styles */
@@ -56,7 +51,6 @@ body {
   height: 720px;
   border: 5px solid #000;
   margin: auto;
-  z-index: 2;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -93,14 +87,6 @@ body {
     0 10px 10px rgba(10, 0, 0, .2),
     0 20px 20px rgba(10, 0, 0, .3);
 }
-/* To cafe/kitchen button container */
-.container {
-  top: 50px;
-  left: 75px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  text-align: center;
-}
 
 #musicToggle {
   top: 10px;
@@ -111,6 +97,15 @@ body {
 #credits {
   bottom: 0px;
   right: 10px;
+}
+
+/* To cafe/kitchen button container */
+.container {
+  top: 50px;
+  left: 75px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  text-align: center;
 }
 
 /* Additional styles for various elements */
@@ -141,26 +136,18 @@ body {
   position: absolute;
   right: 40%;
   margin-top: 15%;
-  z-index: 2;
-}
-
-#speakBubble:hover {
-  filter:brightness(0.8);
-  transition: all 0.3s ease-in-out;
 }
 
 /*Blender + Cup Styling */
 .blender-button {
   position: absolute;
   cursor: pointer;
-  z-index: 4;
   top: 5px;
   left: 545px;
 }
 
 .cup-button {
   position: absolute;
-  z-index: 5;
   top: 430px;
   left: 600px;
 }
@@ -401,16 +388,6 @@ body {
   height: 195px;
 }
 
-
-.blender-button:hover,
-.topping-button:hover,
-.syrup-button:hover,
-.milk-button:hover,
-.icecream-button:hover,
-.cream-button:hover {
-  filter: brightness(80%);
-}
-
 /*Display Styling*/
 /*Whipped Cream Display Styling*/
 .white-cream-display,
@@ -569,7 +546,6 @@ body {
 /*Check Order Button*/
 .checkOrderButton {
   position: absolute;
-  z-index: 5;
   top: 511px;
   left: 738px;
   width: 115px;
@@ -579,14 +555,23 @@ body {
 /*Trash Order Buton*/
 .trashButton {
   position: absolute;
-  z-index: 5;
   top: 648px;
   left: 131px;
   width: 170px;
   height: 85px;
 }
 
+/* All Button Hover Effects */
+.button:hover,
+#speakBubble:hover,
+.blender-button:hover,
+.topping-button:hover,
+.syrup-button:hover,
+.milk-button:hover,
+.icecream-button:hover,
+.cream-button:hover,
 .checkOrderButton:hover,
 .trashButton:hover {
-  filter: brightness(80%);
+  filter: brightness(0.8);
+  transition: all 0.3s ease-in-out;
 }
