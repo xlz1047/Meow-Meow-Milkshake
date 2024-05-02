@@ -843,3 +843,17 @@ canvas {
   width: 165px;
   height: 200px;
 }
+
+/*Check Order Button*/
+.checkOrderButton {
+  position: absolute;
+  z-index: 5;
+  top: 511px;
+  left: 738px;
+  width: 115px;
+  height: 90px;
+}
+
+.checkOrderButton:hover {
+  filter: brightness(80%);
+}
