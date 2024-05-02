@@ -245,7 +245,7 @@ function displayImage(imageId) {
   var image = document.getElementById(imageId);
   image.style.display = "block";
 }
-  sdfg
+  
 // Blender Button Functionality
 let selectedIceCream = "";
 
