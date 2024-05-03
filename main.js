@@ -10,7 +10,6 @@ function toggleMusic() {
     musicStatus.innerText = "Off";
   }
 }
-
 document.addEventListener("click", function() {
   var audio = document.getElementById("backgroundMusic")
   audio.muted = false;
@@ -20,19 +19,12 @@ document.addEventListener("click", function() {
 
 // Screen Toggler
 function toggleScreen(sceneId) {
-  var scenes = ["cafeScene", "kitchenScene"];
+  var scenes = ["cafeScene", "kitchenScene", "orderingScene"];
   for (var i = 0; i < scenes.length; i++) {
     var scene = document.getElementById(scenes[i]);
     scene.style.display = scenes[i] === sceneId ? "block" : "none";
   }
 }
-// Check order button event listener
-document.getElementById("checkOrderButton").addEventListener("click", function() {
-  // Hide the cafe scene and show the ordering scene
-  document.getElementById("cafeScene").style.display = "none";
-  document.getElementById("orderingScene").style.display = "block";
-});
-
 
 //Xin coded this section, randomized order function
 document.addEventListener("DOMContentLoaded", function () {
@@ -70,17 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       characterImage.src = imagePath;
     }
-    // Event listener for the food order button click
-    orderButton.addEventListener("click", function () {
-      // Hide the speak bubble image and food order button
-      speakBubble.style.display = "none";
-      orderButton.style.display = "none";
-      // Hide the cafe scene and show the ordering scene
-      document.getElementById("cafeScene").style.display = "none";
-      document.getElementById("orderingScene").style.display = "block";
-      // Randomize selections and display images for ordering
-      randomizeSelections();
-    });
   }
   window.onload = setCharacterImage;
 
@@ -88,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function animateCustomer() {
     const character = document.getElementById("character");
     const speakBubble = document.getElementById("speakBubble");
-    const orderButton = document.getElementById("foodOrderButton");
+    const orderButton = document.getElementById("orderButton");
 
     // Array of customer images
     const customerImages = [
@@ -96,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
       "./CatCustomer/maggieWalk.png",
       "./CatCustomer/christyWalk.png",
       "./CatCustomer/xinWalk.png",
-      "./CatCustomer/randomWalk1.png"
       // Add more image paths as needed
     ];
 
@@ -135,12 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // Display the speak bubble image and food order button when animation ends
         speakBubble.style.display = "block";
         orderButton.style.display = "block";
-        // Set the speak bubble position above the final position of the customer
-        const characterRect = character.getBoundingClientRect();
-        speakBubble.style.left = (characterRect.left - 275) + "px"; // Adjust the horizontal position as needed
-        speakBubble.style.top = (characterRect.top - 200) + "px"; // Adjust the vertical position as needed
-        // After displaying the speak bubble, call the function to randomize selections and display images
-        randomizeSelections();
       } else {
         posX -= 5;
         character.style.left = posX + "px";
@@ -154,10 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   animateCustomer();
 });
-
-const character = document.getElementById("character");
-const speakBubble = document.getElementById("speakBubble");
-const orderButton = document.getElementById("foodOrderButton");
 
 // Function to randomly select an item from an array
 function getRandomItem(items) {
@@ -230,6 +200,7 @@ function playButtonClickSound() {
 }
 document.getElementById("toKitchenButton").addEventListener("click", playButtonClickSound);
 document.getElementById("toCafeButton").addEventListener("click", playButtonClickSound);
+document.getElementById("orderButton").addEventListener("click", playButtonClickSound);
 
 // Kitchen Sound Effects
 function playToppingClickSound() {
