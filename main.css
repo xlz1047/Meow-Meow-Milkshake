@@ -19,6 +19,9 @@ body {
   height: 100vh;
   font-family: 'Cormorant Garamond', serif;
   background-color: #8d6e5d;
+  background-image: url(./Assets/backgroundSquare.png);
+  background-size: 200px 200px;
+  background-repeat: repeat;
 }
 
 :root {
