@@ -32,9 +32,15 @@
     <img id="cup" src="./Kitchen/cup.png">
     <img id="blender" src="./Kitchen/blender.png" onclick="displayBlendedIceCream()">
 
-    <img id="blended_vanilla" class="icecream-display" src="./Kitchen/Display/cups/icecreamCups/vanillaCupFull.png" style="display:none;">
-    <img id="blended_strawberry" class="icecream-display" src="./Kitchen/Display/cups/icecreamCups/strawberryCupFull.png" style="display:none;">
-    <img id="blended_matcha" class="icecream-display" src="./Kitchen/Display/cups/icecreamCups/strawberryCupFull.png" style="display:none;">
+    <!-- Blended Milkshakes -->
+    <img id="vanillaBlended" src="./Milkshakes/IceCream/vanillaFull.png" style="display:none;">
+    <img id="strawberryBlended" src="./Milkshakes/IceCream/strawberryFull.png" style="display:none;">
+    <img id="matchaBlended" src="./Milkshakes/IceCream/matchaFull.png" style="display:none;">
+    <img id="birthdayCakeBlended" src="./Milkshakes/IceCream/birthdayCakeFull.png" style="display:none;">
+    <img id="chocolateBlended" src="./Milkshakes/IceCream/chocolateFull.png" style="display:none;">
+    <img id="coffeeBlended" src="./Milkshakes/IceCream/coffeeFull.png" style="display:none;">
+    <img id="mangoBlended" src="./Milkshakes/IceCream/mangoFull.png" style="display:none;">
+    <img id="cookieDoughBlended" src="./Milkshakes/IceCream/cookieDoughFull.png" style="display:none;">
 
     <!-- Topping Buttons (Coded by Maggie) --> 
     <div id="kitchenButtons">
@@ -96,14 +102,14 @@
 
     <!-- Ice Cream Buttons -->
     <div id="kitchenButtons">
-      <img id="vanilla" src="./Kitchen/IceCream/vanilla.png" onclick="displayImage('secondImage18')">
-      <img id="strawberry" src="./Kitchen/IceCream/strawberry.png" onclick="displayImage('secondImage19')">
-      <img id="matcha" src="./Kitchen/IceCream/matcha.png" onclick="displayImage('secondImage20')">
-      <img id="birthdayCake" src="./Kitchen/IceCream/birthdayCake.png" onclick="displayImage('secondImage21')">
-      <img id="chocolate" src="./Kitchen/IceCream/chocolate.png" onclick="displayImage('secondImage22')">
-      <img id="coffee" src="./Kitchen/IceCream/coffee.png" onclick="displayImage('secondImage23')">
-      <img id="mango" src="./Kitchen/IceCream/mango.png" onclick="displayImage('secondImage24')">
-      <img id="cookieDough" src="./Kitchen/IceCream/cookieDough.png" onclick="displayImage('secondImage25')">
+      <img id="vanilla" src="./Kitchen/IceCream/vanilla.png" onclick="displayImage('secondImage18');selectIceCream('vanilla')">
+      <img id="strawberry" src="./Kitchen/IceCream/strawberry.png" onclick="displayImage('secondImage19');selectIceCream('strawberry')">
+      <img id="matcha" src="./Kitchen/IceCream/matcha.png" onclick="displayImage('secondImage20');selectIceCream('matcha')">
+      <img id="birthdayCake" src="./Kitchen/IceCream/birthdayCake.png" onclick="displayImage('secondImage21');selectIceCream('birthdayCake')">
+      <img id="chocolate" src="./Kitchen/IceCream/chocolate.png" onclick="displayImage('secondImage22');selectIceCream('chocolate')">
+      <img id="coffee" src="./Kitchen/IceCream/coffee.png" onclick="displayImage('secondImage23');selectIceCream('coffee')">
+      <img id="mango" src="./Kitchen/IceCream/mango.png" onclick="displayImage('secondImage24');selectIceCream('mango')">
+      <img id="cookieDough" src="./Kitchen/IceCream/cookieDough.png" onclick="displayImage('secondImage25');selectIceCream('cookieDough')">
     </div>
 
     <!-- Ice Cream Display -->

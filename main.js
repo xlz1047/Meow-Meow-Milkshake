@@ -225,18 +225,21 @@ function displayImage(imageId) {
 }
   
 // Blender Button Functionality
-let selectedIceCream = "";
+var selectedIceCream = "";
 
 function selectIceCream(flavor) {
   selectedIceCream = flavor;
+  console.log("Selected ice cream:", flavor);
 }
 
 function displayBlendedIceCream() {
   if (selectedIceCream) {
-    document.querySelectorAll('.icecream-display').forEach(img => img.style.display = 'none');
-
-    document.getElementById('blended_' + selectedIceCream).style.display = 'block';
-
+    // Hide the milk option
+    var selectedMilk = document.getElementById('milkDisplay');
+    selectedMilk.style.display = 'none';
+    // Display the full version of the selected ice cream
+    var blendedIceCream = document.getElementById(selectedIceCream + 'Blended');
+    blendedIceCream.style.display = 'block';
   } else {
     alert('Please select and ice cream flavor first.');
   }
