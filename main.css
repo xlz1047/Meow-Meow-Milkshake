@@ -42,7 +42,8 @@ body {
 /* Scene styles */
 #cafeScene,
 #kitchenScene,
-#orderingScene {
+#orderingScene,
+#counter {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -65,23 +66,22 @@ body {
 }
 #orderingScene {
   background-image: url(./Assets/servingDay.png);
+  z-index: 1;
+}
   
-  .counter {
-    position: absolute;
-    z-index: 10;
-  }
-
-  .characterCounter {
-    position: absolute;
-    z-index: 3;
-    bottom: 05px;
-    right: 660px;
-    width: 141px;
-    height: 263px;
-  }
+#counter {
+  background-image: url(./Assets/servingCounter.png);
+  z-index: 3;
 }
 
-
+.characterCounter {
+  position: absolute;
+  z-index: 2;
+  bottom: 05px;
+  right: 660px;
+  width: 141px;
+  height: 263px;
+}
 
 /* Music toggle and credits */
 .container,
