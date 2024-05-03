@@ -303,11 +303,11 @@ function selectTopping(flavor) {
 // Blender Button Functionality
 function displayBlendedIceCream() {
   if (selectedIceCream && selectedMilk) {
-    // Resetting display for all elements with ids starting with "secondImage"
-    var secondImages = document.querySelectorAll("[id^='secondImage']");
-    secondImages.forEach(function(image) {
+    // Resetting display for all milks and ice creams.
+    for (var i = 15; i <= 25; i++) {
+      var image = document.getElementById("secondImage" + i);
       image.style.display = 'none';
-    });
+    }
     // Display the full version of the selected ice cream
     blendedIceCream = document.getElementById(selectedIceCream + 'Blended');
     blendedIceCream.style.display = 'block';
