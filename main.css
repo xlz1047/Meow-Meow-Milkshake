@@ -63,10 +63,25 @@ body {
 #kitchenScene {
   background-image: url(./Assets/kitchenBackground.png);
 }
-
 #orderingScene {
   background-image: url(./Assets/servingDay.png);
 }
+.counter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+}
+.character {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 7;
+
+}
+
+
 
 /* Music toggle and credits */
 .container,
