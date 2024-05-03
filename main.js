@@ -222,6 +222,7 @@ function displayImage(imageId) {
   }
   var image = document.getElementById(imageId);
   image.style.display = "block";
+  document.getElementById("cup").style.display = "none";
 }
   
 // Blender Button Functionality
@@ -229,11 +230,13 @@ var selectedIceCream = "";
 
 function selectIceCream(flavor) {
   selectedIceCream = flavor;
-  console.log("Selected ice cream:", flavor);
 }
 
 function displayBlendedIceCream() {
   if (selectedIceCream) {
+    // Hide the ice cream option
+    var iceCream = document.getElementById('iceCreamDisplay');
+    iceCream.style.display = 'none';
     // Hide the milk option
     var selectedMilk = document.getElementById('milkDisplay');
     selectedMilk.style.display = 'none';
