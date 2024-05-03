@@ -65,20 +65,20 @@ body {
 }
 #orderingScene {
   background-image: url(./Assets/servingDay.png);
-}
-.counter {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
+  .counter {
+    position: absolute;
+    z-index: 5;
+  }
 
-}
-.character {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 7;
-
+  .characterCounter {
+    position: absolute;
+    z-index: 3;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 141px;
+    height: 263px;
+  }
 }
 
 

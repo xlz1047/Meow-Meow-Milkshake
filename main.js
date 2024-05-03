@@ -84,9 +84,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function getRandomCustomerImage() {
       return customerImages[Math.floor(Math.random() * customerImages.length)];
     }
-
     // Set initial customer image
     character.style.backgroundImage = `url('${getRandomCustomerImage()}')`;
+    
+    // Get the reference to the .characterCounter element
+    const characterCounter = document.getElementById('characterCounter');
+
+    // Set initial customer image as background image
+    characterCounter.style.backgroundImage = `url('${getRandomCustomerImage()}')`;
 
     // Animation parameters
     const frameWidth = 141;
@@ -127,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   animateCustomer();
+
 });
 
 // Function to randomly select an item from an array
