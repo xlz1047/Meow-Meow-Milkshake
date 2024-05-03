@@ -207,11 +207,11 @@ function playToppingClickSound() {
   var toppingClickSound = document.getElementById("toppings");
   toppingClickSound.play();
 }
-document.getElementById("biscoffButton").addEventListener("click", playToppingClickSound);
-document.getElementById("sprinklesButton").addEventListener("click", playToppingClickSound);
-document.getElementById("pockyButton").addEventListener("click", playToppingClickSound);
-document.getElementById("marshmellowButton").addEventListener("click", playToppingClickSound);
-document.getElementById("grahamButton").addEventListener("click", playToppingClickSound);
+document.getElementById("biscoff").addEventListener("click", playToppingClickSound);
+document.getElementById("sprinkles").addEventListener("click", playToppingClickSound);
+document.getElementById("pocky").addEventListener("click", playToppingClickSound);
+document.getElementById("marshmellow").addEventListener("click", playToppingClickSound);
+document.getElementById("graham").addEventListener("click", playToppingClickSound);
 
 
 // Kitchen Button Display
@@ -225,26 +225,121 @@ function displayImage(imageId) {
   document.getElementById("cup").style.display = "none";
 }
   
-// Blender Button Functionality
+// Saving Chosen Variables
 var selectedIceCream = "";
+var selectedMilk = "";
+var blendedIceCream = "";
+var selectedWhippedCream = "";
+var selectedSyrup = "";
+var selectedTopping = "";
 
+// Player Kitchen Restrictions
 function selectIceCream(flavor) {
-  selectedIceCream = flavor;
-}
-
-function displayBlendedIceCream() {
-  if (selectedIceCream) {
-    // Hide the ice cream option
-    var iceCream = document.getElementById('iceCreamDisplay');
-    iceCream.style.display = 'none';
-    // Hide the milk option
-    var selectedMilk = document.getElementById('milkDisplay');
-    selectedMilk.style.display = 'none';
-    // Display the full version of the selected ice cream
-    var blendedIceCream = document.getElementById(selectedIceCream + 'Blended');
-    blendedIceCream.style.display = 'block';
+  if (selectedIceCream === undefined) {
+    selectedIceCream = flavor;
+    return true;
   } else {
-    alert('Please select and ice cream flavor first.');
+    alert('Only choose one ice cream.');
+    return false;
+  }
+}
+function selectMilk(flavor) {
+  if (selectedMilk === undefined) {
+    if (selectedIceCream) {
+      selectedMilk = flavor
+      return true;
+    } else {
+      alert('Please select the ice cream first.');
+      return false;
+    }
+  } else {
+    alert('Only choose one milk.')
+    return false;
+  }
+}
+function selectWhippedCream(flavor) {
+  if (selectedWhippedCream === undefined) {
+    if (selectedIceCream && selectedMilk && blendedIceCream) {
+      selectedWhippedCream = flavor
+      return true;
+    } else {
+      alert('Please select the ice cream, milk, and blender first.');
+      return false;
+    }
+  } else {
+    alert('Only choose one whipped cream.')
+    return false;
+  }
+}
+function selectSyrup(flavor) {
+  if (selectedSyrup === undefined) {
+    if (selectedIceCream && selectedMilk && blendedIceCream && selectedWhippedCream) {
+      selectedSyrup = flavor
+      return true;
+    } else {
+      alert('Please select the ice cream, milk, blender, and whipped cream first.');
+      return false;
+    }
+  } else {
+    alert('Only choose one syrup.')
+    return false;
+  }
+}
+function selectTopping(flavor) {
+  if (selectedTopping === undefined) {
+    if (selectedIceCream && selectedMilk && blendedIceCream && selectedWhippedCream && selectedSyrup) {
+      selectedTopping = flavor
+      return true;
+    } else {
+      alert('Please select the ice cream, milk, blender, whipped cream, and syrup first.');
+      return false;
+    }
+  } else {
+    alert('Only choose one topping.')
+    return false;
   }
 }
 
+// Blender Button Functionality
+function displayBlendedIceCream() {
+  if (selectedIceCream && selectedMilk) {
+    // Resetting display for all elements with ids starting with "secondImage"
+    var secondImages = document.querySelectorAll("[id^='secondImage']");
+    secondImages.forEach(function(image) {
+      image.style.display = 'none';
+    });
+    // Display the full version of the selected ice cream
+    blendedIceCream = document.getElementById(selectedIceCream + 'Blended');
+    blendedIceCream.style.display = 'block';
+  } else {
+    alert('Please select the ice cream and milk first.');
+  }
+}
+
+// Trash Can Functionality
+function trashOrder() {
+  selectedIceCream = undefined;
+  selectedMilk = undefined;
+  blendedIceCream = undefined;
+  selectedWhippedCream = undefined;
+  selectedSyrup = undefined;
+  selectedTopping = undefined;
+  // Resetting display for all elements with ids starting with "secondImage"
+  var secondImages = document.querySelectorAll("[id^='secondImage']");
+  secondImages.forEach(function(image) {
+    image.style.display = 'none';
+  });
+  // IDs of blended ice cream images to reset
+  var blendedIceCreamImagesToReset = [
+    "vanillaBlended", "strawberryBlended", "matchaBlended", "birthdayCakeBlended",
+    "chocolateBlended", "coffeeBlended", "mangoBlended", "cookieDoughBlended"
+  ];
+  // Reset display for each blended ice cream image
+  blendedIceCreamImagesToReset.forEach(function(imageId) {
+    var image = document.getElementById(imageId);
+    if (image) {
+      image.style.display = 'none';
+    }
+  });
+  document.getElementById("cup").style.display = "block";
+}

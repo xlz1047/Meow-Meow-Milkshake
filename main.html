@@ -33,31 +33,33 @@
     <img id="blender" src="./Kitchen/blender.png" onclick="displayBlendedIceCream()">
 
     <!-- Blended Milkshakes -->
-    <img id="vanillaBlended" src="./Milkshakes/IceCream/vanillaFull.png" style="display:none;">
-    <img id="strawberryBlended" src="./Milkshakes/IceCream/strawberryFull.png" style="display:none;">
-    <img id="matchaBlended" src="./Milkshakes/IceCream/matchaFull.png" style="display:none;">
-    <img id="birthdayCakeBlended" src="./Milkshakes/IceCream/birthdayCakeFull.png" style="display:none;">
-    <img id="chocolateBlended" src="./Milkshakes/IceCream/chocolateFull.png" style="display:none;">
-    <img id="coffeeBlended" src="./Milkshakes/IceCream/coffeeFull.png" style="display:none;">
-    <img id="mangoBlended" src="./Milkshakes/IceCream/mangoFull.png" style="display:none;">
-    <img id="cookieDoughBlended" src="./Milkshakes/IceCream/cookieDoughFull.png" style="display:none;">
+    <div id="blendedDisplay">
+      <img id="vanillaBlended" src="./Milkshakes/IceCream/vanillaFull.png" style="display:none;">
+      <img id="strawberryBlended" src="./Milkshakes/IceCream/strawberryFull.png" style="display:none;">
+      <img id="matchaBlended" src="./Milkshakes/IceCream/matchaFull.png" style="display:none;">
+      <img id="birthdayCakeBlended" src="./Milkshakes/IceCream/birthdayCakeFull.png" style="display:none;">
+      <img id="chocolateBlended" src="./Milkshakes/IceCream/chocolateFull.png" style="display:none;">
+      <img id="coffeeBlended" src="./Milkshakes/IceCream/coffeeFull.png" style="display:none;">
+      <img id="mangoBlended" src="./Milkshakes/IceCream/mangoFull.png" style="display:none;">
+      <img id="cookieDoughBlended" src="./Milkshakes/IceCream/cookieDoughFull.png" style="display:none;">
+    </div>
 
     <!-- Topping Buttons (Coded by Maggie) --> 
     <div id="kitchenButtons">
-      <img id="biscoff" src="./Kitchen/Topping/biscoff.png" onclick="displayImage('secondImage1')">
-      <img id="pocky" src="./Kitchen/Topping/pocky.png" onclick="displayImage('secondImage2')">
-      <img id="strawberryTopping" src="./Kitchen/Topping/strawberry.png" onclick="displayImage('secondImage3')">
-      <img id="blueberry" src="./Kitchen/Topping/blueberry.png" onclick="displayImage('secondImage4')">
-      <img id="cherry" src="./Kitchen/Topping/cherry.png" onclick="displayImage('secondImage5')">
-      <img id="sprinkles" src="./Kitchen/Topping/sprinkles.png" onclick="displayImage('secondImage6')">
-      <img id="graham" src="./Kitchen/Topping/grahamCrackers.png" onclick="displayImage('secondImage7')">
-      <img id="oreo" src="./Kitchen/Topping/oreo.png" onclick="displayImage('secondImage8')">
-      <img id="marshmallow" src="./Kitchen/Topping/marshmallow.png" onclick="displayImage('secondImage9')">
-      <img id="chocolateChips" src="./Kitchen/Topping/chocolateChips.png" onclick="displayImage('secondImage10')">
+      <img id="biscoff" src="./Kitchen/Topping/biscoff.png" onclick="if (selectTopping('biscoff')) displayImage('secondImage1')">
+      <img id="pocky" src="./Kitchen/Topping/pocky.png" onclick="if (selectTopping('pocky')) displayImage('secondImage2')">
+      <img id="strawberryTopping" src="./Kitchen/Topping/strawberry.png" onclick="if (selectTopping('strawberry')) displayImage('secondImage3')">
+      <img id="blueberry" src="./Kitchen/Topping/blueberry.png" onclick="if (selectTopping('blueberry')) displayImage('secondImage4')">
+      <img id="cherry" src="./Kitchen/Topping/cherry.png" onclick="if (selectTopping('cherry')) displayImage('secondImage5')">
+      <img id="sprinkles" src="./Kitchen/Topping/sprinkles.png" onclick="if (selectTopping('sprinkles')) displayImage('secondImage6')">
+      <img id="graham" src="./Kitchen/Topping/grahamCrackers.png" onclick="if (selectTopping('grahamCrackers')) displayImage('secondImage7')">
+      <img id="oreo" src="./Kitchen/Topping/oreo.png" onclick="if (selectTopping('oreo')) displayImage('secondImage8')">
+      <img id="marshmallow" src="./Kitchen/Topping/marshmallow.png" onclick="if (selectTopping('marshmallow')) displayImage('secondImage9')">
+      <img id="chocolateChips" src="./Kitchen/Topping/chocolateChips.png" onclick="if (selectTopping('chocolateChips')) displayImage('secondImage10')">
     </div>
     
     <!-- Topping Display (Coded by Maggie) -->
-    <div>
+    <div id="toppingDisplay">
       <img id="secondImage1" class="biscoffDis" src="./Milkshakes/Topping/biscoff.png" style="display:none;">
       <img id="secondImage2" class="pockyDis" src="./Milkshakes/Topping/pocky.png" style="display:none;">
       <img id="secondImage3" class="strawberryDis" src="./Milkshakes/Topping/strawberry.png" style="display:none;">
@@ -72,10 +74,10 @@
 
     <!-- Syrup Buttons -->
     <div id="kitchenButtons">
-      <img id="peanutButter" src="./Kitchen/Syrup/peanutButter.png" onclick="displayImage('secondImage11')">
-      <img id="chocolateSyrup" src="./Kitchen/Syrup/chocolate.png" onclick="displayImage('secondImage12')">
-      <img id="caramel" src="./Kitchen/Syrup/caramel.png" onclick="displayImage('secondImage13')">
-      <img id="strawberrySyrup" src="./Kitchen/Syrup/strawberry.png" onclick="displayImage('secondImage14')">
+      <img id="peanutButter" src="./Kitchen/Syrup/peanutButter.png" onclick="if (selectSyrup('peanutButter')) displayImage('secondImage11')">
+      <img id="chocolateSyrup" src="./Kitchen/Syrup/chocolate.png" onclick="if (selectSyrup('chocolate')) displayImage('secondImage12')">
+      <img id="caramel" src="./Kitchen/Syrup/caramel.png" onclick="if (selectSyrup('caramel')) displayImage('secondImage13')">
+      <img id="strawberrySyrup" src="./Kitchen/Syrup/strawberry.png" onclick="if (selectSyrup('strawberry')) displayImage('secondImage14')">
     </div>
 
     <!-- Syrup Display -->
@@ -88,9 +90,9 @@
   
     <!-- Milk Buttons -->
     <div id="kitchenButtons">
-      <img id="whole" src="./Kitchen/Milk/whole.png" onclick="displayImage('secondImage15')">
-      <img id="oat" src="./Kitchen/Milk/oat.png"onclick="displayImage('secondImage16')">
-      <img id="almond" src="./Kitchen/Milk/almond.png" onclick="displayImage('secondImage17')">
+      <img id="whole" src="./Kitchen/Milk/whole.png" onclick="if (selectMilk('whole')) displayImage('secondImage15')">
+      <img id="oat" src="./Kitchen/Milk/oat.png" onclick="if (selectMilk('oat')) displayImage('secondImage16')">
+      <img id="almond" src="./Kitchen/Milk/almond.png" onclick="if (selectMilk('almond')) displayImage('secondImage17')">
     </div>
 
     <!-- Milk Display -->
@@ -102,14 +104,14 @@
 
     <!-- Ice Cream Buttons -->
     <div id="kitchenButtons">
-      <img id="vanilla" src="./Kitchen/IceCream/vanilla.png" onclick="displayImage('secondImage18');selectIceCream('vanilla')">
-      <img id="strawberry" src="./Kitchen/IceCream/strawberry.png" onclick="displayImage('secondImage19');selectIceCream('strawberry')">
-      <img id="matcha" src="./Kitchen/IceCream/matcha.png" onclick="displayImage('secondImage20');selectIceCream('matcha')">
-      <img id="birthdayCake" src="./Kitchen/IceCream/birthdayCake.png" onclick="displayImage('secondImage21');selectIceCream('birthdayCake')">
-      <img id="chocolate" src="./Kitchen/IceCream/chocolate.png" onclick="displayImage('secondImage22');selectIceCream('chocolate')">
-      <img id="coffee" src="./Kitchen/IceCream/coffee.png" onclick="displayImage('secondImage23');selectIceCream('coffee')">
-      <img id="mango" src="./Kitchen/IceCream/mango.png" onclick="displayImage('secondImage24');selectIceCream('mango')">
-      <img id="cookieDough" src="./Kitchen/IceCream/cookieDough.png" onclick="displayImage('secondImage25');selectIceCream('cookieDough')">
+      <img id="vanilla" src="./Kitchen/IceCream/vanilla.png" onclick="if (selectIceCream('vanilla')) displayImage('secondImage18')">
+      <img id="strawberry" src="./Kitchen/IceCream/strawberry.png" onclick="if (selectIceCream('strawberry')) displayImage('secondImage19')">
+      <img id="matcha" src="./Kitchen/IceCream/matcha.png" onclick="if (selectIceCream('matcha')) displayImage('secondImage20')">
+      <img id="birthdayCake" src="./Kitchen/IceCream/birthdayCake.png" onclick="if (selectIceCream('birthdayCake')) displayImage('secondImage21')">
+      <img id="chocolate" src="./Kitchen/IceCream/chocolate.png" onclick="if (selectIceCream('chocolate')) displayImage('secondImage22')">
+      <img id="coffee" src="./Kitchen/IceCream/coffee.png" onclick="if (selectIceCream('coffee')) displayImage('secondImage23')">
+      <img id="mango" src="./Kitchen/IceCream/mango.png" onclick="if (selectIceCream('mango')) displayImage('secondImage24')">
+      <img id="cookieDough" src="./Kitchen/IceCream/cookieDough.png" onclick="if (selectIceCream('cookieDough')) displayImage('secondImage25')">
     </div>
 
     <!-- Ice Cream Display -->
@@ -126,8 +128,8 @@
   
     <!-- Whipped Cream Buttons -->
     <div id="kitchenButtons">
-      <img id="chocolateCream" src="./Kitchen/WhippedCream/chocolate.png" onclick="displayImage('secondImage26')">
-      <img id="vanillaCream" src="./Kitchen/WhippedCream/vanilla.png" onclick="displayImage('secondImage27')">
+      <img id="chocolateCream" src="./Kitchen/WhippedCream/chocolate.png" onclick="if (selectWhippedCream('chocolate')) displayImage('secondImage26')">
+      <img id="vanillaCream" src="./Kitchen/WhippedCream/vanilla.png" onclick="if (selectWhippedCream('vanilla')) displayImage('secondImage27')">
     </div>
     
     <!-- Whipped Cream Display -->
@@ -140,7 +142,7 @@
     <img class="checkOrderButton" id="checkOrderButton" src="./Kitchen/doneButton.png" onclick="toggleScreen('orderingScene')">
 
     <!-- Trash Button -->
-    <img class="trashButton" id="trashButton" src="./Kitchen/trashButton.png">
+    <img class="trashButton" id="trashButton" src="./Kitchen/trashButton.png" onclick="trashOrder()">
 
   </div>
 
@@ -176,19 +178,3 @@
 <script src="main.js"></script>
 
 </html>
-
-<!-- Trash Can -->
-<!-- <button id="trash-can">Trash Can</button>
-use javascript for function 
-
-put in javascript thing
-when trash can is clicked  
-  trashButton.addEventListener('click', function() {
-  const trashButton = document.getElementById('trash-can');
-    // Clear all ingredients from the list
-  function clearIngredientList() {
-  // Clear all  elements of the ingredient list (innerHTML sets html as sring and it clears the string
-  // repleaces old html conetent with new html aka the empty string)
-   ingredientList.innerHTML = "";
-  }
-  -->
