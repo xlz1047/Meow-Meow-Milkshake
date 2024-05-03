@@ -84,14 +84,13 @@ document.addEventListener("DOMContentLoaded", function () {
     function getRandomCustomerImage() {
       return customerImages[Math.floor(Math.random() * customerImages.length)];
     }
-    // Set initial customer image
-    character.style.backgroundImage = `url('${getRandomCustomerImage()}')`;
-    
-    // Get the reference to the .characterCounter element
-    const characterCounter = document.getElementById('characterCounter');
+    //sets intial customer and stores it
+    const randomImage = getRandomCustomerImage();
+    character.style.backgroundImage = `url('${randomImage}')`;
+    //used stored image and uses it for character behind counter
+    const characterCounter = document.querySelector('.characterCounter');
+    characterCounter.style.backgroundImage = `url('${randomImage}')`;
 
-    // Set initial customer image as background image
-    characterCounter.style.backgroundImage = `url('${getRandomCustomerImage()}')`;
 
     // Animation parameters
     const frameWidth = 141;
