@@ -206,6 +206,7 @@ function playButtonClickSound() {
 document.getElementById("toKitchenButton").addEventListener("click", playButtonClickSound);
 document.getElementById("toCafeButton").addEventListener("click", playButtonClickSound);
 document.getElementById("orderButton").addEventListener("click", playButtonClickSound);
+document.getElementById("test").addEventListener("click", playToppingClickSound);
 
 // Kitchen Button Display
 function displayImage(imageId) {
