@@ -129,13 +129,11 @@ body {
   height: 200px;
 }
 
-#speakBubble {
-  width: 100px;
-  height: 100px;
-  background-repeat: no-repeat;
+#speakBubble img {
   position: absolute;
-  right: 40%;
-  margin-top: 15%;
+  cursor: pointer;
+  right: 600px;
+  margin-top: 150px;
 }
 
 /*Blender + Cup Styling */
@@ -478,7 +476,70 @@ body {
 }
 
 /*Blended Shakes Display Styling*/
-.blended-vanilla {
+#vanillaBlended {
+  position: absolute;
+  z-index: 7;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
+}
+
+#strawberryBlended {
+  position: absolute;
+  z-index: 7;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
+}
+
+#matchaBlended {
+  position: absolute;
+  z-index: 7;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
+}
+
+#birthdayCakeBlended {
+  position: absolute;
+  z-index: 7;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
+}
+
+#chocolateBlended {
+  position: absolute;
+  z-index: 7;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
+}
+
+#coffeeBlended {
+  position: absolute;
+  z-index: 7;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
+}
+
+#mangoBlended {
+  position: absolute;
+  z-index: 7;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
+}
+
+#cookieDoughBlended {
   position: absolute;
   z-index: 7;
   top: 430px;
@@ -507,7 +568,7 @@ body {
 
 /* All Button Hover Effects */
 .button:hover,
-#speakBubble:hover,
+#speakBubble img:hover,
 #kitchenButtons img:hover,
 #blender:hover,
 .checkOrderButton:hover,
