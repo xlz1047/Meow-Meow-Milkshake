@@ -566,6 +566,7 @@ body {
 /*Check Order Button*/
 .checkOrderButton {
   position: absolute;
+  cursor: pointer;
   top: 511px;
   left: 738px;
   width: 115px;
@@ -575,6 +576,7 @@ body {
 /*Trash Order Buton*/
 .trashButton {
   position: absolute;
+  cursor: pointer;
   top: 648px;
   left: 131px;
   width: 170px;
