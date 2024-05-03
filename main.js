@@ -207,18 +207,6 @@ document.getElementById("toKitchenButton").addEventListener("click", playButtonC
 document.getElementById("toCafeButton").addEventListener("click", playButtonClickSound);
 document.getElementById("orderButton").addEventListener("click", playButtonClickSound);
 
-// Kitchen Sound Effects
-function playToppingClickSound() {
-  var toppingClickSound = document.getElementById("toppings");
-  toppingClickSound.play();
-}
-document.getElementById("biscoff").addEventListener("click", playToppingClickSound);
-document.getElementById("sprinkles").addEventListener("click", playToppingClickSound);
-document.getElementById("pocky").addEventListener("click", playToppingClickSound);
-document.getElementById("marshmellow").addEventListener("click", playToppingClickSound);
-document.getElementById("graham").addEventListener("click", playToppingClickSound);
-
-
 // Kitchen Button Display
 function displayImage(imageId) {
   var images = document.getElementsByClassName("secondImage");
@@ -294,6 +282,8 @@ function selectTopping(flavor) {
   if (selectedTopping === undefined) {
     if (selectedIceCream && selectedMilk && blendedIceCream && selectedWhippedCream && selectedSyrup) {
       selectedTopping = flavor
+      var toppingClickSound = document.getElementById("toppings");
+      toppingClickSound.play();
       return true;
     } else {
       alert('Please select the ice cream, milk, blender, whipped cream, and syrup first.');
