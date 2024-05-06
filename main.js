@@ -206,7 +206,7 @@ function playButtonClickSound() {
 document.getElementById("toKitchenButton").addEventListener("click", playButtonClickSound);
 document.getElementById("toCafeButton").addEventListener("click", playButtonClickSound);
 document.getElementById("orderButton").addEventListener("click", playButtonClickSound);
-document.getElementById("test").addEventListener("click", playToppingClickSound);
+document.getElementById("test").addEventListener("click", playButtonClickSound);
 
 // Kitchen Button Display
 function displayImage(imageId) {
@@ -338,4 +338,47 @@ function trashOrder() {
     }
   });
   document.getElementById("cup").style.display = "block";
+}
+
+// Check Order Button Functionality
+function checkOrder() {
+  if (selectedIceCream !== "" && selectedIceCream !==iceCream) {
+    return false;
+  }
+  if (selectedMilk !== "" && selectedMilk !== milk) {
+    return false;
+  }
+  if (selectedWhippedCream !== "" && selectedWhippedCream !== whippedCream) {
+    return false;
+  }
+  if (selectedSyrup !== "" && selectedSyrup !== syrup) {
+    return false;
+  }
+  if (selectedTopping !== "" && selectedTopping !== topping) {
+    return false;
+  }
+  return true;
+}
+
+checkOrderButton.addEventListener("click", function () {
+  speakBubble.style.display = "none";
+  orderButton.style.display = "none";
+  randomizeSelections();
+
+  const orderMatches = checkOrder();
+  displayResultImage(orderMatches);
+});
+
+//Function to Display Result Images
+function displayResultImage(orderMatches) {
+  const correctImage = document.getElementById("correctImage");
+  const incorrectimage = document.getElementById("incorrectImage");
+
+  if(orderMatches) {
+    correctImage.style.display = "block"; 
+    incorrectimage.style.display = "none"; 
+  } else {
+    correctImage.style.display = "none";
+    incorrectimage.style.display = "block"; 
+  }
 }
