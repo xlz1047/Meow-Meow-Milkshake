@@ -206,7 +206,6 @@ function playButtonClickSound() {
 document.getElementById("toKitchenButton").addEventListener("click", playButtonClickSound);
 document.getElementById("toCafeButton").addEventListener("click", playButtonClickSound);
 document.getElementById("orderButton").addEventListener("click", playButtonClickSound);
-document.getElementById("test").addEventListener("click", playButtonClickSound);
 
 // Kitchen Button Display
 function displayImage(imageId) {
@@ -220,12 +219,12 @@ function displayImage(imageId) {
 }
   
 // Saving Chosen Variables
-var selectedIceCream = "";
-var selectedMilk = "";
-var blendedIceCream = "";
-var selectedWhippedCream = "";
-var selectedSyrup = "";
-var selectedTopping = "";
+var selectedIceCream = undefined;
+var selectedMilk = undefined;
+var blendedIceCream = undefined;
+var selectedWhippedCream = undefined;
+var selectedSyrup = undefined;
+var selectedTopping = undefined;
 
 // Player Kitchen Restrictions
 function selectIceCream(flavor) {
