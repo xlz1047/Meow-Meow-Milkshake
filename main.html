@@ -18,15 +18,15 @@
     <div id="speakBubble" style="display: none;">
       <img id="orderButton" src="./Assets/buttonQuestion.png" onclick="toggleScreen('orderingScene')">
     </div>
-    <div class="container">
-      <div class="button" id="toKitchenButton" onclick="toggleScreen('kitchenScene')">To Kitchen</div>
+    <div class="button">
+      <img id="toKitchenButton" src="./Assets/kitchen.png" onclick="toggleScreen('kitchenScene')">
     </div>
   </div>
 
   <!-- Kitchen Scene -->
   <div id="kitchenScene" style="display: none;">
-    <div class="container">
-      <div class="button" id="toCafeButton" onclick="toggleScreen('cafeScene')">To Cafe</div>
+    <div class="button">
+      <img id="toCafeButton" src="./Assets/cafe.png" onclick="toggleScreen('cafeScene')">
     </div>
   
     <img id="cup" src="./Kitchen/cup.png">
@@ -140,8 +140,6 @@
     
     <!-- Check Order Button -->
     <img class="checkOrderButton" id="checkOrderButton" src="./Kitchen/doneButton.png" onclick="toggleScreen('orderingScene')">
-    <img id="correctImage" src="./Assets/reactions/happyface.png" style="display: none;">
-    <img id="incorrectImage" src="./Assets/reactions/angryFace.png" style="display: none;">
 
     <!-- Trash Button -->
     <img class="trashButton" id="trashButton" src="./Kitchen/trash_button.png" onclick="trashOrder()">

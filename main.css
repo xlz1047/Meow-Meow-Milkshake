@@ -29,17 +29,17 @@ body {
   --color-heading-shadow: #321d08;
 }
 
-/* Button styles */
+/* To cafe/kitchen buttons */
 .button {
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  padding: 15px;
-  background-color: #645043;
-  border: 4px solid black;
+  position: absolute;
   cursor: pointer;
+  top: -5px;
+  left: 10px;
+}
+
+.button img{
+  width: 80%;
+  height: 80%;
 }
 
 /* Scene styles */
@@ -87,7 +87,6 @@ body {
 }
 
 /* Music toggle and credits */
-.container,
 #musicToggle,
 #credits {
   position: absolute;
