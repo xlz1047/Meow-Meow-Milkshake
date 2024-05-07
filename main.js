@@ -26,7 +26,7 @@ function toggleScreen(sceneId) {
   }
 }
 
-// Chosen player character display
+// Chosen Player Character Display
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;
   name = name.replace(/[\[\]]/g, "\\$&");
@@ -82,10 +82,10 @@ function animateCustomer() {
   function getRandomCustomerImage() {
     return customerImages[Math.floor(Math.random() * customerImages.length)];
   }
-  //sets intial customer and stores it
+  // Sets intial customer and stores it
   const randomImage = getRandomCustomerImage();
   character.style.backgroundImage = `url('${randomImage}')`;
-  //used stored image and uses it for character behind counter
+  // Used stored image and uses it for character behind counter
   const characterCounter = document.querySelector('.characterCounter');
   characterCounter.style.backgroundImage = `url('${randomImage}')`;
 
