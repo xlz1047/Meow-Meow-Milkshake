@@ -50,20 +50,17 @@
   </div>
   <audio id="backgroundMusic" autoplay loop>
     <source src="./BackgroundMusic/Cozy-Place(Loading).mp3" type="audio/mp3">
-    Your browser does not support the audio element.
   </audio>
 
   <!-- Sound Effects -->
   <audio id="catSelect">
     <source src="./SoundEffects/catSelect.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
   </audio>
   <audio id="buttonClick">
     <source src="./SoundEffects/buttonClick.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
   </audio>
+  
   <script>
-
     // Music Toggler
     function toggleMusic() {
       var music = document.getElementById("backgroundMusic");
@@ -133,8 +130,8 @@
       }
       window.location.href = "main.html?character=" + encodeURIComponent(selectedCharacter) + "&name=" + encodeURIComponent(playerName);
     }
-
   </script>
+  
 </body>
-
+  
 </html>

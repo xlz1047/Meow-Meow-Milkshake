@@ -1,57 +1,64 @@
-// Coded by Xin 
-const character = document.getElementById("character");
-const speakBubble = document.getElementById("speakBubble");
-const orderButton = document.getElementById("foodOrderButton");
+var character = document.getElementById("character");
+var speakBubble = document.getElementById("speakBubble");
+var orderButton = document.getElementById("foodOrderButton");
+
+// List for options
+const iceCreamOptions = [
+  "brithdayCake",
+  "chocolate",
+  "coffee",
+  "cookieDough",
+  "mango",
+  "matcha",
+  "strawberry",
+  "vanilla"
+];
+
+const milkOptions = [
+  "almond",
+  "oat",
+  "whole"
+];
+
+const syrupOptions = [
+  "caramel",
+  "chocolate",
+  "peanutButter",
+  "strawberry"
+];
+
+const toppingOptions = [
+  "biscoff",
+  "blueberry",
+  "cherry",
+  "chocolateChips",
+  "grahamCrackers",
+  "marshmallow",
+  "oreo",
+  "pocky",
+  "sprinkles",
+  "strawberry"
+];
+
+const whippedCreamOptions = [
+  "chocolate",
+  "vanilla"
+];
+
 
 // Function to randomly select an item from an array
 function getRandomItem(items) {
   return items[Math.floor(Math.random() * items.length)];
 }
 
-const iceCreamOptions = [
-  "vanilla",
-  "strawberry",
-  "chocolate",
-//add rest of ice cream
-];
-
-const milkOptions = [
-  "whole",
-  "oat",
-  "almond",
-];
-
-const whippedCreamOptions = [
-  "chocolate",
-  "whisked",
-];
-
-const toppingOptions = [
-  "biscoff",
-  "pocky",
-  "strawberry",
-  "blueberry",
-  "cherry",
-  "sprinkles",
-  "graham",
-  "oreo",
-  "marshmallow",
-];
-
-const syrupOptions = [
-  "peanutbutter",
-  "chocolate",
-  "caramel",
-  "strawberry",
-];
-
 // Function to randomly select options for ice cream, milk, whipped cream, topping, and syrup
 function randomizeSelections() {
-  const iceCream = getRandomItem(iceCreamOptions);
-  const milk = getRandomItem(milkOptions);
-  const whippedCream = getRandomItem(whippedCreamOptions);
-  const topping = getRandomItem(toppingOptions);
-  const syrup = getRandomItem(syrupOptions);
+  var iceCream = getRandomItem(iceCreamOptions);
+  var milk = getRandomItem(milkOptions);
+  var whippedCream = getRandomItem(whippedCreamOptions);
+  var topping = getRandomItem(toppingOptions);
+  var syrup = getRandomItem(syrupOptions);
+
 
   // Display selected images in the speak button
   const speakButton = document.getElementById("speakBubble");
