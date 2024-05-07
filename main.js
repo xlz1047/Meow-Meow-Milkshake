@@ -4,10 +4,10 @@ function toggleMusic() {
   var musicStatus = document.getElementById("musicStatus");
   if (music.paused) {
     music.play();
-    musicStatus.innerText = "On";
+    musicToggle.src = "./Assets/musicOn.png";
   } else {
     music.pause();
-    musicStatus.innerText = "Off";
+    musicToggle.src = "./Assets/musicOff.png";
   }
 }
 document.addEventListener("click", function() {
