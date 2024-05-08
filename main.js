@@ -118,7 +118,7 @@ function animateCustomer() {
       speakBubble.style.display = "block";
       orderButton.style.display = "block";
     } else {
-      posX -= 5;
+      posX -= 10;
       character.style.left = posX + "px";
     }
   }
@@ -141,6 +141,10 @@ function playButtonClickSound() {
 document.getElementById("toKitchenButton").addEventListener("click", playButtonClickSound);
 document.getElementById("toCafeButton").addEventListener("click", playButtonClickSound);
 document.getElementById("orderButton").addEventListener("click", playButtonClickSound);
+
+//Randomize flavor list
+
+
 
 // Kitchen Button Display
 function displayImage(imageId) {
@@ -288,6 +292,9 @@ function trashOrder() {
 }
 
 console.log(selectedOrder);
+
+
+
 
 // Check Order Button Functionality
 function checkOrder() {
