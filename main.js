@@ -244,21 +244,34 @@ function randomizeSelections() {
   var syrup = getRandomItem(syrupOptions);
   var topping = getRandomItem(toppingOptions);
 
-  var order = [
-    `url('./Kitchen/IceCream/${iceCream}.png')`,
-    `url('./kitchen/Milk/${milk}.png')`,
-    `url('./kitchen/WhippedCream/${whippedCream}.png')`,
-    `url('./kitchen/Syrup/${syrup}.png')`,
-    `url('./kitchen/Topping/${topping}.png')`
+  var randomOrder = [
+    iceCream,
+    milk,
+    whippedCream,
+    syrup,
+    topping
   ];
-  return order;
+
+  console.log("random:", randomOrder);
+  return randomOrder;
 }
-function displayImagesOneByOne(order, displaySpeed) {
+// Function to generate URLs for the order to be displayed
+function generateDisplayUrls(order) {
+  var displayUrls = [
+    `./Kitchen/IceCream/${order[0]}.png`,
+    `./Kitchen/Milk/${order[1]}.png`,
+    `./Kitchen/WhippedCream/${order[2]}.png`,
+    `./Kitchen/Syrup/${order[3]}.png`,
+    `./Kitchen/Topping/${order[4]}.png`
+  ];
+  return displayUrls;
+}
+function displayImagesOneByOne(urls, displaySpeed) {
   var index = 0;
 
   function displayNextImage() {
-    if (index < order.length) {
-      var currentImageUrl = order[index];
+    if (index < urls.length) {
+      var currentImageUrl = urls[index];
       console.log(currentImageUrl);
 
       var imgElement = document.createElement("img");
@@ -271,40 +284,46 @@ function displayImagesOneByOne(order, displaySpeed) {
       imgElement.style.zIndex = '7';
       document.body.appendChild(imgElement);
 
+    setTimeout(function() {
+      imgElement.style.display = 'none'; // Hide the current image after a delay
       index++;
-      setTimeout(displayNextImage, displaySpeed);
-    } else {
-      console.log("All images displayed.");
+      displayNextImage(); // Call recursively to display the next image
+    }, displaySpeed);
+  } else {
+    console.log("All images displayed.");
 
-      var allImages = document.querySelectorAll("img");
-      allImages.forEach(function(image) {
-        image.style.display = 'none';
-      });
+    var allImages = document.querySelectorAll("img");
+    allImages.forEach(function(image) {
+      image.style.display = 'none';
+    });
 
-      // Transition to the kitchen scene after a delay
-      setTimeout(function() {
-        console.log("Transitioning to the kitchen scene...");
-        toggleScreen("kitchenScene");
+    // Transition to the kitchen scene after a delay
+    setTimeout(function() {
+      console.log("Transitioning to the kitchen scene...");
+      toggleScreen("kitchenScene");
 
-        // Hide the orderingScene when transitioning to the kitchenScene
-        document.getElementById("orderingScene").style.display = "none";
-      }, 1000); // 2 seconds delay before transitioning to the kitchen scene
-    }
+      // Hide the orderingScene when transitioning to the kitchenScene
+      document.getElementById("orderingScene").style.display = "none";
+    }, 1000); // 2 seconds delay before transitioning to the kitchen scene
   }
+}
 
   displayNextImage();
 }
-
 // Update the orderButton click event to call the displayImagesOneByOne function
 document.getElementById("orderButton").addEventListener("click", function() {
   // Test the randomizeSelections function
-  var order = randomizeSelections();
-  console.log(order);
+  var randomOrder = randomizeSelections();
+  
+  // Test the generateDisplayUrls function
+  var displayUrls = generateDisplayUrls(randomOrder);
+
   // Test the displayImagesOneByOne function
   var displaySpeed = 1000; // milliseconds (adjust as needed)
 
-  displayImagesOneByOne(order, displaySpeed);
+  displayImagesOneByOne(displayUrls, displaySpeed);
 });
+
 
 // Kitchen Button Display
 function displayImage(imageId) {
@@ -324,7 +343,7 @@ var blendedIceCream = null;
 var selectedWhippedCream = null;
 var selectedSyrup = null;
 var selectedTopping = null;
-var selectedOrder = []
+var selectedOrder = [];
 
 //Function append selected flavor to selectedOrder array
 function addToSelectedOrder(flavor) {
@@ -450,7 +469,31 @@ function trashOrder() {
   document.getElementById("cup").style.display = "block";
 }
 
-console.log(selectedOrder);
+console.log("selected:", selectedOrder);
+
+
+
+// Function to handle the check order button click event in the kitchen scene
+document.getElementById("checkOrderButton").addEventListener("click", function() {
+  // Toggle to the orderingScene
+  toggleScreen("orderingScene");
+  
+  // Display the counter
+  document.getElementById("counter").style.display = "block";
+  
+  // Display the random customer character
+  var randomImage = getRandomCustomerImage();
+  document.querySelector('.characterCounter').style.backgroundImage = `url('./CatCustomer/${randomImage}Stand.png')`;
+  
+  // Show the orderSpeakBubble in orderingScene
+  document.getElementById("orderSpeakBubble").style.display = "block";
+  
+  // Check the orders and calculate the score
+  checkOrders();
+  
+  // Display the result image and text
+  document.getElementById("score").style.display = "block";
+});
 
 // Function to check the orders and calculate the score
 function checkOrders() {
@@ -465,6 +508,7 @@ function checkOrders() {
 
   // Display the result based on the score
   displayResult(score);
+  console.log("score:", score);
 }
 
 // Function to display result images and text based on the score
@@ -491,26 +535,5 @@ function displayResult(score) {
       resultImage.src = "./Assets/buttonquestion.png";
       resultText.textContent = "You didn't score well this time.";
   }
+  console.log("result", resultImage.src, resultText.textContent);
 }
-
-// Function to handle the check order button click event in the kitchen scene
-document.getElementById("checkOrderButton").addEventListener("click", function() {
-  // Toggle to the orderingScene
-  toggleScreen("orderingScene");
-  
-  // Display the counter
-  document.getElementById("counter").style.display = "block";
-  
-  // Display the random customer character
-  var randomImage = getRandomCustomerImage();
-  document.querySelector('.characterCounter').style.backgroundImage = `url('./CatCustomer/${randomImage}Stand.png')`;
-  
-  // Show the orderSpeakBubble in orderingScene
-  document.getElementById("bubble").style.display = "block";
-  
-  // Check the orders and calculate the score
-  checkOrders();
-  
-  // Display the result image and text
-  document.getElementById("score").style.display = "block";
-});
