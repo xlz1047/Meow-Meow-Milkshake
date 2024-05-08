@@ -131,6 +131,8 @@ function animateCustomer() {
 animateCustomer();
 
 
+//////////////////////////////////Order Functionality Section + kitchen Functionality//////////////////////////////////////////////
+
 // Button Sound Effects
 function playButtonClickSound() {
   var buttonClickSound = document.getElementById("buttonClick");

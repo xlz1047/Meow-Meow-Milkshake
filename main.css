@@ -89,19 +89,19 @@ html {
 }
 
 /* Music toggle and credits */
-#musicToggle {
+#musicToggle{
   position: absolute;
-  top: 0px;
-  right: 15px;
+  top: 20px;
+  right: 45px;
   cursor: pointer;
-  width: 100px;
+  width: 40px;
 }
 
 #credits {
   position: absolute;
   bottom: 0px;
   right: 0px;
-  width: 40%;
+  width: 30%;
 }
 
 /* To cafe/kitchen button container */

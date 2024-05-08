@@ -1,19 +1,28 @@
   @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
 
-  html, body, * {
+  /* Resetting user-select */
+  html,
+  body,
+  * {
     user-select: none;
-  }
-
-  /* Creates outer background color */
-  body {
     margin: 0;
     padding: 0;
+  }
+
+  /* Global styles */
+  html,
+  body {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+  }
+
+  html {
     background-color: #8d6e5d;
-    font-family: 'Cormorant Garamond', serif;
+    background-image: url(./Assets/backgroundSquare.png);
+    background-size: 200px 200px;
+    background-repeat: repeat;
   }
 
   /* Creates reusable variables */
@@ -154,42 +163,18 @@
   /* Music Toggle */
   #musicToggle{
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 45px;
     cursor: pointer;
-    font-family: "Cherry Bomb One", sans-serif;
-    color: #ffffff;
-    text-shadow:    0 1px 0 var(--color-heading-shadow),
-                    0 2px 0 var(--color-heading-shadow),
-                    0 3px 0 var(--color-heading-shadow),
-                    0 4px 0 var(--color-heading-shadow),
-
-                    0 0 5px rgba(10,0,0,.05),
-                    0 1px 3px rgba(10,0,0,.2),
-                    0 3px 5px rgba(10,0,0,.2),
-                    0 5px 10px rgba(10,0,0,.2),
-                    0 10px 10px rgba(10,0,0,.2),
-                    0 20px 20px rgba(10,0,0,.3);
+    width: 40px;
   }
 
   /* Credits */
-  #credits{
+  #credits {
     position: absolute;
     bottom: 0px;
-    right: 10px;
-    font-family: "Cherry Bomb One", sans-serif;
-    color: #ffffff;
-    text-shadow:    0 1px 0 var(--color-heading-shadow),
-                    0 2px 0 var(--color-heading-shadow),
-                    0 3px 0 var(--color-heading-shadow),
-                    0 4px 0 var(--color-heading-shadow),
-
-                    0 0 5px rgba(10,0,0,.05),
-                    0 1px 3px rgba(10,0,0,.2),
-                    0 3px 5px rgba(10,0,0,.2),
-                    0 5px 10px rgba(10,0,0,.2),
-                    0 10px 10px rgba(10,0,0,.2),
-                    0 20px 20px rgba(10,0,0,.3);
+    right: 0px;
+    width: 30%;
   }
 
   /* Character Selection Styling */

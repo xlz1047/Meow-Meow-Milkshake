@@ -41,15 +41,12 @@
       <button id="doneButton" onclick="navigateToLobby()">Done</button>
     </div>
   </div>
-
+  
   <!-- Credits -->
-  <div id="credits">
-    <p>Made by: Xin Zheng, Christy Tran, Maggie Kocorowski, Armaan Zahid</p>
-  </div>
+  <img id="credits" src="./Assets/names.png">
 
   <!-- Background Music -->
-  <div id="musicToggle" onclick="toggleMusic()">Music: <span id="musicStatus">On</span>
-  </div>
+  <img id="musicToggle" src="./Assets/musicOn.png" onclick="toggleMusic()">
   <audio id="backgroundMusic" autoplay loop>
     <source src="./BackgroundMusic/Cozy-Place(Loading).mp3" type="audio/mp3">
   </audio>
@@ -69,10 +66,10 @@
       var musicStatus = document.getElementById("musicStatus");
       if (music.paused) {
         music.play();
-        musicStatus.innerText = "On";
+        musicToggle.src = "./Assets/musicOn.png";
       } else {
         music.pause();
-        musicStatus.innerText = "Off";
+        musicToggle.src = "./Assets/musicOff.png";
       }
     }
     document.addEventListener("click", function () {
