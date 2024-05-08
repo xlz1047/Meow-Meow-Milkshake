@@ -131,13 +131,12 @@ html {
 
 #player {
   position: absolute;
-  top: 252px;
-  left: 185px;
+  top: 220px;
+  left: 150px;
 }
 
 #player img {
-  width: 129px;
-  height: 200px;
+  height: 300px;
 }
 
 #speakBubble img {

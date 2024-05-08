@@ -44,7 +44,7 @@ function setCharacterImage() {
 
     switch (characterParam) {
       case "Character1":
-        imagePath += "calicoCatSelection.png";
+        imagePath += "calicoSideCatSelection.png";
         break;
       case "Character2":
         imagePath += "blackCatSelection.png";
@@ -118,7 +118,7 @@ function animateCustomer() {
       speakBubble.style.display = "block";
       orderButton.style.display = "block";
     } else {
-      posX -= 10;
+      posX -= 5;
       character.style.left = posX + "px";
     }
   }
