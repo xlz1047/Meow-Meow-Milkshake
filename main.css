@@ -157,3 +157,39 @@ html {
   filter: brightness(0.8);
   transition: all 0.3s ease-in-out;
 }
+
+#orderingScene.show #score {
+  display: block;
+}
+
+#orderSpeakBubble {
+  display: block;
+}
+#checkOrderButton:active + #orderingScene #orderSpeakBubble {
+  display: block;
+  z-index: 6;
+}
+
+#score {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 8;
+}
+
+#resultImage {
+  width: 100px; /* Adjust width as needed */
+  height: 100px; /* Adjust height as needed */
+  margin-bottom: 20px; /* Adjust spacing between image and text */
+  z-index: 8;
+}
+
+#resultText {
+  font-size: 18px; /* Adjust font size as needed */
+  font-weight: bold;
+  z-index: 8;
+}
+

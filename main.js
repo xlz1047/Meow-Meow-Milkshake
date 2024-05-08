@@ -26,7 +26,47 @@ function toggleScreen(sceneId) {
   // Loop through scene elements and display the selected scene
   for (var i = 0; i < scenes.length; i++) {
     var scene = document.getElementById(scenes[i]);
-    scene.style.display = scenes[i] === sceneId ? "block" : "none";
+    if (scenes[i] === sceneId) {
+      scene.style.display = "block";
+    } else {
+      scene.style.display = "none";
+    }
+  }
+
+  // Additional code to handle specific elements in the kitchen scene
+  if (sceneId === "kitchenScene") {
+    // Show all elements specific to the kitchen scene
+    var kitchenElements = document.querySelectorAll("#kitchenScene > *");
+    kitchenElements.forEach(function(element) {
+      element.style.display = "block";
+    });
+
+    // Show kitchen buttons
+    var kitchenButtons = document.querySelectorAll("#kitchenButtons > *");
+    kitchenButtons.forEach(function(button) {
+      button.style.display = "block";
+    });
+  } else {
+    // Hide kitchen-specific elements when not in the kitchen scene
+    var kitchenElements = document.querySelectorAll("#kitchenScene > *");
+    kitchenElements.forEach(function(element) {
+      element.style.display = "none";
+    });
+  }
+
+  // Additional code to handle specific elements in the ordering scene
+  if (sceneId === "orderingScene") {
+    // Show all elements specific to the ordering scene
+    var orderingElements = document.querySelectorAll("#orderingScene > *");
+    orderingElements.forEach(function(element) {
+      element.style.display = "block";
+    });
+  } else {
+    // Hide ordering-specific elements when not in the ordering scene
+    var orderingElements = document.querySelectorAll("#orderingScene > *");
+    orderingElements.forEach(function(element) {
+      element.style.display = "none";
+    });
   }
 }
 
@@ -200,15 +240,70 @@ function randomizeSelections() {
   var iceCream = getRandomItem(iceCreamOptions);
   var milk = getRandomItem(milkOptions);
   var whippedCream = getRandomItem(whippedCreamOptions);
-  var topping = getRandomItem(toppingOptions);
   var syrup = getRandomItem(syrupOptions);
+  var topping = getRandomItem(toppingOptions);
 
-  var order = [iceCream, milk, whippedCream, topping, syrup];
+  var order = [
+    `url('./Kitchen/IceCream/${iceCream}.png')`,
+    `url('./kitchen/Milk/${milk}.png')`,
+    `url('./kitchen/WhippedCream/${whippedCream}.png')`,
+    `url('./kitchen/Syrup/${syrup}.png')`,
+    `url('./kitchen/Topping/${topping}.png')`
+  ];
   return order;
 }
-// Test the randomizeSelections function
-var order = randomizeSelections();
-console.log(order);
+function displayImagesOneByOne(order, displaySpeed) {
+  var index = 0;
+
+  function displayNextImage() {
+    if (index < order.length) {
+      var currentImageUrl = order[index];
+      console.log(currentImageUrl);
+
+      var imgElement = document.createElement("img");
+      imgElement.src = currentImageUrl;
+      imgElement.style.width = '120px';
+      imgElement.style.height = '120px';
+      imgElement.style.position = 'absolute';
+      imgElement.style.top = '25%';
+      imgElement.style.right = '22%';
+      imgElement.style.zIndex = '7';
+      document.body.appendChild(imgElement);
+
+      index++;
+      setTimeout(displayNextImage, displaySpeed);
+    } else {
+      console.log("All images displayed.");
+
+      var allImages = document.querySelectorAll("img");
+      allImages.forEach(function(image) {
+        image.style.display = 'none';
+      });
+
+      // Transition to the kitchen scene after a delay
+      setTimeout(function() {
+        console.log("Transitioning to the kitchen scene...");
+        toggleScreen("kitchenScene");
+
+        // Hide the orderingScene when transitioning to the kitchenScene
+        document.getElementById("orderingScene").style.display = "none";
+      }, 1000); // 2 seconds delay before transitioning to the kitchen scene
+    }
+  }
+
+  displayNextImage();
+}
+
+// Update the orderButton click event to call the displayImagesOneByOne function
+document.getElementById("orderButton").addEventListener("click", function() {
+  // Test the randomizeSelections function
+  var order = randomizeSelections();
+  console.log(order);
+  // Test the displayImagesOneByOne function
+  var displaySpeed = 1000; // milliseconds (adjust as needed)
+
+  displayImagesOneByOne(order, displaySpeed);
+});
 
 // Kitchen Button Display
 function displayImage(imageId) {
@@ -356,48 +451,65 @@ function trashOrder() {
 
 console.log(selectedOrder);
 
+// Function to check the orders and calculate the score
+function checkOrders() {
+  let score = 0;
+  
+  // Iterate through the selectedOrder list and compare with the randomOrder list
+  for (let i = 0; i < selectedOrder.length; i++) {
+      if (selectedOrder[i] === randomOrder[i]) {
+          score++;
+      }
+  }
 
-
-
-// Check Order Button Functionality
-function checkOrder() {
-  if (selectedIceCream !== "" && selectedIceCream !==iceCream) {
-    return false;
-  }
-  if (selectedMilk !== "" && selectedMilk !== milk) {
-    return false;
-  }
-  if (selectedWhippedCream !== "" && selectedWhippedCream !== whippedCream) {
-    return false;
-  }
-  if (selectedSyrup !== "" && selectedSyrup !== syrup) {
-    return false;
-  }
-  if (selectedTopping !== "" && selectedTopping !== topping) {
-    return false;
-  }
-  return true;
+  // Display the result based on the score
+  displayResult(score);
 }
 
-checkOrderButton.addEventListener("click", function () {
-  speakBubble.style.display = "none";
-  orderButton.style.display = "none";
-  randomizeSelections();
+// Function to display result images and text based on the score
+function displayResult(score) {
+  var resultImage = document.getElementById("resultImage");
+  var resultText = document.getElementById("resultText");
 
-  const orderMatches = checkOrder();
-  displayResultImage(orderMatches);
-});
-
-//Function to Display Result Images
-function displayResultImage(orderMatches) {
-  const correctImage = document.getElementById("correctImage");
-  const incorrectimage = document.getElementById("incorrectImage");
-
-  if(orderMatches) {
-    correctImage.style.display = "block"; 
-    incorrectimage.style.display = "none"; 
+  if (score === 5) {
+      resultImage.src = "./Assets/buttonExclamation.png";
+      resultText.textContent = "You got 5 out of 5 right!";
+  } else if (score === 4) {
+      resultImage.src = "./Assets/buttonExclamation.png";
+      resultText.textContent = "You got 4 out of 5 right!";
+  } else if (score === 3) {
+      resultImage.src = "./Assets/buttonExclamation.png";
+      resultText.textContent = "You got 3 out of 5 right!";
+  } else if (score === 2) {
+      resultImage.src = "./Assets/buttonquestion.png";
+      resultText.textContent = "You got 2 out of 5 right!";
+  } else if (score === 1) {
+      resultImage.src = "./Assets/buttonquestion.png";
+      resultText.textContent = "You got 1 out of 5 right!";
   } else {
-    correctImage.style.display = "none";
-    incorrectimage.style.display = "block"; 
+      resultImage.src = "./Assets/buttonquestion.png";
+      resultText.textContent = "You didn't score well this time.";
   }
 }
+
+// Function to handle the check order button click event in the kitchen scene
+document.getElementById("checkOrderButton").addEventListener("click", function() {
+  // Toggle to the orderingScene
+  toggleScreen("orderingScene");
+  
+  // Display the counter
+  document.getElementById("counter").style.display = "block";
+  
+  // Display the random customer character
+  var randomImage = getRandomCustomerImage();
+  document.querySelector('.characterCounter').style.backgroundImage = `url('./CatCustomer/${randomImage}Stand.png')`;
+  
+  // Show the orderSpeakBubble in orderingScene
+  document.getElementById("bubble").style.display = "block";
+  
+  // Check the orders and calculate the score
+  checkOrders();
+  
+  // Display the result image and text
+  document.getElementById("score").style.display = "block";
+});
