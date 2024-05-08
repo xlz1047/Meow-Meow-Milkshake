@@ -10,16 +10,20 @@ function toggleMusic() {
     musicToggle.src = "./Assets/musicOff.png";
   }
 }
+
+// Automatically play music on first click anywhere on the page
 document.addEventListener("click", function() {
   var audio = document.getElementById("backgroundMusic")
   audio.muted = false;
   audio.play();
+  // Remove the click event listener after the first click
   document.removeEventListener("click", arguments.callee);
 });
 
 // Screen Toggler
 function toggleScreen(sceneId) {
   var scenes = ["cafeScene", "kitchenScene", "orderingScene"];
+  // Loop through scene elements and display the selected scene
   for (var i = 0; i < scenes.length; i++) {
     var scene = document.getElementById(scenes[i]);
     scene.style.display = scenes[i] === sceneId ? "block" : "none";
@@ -28,6 +32,7 @@ function toggleScreen(sceneId) {
 
 // Chosen Player Character Display
 function getParameterByName(name, url) {
+  // Retrieve query parameters from the URL
   if (!url) url = window.location.href;
   name = name.replace(/[\[\]]/g, "\\$&");
   var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
@@ -36,7 +41,9 @@ function getParameterByName(name, url) {
   if (!results[2]) return "";
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
 function setCharacterImage() {
+  // Set the player character image based on the query parameter
   var characterParam = getParameterByName("character");
   if (characterParam) {
     var characterImage = document.getElementById("characterImage");
@@ -63,11 +70,13 @@ function setCharacterImage() {
 }
 window.onload = setCharacterImage;
 
+// Function to animate the customer character
 function animateCustomer() {
   var character = document.getElementById("character");
   var speakBubble = document.getElementById("speakBubble");
   var orderButton = document.getElementById("orderButton");
 
+  // Array containing names of customer images
   const customerImages = [
     "armaan", 
     "maggie", 
@@ -76,35 +85,42 @@ function animateCustomer() {
     //Add more as needed
   ];
 
+  // Function to get a random customer image from the array
   function getRandomCustomerImage() {
     return customerImages[Math.floor(Math.random() * customerImages.length)];
   }
 
+  // Set initial customer image
   var randomImage = getRandomCustomerImage();
   character.style.backgroundImage = `url('./CatCustomer/${randomImage}Walk.png')`;
+
+  // Set counter background image for order scene
   const characterCounter = document.querySelector('.characterCounter');
-  // Order scene
   characterCounter.style.backgroundImage = `url('./CatCustomer/${randomImage}Stand.png')`;
   characterCounter.style.backgroundSize = "400px 600px";
 
+  // Animation variables
   const frameWidth = 141;
   const totalFrames = 4;
   const animationSpeed = 100;
   let frameIndex = 0;
 
+  // Initial position and target position for character movement
   const cafeSceneWidth = document.getElementById("cafeScene").offsetWidth;
-
   let posX = cafeSceneWidth - 150;
   let targetX = posX - 650;
 
+  // Function to animate character frames
   function animate() {
     frameIndex = (frameIndex + 1) % totalFrames;
     character.style.backgroundPosition = `-${frameIndex * frameWidth}px 0`;
   }
 
+  // Function to move the character towards the target position
   function moveCharacter() {
     if (posX <= targetX) {
       clearInterval(animationInterval);
+      // Display speak bubble and order button when character reaches target position
       speakBubble.style.display = "block";
       orderButton.style.display = "block";
     } else {
@@ -113,12 +129,13 @@ function animateCustomer() {
     }
   }
 
+  // Start character animation and movement intervals
   const animationInterval = setInterval(animate, animationSpeed);
   setInterval(moveCharacter, 20);
 }
 
+// Automatically animate the customer character when the page loads
 animateCustomer();
-
 
 ////////////////////Order Functionality Section + kitchen Functionality////////////////////////
 
