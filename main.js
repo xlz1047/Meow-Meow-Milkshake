@@ -131,7 +131,7 @@ function animateCustomer() {
 animateCustomer();
 
 
-//////////////////////////////////Order Functionality Section + kitchen Functionality//////////////////////////////////////////////
+////////////////////Order Functionality Section + kitchen Functionality////////////////////////
 
 // Button Sound Effects
 function playButtonClickSound() {
@@ -160,11 +160,19 @@ var blendedIceCream = null;
 var selectedWhippedCream = null;
 var selectedSyrup = null;
 var selectedTopping = null;
+var selectedOrder = []
+
+//Function append selected flavor to selectedOrder array
+function addToSelectedOrder(flavor) {
+  selectedOrder.push(flavor);
+  console.log(selectedOrder);
+}
 
 // Player Kitchen Restrictions
 function selectIceCream(flavor) {
   if (selectedIceCream === null) {
     selectedIceCream = flavor;
+    addToSelectedOrder(flavor);
     return true;
   } else {
     alert('Only choose one ice cream.');
@@ -175,6 +183,7 @@ function selectMilk(flavor) {
   if (selectedMilk === null) {
     if (selectedIceCream) {
       selectedMilk = flavor
+      addToSelectedOrder(flavor);
       return true;
     } else {
       alert('Please select the ice cream first.');
@@ -189,6 +198,7 @@ function selectWhippedCream(flavor) {
   if (selectedWhippedCream === null) {
     if (selectedIceCream && selectedMilk && blendedIceCream) {
       selectedWhippedCream = flavor
+      addToSelectedOrder(flavor);
       return true;
     } else {
       alert('Please select the ice cream, milk, and blender first.');
@@ -203,6 +213,7 @@ function selectSyrup(flavor) {
   if (selectedSyrup === null) {
     if (selectedIceCream && selectedMilk && blendedIceCream && selectedWhippedCream) {
       selectedSyrup = flavor
+      addToSelectedOrder(flavor);
       return true;
     } else {
       alert('Please select the ice cream, milk, blender, and whipped cream first.');
@@ -219,6 +230,7 @@ function selectTopping(flavor) {
       selectedTopping = flavor
       var toppingClickSound = document.getElementById("toppings");
       toppingClickSound.play();
+      addToSelectedOrder(flavor);
       return true;
     } else {
       alert('Please select the ice cream, milk, blender, whipped cream, and syrup first.');
@@ -254,6 +266,7 @@ function trashOrder() {
   selectedWhippedCream = null;
   selectedSyrup = null;
   selectedTopping = null;
+  selectedOrder = [];
   // Resetting display for all elements with ids starting with "secondImage"
   var secondImages = document.querySelectorAll("[id^='secondImage']");
   secondImages.forEach(function(image) {
@@ -273,6 +286,8 @@ function trashOrder() {
   });
   document.getElementById("cup").style.display = "block";
 }
+
+console.log(selectedOrder);
 
 // Check Order Button Functionality
 function checkOrder() {
