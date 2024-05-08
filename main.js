@@ -63,58 +63,48 @@ function setCharacterImage() {
 }
 window.onload = setCharacterImage;
 
-// Function to animate the customer
 function animateCustomer() {
-  const character = document.getElementById("character");
-  const speakBubble = document.getElementById("speakBubble");
-  const orderButton = document.getElementById("orderButton");
+  var character = document.getElementById("character");
+  var speakBubble = document.getElementById("speakBubble");
+  var orderButton = document.getElementById("orderButton");
 
-  // Array of customer images
   const customerImages = [
-    "./CatCustomer/armaanWalk.png",
-    "./CatCustomer/maggieWalk.png",
-    "./CatCustomer/christyWalk.png",
-    "./CatCustomer/xinWalk.png",
-    // Add more image paths as needed
+    "armaan", 
+    "maggie", 
+    "christy", 
+    "xin",
+    //Add more as needed
   ];
 
-  // Function to get a random customer image
   function getRandomCustomerImage() {
     return customerImages[Math.floor(Math.random() * customerImages.length)];
   }
-  // Sets intial customer and stores it
-  const randomImage = getRandomCustomerImage();
-  character.style.backgroundImage = `url('${randomImage}')`;
-  // Used stored image and uses it for character behind counter
+
+  var randomImage = getRandomCustomerImage();
+  character.style.backgroundImage = `url('./CatCustomer/${randomImage}Walk.png')`;
   const characterCounter = document.querySelector('.characterCounter');
-  characterCounter.style.backgroundImage = `url('${randomImage}')`;
+  // Order scene
+  characterCounter.style.backgroundImage = `url('./CatCustomer/${randomImage}Stand.png')`;
+  characterCounter.style.backgroundSize = "400px 600px";
 
-
-  // Animation parameters
   const frameWidth = 141;
   const totalFrames = 4;
   const animationSpeed = 100;
   let frameIndex = 0;
 
-  // Get the width of the cafe scene container
   const cafeSceneWidth = document.getElementById("cafeScene").offsetWidth;
 
-  // Set posX relative to the width of the cafe scene container
-  let posX = cafeSceneWidth - 150; // Adjust the value as needed
+  let posX = cafeSceneWidth - 150;
   let targetX = posX - 650;
-  let animationInterval;
 
-  // Function to animate the character
   function animate() {
     frameIndex = (frameIndex + 1) % totalFrames;
     character.style.backgroundPosition = `-${frameIndex * frameWidth}px 0`;
   }
 
-  // Function to move the character
   function moveCharacter() {
     if (posX <= targetX) {
       clearInterval(animationInterval);
-      // Display the speak bubble image and food order button when animation ends
       speakBubble.style.display = "block";
       orderButton.style.display = "block";
     } else {
@@ -123,9 +113,8 @@ function animateCustomer() {
     }
   }
 
-  // Start animation and movement
-  animationInterval = setInterval(animate, animationSpeed);
-  setInterval(moveCharacter, 50); // Adjust the interval for smoother movement
+  const animationInterval = setInterval(animate, animationSpeed);
+  setInterval(moveCharacter, 20);
 }
 
 animateCustomer();
@@ -142,9 +131,67 @@ document.getElementById("toKitchenButton").addEventListener("click", playButtonC
 document.getElementById("toCafeButton").addEventListener("click", playButtonClickSound);
 document.getElementById("orderButton").addEventListener("click", playButtonClickSound);
 
-//Randomize flavor list
+// List for options
+const iceCreamOptions = [
+  "brithdayCake",
+  "chocolate",
+  "coffee",
+  "cookieDough",
+  "mango",
+  "matcha",
+  "strawberry",
+  "vanilla"
+];
 
+const milkOptions = [
+  "almond",
+  "oat",
+  "whole"
+];
 
+const whippedCreamOptions = [
+  "chocolate",
+  "vanilla"
+];
+
+const syrupOptions = [
+  "caramel",
+  "chocolate",
+  "peanutButter",
+  "strawberry"
+];
+
+const toppingOptions = [
+  "biscoff",
+  "blueberry",
+  "cherry",
+  "chocolateChips",
+  "grahamCrackers",
+  "marshmallow",
+  "oreo",
+  "pocky",
+  "sprinkles",
+  "strawberry"
+];
+
+// Function to randomly select an item from an array
+function getRandomItem(items) {
+  return items[Math.floor(Math.random() * items.length)];
+}
+// Function to randomly select options for ice cream, milk, whipped cream, topping, and syrup
+function randomizeSelections() {
+  var iceCream = getRandomItem(iceCreamOptions);
+  var milk = getRandomItem(milkOptions);
+  var whippedCream = getRandomItem(whippedCreamOptions);
+  var topping = getRandomItem(toppingOptions);
+  var syrup = getRandomItem(syrupOptions);
+
+  var order = [iceCream, milk, whippedCream, topping, syrup];
+  return order;
+}
+// Test the randomizeSelections function
+var order = randomizeSelections();
+console.log(order);
 
 // Kitchen Button Display
 function displayImage(imageId) {
@@ -171,7 +218,6 @@ function addToSelectedOrder(flavor) {
   selectedOrder.push(flavor);
   console.log(selectedOrder);
 }
-
 // Player Kitchen Restrictions
 function selectIceCream(flavor) {
   if (selectedIceCream === null) {
