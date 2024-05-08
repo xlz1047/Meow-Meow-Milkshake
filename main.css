@@ -44,6 +44,10 @@ html {
   height: 80%;
 }
 
+#musicToggle, #credits {
+  display: block !important;
+}
+
 /* Scene styles */
 #cafeScene,
 #kitchenScene,

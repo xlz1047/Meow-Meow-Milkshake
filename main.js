@@ -41,6 +41,7 @@ function toggleScreen(sceneId) {
       element.style.display = "block";
     });
 
+    
     // Show kitchen buttons
     var kitchenButtons = document.querySelectorAll("#kitchenButtons > *");
     kitchenButtons.forEach(function(button) {
