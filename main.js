@@ -32,43 +32,6 @@ function toggleScreen(sceneId) {
       scene.style.display = "none";
     }
   }
-
-  // Additional code to handle specific elements in the kitchen scene
-  if (sceneId === "kitchenScene") {
-    // Show all elements specific to the kitchen scene
-    var kitchenElements = document.querySelectorAll("#kitchenScene > *");
-    kitchenElements.forEach(function(element) {
-      element.style.display = "block";
-    });
-
-    
-    // Show kitchen buttons
-    var kitchenButtons = document.querySelectorAll("#kitchenButtons > *");
-    kitchenButtons.forEach(function(button) {
-      button.style.display = "block";
-    });
-  } else {
-    // Hide kitchen-specific elements when not in the kitchen scene
-    var kitchenElements = document.querySelectorAll("#kitchenScene > *");
-    kitchenElements.forEach(function(element) {
-      element.style.display = "none";
-    });
-  }
-
-  // Additional code to handle specific elements in the ordering scene
-  if (sceneId === "orderingScene") {
-    // Show all elements specific to the ordering scene
-    var orderingElements = document.querySelectorAll("#orderingScene > *");
-    orderingElements.forEach(function(element) {
-      element.style.display = "block";
-    });
-  } else {
-    // Hide ordering-specific elements when not in the ordering scene
-    var orderingElements = document.querySelectorAll("#orderingScene > *");
-    orderingElements.forEach(function(element) {
-      element.style.display = "none";
-    });
-  }
 }
 
 // Chosen Player Character Display
@@ -301,15 +264,10 @@ function displayImagesOneByOne(urls, displaySpeed) {
   } else {
     console.log("All images displayed.");
 
-    var allImages = document.querySelectorAll("img");
-    allImages.forEach(function(image) {
-      image.style.display = 'none';
-    });
-
     // Transition to the kitchen scene after a delay
     setTimeout(function() {
       console.log("Transitioning to the kitchen scene...");
-      toggleScreen("kitchenScene");
+      toggleScreen("cafeScene");
 
       // Hide the orderingScene when transitioning to the kitchenScene
       document.getElementById("orderingScene").style.display = "none";
