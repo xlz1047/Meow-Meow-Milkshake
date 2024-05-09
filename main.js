@@ -511,18 +511,4 @@ function displayResult(score) {
 var scoreContainer = document.getElementById("score");
 scoreContainer.style.display = "block";
 
- // Adjusting position and size
- resultImage.style.position = 'absolute'; 
- resultImage.style.top = '10%'; 
- resultImage.style.right = '10%'; 
- resultImage.style.width = '300px';
- resultImage.style.height = '300px';
- resultImage.style.zIndex = '9';
-
- resultText.style.position = 'absolute'; 
- resultText.style.top = '10%'; 
- resultText.style.right = '10%';
- resultText.style.zIndex = '9';
- console.log("result", resultImage.src, resultText.textContent);
- 
 }
