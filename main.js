@@ -253,7 +253,7 @@ function randomizeSelections() {
   var syrup = getRandomItem(syrupOptions);
   var topping = getRandomItem(toppingOptions);
 
-  var randomOrder = [
+  randomOrder = [
     iceCream,
     milk,
     whippedCream,
@@ -499,14 +499,18 @@ document.getElementById("checkOrderButton").addEventListener("click", function()
 
 // Function to check the orders and calculate the score
 function checkOrders() {
+  console.log("Selected Order:", selectedOrder);
+  console.log("Random Order:", randomOrder);
   let score = 0;
   
   // Iterate through the selectedOrder list and compare with the randomOrder list
   for (let i = 0; i < selectedOrder.length; i++) {
-      if (selectedOrder[i] == randomOrder[i]) {
-        score++;
-      }
+    if (selectedOrder[i] === randomOrder[i]) {
+      score++;
+    }
   }
+
+  console.log("Score:", score);
 
   // Display the result based on the score
   displayResult(score);
@@ -519,35 +523,40 @@ function displayResult(score) {
   var resultText = document.getElementById("resultText");
 
   if (score === 5) {
-      resultImage.src = "./Assets/heart.png";
+      resultImage.src = "./Assets/reactions/heart.png";
       resultText.textContent = "You got 5 out of 5 right!";
   } else if (score === 4) {
-      resultImage.src = "./Assets/happyface.png";
+      resultImage.src = "./Assets/reactions/happyface.png";
       resultText.textContent = "You got 4 out of 5 right!";
   } else if (score === 3) {
-      resultImage.src = "./Assets/negativeReaction.png";
+      resultImage.src = "./Assets/reactions/negativeReaction.png";
       resultText.textContent = "You got 3 out of 5 right!";
   } else if (score === 2) {
-      resultImage.src = "./Assets/negativeReaction.png";
+      resultImage.src = "./Assets/reactions/negativeReaction.png";
       resultText.textContent = "You got 2 out of 5 right!";
   } else if (score === 1) {
-      resultImage.src = "./Assets/angryFace.png";
+      resultImage.src = "./Assets/reactions/angryFace.png";
       resultText.textContent = "You got 1 out of 5 right!";
   } else {
-      resultImage.src = "./Assets/angryFace.png";
+      resultImage.src = "./Assets/reactions/angryFace.png";
       resultText.textContent = "You didn't score well this time.";
   }
-  // Adjusting position and size
-  resultImage.style.position = 'absolute'; 
-  resultImage.style.top = '10%'; 
-  resultImage.style.right = '10%'; 
-  resultImage.style.width = '300px';
-  resultImage.style.height = '300px';
-  resultImage.style.zIndex = '9';
 
-  resultText.style.position = 'absolute'; 
-  resultText.style.top = '10%'; 
-  resultText.style.right = '10%';
-  resultText.style.zIndex = '9';
-  console.log("result", resultImage.src, resultText.textContent);
+var scoreContainer = document.getElementById("score");
+scoreContainer.style.display = "block";
+
+ // Adjusting position and size
+ resultImage.style.position = 'absolute'; 
+ resultImage.style.top = '10%'; 
+ resultImage.style.right = '10%'; 
+ resultImage.style.width = '300px';
+ resultImage.style.height = '300px';
+ resultImage.style.zIndex = '9';
+
+ resultText.style.position = 'absolute'; 
+ resultText.style.top = '10%'; 
+ resultText.style.right = '10%';
+ resultText.style.zIndex = '9';
+ console.log("result", resultImage.src, resultText.textContent);
+ 
 }
