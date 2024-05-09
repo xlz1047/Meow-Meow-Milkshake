@@ -160,7 +160,7 @@ document.getElementById("orderButton").addEventListener("click", playButtonClick
 
 // List for options
 const iceCreamOptions = [
-  "brithdayCake",
+  "birthdayCake",
   "chocolate",
   "coffee",
   "cookieDough",
