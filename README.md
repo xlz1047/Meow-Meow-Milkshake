@@ -10,20 +10,11 @@ Meow Meow Milkshake is a cute and whimsical cooking simulator game for gamers an
 
 ## Development and Purpose
 
-As we developed our game we wanted to ----
+During our development process, we adopted agile methodolgy, which allowed us to work efficiently and respond to any changes or feedback. We began with deciding various interfaces like the Loading Screen, Selection Screen, Cafe Screen, and the Serving Scren while organizing and creating user stories. We catorgorized the user stories by its priority level and the amount of work (Small, Medium, Large task and Must/Should/Could/Won't tasks). We also created a mission statement, a success slider, our team charter, and our vision for what we want to create. For each user story we outlined a definition and acceptance critia and broke them into sprint tasks. For every three weeks (each sprint period), we designated time to work on tasks. Each sprint began with a planning session and a stand up meeting where we discussed our user stories and our progress. We also got input from eachother and implemented to meet our user needs and expectations. We also maintained a Team Metrics page and our own Activity Report.
 
-Loading screen:
-Cat selection screen:
-Cafe screen:
-Kitchen screen:
-Ordering screen
+During class, we also held sprint reviews with other groups and communicated with our scrum master. We would showcase our features and enchancements that we works on. We gathered a lot of valuable input and it helped us to move our project in the right direction. 
 
-Agile Methodology:
-
-We organized and propitized certain interfaces like the Loading Screen, Selection Screen, Cafe Screen, and Serving Screen while creating user stories. We sorted the user stories by their priority level and amount of work (Small, Medium, Large task and a Must/Should/Could/Wont.
-For each US we wrote acceptable criteria and broke them into sprint tasks. Each sprint, a period of three weeks we would focus on  
-
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+The purpose of developing 'Meow Meow Milkshake' was to challenge ourselves and to create a viable product. We wanted to explore new technologies, develop new team collaboration skills, and refine our coding ability. For UI/UX, we wanted them to have an accessible, easy, and charming experience. We hope to appeal to a broad audience and that they immerse themsleves in joy while creating milkshakes for their cat customers! 
 
 ## Tools
 We used a variety of tools including:
@@ -34,6 +25,7 @@ We used a variety of tools including:
 - Discord
 - Medibang
 - IArtbook
+We used these tools to maximize collaboration, document managment, coding, version control, and creating graphical and artistic graphs.
 
 ## Programming Languages
 We used a varitey of programming languages including:
