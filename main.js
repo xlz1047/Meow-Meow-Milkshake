@@ -95,13 +95,13 @@ function setCharacterImage() {
         imagePath += "calicoSideCatSelection.png";
         break;
       case "Character2":
-        imagePath += "blackCatSelection.png";
+        imagePath += "blackSideProfile.png";
         break;
       case "Character3":
-        imagePath += "orangeCatSelection.png";
+        imagePath += "orangeSideProfile.png";
         break;
       case "Character4":
-        imagePath += "siameseCatSelection.png";
+        imagePath += "siameseSideProfile.png";
         break;
       default:
         break;
