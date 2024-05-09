@@ -259,8 +259,8 @@ function displayImagesOneByOne(urls, displaySpeed) {
       imgElement.id = imgId; // Use the type as the ID
       
       imgElement.style.position = 'absolute';
-      imgElement.style.top = '246px';
-      imgElement.style.left = '1248px';
+      imgElement.style.top = '26%';
+      imgElement.style.left = '65%';
       imgElement.style.zIndex = '7';
       document.body.appendChild(imgElement);
 
