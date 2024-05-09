@@ -257,7 +257,7 @@ function displayImagesOneByOne(urls, displaySpeed) {
       // Determine the ID based on the current image URL
       var imgId = currentImageUrl.split('/')[3].split('.')[0];
       imgElement.id = imgId; // Use the type as the ID
-      
+
       imgElement.style.position = 'absolute';
       imgElement.style.top = 'unset';
       imgElement.style.left = 'unset';
@@ -275,11 +275,11 @@ function displayImagesOneByOne(urls, displaySpeed) {
     // Transition to the kitchen scene after a delay
     setTimeout(function() {
       console.log("Transitioning to the kitchen scene...");
-      toggleScreen("cafeScene");
+      toggleScreen("kitchenScene");
 
       // Hide the orderingScene when transitioning to the kitchenScene
       document.getElementById("orderingScene").style.display = "none";
-    }, 1000); // 2 seconds delay before transitioning to the kitchen scene
+    }, 1000); // 1 seconds delay before transitioning to the kitchen scene
   }
 }
 
@@ -289,7 +289,7 @@ function displayImagesOneByOne(urls, displaySpeed) {
 document.getElementById("orderButton").addEventListener("click", function() {
   // Test the randomizeSelections function
   var randomOrder = randomizeSelections();
-  
+
   // Test the generateDisplayUrls function
   var displayUrls = generateDisplayUrls(randomOrder);
 
@@ -310,7 +310,7 @@ function displayImage(imageId) {
   image.style.display = "block";
   document.getElementById("cup").style.display = "none";
 }
-  
+
 // Saving Chosen Variables
 var selectedIceCream = null;
 var selectedMilk = null;
@@ -452,23 +452,25 @@ console.log("selected:", selectedOrder);
 document.getElementById("checkOrderButton").addEventListener("click", function() {
   // Toggle to the orderingScene
   toggleScreen("orderingScene");
-  
+
   // Show the orderSpeakBubble in orderingScene
   document.getElementById("orderSpeakBubble").style.display = "block";
-  
+
   // Check the orders and calculate the score
   checkOrders();
-  
+
   // Display the result image and text
   document.getElementById("score").style.display = "block";
 });
 
-// Function to check the orders and calculate the score
 function checkOrders() {
+  // Toggle back to the ordering scene to display the result
+  toggleScreen("orderingScene");
+
   console.log("Selected Order:", selectedOrder);
   console.log("Random Order:", randomOrder);
   let score = 0;
-  
+
   // Iterate through the selectedOrder list and compare with the randomOrder list
   for (let i = 0; i < selectedOrder.length; i++) {
     if (selectedOrder[i] === randomOrder[i]) {
@@ -481,7 +483,43 @@ function checkOrders() {
   // Display the result based on the score
   displayResult(score);
   console.log("score:", score);
+
+  // After displaying the result, toggle back to the cafe scene and wait before generating a new customer
+  setTimeout(function() {
+    toggleScreen("cafeScene");
+
+    // Hide the speakBubble for the next round
+    document.getElementById("speakBubble").style.display = "none";
+    // Clear the selected order array for the new round
+    selectedOrder = [];
+
+    // Trash the selected options
+    trashOrder();
+
+    // Clear the result score image and text
+    clearResult();
+    // Wait for a brief moment before generating a new customer
+    setTimeout(function() {
+      // Generate a new random order for the next round
+      randomOrder = randomizeSelections();
+
+      // Animate a new customer for the next round
+      getRandomCustomerImage();
+      animateCustomer();
+
+    }, 1000); // Adjust the delay as needed
+  }, 1000); // Adjust the delay as needed
 }
+
+// Function to clear the result score image and text
+function clearResult() {
+  var resultImage = document.getElementById("resultImage");
+  var resultText = document.getElementById("resultText");
+
+  resultImage.src = "";
+  resultText.textContent = "";
+}
+
 
 // Function to display result images and text based on the score
 function displayResult(score) {
