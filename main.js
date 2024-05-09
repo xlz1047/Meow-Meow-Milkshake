@@ -524,22 +524,22 @@ function displayResult(score) {
   var resultText = document.getElementById("resultText");
 
   if (score === 5) {
-      resultImage.src = "./Assets/buttonExclamation.png";
+      resultImage.src = "./Assets/heart.png";
       resultText.textContent = "You got 5 out of 5 right!";
   } else if (score === 4) {
-      resultImage.src = "./Assets/buttonExclamation.png";
+      resultImage.src = "./Assets/happyface.png";
       resultText.textContent = "You got 4 out of 5 right!";
   } else if (score === 3) {
-      resultImage.src = "./Assets/buttonExclamation.png";
+      resultImage.src = "./Assets/negativeReaction.png";
       resultText.textContent = "You got 3 out of 5 right!";
   } else if (score === 2) {
-      resultImage.src = "./Assets/buttonquestion.png";
+      resultImage.src = "./Assets/negativeReaction.png";
       resultText.textContent = "You got 2 out of 5 right!";
   } else if (score === 1) {
-      resultImage.src = "./Assets/buttonquestion.png";
+      resultImage.src = "./Assets/angryFace.png";
       resultText.textContent = "You got 1 out of 5 right!";
   } else {
-      resultImage.src = "./Assets/buttonquestion.png";
+      resultImage.src = "./Assets/angryFace.png";
       resultText.textContent = "You didn't score well this time.";
   }
   console.log("result", resultImage.src, resultText.textContent);
