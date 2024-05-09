@@ -521,7 +521,7 @@ function clearResult() {
 }
 
 
-// Function to display result images and text based on the score- coded by Maggie
+// Function to display result images and text based on the score
 function displayResult(score) {
   var resultImage = document.getElementById("resultImage");
   var resultText = document.getElementById("resultText");
