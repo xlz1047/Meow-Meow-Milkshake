@@ -94,12 +94,22 @@ html {
   right: 30%;
 }
 
+#bubble {
+  position: relative;
+  width: 360px;
+  height: 315px;
+  top: 70px;
+  left: 850px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #orderSpeakBubble {
   position: absolute;
+  top: 5px;
   width: 350px;
   height: 350px;
-  top: 65px;
-  right: 100px;
   z-index: 4;
 }
 

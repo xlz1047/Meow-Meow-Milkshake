@@ -259,10 +259,10 @@ function displayImagesOneByOne(urls, displaySpeed) {
       imgElement.id = imgId; // Use the type as the ID
       
       imgElement.style.position = 'absolute';
-      imgElement.style.top = '26%';
-      imgElement.style.left = '65%';
+      imgElement.style.top = 'unset';
+      imgElement.style.left = 'unset';
       imgElement.style.zIndex = '7';
-      document.body.appendChild(imgElement);
+      document.getElementById("bubble").appendChild(imgElement);
 
     setTimeout(function() {
       imgElement.style.display = 'none'; // Hide the current image after a delay
