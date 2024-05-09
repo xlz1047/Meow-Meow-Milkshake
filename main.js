@@ -232,6 +232,8 @@ const toppingOptions = [
   "strawberry"
 ];
 
+var randomOrder = [];
+
 // Function to randomly select an item from an array
 function getRandomItem(items) {
   return items[Math.floor(Math.random() * items.length)];
@@ -478,13 +480,6 @@ document.getElementById("checkOrderButton").addEventListener("click", function()
   // Toggle to the orderingScene
   toggleScreen("orderingScene");
   
-  // Display the counter
-  document.getElementById("counter").style.display = "block";
-  
-  // Display the random customer character
-  var randomImage = getRandomCustomerImage();
-  document.querySelector('.characterCounter').style.backgroundImage = `url('./CatCustomer/${randomImage}Stand.png')`;
-  
   // Show the orderSpeakBubble in orderingScene
   document.getElementById("orderSpeakBubble").style.display = "block";
   
@@ -501,8 +496,8 @@ function checkOrders() {
   
   // Iterate through the selectedOrder list and compare with the randomOrder list
   for (let i = 0; i < selectedOrder.length; i++) {
-      if (selectedOrder[i] === randomOrder[i]) {
-          score++;
+      if (selectedOrder[i] == randomOrder[i]) {
+        score++;
       }
   }
 
@@ -516,24 +511,36 @@ function displayResult(score) {
   var resultImage = document.getElementById("resultImage");
   var resultText = document.getElementById("resultText");
 
-  if (score === 5) {
-      resultImage.src = "./Assets/buttonExclamation.png";
+  if (score == 5) {
+      resultImage.src = `./Assets/buttonExclamation.png`;
       resultText.textContent = "You got 5 out of 5 right!";
-  } else if (score === 4) {
-      resultImage.src = "./Assets/buttonExclamation.png";
+  } else if (score == 4) {
+      resultImage.src = `./Assets/buttonExclamation.png`;
       resultText.textContent = "You got 4 out of 5 right!";
-  } else if (score === 3) {
-      resultImage.src = "./Assets/buttonExclamation.png";
+  } else if (score == 3) {
+      resultImage.src = `./Assets/buttonExclamation.png`;
       resultText.textContent = "You got 3 out of 5 right!";
-  } else if (score === 2) {
-      resultImage.src = "./Assets/buttonquestion.png";
+  } else if (score == 2) {
+      resultImage.src = `./Assets/buttonquestion.png`;
       resultText.textContent = "You got 2 out of 5 right!";
   } else if (score === 1) {
-      resultImage.src = "./Assets/buttonquestion.png";
+      resultImage.src = `./Assets/buttonquestion.png`;
       resultText.textContent = "You got 1 out of 5 right!";
   } else {
-      resultImage.src = "./Assets/buttonquestion.png";
+      resultImage.src = `./Assets/buttonquestion.png`;
       resultText.textContent = "You didn't score well this time.";
   }
+  // Adjusting position and size
+  resultImage.style.position = 'absolute'; 
+  resultImage.style.top = '10%'; 
+  resultImage.style.right = '10%'; 
+  resultImage.style.width = '300px';
+  resultImage.style.height = '300px';
+  resultImage.style.zIndex = '9';
+
+  resultText.style.position = 'absolute'; 
+  resultText.style.top = '10%'; 
+  resultText.style.right = '10%';
+  resultText.style.zIndex = '9';
   console.log("result", resultImage.src, resultText.textContent);
 }
