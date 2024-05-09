@@ -25,6 +25,7 @@ We used a variety of tools including:
 - Discord
 - Medibang
 - IArtbook
+
 We used these tools to maximize collaboration, document managment, coding, version control, and creating graphical and artistic graphs.
 
 ## Programming Languages
@@ -56,18 +57,25 @@ As of now, we are not open to collaborators.
 Please show your appreciation to those who have contributed to the project.
 Thank you for our wonderful team, scrum masters, and our professor during our time making this project.
 
-Team:
-Armaan Zahid
-Xin Zheng
-Maggie Kocorowski
-Christy Tran
+**Team:**
 
-Scrum Masters:
-Niki Patel
-Surendra Pothuri
+  Armaan Zahid
 
-Professor:
-Tammy Pirmann
+  Xin Zheng
+
+  Maggie Kocorowski
+
+  Christy Tran
+
+**Scrum Masters:**
+
+  Niki Patel 
+
+  Surendra Pothuri
+
+**Professor:**
+
+  Tammy Pirmann
 
 
 ## Project status
