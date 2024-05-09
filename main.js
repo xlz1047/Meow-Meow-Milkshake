@@ -111,6 +111,17 @@ function setCharacterImage() {
 }
 window.onload = setCharacterImage;
 
+function getRandomCustomerImage() {
+  const customerImages = [
+    "armaan", 
+    "maggie", 
+    "christy", 
+    "xin",
+    //Add more as needed
+  ];
+  return customerImages[Math.floor(Math.random() * customerImages.length)];
+}
+
 // Function to animate the customer character
 function animateCustomer() {
   var character = document.getElementById("character");
@@ -125,11 +136,6 @@ function animateCustomer() {
     "xin",
     //Add more as needed
   ];
-
-  // Function to get a random customer image from the array
-  function getRandomCustomerImage() {
-    return customerImages[Math.floor(Math.random() * customerImages.length)];
-  }
 
   // Set initial customer image
   var randomImage = getRandomCustomerImage();
@@ -238,6 +244,7 @@ var randomOrder = [];
 function getRandomItem(items) {
   return items[Math.floor(Math.random() * items.length)];
 }
+
 // Function to randomly select options for ice cream, milk, whipped cream, topping, and syrup
 function randomizeSelections() {
   var iceCream = getRandomItem(iceCreamOptions);
