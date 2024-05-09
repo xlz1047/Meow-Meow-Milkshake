@@ -518,7 +518,6 @@ function displayResult(score) {
   var resultImage = document.getElementById("resultImage");
   var resultText = document.getElementById("resultText");
 
-<<<<<<< HEAD
   if (score === 5) {
       resultImage.src = "./Assets/heart.png";
       resultText.textContent = "You got 5 out of 5 right!";
@@ -536,25 +535,6 @@ function displayResult(score) {
       resultText.textContent = "You got 1 out of 5 right!";
   } else {
       resultImage.src = "./Assets/angryFace.png";
-=======
-  if (score == 5) {
-      resultImage.src = `./Assets/buttonExclamation.png`;
-      resultText.textContent = "You got 5 out of 5 right!";
-  } else if (score == 4) {
-      resultImage.src = `./Assets/buttonExclamation.png`;
-      resultText.textContent = "You got 4 out of 5 right!";
-  } else if (score == 3) {
-      resultImage.src = `./Assets/buttonExclamation.png`;
-      resultText.textContent = "You got 3 out of 5 right!";
-  } else if (score == 2) {
-      resultImage.src = `./Assets/buttonquestion.png`;
-      resultText.textContent = "You got 2 out of 5 right!";
-  } else if (score === 1) {
-      resultImage.src = `./Assets/buttonquestion.png`;
-      resultText.textContent = "You got 1 out of 5 right!";
-  } else {
-      resultImage.src = `./Assets/buttonquestion.png`;
->>>>>>> cc90f51088d6874a0e3963f7e270965caf702b69
       resultText.textContent = "You didn't score well this time.";
   }
   // Adjusting position and size
