@@ -210,6 +210,12 @@ function getRandomItem(items) {
 
 // Function to randomly select options for ice cream, milk, whipped cream, topping, and syrup
 function randomizeSelections() {
+  // If a random order exists, return it
+  if (randomOrder.length !== 0) {
+    console.log("random:", randomOrder);
+    return randomOrder;
+  }
+  // Otherwise, generate a random order
   var iceCream = getRandomItem(iceCreamOptions);
   var milk = getRandomItem(milkOptions);
   var whippedCream = getRandomItem(whippedCreamOptions);
