@@ -96,8 +96,10 @@ html {
 
 #orderSpeakBubble {
   position: absolute;
-  top: 10%;
-  right: 10%;
+  width: 350px;
+  height: 350px;
+  top: 65px;
+  right: 100px;
   z-index: 4;
 }
 

@@ -57,7 +57,7 @@
     left: 972px;
   }
   
-  #graham {
+  #grahamCrackers {
     top: 525px;
     left: 959px;
     width: 150px;
@@ -291,8 +291,8 @@
     position: absolute;
     z-index: 9;
     top: 385px;
-    left: 595px;
-    width: 115px;
+    left: 600px;
+    width: 85px;
     height: 93px;
   }
   
@@ -300,8 +300,8 @@
     position: absolute;
     z-index: 9;
     top: 385px;
-    left: 600px;
-    width: 85px;
+    left: 595px;
+    width: 108px;
     height: 106px;
   }
   

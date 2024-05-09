@@ -177,15 +177,15 @@ const milkOptions = [
 ];
 
 const whippedCreamOptions = [
-  "chocolate",
-  "vanilla"
+  "chocolateCream",
+  "vanillaCream"
 ];
 
 const syrupOptions = [
   "caramel",
-  "chocolate",
+  "chocolateSyrup",
   "peanutButter",
-  "strawberry"
+  "strawberrySyrup"
 ];
 
 const toppingOptions = [
@@ -198,7 +198,7 @@ const toppingOptions = [
   "oreo",
   "pocky",
   "sprinkles",
-  "strawberry"
+  "strawberryTopping"
 ];
 
 var randomOrder = [];
@@ -254,11 +254,13 @@ function displayImagesOneByOne(urls, displaySpeed) {
 
       var imgElement = document.createElement("img");
       imgElement.src = currentImageUrl;
-      imgElement.style.width = '120px';
-      imgElement.style.height = '120px';
+      // Determine the ID based on the current image URL
+      var imgId = currentImageUrl.split('/')[3].split('.')[0];
+      imgElement.id = imgId; // Use the type as the ID
+      
       imgElement.style.position = 'absolute';
-      imgElement.style.top = '25%';
-      imgElement.style.right = '22%';
+      imgElement.style.top = '246px';
+      imgElement.style.left = '1248px';
       imgElement.style.zIndex = '7';
       document.body.appendChild(imgElement);
 
