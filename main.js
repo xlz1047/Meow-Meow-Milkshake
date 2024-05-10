@@ -80,6 +80,7 @@ function getRandomCustomerImage() {
     "maggie", 
     "christy", 
     "xin",
+    "grace",
     //Add more as needed
   ];
   return customerImages[Math.floor(Math.random() * customerImages.length)];
@@ -97,6 +98,7 @@ function animateCustomer() {
     "maggie", 
     "christy", 
     "xin",
+    "grace",
     //Add more as needed
   ];
 
