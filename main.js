@@ -85,11 +85,13 @@ function getRandomCustomerImage() {
   return customerImages[Math.floor(Math.random() * customerImages.length)];
 }
 
-// Function to animate the customer character
 function animateCustomer() {
   var character = document.getElementById("character");
   var speakBubble = document.getElementById("speakBubble");
   var orderButton = document.getElementById("orderButton");
+
+  // Hide the order button initially
+  orderButton.style.display = "none";
 
   // Array containing names of customer images
   const customerImages = [
@@ -132,7 +134,7 @@ function animateCustomer() {
       clearInterval(animationInterval);
       // Display speak bubble and order button when character reaches target position
       speakBubble.style.display = "block";
-      orderButton.style.display = "block";
+      orderButton.style.display = "block"; // Display order button when character reaches target position
     } else {
       posX -= 5;
       character.style.left = posX + "px";
@@ -488,8 +490,6 @@ function checkOrders() {
   setTimeout(function() {
     toggleScreen("cafeScene");
 
-    // Hide the speakBubble for the next round
-    document.getElementById("speakBubble").style.display = "none";
     // Clear the selected order array for the new round
     selectedOrder = [];
 
