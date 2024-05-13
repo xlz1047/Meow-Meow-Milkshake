@@ -4,10 +4,10 @@ function toggleMusic() {
   var musicStatus = document.getElementById("musicStatus");
   if (music.paused) {
     music.play();
-    musicToggle.src = "./Assets/musicOn.png";
+    musicToggle.src = "./Assets/buttons/musicOn.png";
   } else {
     music.pause();
-    musicToggle.src = "./Assets/musicOff.png";
+    musicToggle.src = "./Assets/buttons/musicOff.png";
   }
 }
 
@@ -80,6 +80,7 @@ function getRandomCustomerImage() {
     "maggie", 
     "christy", 
     "xin",
+    "grace",
     //Add more as needed
   ];
   return customerImages[Math.floor(Math.random() * customerImages.length)];
@@ -99,6 +100,7 @@ function animateCustomer() {
     "maggie", 
     "christy", 
     "xin",
+    "grace",
     //Add more as needed
   ];
 

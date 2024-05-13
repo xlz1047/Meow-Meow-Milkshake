@@ -2,39 +2,19 @@
 Armaan Zahid, Xin Zheng, Maggie Kocorowski, Christy Tran
 
 ## Meow Meow Milkshake
-"Meow Meow Milshake" is a browser game created using HTML, Javascript, and CSS. As new coders, we wanted to challenge ourselves with a game and we decided that we should make a cozy cooking simulator. Our original idea was to create a world where all humans were gone and cats had taken over. Now you work as a pawrista at a local milkshake bar. We planned to add a story but we wanted functionality and gameplay before anything else. 
+"Meow Meow Milshake" is a browser game created using HTML, Javascript, and CSS. As new coders, we wanted to challenge ourselves with a game and we decided that we should make a cozy cooking simulator. Our original idea was to create a world where all humans were gone and cats had taken over. Now you work as a pawrista at a local milkshake bar. 
 
 ## Description
 Meow Meow Milkshake is a cute and whimsical cooking simulator game for gamers and non-gamers alike. Our goal is to provide users with a cute and wholesome experince of creating a varitey of milkshakes for a diverse cast of cat customers. 
 
 
-## Development
-As we developed our game we wanted to ----
+## Development and Purpose
 
-Loading screen:
-Cat selection screen:
-Cafe screen:
-Kitchen screen:
-Ordering screen
+During our development process, we adopted agile methodolgy, which allowed us to work efficiently and respond to any changes or feedback. We began with deciding various interfaces like the Loading Screen, Selection Screen, Cafe Screen, and the Serving Scren while organizing and creating user stories. We catorgorized the user stories by its priority level and the amount of work (Small, Medium, Large task and Must/Should/Could/Won't tasks). We also created a mission statement, a success slider, our team charter, and our vision for what we want to create. For each user story we outlined a definition and acceptance critia and broke them into sprint tasks. For every three weeks (each sprint period), we designated time to work on tasks. Each sprint began with a planning session and a stand up meeting where we discussed our user stories and our progress. We also got input from eachother and implemented to meet our user needs and expectations. We also maintained a Team Metrics page and our own Activity Report.
 
+During class, we also held sprint reviews with other groups and communicated with our scrum master. We would showcase our features and enchancements that we works on. We gathered a lot of valuable input and it helped us to move our project in the right direction. 
 
-Agile Methodology:
-
--Define
--desgin
--build
--test
-
-
-
-We organized and propitized certain interfaces like the Loading Screen, Selection Screen, Cafe Screen, and Serving Screen while creating user stories. We sorted the user stories by their priority level and amount of work (Small, Medium, Large task and a Must/Should/Could/Wont.
-For each US we wrote acceptable criteria and broke them into sprint tasks. Each sprint, a period of three weeks we would focus on  
-
-
-
-
-
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+The purpose of developing 'Meow Meow Milkshake' was to challenge ourselves and to create a viable product. We wanted to explore new technologies, develop new team collaboration skills, and refine our coding ability. For UI/UX, we wanted them to have an accessible, easy, and charming experience. We hope to appeal to a broad audience and that they immerse themsleves in joy while creating milkshakes for their cat customers! 
 
 ## Tools
 We used a variety of tools including:
@@ -46,17 +26,13 @@ We used a variety of tools including:
 - Medibang
 - IArtbook
 
+We used these tools to maximize collaboration, document managment, coding, version control, and creating graphical and artistic graphs.
+
 ## Programming Languages
 We used a varitey of programming languages including:
 - HTML
 - CSS
 - Javascript
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
 
 ## Usage
 For our game, we imagined the users to play our game during their free time. We wanted to provide them with a fun experience for both people who are familiar and less familiar with new games. 
@@ -73,8 +49,6 @@ Please email us if you have any questions!
 
 -Maggie Kocorowski : mjk488@drexel.edu
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
 
 ## Contributing
 As of now, we are not open to collaborators.
@@ -83,18 +57,25 @@ As of now, we are not open to collaborators.
 Please show your appreciation to those who have contributed to the project.
 Thank you for our wonderful team, scrum masters, and our professor during our time making this project.
 
-Team:
-Armaan Zahid
-Xin Zheng
-Maggie Kocorowski
-Christy Tran
+**Team:**
 
-Scrum Masters:
-Niki Patel
-Surendra Pothuri
+  Armaan Zahid
 
-Professor:
-Tammy Pirmann
+  Xin Zheng
+
+  Maggie Kocorowski
+
+  Christy Tran
+
+**Scrum Masters:**
+
+  Niki Patel 
+
+  Surendra Pothuri
+
+**Professor:**
+
+  Tammy Pirmann
 
 
 ## Project status
