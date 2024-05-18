@@ -490,6 +490,10 @@ function checkOrders() {
   displayResult(score);
   console.log("score:", score);
 
+  // Update coins based on the score
+  coins += score;
+  updateCoin();
+
   // After displaying the result, toggle back to the cafe scene and wait before generating a new customer
   setTimeout(function() {
     toggleScreen("cafeScene");
@@ -553,4 +557,11 @@ function displayResult(score) {
 var scoreContainer = document.getElementById("score");
 scoreContainer.style.display = "block";
 
+}
+
+//function to update the coins
+var coins = 0;
+function updateCoin() {
+  var coinDisplay = document.getElementById("coinDisplay");
+  coinDisplay.textContent = "Coins: " + coins;
 }
