@@ -94,6 +94,7 @@ function animateCustomer() {
 
   // Hide the order button initially
   orderButton.style.display = "none";
+  speakBubble.style.display = "none"; 
 
   // Array containing names of customer images
   const customerImages = [
@@ -136,6 +137,8 @@ function animateCustomer() {
   function moveCharacter() {
     if (posX <= targetX) {
       clearInterval(animationInterval);
+      clearInterval(movementInterval);
+
       // Display speak bubble and order button when character reaches target position
       speakBubble.style.display = "block";
       orderButton.style.display = "block"; // Display order button when character reaches target position
@@ -147,7 +150,7 @@ function animateCustomer() {
 
   // Start character animation and movement intervals
   const animationInterval = setInterval(animate, animationSpeed);
-  setInterval(moveCharacter, 20);
+  const movementInterval = setInterval(moveCharacter, 20);
 }
 
 // Automatically animate the customer character when the page loads
@@ -500,22 +503,18 @@ function checkOrders() {
 
     // Clear the selected order array for the new round
     selectedOrder = [];
+    randomOrder = [];
 
     // Trash the selected options
     trashOrder();
 
     // Clear the result score image and text
     clearResult();
-    // Wait for a brief moment before generating a new customer
-    setTimeout(function() {
-      // Generate a new random order for the next round
-      randomOrder = randomizeSelections();
 
-      // Animate a new customer for the next round
-      getRandomCustomerImage();
-      animateCustomer();
-
-    }, 1000); // Adjust the delay as needed
+    // Generate a new customer for the next round
+    animateCustomer();
+    // Generate a new random order for the next round
+    randomOrder = randomizeSelections();
   }, 1000); // Adjust the delay as needed
 }
 
@@ -526,6 +525,9 @@ function clearResult() {
 
   resultImage.src = "";
   resultText.textContent = "";
+
+  // Hide the result container
+  document.getElementById("score").style.display = "none";
 }
 
 
@@ -535,22 +537,22 @@ function displayResult(score) {
   var resultText = document.getElementById("resultText");
 
   if (score === 5) {
-      resultImage.src = "./Assets/reactions/heart.png";
+      resultImage.src = "./Assets/Reactions/heart.png";
       resultText.textContent = "You got 5 out of 5 right!";
   } else if (score === 4) {
-      resultImage.src = "./Assets/reactions/happyface.png";
+      resultImage.src = "./Assets/Reactions/happyface.png";
       resultText.textContent = "You got 4 out of 5 right!";
   } else if (score === 3) {
-      resultImage.src = "./Assets/reactions/negativeReaction.png";
+      resultImage.src = "./Assets/Reactions/negativeReaction.png";
       resultText.textContent = "You got 3 out of 5 right!";
   } else if (score === 2) {
-      resultImage.src = "./Assets/reactions/negativeReaction.png";
+      resultImage.src = "./Assets/Reactions/negativeReaction.png";
       resultText.textContent = "You got 2 out of 5 right!";
   } else if (score === 1) {
-      resultImage.src = "./Assets/reactions/angryFace.png";
+      resultImage.src = "./Assets/Reactions/angryFace.png";
       resultText.textContent = "You got 1 out of 5 right!";
   } else {
-      resultImage.src = "./Assets/reactions/angryFace.png";
+      resultImage.src = "./Assets/Reactions/angryFace.png";
       resultText.textContent = "You didn't score well this time.";
   }
 
