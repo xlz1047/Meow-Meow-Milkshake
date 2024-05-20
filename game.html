@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
-  <title>Meow Meow Milkshakes</title>
+  <title>Meow Meow Milkshake</title>
   <link rel="icon" type="image/png" href="./Assets/Buttons/icon.png">
   <link rel="stylesheet" href="game.css">
   <link rel="stylesheet" href="kitchen.css">
@@ -23,6 +23,11 @@
     </div>
     <div class="button">
       <img id="toKitchenButton" src="./Assets/Buttons/kitchen.png" onclick="toggleScreen('kitchenScene')">
+    </div>
+    <!-- Coin Display -->
+    <div class="text" id="coinDisplay">
+      <img id="coin" src="./Shop/coin.png">
+      <span id="coinCount">0</span>
     </div>
   </div>
 
@@ -162,10 +167,6 @@
       <div id="resultText"></div>
     </div>
   </div>
-
-  <!-- coin display -->
-  <div id="coinDisplay">Coins: 0</div>
-  
 
   <!-- Credits -->
   <img id="credits" src="./Assets/Text/names.png">
