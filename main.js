@@ -414,17 +414,54 @@ function selectTopping(flavor) {
   }
 }
 
+// Helper Functions to Disable and Enable Image Buttons
+function disableImageButtons() {
+  var imageButtons = document.querySelectorAll('img[onclick]');
+  imageButtons.forEach(function(img) {
+    if (img.id !== 'blenderButton') {
+      img.originalOnClick = img.onclick;
+      img.onclick = function() { showAlert(); };
+    }
+  });
+}
+
+function enableImageButtons() {
+  var imageButtons = document.querySelectorAll('img[onclick]');
+  imageButtons.forEach(function(img) {
+    if (img.originalOnClick) {
+      img.onclick = img.originalOnClick;
+      delete img.originalOnClick;
+    }
+  });
+}
+
+function showAlert() {
+  alert('The blender is working. Please wait.');
+}
+
 // Blender Button Functionality
 function displayBlendedIceCream() {
   if (selectedIceCream && selectedMilk) {
-    // Resetting display for all milks and ice creams.
-    for (var i = 15; i <= 25; i++) {
-      var image = document.getElementById("secondImage" + i);
-      image.style.display = 'none';
-    }
-    // Display the full version of the selected ice cream
-    blendedIceCream = document.getElementById(selectedIceCream + 'Blended');
-    blendedIceCream.style.display = 'block';
+    var mixerClickSound = document.getElementById("mixer");
+    mixerClickSound.play();
+    // Disable all image buttons except the blender button
+    disableImageButtons();
+
+    // Start a 5-second timer
+    setTimeout(function() {
+      // Re-enable all image buttons
+      enableImageButtons();
+
+      // Resetting display for all milks and ice creams.
+      for (var i = 15; i <= 25; i++) {
+        var image = document.getElementById("secondImage" + i);
+        image.style.display = 'none';
+      }
+
+      // Display the full version of the selected ice cream
+      blendedIceCream = document.getElementById(selectedIceCream + 'Blended');
+      blendedIceCream.style.display = 'block';
+    }, 5000); // 5 seconds delay
   } else {
     alert('Please select the ice cream and milk first.');
   }
