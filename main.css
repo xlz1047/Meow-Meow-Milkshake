@@ -1,33 +1,3 @@
-/* Resetting user-select */
-html,
-body,
-* {
-  user-select: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Global styles */
-html,
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-html {
-  background-color: #8d6e5d;
-  background-image: url(./Assets/Background/backgroundSquare.png);
-  background-size: 200px 200px;
-  background-repeat: repeat;
-}
-
-:root {
-  --color-heading: #8d6e5d;
-  --color-heading-shadow: #321d08;
-}
-
 /* To cafe/kitchen buttons */
 .button {
   position: absolute;

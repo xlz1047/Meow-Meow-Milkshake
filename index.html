@@ -4,27 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meow Meow Milkshakes</title>
+  <title>Meow Meow Milkshake</title>
   <!-- Icon code -->
   <link rel="icon" type="image/png" href="Assets/Buttons/icon.png">
   <!-- Styling CSS-->
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
   <!-- Loading Scene -->
-  <canvas id="canvas"></canvas>
   <div id="loadingScene">
-    <div class="container">
+    <div class="startButton">
       <a href="#" id="image-button" onclick="toggleScreen()">
-        <img src="./Assets/Buttons/loadingButton.png" id="button" alt="Button Image" width="250" height="250">
+        <img src="./Assets/Buttons/loadingButton.png" id="button" width="250" height="250">
       </a>
     </div>
   </div>
 
   <!-- Selection Scene -->
   <div id="selectionScene" style="display: none;">
-    <div class="container2"> Select your character!
+    <div class="text" id="select"> Select your character!
     </div>
     <div class="character-buttons">
       <button class="character-button" data-character="Character1" onclick="selectCharacter('Character1')"><img
@@ -36,10 +36,10 @@
       <button class="character-button" data-character="Character4" onclick="selectCharacter('Character4')"><img
           src="./CatSelection/siameseCatSelection.png" alt="Character 4"></button>
     </div>
-    <div class="container3">
+    <div class="text" id="name">
       <label for="nameInput">Enter your name:</label>
       <input type="text" id="nameInput">
-      <button id="doneButton" onclick="navigateToLobby()">Done</button>
+      <button class="text" id="doneButton" onclick="navigateToLobby()">Done</button>
     </div>
   </div>
   

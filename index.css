@@ -1,124 +1,35 @@
-  @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
-
-  /* Resetting user-select */
-  html,
-  body,
-  * {
-    user-select: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Global styles */
-  html,
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-
-  html {
-    background-color: #8d6e5d;
-    background-image: url(./Assets/Background/backgroundSquare.png);
-    background-size: 200px 200px;
-    background-repeat: repeat;
-  }
-
-  /* Creates reusable variables */
-  :root {
-      --color-text: #433218;
-      --color-heading: #8d6e5d;
-      --color-heading-shadow: #321d08;
-      --color-button: cyan;
-      --color-button-active: rgba(255,255,255,0.6);
-  }
-
-  /* Reusable containers */
-  .container { /* Middle Bottom */
+  .startButton {
       position: absolute;
       bottom: -10%;
       left: 50%;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      text-align: center;
-      font-family: "Cherry Bomb One", sans-serif;
-      color: #ffffff;
-      text-shadow:    0 1px 0 var(--color-heading-shadow),
-                      0 2px 0 var(--color-heading-shadow),
-                      0 3px 0 var(--color-heading-shadow),
-                      0 4px 0 var(--color-heading-shadow),
-
-                      0 0 5px rgba(10,0,0,.05),
-                      0 1px 3px rgba(10,0,0,.2),
-                      0 3px 5px rgba(10,0,0,.2),
-                      0 5px 10px rgba(10,0,0,.2),
-                      0 10px 10px rgba(10,0,0,.2),
-                      0 20px 20px rgba(10,0,0,.3);
   }
-  .container2 { /* Middle Top */
+
+  #select { /* Text Box for Selection */
       position: absolute;
       top: 10%;
       left: 50%;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      text-align: center;
-      font-family: "Cherry Bomb One", sans-serif;
       font-size: 25px;
-      color: #ffffff;
-      text-shadow:    0 1px 0 var(--color-heading-shadow),
-                      0 2px 0 var(--color-heading-shadow),
-                      0 3px 0 var(--color-heading-shadow),
-                      0 4px 0 var(--color-heading-shadow),
-
-                      0 0 5px rgba(10,0,0,.05),
-                      0 1px 3px rgba(10,0,0,.2),
-                      0 3px 5px rgba(10,0,0,.2),
-                      0 5px 10px rgba(10,0,0,.2),
-                      0 10px 10px rgba(10,0,0,.2),
-                      0 20px 20px rgba(10,0,0,.3);
   }
-  .container3 { /* Middle Bottom */
+
+  #name { /* Text Box for Name */
       position: absolute;
       bottom: 5%;
       left: 50%;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      text-align: center;
-      font-family: "Cherry Bomb One", sans-serif;
       font-size: 25px;
-      color: #ffffff;
-      text-shadow:    0 1px 0 var(--color-heading-shadow),
-                      0 2px 0 var(--color-heading-shadow),
-                      0 3px 0 var(--color-heading-shadow),
-                      0 4px 0 var(--color-heading-shadow),
-
-                      0 0 5px rgba(10,0,0,.05),
-                      0 1px 3px rgba(10,0,0,.2),
-                      0 3px 5px rgba(10,0,0,.2),
-                      0 5px 10px rgba(10,0,0,.2),
-                      0 10px 10px rgba(10,0,0,.2),
-                      0 20px 20px rgba(10,0,0,.3);
   }
+
   .image-button {
       display: inline-block;
       position: relative;
       overflow: hidden;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
       border-radius: 8px;
-  }
-  canvas {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    margin: auto;
-    width: 1280px;
-    height: 720px;
-    border: 5px solid #000;
-    z-index: 1;
-    background-color: #dbbfa3
   }
 
   /* Loading Scene */
@@ -135,11 +46,13 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 2;
+    background-color: #dbbfa3;
   }
+
   #button {
     border-radius: 50%;
   }
+
   #button:hover {
     filter:brightness(0.8);
     transition: all 0.3s ease-in-out;
@@ -156,9 +69,8 @@
     margin: auto;
     position: absolute;
     align-items: center;
-    z-index: 2;
+    background-color: #dbbfa3;
   }
-
 
   /* Music Toggle */
   #musicToggle{
@@ -184,6 +96,7 @@
     align-items: center;
     margin-top: 125px;
   }
+
   .character-button {
     background-color: transparent;
     border: none;
@@ -192,11 +105,13 @@
     outline: none;
     position: relative
   }
+
   .character-button img {
     width: 290px;
     height: 450px;
     border-radius: 8px;
   }
+
   .character-button.selected::before {
     content: '';
     position: absolute;
@@ -209,13 +124,16 @@
     box-sizing: border-box;
     pointer-events: none;
   }
+
   .character-button:hover img {
     filter:brightness(0.8);
     transition: all 0.3s ease-in-out;
   }
+
   #nameInput {
     margin-top: 10px;
   }
+
   #doneButton {
     display: inline-block;
     position: relative;
@@ -230,20 +148,8 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     font-size: 20px;
-    font-family: "Cherry Bomb One", sans-serif;
-    color: #ffffff;
-    text-shadow:    0 1px 0 var(--color-heading-shadow),
-                    0 2px 0 var(--color-heading-shadow),
-                    0 3px 0 var(--color-heading-shadow),
-                    0 4px 0 var(--color-heading-shadow),
-
-                    0 0 5px rgba(10,0,0,.05),
-                    0 1px 3px rgba(10,0,0,.2),
-                    0 3px 5px rgba(10,0,0,.2),
-                    0 5px 10px rgba(10,0,0,.2),
-                    0 10px 10px rgba(10,0,0,.2),
-                    0 20px 20px rgba(10,0,0,.3);
   }
+
   #doneButton:hover {
     filter:brightness(0.8);
   }
