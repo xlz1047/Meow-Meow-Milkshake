@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meow Meow Milkshake</title>
   <!-- Icon code -->
   <link rel="icon" type="image/png" href="Assets/Buttons/icon.png">
-  <!-- Styling CSS-->
+  <!-- Styling CSS -->
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
   <!-- Loading Scene -->
   <div id="loadingScene">
@@ -22,19 +20,21 @@
     </div>
   </div>
 
-  <!-- Selection Scene -->
-  <div id="selectionScene" style="display: none;">
-    <div class="text" id="select"> Select your character!
-    </div>
+  <!-- Mode Selection Scene -->
+  <div id="modeSelectionScene" style="display: none;">
+    <div class="text">Select your Mode</div>
+    <button id="gameModeButton" onclick="selectMode('game.html')">Game Mode</button>
+    <button id="plotModeButton" onclick="selectMode('plot.html')">Plot Mode</button>
+  </div>
+
+  <!-- Character Selection Scene -->
+  <div id="characterSelectionScene" style="display: none;">
+    <div class="text" id="select">Select your Character</div>
     <div class="character-buttons">
-      <button class="character-button" data-character="Character1" onclick="selectCharacter('Character1')"><img
-          src="./CatSelection/calicoCatSelection.png" alt="Character 1"></button>
-      <button class="character-button" data-character="Character2" onclick="selectCharacter('Character2')"><img
-          src="./CatSelection/blackCatSelection.png" alt="Character 2"></button>
-      <button class="character-button" data-character="Character3" onclick="selectCharacter('Character3')"><img
-          src="./CatSelection/orangeCatSelection.png" alt="Character 3"></button>
-      <button class="character-button" data-character="Character4" onclick="selectCharacter('Character4')"><img
-          src="./CatSelection/siameseCatSelection.png" alt="Character 4"></button>
+      <button class="character-button" data-character="Character1" onclick="selectCharacter('Character1')"><img src="./CatSelection/calicoCatSelection.png" alt="Character 1"></button>
+      <button class="character-button" data-character="Character2" onclick="selectCharacter('Character2')"><img src="./CatSelection/blackCatSelection.png" alt="Character 2"></button>
+      <button class="character-button" data-character="Character3" onclick="selectCharacter('Character3')"><img src="./CatSelection/orangeCatSelection.png" alt="Character 3"></button>
+      <button class="character-button" data-character="Character4" onclick="selectCharacter('Character4')"><img src="./CatSelection/siameseCatSelection.png" alt="Character 4"></button>
     </div>
     <div class="text" id="name">
       <label for="nameInput">Enter your name:</label>
@@ -59,7 +59,7 @@
   <audio id="buttonClick">
     <source src="./SoundEffects/buttonClick.mp3" type="audio/mp3">
   </audio>
-  
+
   <script>
     // Music Toggler
     function toggleMusic() {
@@ -82,13 +82,7 @@
         document.removeEventListener("click", arguments.callee);
       }
     });
-
-    // Screen Toggler
-    function toggleScreen() {
-      document.getElementById("loadingScene").style.display = "none";
-      document.getElementById("selectionScene").style.display = "block";
-    }
-
+    
     // Button Sound Effects
     function playButtonClickSound() {
       var buttonClickSound = document.getElementById("buttonClick");
@@ -96,42 +90,54 @@
     }
     document.getElementById("button").addEventListener("click", playButtonClickSound);
 
+
+    // Variables to store selected mode, character, and player name
+    let selectedMode = '';
+    let selectedCharacter = '';
+    let playerName = '';
+
+    // Function to show a scene
+    function showScene(sceneId) {
+      document.querySelectorAll('div[id$="Scene"]').forEach(scene => scene.style.display = 'none');
+      document.getElementById(sceneId).style.display = 'block';
+    }
+
+    // Screen Toggler
+    function toggleScreen() {
+      showScene("modeSelectionScene");
+    }
+
+    // Mode Selection
+    function selectMode(mode) {
+      selectedMode = mode;
+      showScene("characterSelectionScene");
+    }
+
     // Character Selection
-    // Stores the user input as SelectedCharacter and playerName
-    var selectedCharacter = "";
-    var playerName = "";
-    // Function selectCharcter takes the parameter (character)
-    // var characterButtons takes all things with the class character-button and stores them in a variable (characterButtons)
-    // CharacterButtons.foreeach basically deselects all unchosen character buttons
-    // selectedCharacter = character assigns character parameter to the varaible selected character
-    // doc.query sleects character button thats the same as character parameter and adds it to the class selected
     function selectCharacter(character) {
       var characterButtons = document.querySelectorAll('.character-button');
       characterButtons.forEach(button => button.classList.remove('selected'));
       selectedCharacter = character;
       document.querySelector(`.character-button[data-character="${character}"]`).classList.add('selected');
-      // cat select sound for when button is clicked it plays cat sound
-      var catSelectSound = document.getElementById("catSelect");;
+
+      // Play selection sound
+      var catSelectSound = document.getElementById("catSelect");
       catSelectSound.play();
     }
-    // Takes name input and reassigns it as playername 
-    // Checks if empty, if it is then alerts 
-    // Checks if there is a selected character, if not then alert
-    // if both conditions meet then moves to URL with character and player as parameters 
+
+    // Navigate to the selected mode with character and name
     function navigateToLobby() {
       playerName = document.getElementById("nameInput").value;
-      if (playerName.trim() === "") {
-        alert("Please enter your name!");
+      if (playerName.trim() === '') {
+        alert('Please enter your name!');
         return;
       }
       if (!selectedCharacter) {
-        alert("Please select a character!");
+        alert('Please select a character!');
         return;
       }
-      window.location.href = "main.html?character=" + encodeURIComponent(selectedCharacter) + "&name=" + encodeURIComponent(playerName);
+      window.location.href = selectedMode + '?character=' + encodeURIComponent(selectedCharacter) + '&name=' + encodeURIComponent(playerName);
     }
   </script>
-  
 </body>
-  
 </html>

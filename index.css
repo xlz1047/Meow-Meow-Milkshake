@@ -58,8 +58,22 @@
     transition: all 0.3s ease-in-out;
   }
 
-  /* Selection Scene */
-  #selectionScene {
+  /* Mode Selection Scene */
+  #modeSelectionScene {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1280px;
+    height: 720px;
+    border: 5px solid #000;
+    margin: auto;
+    position: absolute;
+    align-items: center;
+    background-color: #dbbfa3;
+  }
+
+  /* Cat Selection Scene */
+  #characterSelectionScene {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
