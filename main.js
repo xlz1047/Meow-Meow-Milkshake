@@ -518,7 +518,8 @@ document.getElementById("checkOrderButton").addEventListener("click", function()
 function checkOrders() {
   // Toggle back to the ordering scene to display the result
   toggleScreen("orderingScene");
-
+  // Block the orderSpeakBubble in orderingScene
+  document.getElementById("orderSpeakBubble").style.display = "none";
   console.log("Selected Order:", selectedOrder);
   console.log("Random Order:", randomOrder);
   let score = 0;
@@ -558,7 +559,9 @@ function checkOrders() {
     animateCustomer();
     // Generate a new random order for the next round
     randomOrder = randomizeSelections();
-  }, 1000); // Adjust the delay as needed
+    // Block the orderSpeakBubble in orderingScene
+    document.getElementById("orderSpeakBubble").style.display = "block";
+  }, 2000); // Adjust the delay as needed
 }
 
 // Function to clear the result score image and text
@@ -607,6 +610,6 @@ scoreContainer.style.display = "block";
 //function to update the coins
 var coins = 0;
 function updateCoin() {
-  var coinDisplay = document.getElementById("coinDisplay");
-  coinDisplay.textContent = "Coins: " + coins;
+  var coinCount = document.getElementById("coinCount");
+  coinCount.textContent = coins;
 }
