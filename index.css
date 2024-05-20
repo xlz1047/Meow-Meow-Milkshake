@@ -1,169 +1,169 @@
-  .startButton {
-      position: absolute;
-      bottom: -10%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-  }
-
-  #select { /* Text Box for Selection */
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      font-size: 25px;
-  }
-
-  #name { /* Text Box for Name */
-      position: absolute;
-      bottom: 5%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      font-size: 25px;
-  }
-
-  .image-button {
-      display: inline-block;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-      border-radius: 8px;
-  }
-
-  /* Loading Scene */
-  #loadingScene {
-    top: 50%;
+.startButton {
+    position: absolute;
+    bottom: -10%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 1280px;
-    height: 720px;
-    border: 5px solid #000;
-    margin: auto;
-    position: absolute;
-    background-image: url(./Assets/Background/loadingBackground.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #dbbfa3;
-  }
-
-  #button {
     border-radius: 50%;
-  }
+}
 
-  #button:hover {
-    filter:brightness(0.8);
-    transition: all 0.3s ease-in-out;
-  }
-
-  /* Mode Selection Scene */
-  #modeSelectionScene {
-    top: 50%;
+#select { /* Text Box for Selection */
+    position: absolute;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 1280px;
-    height: 720px;
-    border: 5px solid #000;
-    margin: auto;
-    position: absolute;
-    align-items: center;
-    background-color: #dbbfa3;
-  }
+    border-radius: 50%;
+    font-size: 25px;
+}
 
-  /* Cat Selection Scene */
-  #characterSelectionScene {
-    top: 50%;
+#name { /* Text Box for Name */
+    position: absolute;
+    bottom: 5%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 1280px;
-    height: 720px;
-    border: 5px solid #000;
-    margin: auto;
-    position: absolute;
-    align-items: center;
-    background-color: #dbbfa3;
-  }
+    border-radius: 50%;
+    font-size: 25px;
+}
 
-  /* Music Toggle */
-  #musicToggle{
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    cursor: pointer;
-    width: 40px;
-  }
-
-  /* Credits */
-  #credits {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    width: 30%;
-  }
-
-  /* Character Selection Styling */
-  .character-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 125px;
-  }
-
-  .character-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    margin: 0 10px;
-    outline: none;
-    position: relative
-  }
-
-  .character-button img {
-    width: 290px;
-    height: 450px;
-    border-radius: 8px;
-  }
-
-  .character-button.selected::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 2px solid white;
-    border-radius: 8px;
-    box-sizing: border-box;
-    pointer-events: none;
-  }
-
-  .character-button:hover img {
-    filter:brightness(0.8);
-    transition: all 0.3s ease-in-out;
-  }
-
-  #nameInput {
-    margin-top: 10px;
-  }
-
-  #doneButton {
+.image-button {
     display: inline-block;
     position: relative;
     overflow: hidden;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
     border-radius: 8px;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: #8d6e5d;
-    border: 4px solid black;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    font-size: 20px;
-  }
+}
 
-  #doneButton:hover {
-    filter:brightness(0.8);
-  }
+/* Loading Scene */
+#loadingScene {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1280px;
+  height: 720px;
+  border: 5px solid #000;
+  margin: auto;
+  position: absolute;
+  background-image: url(./Assets/Background/loadingBackground.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #dbbfa3;
+}
+
+#button {
+  border-radius: 50%;
+}
+
+#button:hover {
+  filter:brightness(0.8);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Mode Selection Scene */
+#modeSelectionScene {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1280px;
+  height: 720px;
+  border: 5px solid #000;
+  margin: auto;
+  position: absolute;
+  align-items: center;
+  background-color: #dbbfa3;
+}
+
+/* Cat Selection Scene */
+#characterSelectionScene {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1280px;
+  height: 720px;
+  border: 5px solid #000;
+  margin: auto;
+  position: absolute;
+  align-items: center;
+  background-color: #dbbfa3;
+}
+
+/* Music Toggle */
+#musicToggle{
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  cursor: pointer;
+  width: 40px;
+}
+
+/* Credits */
+#credits {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 30%;
+}
+
+/* Character Selection Styling */
+.character-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 125px;
+}
+
+.character-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0 10px;
+  outline: none;
+  position: relative
+}
+
+.character-button img {
+  width: 290px;
+  height: 450px;
+  border-radius: 8px;
+}
+
+.character-button.selected::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid white;
+  border-radius: 8px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.character-button:hover img {
+  filter:brightness(0.8);
+  transition: all 0.3s ease-in-out;
+}
+
+#nameInput {
+  margin-top: 10px;
+}
+
+#doneButton {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  border-radius: 8px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #8d6e5d;
+  border: 4px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 20px;
+}
+
+#doneButton:hover {
+  filter:brightness(0.8);
+}
