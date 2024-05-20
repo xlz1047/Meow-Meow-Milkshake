@@ -22,9 +22,11 @@
 
   <!-- Mode Selection Scene -->
   <div id="modeSelectionScene" style="display: none;">
-    <div class="text">Select your Mode</div>
-    <button id="gameModeButton" onclick="selectMode('game.html')">Game Mode</button>
-    <button id="plotModeButton" onclick="selectMode('plot.html')">Plot Mode</button>
+    <div class="text" id="select">Select your Mode</div>
+    <div class="modeButton">
+      <button id="gameModeButton" onclick="selectMode('game.html')">Game Mode</button>
+      <button id="plotModeButton" onclick="selectMode('plot.html')">Plot Mode</button>
+    </div>
   </div>
 
   <!-- Character Selection Scene -->
@@ -68,7 +70,7 @@
       var musicStatus = document.getElementById("musicStatus");
       if (music.paused) {
         music.play();
-        musicToggle.src = "./Assets/musicOn.png";
+        musicToggle.src = "./Assets/Buttons/musicOn.png";
       } else {
         music.pause();
         musicToggle.src = "./Assets/Buttons/musicOff.png";
