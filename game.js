@@ -288,7 +288,7 @@ function displayImagesOneByOne(urls, displaySpeed) {
 
       // Hide the orderingScene when transitioning to the kitchenScene
       document.getElementById("orderingScene").style.display = "none";
-    }, 1000); // 1 seconds delay before transitioning to the kitchen scene
+    }, 500); // 1 seconds delay before transitioning to the kitchen scene
   }
 }
 
@@ -303,7 +303,7 @@ document.getElementById("orderButton").addEventListener("click", function() {
   var displayUrls = generateDisplayUrls(randomOrder);
 
   // Test the displayImagesOneByOne function
-  var displaySpeed = 1000; // milliseconds (adjust as needed)
+  var displaySpeed = 500; // milliseconds (adjust as needed)
 
   displayImagesOneByOne(displayUrls, displaySpeed);
 });

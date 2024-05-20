@@ -22,16 +22,16 @@ document.removeEventListener("click", arguments.callee);
 
 // Screen Toggler
 function toggleScreen(sceneId) {
-var scenes = ["cafeScene", "kitchenScene", "orderingScene"];
-// Loop through scene elements and display the selected scene
-for (var i = 0; i < scenes.length; i++) {
-    var scene = document.getElementById(scenes[i]);
-    if (scenes[i] === sceneId) {
-    scene.style.display = "block";
-    } else {
-    scene.style.display = "none";
+    var scenes = ["cafeScene", "kitchenScene", "orderingScene"];
+    // Loop through scene elements and display the selected scene
+    for (var i = 0; i < scenes.length; i++) {
+        var scene = document.getElementById(scenes[i]);
+        if (scenes[i] === sceneId) {
+        scene.style.display = "block";
+        } else {
+        scene.style.display = "none";
+        }
     }
-}
 }
 
 // Chosen Player Character Display
