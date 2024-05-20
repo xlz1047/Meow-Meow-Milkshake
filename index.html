@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meow Meow Milkshakes</title>
   <!-- Icon code -->
-  <link rel="icon" type="image/png" href="Assets/buttons/icon.png">
+  <link rel="icon" type="image/png" href="Assets/Buttons/icon.png">
   <!-- Styling CSS-->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
   <div id="loadingScene">
     <div class="container">
       <a href="#" id="image-button" onclick="toggleScreen()">
-        <img src="./Assets/buttons/loadingButton.png" id="button" alt="Button Image" width="250" height="250">
+        <img src="./Assets/Buttons/loadingButton.png" id="button" alt="Button Image" width="250" height="250">
       </a>
     </div>
   </div>
@@ -44,10 +44,10 @@
   </div>
   
   <!-- Credits -->
-  <img id="credits" src="./Assets/text/names.png">
+  <img id="credits" src="./Assets/Text/names.png">
 
   <!-- Background Music -->
-  <img id="musicToggle" src="./Assets/buttons/musicOn.png" onclick="toggleMusic()">
+  <img id="musicToggle" src="./Assets/Buttons/musicOn.png" onclick="toggleMusic()">
   <audio id="backgroundMusic" autoplay loop>
     <source src="./BackgroundMusic/Cozy-Place(Loading).mp3" type="audio/mp3">
   </audio>
@@ -70,7 +70,7 @@
         musicToggle.src = "./Assets/musicOn.png";
       } else {
         music.pause();
-        musicToggle.src = "./Assets/buttons/musicOff.png";
+        musicToggle.src = "./Assets/Buttons/musicOff.png";
       }
     }
     document.addEventListener("click", function () {

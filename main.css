@@ -18,7 +18,7 @@ body {
 
 html {
   background-color: #8d6e5d;
-  background-image: url(./Assets/background/backgroundSquare.png);
+  background-image: url(./Assets/Background/backgroundSquare.png);
   background-size: 200px 200px;
   background-repeat: repeat;
 }
@@ -65,19 +65,19 @@ html {
 }
 
 #cafeScene {
-  background-image: url(./Assets/background/cafeDay.png);
+  background-image: url(./Assets/Background/cafeDay.png);
 }
 
 #kitchenScene {
-  background-image: url(./Assets/background/kitchenBackground.png);
+  background-image: url(./Assets/Background/kitchenBackground.png);
 }
 #orderingScene {
-  background-image: url(./Assets/background/servingDay.png);
+  background-image: url(./Assets/Background/servingDay.png);
   z-index: 1;
 }
   
 #counter {
-  background-image: url(./Assets/background/servingCounter.png);
+  background-image: url(./Assets/Background/servingCounter.png);
   z-index: 3;
 }
 

@@ -20,7 +20,7 @@
 
   html {
     background-color: #8d6e5d;
-    background-image: url(./Assets/background/backgroundSquare.png);
+    background-image: url(./Assets/Background/backgroundSquare.png);
     background-size: 200px 200px;
     background-repeat: repeat;
   }
@@ -131,7 +131,7 @@
     border: 5px solid #000;
     margin: auto;
     position: absolute;
-    background-image: url(./Assets/background/loadingBackground.png);
+    background-image: url(./Assets/Background/loadingBackground.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
