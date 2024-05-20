@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meow Meow Milkshake</title>
+  <link rel="stylesheet" href="plot.css">
+  <link rel="stylesheet" href="kitchen.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <!-- Kitchen Scene -->
+  <div id="kitchenScene" style="display: none;">
+    <!--
+    <div class="button">
+      <img id="toCafeButton" src="./Assets/Buttons/cafe.png" onclick="toggleScreen('cafeScene')">
+    </div>
+    -->
+    <img id="cup" src="./Kitchen/cup.png">
+    <img id="blender" src="./Kitchen/blender.png" onclick="displayBlendedIceCream()">
+
+    <!-- Blended Milkshakes -->
+    <div id="blendedDisplay">
+      <img id="vanillaBlended" src="./Milkshakes/IceCream/vanillaFull.png" style="display:none;">
+      <img id="strawberryBlended" src="./Milkshakes/IceCream/strawberryFull.png" style="display:none;">
+      <img id="matchaBlended" src="./Milkshakes/IceCream/matchaFull.png" style="display:none;">
+      <img id="birthdayCakeBlended" src="./Milkshakes/IceCream/birthdayCakeFull.png" style="display:none;">
+      <img id="chocolateBlended" src="./Milkshakes/IceCream/chocolateFull.png" style="display:none;">
+      <img id="coffeeBlended" src="./Milkshakes/IceCream/coffeeFull.png" style="display:none;">
+      <img id="mangoBlended" src="./Milkshakes/IceCream/mangoFull.png" style="display:none;">
+      <img id="cookieDoughBlended" src="./Milkshakes/IceCream/cookieDoughFull.png" style="display:none;">
+    </div>
+
+    <!-- Topping Buttons (Coded by Maggie) --> 
+    <div id="kitchenButtons" id="toppingButtons">
+      <img id="biscoff" src="./Kitchen/Topping/biscoff.png" onclick="if (selectTopping('biscoff')) displayImage('secondImage1')">
+      <img id="pocky" src="./Kitchen/Topping/pocky.png" onclick="if (selectTopping('pocky')) displayImage('secondImage2')">
+      <img id="strawberryTopping" src="./Kitchen/Topping/strawberryTopping.png" onclick="if (selectTopping('strawberryTopping')) displayImage('secondImage3')">
+      <img id="blueberry" src="./Kitchen/Topping/blueberry.png" onclick="if (selectTopping('blueberry')) displayImage('secondImage4')">
+      <img id="cherry" src="./Kitchen/Topping/cherry.png" onclick="if (selectTopping('cherry')) displayImage('secondImage5')">
+      <img id="sprinkles" src="./Kitchen/Topping/sprinkles.png" onclick="if (selectTopping('sprinkles')) displayImage('secondImage6')">
+      <img id="grahamCrackers" src="./Kitchen/Topping/grahamCrackers.png" onclick="if (selectTopping('grahamCrackers')) displayImage('secondImage7')">
+      <img id="oreo" src="./Kitchen/Topping/oreo.png" onclick="if (selectTopping('oreo')) displayImage('secondImage8')">
+      <img id="marshmallow" src="./Kitchen/Topping/marshmallow.png" onclick="if (selectTopping('marshmallow')) displayImage('secondImage9')">
+      <img id="chocolateChips" src="./Kitchen/Topping/chocolateChips.png" onclick="if (selectTopping('chocolateChips')) displayImage('secondImage10')">
+    </div>
+    
+    <!-- Topping Display (Coded by Maggie) -->
+    <div id="toppingDisplay">
+      <img id="secondImage1" class="biscoffDis" src="./Milkshakes/Topping/biscoff.png" style="display:none;">
+      <img id="secondImage2" class="pockyDis" src="./Milkshakes/Topping/pocky.png" style="display:none;">
+      <img id="secondImage3" class="strawberryDis" src="./Milkshakes/Topping/strawberry.png" style="display:none;">
+      <img id="secondImage4" class="blueberryDis" src="./Milkshakes/Topping/blueberry.png" style="display:none;">
+      <img id="secondImage5" class="cherryDis" src="./Milkshakes/Topping/cherry.png" style="display:none;">
+      <img id="secondImage6" class="sprinklesDis" src="./Milkshakes/Topping/sprinkles.png" style="display:none;">
+      <img id="secondImage7" class="grahamDis" src="./Milkshakes/Topping/grahamCrackers.png" style="display:none;">
+      <img id="secondImage8" class="oreoDis" src="./Milkshakes/Topping/oreo.png" style="display:none;">
+      <img id="secondImage9" class="marshDis" src="./Milkshakes/Topping/marshmallow.png" style="display:none;">
+      <img id="secondImage10" class="chocDis" src="./Milkshakes/Topping/chocolateChips.png" style="display:none;">
+    </div>
+
+    <!-- Syrup Buttons -->
+    <div id="kitchenButtons" id="syrupButtons">
+      <img id="peanutButter" src="./Kitchen/Syrup/peanutButter.png" onclick="if (selectSyrup('peanutButter')) displayImage('secondImage11')">
+      <img id="chocolateSyrup" src="./Kitchen/Syrup/chocolateSyrup.png" onclick="if (selectSyrup('chocolateSyrup')) displayImage('secondImage12')">
+      <img id="caramel" src="./Kitchen/Syrup/caramel.png" onclick="if (selectSyrup('caramel')) displayImage('secondImage13')">
+      <img id="strawberrySyrup" src="./Kitchen/Syrup/strawberrySyrup.png" onclick="if (selectSyrup('strawberrySyrup')) displayImage('secondImage14')">
+    </div>
+
+    <!-- Syrup Display -->
+    <div id="syrupDisplay">
+      <img id="secondImage11" src="./Milkshakes/Syrup/peanutButter.png" style="display:none;">
+      <img id="secondImage12" src="./Milkshakes/Syrup/chocolate.png" style="display:none;">
+      <img id="secondImage13" src="./Milkshakes/Syrup/caramel.png" style="display:none;">
+      <img id="secondImage14" src="./Milkshakes/Syrup/strawberry.png" style="display:none;">
+    </div>
+  
+    <!-- Milk Buttons -->
+    <div id="kitchenButtons" id="milkButtons">
+      <img id="whole" src="./Kitchen/Milk/whole.png" onclick="if (selectMilk('whole')) displayImage('secondImage15')">
+      <img id="oat" src="./Kitchen/Milk/oat.png" onclick="if (selectMilk('oat')) displayImage('secondImage16')">
+      <img id="almond" src="./Kitchen/Milk/almond.png" onclick="if (selectMilk('almond')) displayImage('secondImage17')">
+    </div>
+
+    <!-- Milk Display -->
+    <div id="milkDisplay">
+      <img id="secondImage15" src="./Milkshakes/Milk/whole.png" style="display:none;">
+      <img id="secondImage16" src="./Milkshakes/Milk/oat.png" style="display:none;">
+      <img id="secondImage17" src="./Milkshakes/Milk/almond.png" style="display:none;">
+    </div>
+
+    <!-- Ice Cream Buttons -->
+    <div id="kitchenButtons" id="iceCreamButtons">
+      <img id="vanilla" src="./Kitchen/IceCream/vanilla.png" onclick="if (selectIceCream('vanilla')) displayImage('secondImage18')">
+      <img id="strawberry" src="./Kitchen/IceCream/strawberry.png" onclick="if (selectIceCream('strawberry')) displayImage('secondImage19')">
+      <img id="matcha" src="./Kitchen/IceCream/matcha.png" onclick="if (selectIceCream('matcha')) displayImage('secondImage20')">
+      <img id="birthdayCake" src="./Kitchen/IceCream/birthdayCake.png" onclick="if (selectIceCream('birthdayCake')) displayImage('secondImage21')">
+      <img id="chocolate" src="./Kitchen/IceCream/chocolate.png" onclick="if (selectIceCream('chocolate')) displayImage('secondImage22')">
+      <img id="coffee" src="./Kitchen/IceCream/coffee.png" onclick="if (selectIceCream('coffee')) displayImage('secondImage23')">
+      <img id="mango" src="./Kitchen/IceCream/mango.png" onclick="if (selectIceCream('mango')) displayImage('secondImage24')">
+      <img id="cookieDough" src="./Kitchen/IceCream/cookieDough.png" onclick="if (selectIceCream('cookieDough')) displayImage('secondImage25')">
+    </div>
+
+    <!-- Ice Cream Display -->
+    <div id="iceCreamDisplay">
+      <img id="secondImage18" src="./Milkshakes/IceCream/vanilla.png" style="display:none;">
+      <img id="secondImage19" src="./Milkshakes/IceCream/strawberry.png" style="display:none;">
+      <img id="secondImage20" src="./Milkshakes/IceCream/matcha.png" style="display:none;">
+      <img id="secondImage21" src="./Milkshakes/IceCream/birthdayCake.png" style="display:none;">
+      <img id="secondImage22" src="./Milkshakes/IceCream/chocolate.png" style="display:none;">
+      <img id="secondImage23" src="./Milkshakes/IceCream/coffee.png" style="display:none;">
+      <img id="secondImage24" src="./Milkshakes/IceCream/mango.png" style="display:none;">
+      <img id="secondImage25" src="./Milkshakes/IceCream/cookieDough.png" style="display:none;">
+    </div>
+  
+    <!-- Whipped Cream Buttons -->
+    <div id="kitchenButtons" id="whipButtons">
+      <img id="chocolateCream" src="./Kitchen/WhippedCream/chocolateCream.png" onclick="if (selectWhippedCream('chocolateCream')) displayImage('secondImage26')">
+      <img id="vanillaCream" src="./Kitchen/WhippedCream/vanillaCream.png" onclick="if (selectWhippedCream('vanillaCream')) displayImage('secondImage27')">
+    </div>
+    
+    <!-- Whipped Cream Display -->
+    <div id="whipDisplay">
+      <img id="secondImage26" src="./Milkshakes/WhippedCream/chocolate.png" style="display:none;">
+      <img id="secondImage27" src="./Milkshakes/WhippedCream/vanilla.png" style="display:none;">
+    </div>
+    
+    <!-- Check Order Button -->
+    <img id="checkOrderButton" src="./Kitchen/doneButton.png" onclick="toggleScreen('orderingScene')">
+
+    <!-- Trash Button -->
+    <img id="trashButton" src="./Kitchen/trash_button.png" onclick="trashOrder()">
+
+  </div>
+  
+  <!-- Ordering Scene -->
+  <div id="orderingScene" style="display: none;">
+    <div id="counter"></div>
+    <div class="characterCounter" id="characterCounter"></div>
+    <div id="bubble">
+      <img id="orderSpeakBubble" src="./Assets/Buttons/buttonBlank.png" style="display: block;">
+    </div>
+    <div id="randomOrderImg" style="display: none;"></div>
+    <div id="score" style="display: none;">
+      <img id="resultImage" src="" alt="Result Image">
+      <div id="resultText"></div>
+    </div>
+  </div>
+
+  <!-- Credits -->
+  <img id="credits" src="./Assets/Text/names.png">
+
+  <!-- Background Music -->
+  <img id="musicToggle" src="./Assets/Buttons/musicOn.png" onclick="toggleMusic()">
+  
+  <audio id="backgroundMusic" autoplay loop>
+    <source src="./BackgroundMusic/Colorful-Flowers(Cafe).mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Sound Effects -->
+  <audio id="buttonClick">
+    <source src="./SoundEffects/buttonClick.mp3" type="audio/mp3">
+  </audio>
+  <audio id="scoop">
+    <source src="./SoundEffects/scoop.wav" type="audio/wav">
+  </audio>
+  <audio id="carton">
+    <source src="./SoundEffects/carton.wav" type="audio/wav">
+  </audio>
+  <audio id="mixer">
+    <source src="./SoundEffects/mixer.mp3" type="audio/mp3">
+  </audio>
+  <audio id="whip">
+    <source src="./SoundEffects/whip.wav" type="audio/wav">
+  </audio>
+  <audio id="toppings">
+    <source src="./SoundEffects/toppings.mp3" type="audio/mp3">
+  </audio>
+   
+</body>
+<script src="plot.js"></script>
+
+</html>

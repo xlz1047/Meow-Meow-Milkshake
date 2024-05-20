@@ -1,436 +1,436 @@
 /*---------------Additional styles for various Kitchen elements---------------*/
 /*Blender + Cup Styling */
 #blender {
-    position: absolute;
-    cursor: pointer;
-    top: 5px;
-    left: 545px;
-  }
-  
-  #cup {
-    position: absolute;
-    top: 430px;
-    left: 600px;
-  }
-  
-  #kitchenButtons img {
-    position: absolute;
-    cursor: pointer;
-    z-index: 8;
-  }
-  
-  /* Topping Buttons */
-  #biscoff {
-    top: 28px;
-    left: 973px;
-  }
-  
-  #pocky {
-    top: 261px;
-    left: 972px;
-  }
-  
-  #strawberryTopping {
-    top: 168px;
-    left: 1100px;
-    height: 132px;
-    width: 147px;
-  }
-  
-  #blueberry {
-    top: 403px;
-    left: 1109px;
-    width: 139px;
-    height: 135px;
-  }
-  
-  #cherry {
-    top: 42px;
-    left: 1102px;
-    width: 144px;
-    height: 142px;
-  }
-  
-  #sprinkles {
-    height: 144px;
-    top: 143px;
-    left: 972px;
-  }
-  
-  #grahamCrackers {
-    top: 525px;
-    left: 959px;
-    width: 150px;
-    height: 130px;
-  }
-  
-  #oreo {
-    top: 390px;
-    left: 965px;
-    width: 137px;
-    height: 164px;
-  }
-  
-  #marshmallow {
-    top: 278px;
-    left: 1108px;
-    width: 134px;
-    height: 157px
-  }
-  
-  #chocolateChips {
-    top: 515px;
-    left: 1110px;
-    width: 134px;
-    height: 157px;
-  }
-  
-  /* Syrup Buttons */
-  #peanutButter {
-    top: 80px;
-    left: 830px;
-    width: 146px;
-    height: 172px;
-  }
-  
-  #chocolateSyrup {
-    top: 203px;
-    left: 830px;
-    width: 146px;
-    height: 172px;
-  }
-  
-  #caramel {
-    top: 333px;
-    left: 839px;
-    width: 146px;
-    height: 172px;
-  }
-  
-  #strawberrySyrup {
-    top: 460px;
-    left: 831px;
-    width: 146px;
-    height: 172px;
-  }
-  
-  /* Milk Buttons */
-  #whole {
-    top: 70px;
-    left: 370px;
-    width: 160px;
-    height: 190px;
-  }
-  
-  #oat {
-    top: 260px;
-    left: 370px;
-    width: 160px;
-    height: 190px;
-  }
-  
-  #almond {
-    top: 448px;
-    left: 370px;
-    width: 160px;
-    height: 190px;
-  }
-  
-  /* Ice Cream Buttons */
-  #vanilla {
-    top: 60px;
-    left: 35px;
-    width: 174px;
-    height: 190px;
-  }
-  
-  #strawberry {
-    top: 184px;
-    left: 33px;
-    width: 174px;
-    height: 205px;
-  }
-  
-  #matcha {
-    top: 340px;
-    left: 33px;
-    width: 174px;
-    height: 200px;
-  }
-  
-  #birthdayCake {
-    top: 474px;
-    left: 33px;
-    width: 174px;
-    height: 200px;
-  }
-  
-  #chocolate {
-    top: 46px;
-    left: 195px;
-    width: 176px;
-    height: 166px;
-  }
-  
-  #coffee {
-    top: 200px;
-    left: 196px;
-    width: 174px;
-    height: 157px;
-  }
-  
-  #mango {
-    top: 332px;
-    left: 205px;
-    width: 167px;
-    height: 170px;
-  }
-  
-  #cookieDough {
-    top: 488px;
-    left: 217px;
-    width: 154px;
-    height: 143px;
-  }
-  
-  /* Whipped Cream Buttons */
-  #chocolateCream {
-    top: 83px;
-    left: 748px;
-    width: 113px;
-    height: 195px;
-  }
-  
-  #vanillaCream {
-    top: 255px;
-    left: 751px;
-    width: 117px;
-    height: 195px;
-  }
-  
-  /*----------Displaying Elements----------*/
-  
-  /* Whipped Cream Display */
-  #whipDisplay img {
-    position: absolute;
-    z-index: 7;
-    top: 381px;
-    left: 600px;
-    width: 97px;
-    height: 112px;
-  }
-  
-  /* Milk Display */
-  #milkDisplay img {
-    position: absolute;
-    z-index: 6;
-    top: 432px;
-    left: 571px;
-    width: 164px;
-    height: 193px;
-  }
-  
-  /* Syrup Display */
-  #syrupDisplay img{
-    position: absolute;
-    z-index: 8;
-    top: 381px;
-    left: 600px;
-    width: 97px;
-    height: 112px;
-  }
-  
-  /* Ice Cream Half Display */
-  #iceCreamDisplay img {
-    position: absolute;
-    z-index: 5;
-    top: 430px;
-    left: 569px;
-    width: 165px;
-    height: 200px;
-  }
-  
-  /* Topping Display */
-  .biscoffDis {
-    position: absolute;
-    z-index: 10;
-    top: 385px;
-    left: 647px;
-    width: 60px;
-    height: 70px;
-  }
-  
-  .pockyDis {
-    position: absolute;
-    z-index: 10;
-    top: 385px;
-    left: 647px;
-    width: 60px;
-    height: 70px;
-  }
-  
-  .sprinklesDis {
-    position: absolute;
-    z-index: 9;
-    top: 385px;
-    left: 599px;
-    width: 110px;
-    height: 90px;
-  }
-  
-  .grahamDis {
-    position: absolute;
-    z-index: 9;
-    top: 385px;
-    left: 592px;
-    width: 110px;
-    height: 90px;
-  }
-  
-  .oreoDis {
-    position: absolute;
-    z-index: 9;
-    top: 385px;
-    left: 600px;
-    width: 85px;
-    height: 93px;
-  }
-  
-  .marshDis {
-    position: absolute;
-    z-index: 9;
-    top: 385px;
-    left: 595px;
-    width: 108px;
-    height: 106px;
-  }
-  
-  .chocDis {
-    position: absolute;
-    z-index: 9;
-    top: 392px;
-    left: 620px;
-    width: 60px;
-    height: 55px;
-  }
-  
-  .strawberryDis {
-    position: absolute;
-    z-index: 9;
-    top: 392px;
-    left: 618px;
-    width: 60px;
-    height: 55px;
-  }
-  
-  .blueberryDis {
-    position: absolute;
-    z-index: 9;
-    top: 392px;
-    left: 621px;
-    width: 57px;
-    height: 59px;
-  }
-  
-  .cherryDis {
-    position: absolute;
-    z-index: 9;
-    top: 392px;
-    left: 612px;
-    width: 47px;
-    height: 50px;
-  }
-  
-  /*Blended Shakes Display Styling*/
-  #vanillaBlended {
-    position: absolute;
-    z-index: 7;
-    top: 430px;
-    left: 569px;
-    width: 165px;
-    height: 200px;
-  }
-  
-  #strawberryBlended {
-    position: absolute;
-    z-index: 7;
-    top: 430px;
-    left: 569px;
-    width: 165px;
-    height: 200px;
-  }
-  
-  #matchaBlended {
-    position: absolute;
-    z-index: 7;
-    top: 430px;
-    left: 569px;
-    width: 165px;
-    height: 200px;
-  }
-  
-  #birthdayCakeBlended {
-    position: absolute;
-    z-index: 7;
-    top: 430px;
-    left: 569px;
-    width: 165px;
-    height: 200px;
-  }
-  
-  #chocolateBlended {
-    position: absolute;
-    z-index: 7;
-    top: 430px;
-    left: 569px;
-    width: 165px;
-    height: 200px;
-  }
-  
-  #coffeeBlended {
-    position: absolute;
-    z-index: 7;
-    top: 430px;
-    left: 569px;
-    width: 165px;
-    height: 200px;
-  }
-  
-  #mangoBlended {
-    position: absolute;
-    z-index: 7;
-    top: 430px;
-    left: 569px;
-    width: 165px;
-    height: 200px;
-  }
-  
-  #cookieDoughBlended {
-    position: absolute;
-    z-index: 7;
-    top: 430px;
-    left: 569px;
-    width: 165px;
-    height: 200px;
-  }
-  
-  /*Check Order Button*/
-  #checkOrderButton {
-    position: absolute;
-    cursor: pointer;
-    top: 511px;
-    left: 738px;
-    width: 115px;
-    height: 90px;
-  }
-  
-  /*Trash Order Buton*/
-  #trashButton {
-    position: absolute;
-    cursor: pointer;
-    top: 645px;
-    left: 131px;
-    width: 170px;
-    height: 85px;
-  }
+  position: absolute;
+  cursor: pointer;
+  top: 5px;
+  left: 545px;
+}
+
+#cup {
+  position: absolute;
+  top: 430px;
+  left: 600px;
+}
+
+#kitchenButtons img {
+  position: absolute;
+  cursor: pointer;
+  z-index: 8;
+}
+
+/* Topping Buttons */
+#biscoff {
+  top: 28px;
+  left: 973px;
+}
+
+#pocky {
+  top: 261px;
+  left: 972px;
+}
+
+#strawberryTopping {
+  top: 168px;
+  left: 1100px;
+  height: 132px;
+  width: 147px;
+}
+
+#blueberry {
+  top: 403px;
+  left: 1109px;
+  width: 139px;
+  height: 135px;
+}
+
+#cherry {
+  top: 42px;
+  left: 1102px;
+  width: 144px;
+  height: 142px;
+}
+
+#sprinkles {
+  height: 144px;
+  top: 143px;
+  left: 972px;
+}
+
+#grahamCrackers {
+  top: 525px;
+  left: 959px;
+  width: 150px;
+  height: 130px;
+}
+
+#oreo {
+  top: 390px;
+  left: 965px;
+  width: 137px;
+  height: 164px;
+}
+
+#marshmallow {
+  top: 278px;
+  left: 1108px;
+  width: 134px;
+  height: 157px
+}
+
+#chocolateChips {
+  top: 515px;
+  left: 1110px;
+  width: 134px;
+  height: 157px;
+}
+
+/* Syrup Buttons */
+#peanutButter {
+  top: 80px;
+  left: 830px;
+  width: 146px;
+  height: 172px;
+}
+
+#chocolateSyrup {
+  top: 203px;
+  left: 830px;
+  width: 146px;
+  height: 172px;
+}
+
+#caramel {
+  top: 333px;
+  left: 839px;
+  width: 146px;
+  height: 172px;
+}
+
+#strawberrySyrup {
+  top: 460px;
+  left: 831px;
+  width: 146px;
+  height: 172px;
+}
+
+/* Milk Buttons */
+#whole {
+  top: 70px;
+  left: 370px;
+  width: 160px;
+  height: 190px;
+}
+
+#oat {
+  top: 260px;
+  left: 370px;
+  width: 160px;
+  height: 190px;
+}
+
+#almond {
+  top: 448px;
+  left: 370px;
+  width: 160px;
+  height: 190px;
+}
+
+/* Ice Cream Buttons */
+#vanilla {
+  top: 60px;
+  left: 35px;
+  width: 174px;
+  height: 190px;
+}
+
+#strawberry {
+  top: 184px;
+  left: 33px;
+  width: 174px;
+  height: 205px;
+}
+
+#matcha {
+  top: 340px;
+  left: 33px;
+  width: 174px;
+  height: 200px;
+}
+
+#birthdayCake {
+  top: 474px;
+  left: 33px;
+  width: 174px;
+  height: 200px;
+}
+
+#chocolate {
+  top: 46px;
+  left: 195px;
+  width: 176px;
+  height: 166px;
+}
+
+#coffee {
+  top: 200px;
+  left: 196px;
+  width: 174px;
+  height: 157px;
+}
+
+#mango {
+  top: 332px;
+  left: 205px;
+  width: 167px;
+  height: 170px;
+}
+
+#cookieDough {
+  top: 488px;
+  left: 217px;
+  width: 154px;
+  height: 143px;
+}
+
+/* Whipped Cream Buttons */
+#chocolateCream {
+  top: 83px;
+  left: 748px;
+  width: 113px;
+  height: 195px;
+}
+
+#vanillaCream {
+  top: 255px;
+  left: 751px;
+  width: 117px;
+  height: 195px;
+}
+
+/*----------Displaying Elements----------*/
+
+/* Whipped Cream Display */
+#whipDisplay img {
+  position: absolute;
+  z-index: 7;
+  top: 381px;
+  left: 600px;
+  width: 97px;
+  height: 112px;
+}
+
+/* Milk Display */
+#milkDisplay img {
+  position: absolute;
+  z-index: 6;
+  top: 432px;
+  left: 571px;
+  width: 164px;
+  height: 193px;
+}
+
+/* Syrup Display */
+#syrupDisplay img{
+  position: absolute;
+  z-index: 8;
+  top: 381px;
+  left: 600px;
+  width: 97px;
+  height: 112px;
+}
+
+/* Ice Cream Half Display */
+#iceCreamDisplay img {
+  position: absolute;
+  z-index: 5;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
+}
+
+/* Topping Display */
+.biscoffDis {
+  position: absolute;
+  z-index: 10;
+  top: 385px;
+  left: 647px;
+  width: 60px;
+  height: 70px;
+}
+
+.pockyDis {
+  position: absolute;
+  z-index: 10;
+  top: 385px;
+  left: 647px;
+  width: 60px;
+  height: 70px;
+}
+
+.sprinklesDis {
+  position: absolute;
+  z-index: 9;
+  top: 385px;
+  left: 599px;
+  width: 110px;
+  height: 90px;
+}
+
+.grahamDis {
+  position: absolute;
+  z-index: 9;
+  top: 385px;
+  left: 592px;
+  width: 110px;
+  height: 90px;
+}
+
+.oreoDis {
+  position: absolute;
+  z-index: 9;
+  top: 385px;
+  left: 600px;
+  width: 85px;
+  height: 93px;
+}
+
+.marshDis {
+  position: absolute;
+  z-index: 9;
+  top: 385px;
+  left: 595px;
+  width: 108px;
+  height: 106px;
+}
+
+.chocDis {
+  position: absolute;
+  z-index: 9;
+  top: 392px;
+  left: 620px;
+  width: 60px;
+  height: 55px;
+}
+
+.strawberryDis {
+  position: absolute;
+  z-index: 9;
+  top: 392px;
+  left: 618px;
+  width: 60px;
+  height: 55px;
+}
+
+.blueberryDis {
+  position: absolute;
+  z-index: 9;
+  top: 392px;
+  left: 621px;
+  width: 57px;
+  height: 59px;
+}
+
+.cherryDis {
+  position: absolute;
+  z-index: 9;
+  top: 392px;
+  left: 612px;
+  width: 47px;
+  height: 50px;
+}
+
+/*Blended Shakes Display Styling*/
+#vanillaBlended {
+  position: absolute;
+  z-index: 7;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
+}
+
+#strawberryBlended {
+  position: absolute;
+  z-index: 7;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
+}
+
+#matchaBlended {
+  position: absolute;
+  z-index: 7;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
+}
+
+#birthdayCakeBlended {
+  position: absolute;
+  z-index: 7;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
+}
+
+#chocolateBlended {
+  position: absolute;
+  z-index: 7;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
+}
+
+#coffeeBlended {
+  position: absolute;
+  z-index: 7;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
+}
+
+#mangoBlended {
+  position: absolute;
+  z-index: 7;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
+}
+
+#cookieDoughBlended {
+  position: absolute;
+  z-index: 7;
+  top: 430px;
+  left: 569px;
+  width: 165px;
+  height: 200px;
+}
+
+/*Check Order Button*/
+#checkOrderButton {
+  position: absolute;
+  cursor: pointer;
+  top: 511px;
+  left: 738px;
+  width: 115px;
+  height: 90px;
+}
+
+/*Trash Order Buton*/
+#trashButton {
+  position: absolute;
+  cursor: pointer;
+  top: 645px;
+  left: 131px;
+  width: 170px;
+  height: 85px;
+}
   
