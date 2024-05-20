@@ -166,8 +166,8 @@ html {
 #speakBubble img:hover,
 #kitchenButtons img:hover,
 #blender:hover,
-.checkOrderButton:hover,
-.trashButton:hover {
+#checkOrderButton:hover,
+#trashButton:hover {
   filter: brightness(0.8);
   transition: all 0.3s ease-in-out;
 }

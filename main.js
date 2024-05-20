@@ -338,6 +338,8 @@ function addToSelectedOrder(flavor) {
 function selectIceCream(flavor) {
   if (selectedIceCream === null) {
     selectedIceCream = flavor;
+    var scoopClickSound = document.getElementById("scoop");
+    scoopClickSound.play();
     addToSelectedOrder(flavor);
     return true;
   } else {
@@ -349,6 +351,8 @@ function selectMilk(flavor) {
   if (selectedMilk === null) {
     if (selectedIceCream) {
       selectedMilk = flavor
+      var milkClickSound = document.getElementById("carton");
+      milkClickSound.play();
       addToSelectedOrder(flavor);
       return true;
     } else {
@@ -364,6 +368,8 @@ function selectWhippedCream(flavor) {
   if (selectedWhippedCream === null) {
     if (selectedIceCream && selectedMilk && blendedIceCream) {
       selectedWhippedCream = flavor
+      var whipClickSound = document.getElementById("whip");
+      whipClickSound.play();
       addToSelectedOrder(flavor);
       return true;
     } else {

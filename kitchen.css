@@ -415,7 +415,7 @@
   }
   
   /*Check Order Button*/
-  .checkOrderButton {
+  #checkOrderButton {
     position: absolute;
     cursor: pointer;
     top: 511px;
@@ -425,7 +425,7 @@
   }
   
   /*Trash Order Buton*/
-  .trashButton {
+  #trashButton {
     position: absolute;
     cursor: pointer;
     top: 645px;

@@ -141,10 +141,10 @@
     </div>
     
     <!-- Check Order Button -->
-    <img class="checkOrderButton" id="checkOrderButton" src="./Kitchen/doneButton.png" onclick="toggleScreen('orderingScene')">
+    <img id="checkOrderButton" src="./Kitchen/doneButton.png" onclick="toggleScreen('orderingScene')">
 
     <!-- Trash Button -->
-    <img class="trashButton" id="trashButton" src="./Kitchen/trash_button.png" onclick="trashOrder()">
+    <img id="trashButton" src="./Kitchen/trash_button.png" onclick="trashOrder()">
 
   </div>
   
@@ -174,17 +174,26 @@
   
   <audio id="backgroundMusic" autoplay loop>
     <source src="./BackgroundMusic/Colorful-Flowers(Cafe).mp3" type="audio/mp3">
-    Your browser does not support the audio element.
   </audio>
 
   <!-- Sound Effects -->
   <audio id="buttonClick">
     <source src="./SoundEffects/buttonClick.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
+  </audio>
+  <audio id="scoop">
+    <source src="./SoundEffects/scoop.wav" type="audio/wav">
+  </audio>
+  <audio id="carton">
+    <source src="./SoundEffects/carton.wav" type="audio/wav">
+  </audio>
+  <audio id="mixer">
+    <source src="./SoundEffects/mixer.mp3" type="audio/mp3">
+  </audio>
+  <audio id="whip">
+    <source src="./SoundEffects/whip.wav" type="audio/wav">
   </audio>
   <audio id="toppings">
     <source src="./SoundEffects/toppings.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
   </audio>
 
 </body>
