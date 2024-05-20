@@ -1,0 +1,183 @@
+/* To cafe/kitchen buttons */
+.button {
+    position: absolute;
+    cursor: pointer;
+    top: -5px;
+    left: 10px;
+  }
+  
+  .button img{
+    width: 80%;
+    height: 80%;
+  }
+  
+  /* Stableing them */
+  #musicToggle, #credits {
+    display: block !important;
+  }
+  
+  /* Scene styles */
+  #cafeScene,
+  #kitchenScene,
+  #orderingScene,
+  #counter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1280px;
+    height: 720px;
+    border: 5px solid #000;
+    margin: auto;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  #cafeScene {
+    background-image: url(./Assets/Background/cafeDay.png);
+  }
+  
+  #kitchenScene {
+    background-image: url(./Assets/Background/kitchenBackground.png);
+  }
+  #orderingScene {
+    background-image: url(./Assets/Background/servingDay.png);
+    z-index: 1;
+  }
+    
+  #counter {
+    background-image: url(./Assets/Background/servingCounter.png);
+    z-index: 3;
+  }
+  
+  .characterCounter {
+    position: absolute;
+    z-index: 2;
+    bottom: 05px;
+    width: 350px;
+    height: 500px;
+    top: 30%;
+    right: 30%;
+  }
+  
+  #bubble {
+    position: relative;
+    width: 360px;
+    height: 315px;
+    top: 70px;
+    left: 850px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #orderSpeakBubble {
+    position: absolute;
+    top: 5px;
+    width: 350px;
+    height: 350px;
+    z-index: 4;
+  }
+  
+  /* Music toggle and credits */
+  #musicToggle{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    cursor: pointer;
+    width: 40px;
+  }
+  
+  #credits {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 30%;
+  }
+  
+  /* To cafe/kitchen button container */
+  .container {
+    top: 50px;
+    left: 75px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    text-align: center;
+  }
+  
+  .character {
+    width: 141px;
+    height: 263px;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    margin-top: 20%;
+  }
+  
+  #player {
+    position: absolute;
+    top: 220px;
+    left: 150px;
+  }
+  
+  #player img {
+    height: 300px;
+  }
+  
+  #speakBubble img {
+    position: absolute;
+    cursor: pointer;
+    right: 600px;
+    margin-top: 150px;
+  }
+  
+  /* All Button Hover Effects */
+  .button:hover,
+  #speakBubble img:hover,
+  #kitchenButtons img:hover,
+  #blender:hover,
+  #checkOrderButton:hover,
+  #trashButton:hover {
+    filter: brightness(0.8);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #orderingScene.show #score {
+    display: block;
+  }
+  
+  #orderSpeakBubble {
+    display: block;
+  }
+  #checkOrderButton:active + #orderingScene #orderSpeakBubble {
+    display: block;
+    z-index: 6;
+  }
+  
+  #score {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 8;
+  }
+  
+  #resultImage {
+    position: absolute;
+    top: -286px;
+    left: calc(50% + 218px);
+    width: 350px;
+    height: 350px;
+    z-index: 8;
+  }
+  
+  #resultText {
+    position: absolute;
+    top: -200px;
+    left: 370px;
+    font-size: 20px; /* Adjust font size as needed */
+    font-weight: bold;
+    z-index: 8;
+  }
