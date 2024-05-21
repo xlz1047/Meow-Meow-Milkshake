@@ -21,8 +21,8 @@
     <div id="speakBubble" style="display: none;">
       <img id="orderButton" src="./Assets/Buttons/buttonquestion.png" onclick="toggleScreen('orderingScene')">
     </div>
-    <div class="button">
-      Shop!<img id="toKitchenButton" src="" onclick="toggleScreen('shop')">
+    <div class="container">
+      <img id="shopButton" src="./Assets/Buttons/shop.png">
     </div>
     <!-- Coin Display -->
     <div class="text" id="coinDisplay">
@@ -32,7 +32,22 @@
   </div>
 
   <!-- Shop Popout -->
-  <div id="shop">
+  <div id="shopPopout">
+    <img id="shopExit" src="./Shop/exit.png">
+    <div class="shopItems">
+      <div class="shopItem">
+        <img src="./Shop/speed.png">
+        <p class="text" id="itemDescription">Increase Blender Speed</p>
+      </div>
+      <div class="shopItem">
+        <img src="./Shop/night.png">
+        <p class="text" id="itemDescription">Buy Nighttime Theme</p>
+      </div>
+      <div class="shopItem">
+        <img src="./Shop/trash.png">
+        <p class="text" id="itemDescription">Decrease Trash Can Penalty</p>
+      </div>
+    </div>
   </div>
   
   <!-- Kitchen Scene -->

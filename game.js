@@ -611,3 +611,23 @@ function updateCoin() {
   var coinCount = document.getElementById("coinCount");
   coinCount.textContent = coins;
 }
+
+// Function to toggle the shop popout
+function toggleShopPopout() {
+  var shopPopout = document.getElementById("shopPopout");
+  var cafeScene = document.getElementById("cafeScene");
+
+  if (shopPopout.style.display === "none" || shopPopout.style.display === "") {
+    shopPopout.style.display = "block";
+    cafeScene.classList.add("dimmed");
+    document.getElementById("coinDisplay").classList.remove("dimmed"); // Ensure coinDisplay is not dimmed
+  } else {
+    shopPopout.style.display = "none";
+    cafeScene.classList.remove("dimmed");
+  }
+}
+
+// Add event listener to shop button
+document.getElementById("shopButton").addEventListener("click", toggleShopPopout);
+// Add event listener to close shop button
+document.getElementById("shopExit").addEventListener("click", toggleShopPopout);
