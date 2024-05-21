@@ -163,8 +163,6 @@ function playButtonClickSound() {
   var buttonClickSound = document.getElementById("buttonClick");
   buttonClickSound.play();
 }
-document.getElementById("toKitchenButton").addEventListener("click", playButtonClickSound);
-document.getElementById("toCafeButton").addEventListener("click", playButtonClickSound);
 document.getElementById("orderButton").addEventListener("click", playButtonClickSound);
 
 // List for options
@@ -288,7 +286,7 @@ function displayImagesOneByOne(urls, displaySpeed) {
 
       // Hide the orderingScene when transitioning to the kitchenScene
       document.getElementById("orderingScene").style.display = "none";
-    }, 500); // 1 seconds delay before transitioning to the kitchen scene
+    }, 500); //  seconds delay before transitioning to the kitchen scene
   }
 }
 
