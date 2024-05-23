@@ -198,6 +198,7 @@ function displayImagesOneByOne(displayUrls, displaySpeed) {
       imgElement.style.left = 'unset';
       imgElement.style.zIndex = '7';
       document.getElementById("bubble").appendChild(imgElement);
+      document.getElementById("orderSpeakBubble").style.display = "block";
 
       setTimeout(function() {
         imgElement.style.display = 'none'; // Hide the current image after a delay
