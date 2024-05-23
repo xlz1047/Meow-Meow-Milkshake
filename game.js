@@ -441,6 +441,19 @@ function showAlert() {
   alert('The blender is working. Please wait.');
 }
 
+// Blender Button Animation
+function animateBlender() {
+  var blender = document.getElementById("blenderAnimation");
+  var frameIndex = 0;
+  var totalFrames = 4;
+  var frameRate = 100;
+
+  animationInterval = setInterval(function() {
+    blender.style.backgroundPosition = `-${frameIndex * 100}px 0`;
+    frameIndex = (frameIndex + 1) % totalFrames;
+  }, frameRate);
+}
+
 // Blender Button Functionality
 function displayBlendedIceCream() {
   if (selectedIceCream && selectedMilk) {
@@ -449,8 +462,14 @@ function displayBlendedIceCream() {
     // Disable all image buttons except the blender button
     disableImageButtons();
 
+    // Start blender animation
+    animateBlender();
+
     // Start a 5-second timer
     setTimeout(function() {
+      // Stop blender animation
+      clearInterval(animationInterval);
+
       // Re-enable all image buttons
       enableImageButtons();
 

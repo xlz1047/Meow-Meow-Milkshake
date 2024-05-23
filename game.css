@@ -151,6 +151,18 @@
   margin-top: 150px;
 }
 
+.blender {
+  width: 108px; /* Width of a single frame */
+  height: 263px; /* Height of a single frame */
+  background-image: url('./Kitchen/blenderAnimation.png');
+  background-repeat: no-repeat;
+  position: relative;
+  left: 600px;
+  top: 300px;
+  transform: scale(1.5);
+  transform-origin: top left;
+}
+
 /* All Button Hover Effects */
 .button:hover,
 .container img:hover,
