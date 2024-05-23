@@ -86,10 +86,10 @@ const customers = [
 
 const customerOrders = [
   ['coffee', "whole", "vanillaCream", "caramel", "biscoff"],
-  ['brithdayCake', 'whole', 'vanillaCream', 'chocolate', 'biscoff'],
+  ['birthdayCake', 'whole', 'vanillaCream', 'chocolateSyrup', 'biscoff'],
   ['matcha', 'almond', 'vanillaCream', 'caramel', 'marshmallow'],
-  ['vanilla', 'oat', 'vanillaCream', 'chocolate', 'oreo'],
-  ['mango', 'almond', 'vanillaCream', 'chocolate', 'cherry'],
+  ['vanilla', 'oat', 'vanillaCream', 'chocolateSyrup', 'oreo'],
+  ['mango', 'almond', 'vanillaCream', 'chocolateSyrup', 'cherry'],
   ['strawberry', 'oat', 'vanillaCream', 'strawberrySyrup', 'sprinkles'],
   ['chocolate', 'almond', 'chocolateCream', 'peanutButter', 'blueberry']
 ];
