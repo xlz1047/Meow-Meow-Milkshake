@@ -449,7 +449,7 @@ function animateBlender() {
   var frameRate = 100;
 
   animationInterval = setInterval(function() {
-    blender.style.backgroundPosition = `-${frameIndex * 100}px 0`;
+    blender.style.backgroundPosition = `-${frameIndex * 268}px 0`;
     frameIndex = (frameIndex + 1) % totalFrames;
   }, frameRate);
 }
