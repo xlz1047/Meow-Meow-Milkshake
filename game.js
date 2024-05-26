@@ -88,6 +88,9 @@ function getRandomCustomerImage() {
     "mable",
     "nana",
     "kira",
+    "colin",
+    "georgie",
+
     //Add more as needed
   ];
   return customerImages[Math.floor(Math.random() * customerImages.length)];
@@ -104,7 +107,7 @@ function animateCustomer() {
 
   // Array containing names of customer images
   const customerImages = [
-    "armaan", 
+   "armaan", 
     "maggie", 
     "christy", 
     "xin",
@@ -112,6 +115,9 @@ function animateCustomer() {
     "mable",
     "nana",
     "kira",
+    "colin",
+    "georgie",
+    
     //Add more as needed
   ];
 
