@@ -1,3 +1,7 @@
+// coin variable
+var coins = 0;
+
+
 // Music Toggler
 function toggleMusic() {
   var music = document.getElementById("backgroundMusic");
@@ -490,6 +494,12 @@ function displayBlendedIceCream() {
 
 // Trash Can Functionality
 function trashOrder() {
+  //coin penalty
+  if (selectedOrder.length > 0) {
+    coins -= selectedOrder.length + 30 ;
+    updateCoin();
+  }
+
   selectedIceCream = null;
   selectedMilk = null;
   blendedIceCream = null;
@@ -629,7 +639,6 @@ scoreContainer.style.display = "block";
 }
 
 //function to update the coins
-var coins = 0;
 function updateCoin() {
   var coinCount = document.getElementById("coinCount");
   coinCount.textContent = coins;
