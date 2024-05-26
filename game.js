@@ -496,7 +496,7 @@ function displayBlendedIceCream() {
 function trashOrder() {
   //coin penalty
   if (selectedOrder.length > 0) {
-    coins -= selectedOrder.length + 30 ;
+    coins -= selectedOrder.length *  30 ;
     updateCoin();
   }
 
