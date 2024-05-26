@@ -152,13 +152,14 @@
 }
 
 .blender {
-  width: 268px; /* Width of a single frame */
-  height: 400px; /* Height of a single frame */
+  width: 109px; /* Width of a single frame */
+  height: 350px; /* Height of a single frame */
   background-image: url('./Kitchen/blenderAnimation.png');
   background-repeat: no-repeat;
   position: absolute;
-  left: 501px;
-  top: 19px;
+  left: 586px;
+  top: 75px;
+  transform: scale(1.6);
 }
 
 /* All Button Hover Effects */
@@ -166,7 +167,7 @@
 .container img:hover,
 #speakBubble img:hover,
 #kitchenButtons img:hover,
-#blender:hover,
+.blender:hover,
 #checkOrderButton:hover,
 #trashButton:hover,
 #shopExit:hover {
