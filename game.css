@@ -167,7 +167,6 @@
 .container img:hover,
 #speakBubble img:hover,
 #kitchenButtons img:hover,
-.blender:hover,
 #checkOrderButton:hover,
 #trashButton:hover,
 #shopExit:hover {
@@ -175,6 +174,14 @@
   filter: brightness(0.8);
   transition: all 0.3s ease-in-out;
 }
+
+.blender:hover {
+  filter: brightness(0.8);
+  transition: filter 0.3s ease-in-out;
+}
+
+
+
 
 #orderingScene.show #score {
   display: block;
