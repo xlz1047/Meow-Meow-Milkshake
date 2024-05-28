@@ -439,6 +439,13 @@ function checkOrders() {
     document.getElementById("orderSpeakBubble").style.display = "block";
   }, 4000); // Adjust the delay as needed
 }
+// function to update the memory card
+let memoryCardCounter = 0;
+
+function updateMemoryCardCounter() {
+  var counterElement = document.getElementById("memoryCardCounter");
+  counterElement.textContent = memoryCardCounter; // Display only the count
+}
 
 // Function to distribute memory card to the player
 function distributeMemoryCard(currentCustomerIndex) {
@@ -473,6 +480,12 @@ function distributeMemoryCard(currentCustomerIndex) {
   setTimeout(function() {
     memoryCard.style.display = "none";
   }, 3000); // Adjust the delay as needed
+
+    //updates memory card counter
+    memoryCardCounter++;
+    console.log("Memory Cards:" + memoryCardCounter);
+    updateMemoryCardCounter();
+
 }
 
 

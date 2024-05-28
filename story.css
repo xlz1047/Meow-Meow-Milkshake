@@ -193,6 +193,31 @@ z-index: 10;
 animation: zoomIn 1s ease forwards; /* Apply animation */
 }
 
+
+#memoryCardIcon {
+  width: 55px;
+  height: 55px;
+  margin-right: 5px;
+}
+
+#memoryCardCounter {
+  font-size: 25px;
+  color: white;
+
+}
+
+#memoryCardDisplay {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 70px;
+  left: 120px;
+  filter: brightness(100%);
+}
+
+
+
+
 @keyframes zoomIn {
 0% {
   transform: scale(1) rotate(0deg); /* Initial state */
