@@ -22,7 +22,7 @@ document.addEventListener("click", function() {
 
 // Screen Toggler
 function toggleScreen(sceneId) {
-  var scenes = ["cafeScene", "kitchenScene", "orderingScene"];
+  var scenes = ["cafeScene", "kitchenScene", "orderingScene", "cardScene"];
   // Loop through scene elements and display the selected scene
   for (var i = 0; i < scenes.length; i++) {
     var scene = document.getElementById(scenes[i]);

@@ -20,6 +20,7 @@ display: block !important;
 #cafeScene,
 #kitchenScene,
 #orderingScene,
+#cardScene,
 #counter {
 position: absolute;
 top: 50%;
@@ -51,6 +52,10 @@ background-image: url(./Assets/Background/servingCounter.png);
 z-index: 3;
 }
 
+
+#cardScene {
+background-image: url(./Story/memoryCards/memoryCardBackground.png);
+}
 .characterCounter {
 position: absolute;
 z-index: 2;
