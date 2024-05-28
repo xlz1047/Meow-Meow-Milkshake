@@ -137,6 +137,7 @@ margin-top: 150px;
 #kitchenButtons img:hover,
 #blender:hover,
 #checkOrderButton:hover,
+#memoryCardIcon:hover ,
 #trashButton:hover {
 filter: brightness(0.8);
 transition: all 0.3s ease-in-out;
@@ -198,6 +199,11 @@ animation: zoomIn 1s ease forwards; /* Apply animation */
   width: 55px;
   height: 55px;
   margin-right: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer; 
+  transition: transform 0.3s ease;
+  outline: none;
 }
 
 #memoryCardCounter {
@@ -214,8 +220,6 @@ animation: zoomIn 1s ease forwards; /* Apply animation */
   left: 120px;
   filter: brightness(100%);
 }
-
-
 
 
 @keyframes zoomIn {

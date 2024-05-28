@@ -488,6 +488,10 @@ function distributeMemoryCard(currentCustomerIndex) {
 
 }
 
+//function to go to new page for memory card display
+function MemoryCardButtonClick() {
+  window.location.href = "cards.html";
+}
 
 // Function to clear the result score image and text
 function clearResult() {
