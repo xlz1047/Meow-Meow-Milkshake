@@ -379,6 +379,7 @@ function trashOrder() {
 console.log("selected:", selectedOrder);
 
 // Function to handle the check order button click event in the kitchen scene
+// Function to handle the check order button click event in the kitchen scene
 document.getElementById("checkOrderButton").addEventListener("click", function() {
   // Toggle to the orderingScene
   toggleScreen("orderingScene");
@@ -388,9 +389,6 @@ document.getElementById("checkOrderButton").addEventListener("click", function()
 
   // Check the orders and calculate the score
   checkOrders();
-
-  // Display the result image and text
-  document.getElementById("score").style.display = "block";
 });
 
 function checkOrders() {
@@ -414,7 +412,11 @@ function checkOrders() {
 
   // Display the result based on the score
   displayResult(score);
-  console.log("score:", score);
+
+  // Display memory card after 2 seconds
+  setTimeout(function() {
+    distributeMemoryCard(currentCustomerIndex);
+  }, 2000);
 
   // After displaying the result, toggle back to the cafe scene and wait before generating a new customer
   setTimeout(function() {
@@ -435,8 +437,44 @@ function checkOrders() {
     getOrder = getOrder();
     // Block the orderSpeakBubble in orderingScene
     document.getElementById("orderSpeakBubble").style.display = "block";
-  }, 2000); // Adjust the delay as needed
+  }, 4000); // Adjust the delay as needed
 }
+
+// Function to distribute memory card to the player
+function distributeMemoryCard(currentCustomerIndex) {
+  const memoryCards = [
+    "./Story/MemoryCards/armaanMemory.png",
+    "./Story/MemoryCards/maggieMemory.png",
+    "./Story/MemoryCards/christyMemory.png",
+    "./Story/MemoryCards/graceMemory.png",
+    "./Story/MemoryCards/xinMemory.png",
+    "./Story/MemoryCards/kiraMemory.png",
+    "./Story/MemoryCards/georgieMemory.png"
+  ];
+
+  // Get the memory card element
+  var memoryCard = document.getElementById("memoryCard");
+
+  // Set the memory card image based on the currentCustomerIndex
+  memoryCard.src = memoryCards[currentCustomerIndex % memoryCards.length];
+
+  // Ensure the memory card is displayed
+  memoryCard.style.display = "block";
+
+  // Animate the memory card to zoom in
+  memoryCard.classList.add("zoomIn");
+
+  // After animation, remove the zoomIn class
+  memoryCard.addEventListener("animationend", function() {
+    memoryCard.classList.remove("zoomIn");
+  });
+
+  // Hide the memory card after a delay
+  setTimeout(function() {
+    memoryCard.style.display = "none";
+  }, 3000); // Adjust the delay as needed
+}
+
 
 // Function to clear the result score image and text
 function clearResult() {
@@ -449,7 +487,6 @@ function clearResult() {
   // Hide the result container
   document.getElementById("score").style.display = "none";
 }
-
 
 // Function to display result images and text based on the score
 function displayResult(score) {
@@ -479,6 +516,3 @@ function displayResult(score) {
     var scoreContainer = document.getElementById("score");
     scoreContainer.style.display = "block";
 }
-
-
-

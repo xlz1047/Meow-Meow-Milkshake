@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meow Meow Milkshake</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Rubik+Vinyl&display=swap');
+    /* Stableing them */
+    #credits {
+      display: block !important;
+    }
+
+    #credits {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      width: 30%;
+    }
+
+    /* Scene styles */
+    #beginningScene,
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1280px;
+      height: 720px;
+      border: 5px solid #000;
+      margin: auto;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    /* Next Button */
+    #nextButton1 {
+      position: absolute;
+      top: 80%;
+      right: 10%;
+      z-index: 6;
+      color: black;
+      background-color: gray;
+      font-family: 'Belanosima', sans-serif;
+      width: 200px;
+      height: 50px;
+      border-radius: 25px;
+    }
+
+    /* Next Button */
+    #talkBox {
+      position: absolute;
+      top: 68%;
+      width: 100%;
+      z-index: 5;
+    }
+
+    /* Play Button */
+    #playButton {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 25px;
+      font-family: 'Belanosima', sans-serif;
+      width: 200px;
+      height: 50px;
+      size: 20px;
+      display: none;
+      z-index: 6;
+    }
+  </style>
+</head>
+<body>
+  <!-- Beginning Story Scene -->
+  <div id="beginningScene">
+    <video id="video1">
+      <source src="./Story/plot/video1.mp4" type="video/mp4" autoplay>
+      <source src="./Story/plot/video1.ogg" type="video/ogg">
+    </video>
+    <div id="next">
+      <img id="talkBox" src="./Story/plot/talkBox.png" style="display: none;">
+      <button id="nextButton1" style="display: none;">Look Around</button>
+    </div>
+    <div id="video2">
+      <video id="video2Element" style="display: none;">
+        <source id="video2Source" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- Play Button -->
+  <button id="playButton">Start Story</button>
+
+  <!-- Credits -->
+  <img id="credits" src="./Assets/Text/names.png">
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const video1 = document.getElementById("video1");
+      const video2 = document.getElementById("video2Element");
+      const talkBox = document.getElementById("talkBox");
+      const nextButton1 = document.getElementById("nextButton1");
+      const playButton = document.getElementById("playButton");
+      
+      // Function to get URL parameters
+      function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+              results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+
+      // Set the second video source based on the chosen character
+      function setCharacterVideo() {
+        const characterParam = getParameterByName("character");
+        if (characterParam) {
+          let videoPath = "./Story/plot/";
+          switch (characterParam) {
+            case "Character1":
+              videoPath += "siameseVideo2.mp4";
+              break;
+            case "Character2":
+              videoPath += "blackVideo2.mp4";
+              break;
+            case "Character3":
+              videoPath += "orangeVideo2.mp4";
+              break;
+            case "Character4":
+              videoPath += "calicoVideo2.mp4";
+              break;
+            default:
+              videoPath = "";
+              break;
+          }
+          if (videoPath) {
+            document.getElementById("video2Source").src = videoPath;
+            video2.load();
+          }
+        }
+      }
+
+      setCharacterVideo();
+
+      // Attempt to play the first video automatically
+      const playPromise = video1.play();
+
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          // Autoplay started successfully
+          audio1.play(); // Play the audio along with the video
+        }).catch(error => {
+          // Autoplay was prevented
+          // Show a "Play" button so that user can start playback
+          playButton.style.display = "block";
+        });
+      }
+
+      playButton.addEventListener("click", function() {
+        video1.play();
+        playButton.style.display = "none";
+      });
+
+      video1.addEventListener("ended", function() {
+        talkBox.style.display = "block";
+        nextButton1.style.display = "block";
+      });
+
+      nextButton1.addEventListener("click", function() {
+        video1.style.display = "none";
+        talkBox.style.display = "none";
+        nextButton1.style.display = "none";
+        video2.style.display = "block";
+        video2.play().catch(function(error) {
+          console.error("Error trying to play video2:", error);
+        });
+      });
+
+      video2.addEventListener("ended", function() {
+        // Retrieve the selected character's name from the URL
+        var selectedCharacter = getParameterByName("character");
+
+        // Navigate to story.html with selected character's name as a query parameter
+        window.location.href = "story.html" + '?character=' + encodeURIComponent(selectedCharacter) ;
+      });
+    });
+  </script>
+</body>
+</html>
