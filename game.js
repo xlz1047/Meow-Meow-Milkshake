@@ -785,14 +785,22 @@ document.getElementById("trashIcon").addEventListener("click", function() {
     });
   });
 
-document.getElementById("nightIcon").addEventListener("click", function() {
-  const descriptionLines = [
-    "Do you want to buy this upgrade?",
-    "This upgrade will unlock the nighttime theme.",
-    "Cost: 10     "
-  ];
+let nightMode = false; // Track the current mode
+let nightModePurchased = false; // Track if the upgrade has been purchased
 
-  showPopup(descriptionLines, function(confirmed) {
+document.getElementById("nightIcon").addEventListener("click", function() {
+  if (nightModePurchased) {
+    // Toggle night mode without showing the popup
+    toggleNightMode();
+  } else {
+    const descriptionLines = [
+      "Do you want to buy this upgrade?",
+      "This upgrade will unlock the night theme.",
+      "Click on the button to toggle.",
+      "Cost: 10     "
+    ];
+
+    showPopup(descriptionLines, function(confirmed) {
       if (confirmed) {
         if (coins >= 10) {
           coins -= 10;
@@ -804,13 +812,37 @@ document.getElementById("nightIcon").addEventListener("click", function() {
           // Disable the icon and apply the darkened style
           const nightIcon = document.getElementById("nightIcon");
           nightIcon.classList.add("disabled-icon");
-          nightIcon.style.pointerEvents = 'none';
+          nightIcon.style.pointerEvents = 'auto';
+
+          nightModePurchased = true; // Mark the upgrade as purchased
+          nightIcon.addEventListener("click", toggleNightMode);
+          toggleNightMode(); // Apply night mode immediately after purchase
         } else {
           alert("You don't have enough coins to buy this item.");
         }
       }
     });
-  });
+  }
+});
+
+  function toggleNightMode() {
+  nightMode = !nightMode;
+
+  if (nightMode) {
+    document.getElementById("cafeScene").style.backgroundImage = "url(./Assets/Background/cafeNight.png)";
+    document.getElementById("orderingScene").style.backgroundImage = "url(./Assets/Background/servingNight.png)";
+  } else {
+    document.getElementById("cafeScene").style.backgroundImage = "url(./Assets/Background/cafeDay.png)";
+    document.getElementById("orderingScene").style.backgroundImage = "url(./Assets/Background/servingDay.png)";
+  }
+  }
+
+// Ensure the icon can toggle night mode after the upgrade is purchased
+document.getElementById("nightIcon").addEventListener("click", function() {
+  if (nightModePurchased) {
+    toggleNightMode();
+  }
+});
 
 // CSS class to darken the icon
 const style = document.createElement('style');
