@@ -23,8 +23,8 @@
   <!-- Mode Selection Scene -->
   <div id="modeSelectionScene" style="display: none;">
     <div class="modeButton">
-      <button class="modeButton" onclick="selectMode('game.html')"><img src="./Assets/Buttons/gamemodeButton.png"> </button>
-      <button class="modeButton" onclick="selectMode('prologue.html')"><img src="./Assets/Buttons/storymodeButton.png"> </button> 
+      <button id="mode" class="modeButton" onclick="selectMode('game.html')"><img src="./Assets/Buttons/gamemodeButton.png"> </button>
+      <button id="mode2" class="modeButton" onclick="selectMode('prologue.html')"><img src="./Assets/Buttons/storymodeButton.png"> </button> 
     </div>
 </div>
 
@@ -91,7 +91,8 @@
       buttonClickSound.play();
     }
     document.getElementById("button").addEventListener("click", playButtonClickSound);
-
+    document.getElementById("mode").addEventListener("click", playButtonClickSound);
+    document.getElementById("mode2").addEventListener("click", playButtonClickSound);
 
     // Variables to store selected mode, character, and player name
     let selectedMode = '';
