@@ -342,3 +342,27 @@
 #noButton:hover {
   filter:brightness(0.8);
 }
+
+#speedCheck {
+  display: none;
+  position: absolute;
+  top: 212px;
+  left: 279px;
+  width: 13%;
+}
+
+#trashCheck {
+  display: none;
+  position: absolute;
+  top: 212px;
+  left: 490px;
+  width: 13%;
+}
+
+#nightCheck {
+  display: none;
+  position: absolute;
+  top: 212px;
+  left: 709px;
+  width: 13%;
+}

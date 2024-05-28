@@ -741,6 +741,9 @@ document.getElementById("speedIcon").addEventListener("click", function() {
           blenderSpeed = 2000;
           mixerClickSound = document.getElementById("mixerUpgrade");
 
+          var speedCheck = document.getElementById("speedCheck");
+          speedCheck.style.display = "block";
+          
           // Disable the icon and apply the darkened style
           const speedIcon = document.getElementById("speedIcon");
           speedIcon.classList.add("disabled-icon");
@@ -765,6 +768,9 @@ document.getElementById("trashIcon").addEventListener("click", function() {
           coins -= 20;
           updateCoin(); // Update the displayed coin count
 
+          var trashCheck = document.getElementById("trashCheck");
+          trashCheck.style.display = "block";
+
           // Disable the icon and apply the darkened style
           const trashIcon = document.getElementById("trashIcon");
           trashIcon.classList.add("disabled-icon");
@@ -788,6 +794,9 @@ document.getElementById("nightIcon").addEventListener("click", function() {
         if (coins >= 10) {
           coins -= 10;
           updateCoin(); // Update the displayed coin count
+
+          var nightCheck = document.getElementById("nightCheck");
+          nightCheck.style.display = "block";
 
           // Disable the icon and apply the darkened style
           const nightIcon = document.getElementById("nightIcon");
