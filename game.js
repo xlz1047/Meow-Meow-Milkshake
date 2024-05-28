@@ -523,13 +523,13 @@ function displayBlendedIceCream() {
   }
 }
 
+var trashPenalty = 4;
+
 // Trash Can Functionality
 function trashOrder() {
-  //coin penalty
-  if (selectedOrder.length > 0) {
-    coins -= selectedOrder.length *  30 ;
-    updateCoin();
-  }
+  // Coin Penalty
+  coins -= trashPenalty;
+  updateCoin();
 
   selectedIceCream = null;
   selectedMilk = null;
@@ -767,6 +767,7 @@ document.getElementById("trashIcon").addEventListener("click", function() {
         if (coins >= 20) {
           coins -= 20;
           updateCoin(); // Update the displayed coin count
+          trashPenalty = 2;
 
           var trashCheck = document.getElementById("trashCheck");
           trashCheck.style.display = "block";
