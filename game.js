@@ -464,10 +464,12 @@ function animateBlender() {
   }, frameRate);
 }
 
+var blenderSpeed = 5000;
+var mixerClickSound = document.getElementById("mixer");
+
 // Blender Button Functionality
 function displayBlendedIceCream() {
   if (selectedIceCream && selectedMilk) {
-    var mixerClickSound = document.getElementById("mixer");
     mixerClickSound.play();
     // Disable all image buttons except the blender button
     disableImageButtons();
@@ -492,7 +494,7 @@ function displayBlendedIceCream() {
       // Display the full version of the selected ice cream
       blendedIceCream = document.getElementById(selectedIceCream + 'Blended');
       blendedIceCream.style.display = 'block';
-    }, 5000); // 5 seconds delay
+    }, blenderSpeed); // 5 seconds delay
   } else {
     alert('Please select the ice cream and milk first.');
   }
@@ -669,3 +671,117 @@ function toggleShopPopout() {
 document.getElementById("shopButton").addEventListener("click", toggleShopPopout);
 // Add event listener to close shop button
 document.getElementById("shopExit").addEventListener("click", toggleShopPopout);
+
+// Function to show the popup with the description
+function showPopup(descriptionLines, callback) {
+  const popupContainer = document.getElementById("popupContainer");
+  const popupTextContainer = document.getElementById("popupTextContainer");
+
+  // Clear any existing content
+  popupTextContainer.innerHTML = '';
+
+  // Add each line of the description
+  descriptionLines.forEach(line => {
+    const p = document.createElement("p");
+    p.textContent = line;
+    popupTextContainer.appendChild(p);
+  });
+
+  // Display the popup
+  popupContainer.style.display = "block";
+
+  // Event listener for Yes button
+  document.getElementById("yesButton").onclick = function() {
+    popupContainer.style.display = "none";
+    callback(true);
+  };
+
+  // Event listener for No button
+  document.getElementById("noButton").onclick = function() {
+    popupContainer.style.display = "none";
+    callback(false);
+  };
+}
+
+document.getElementById("speedIcon").addEventListener("click", function() {
+  const descriptionLines = [
+    "Do you want to buy this upgrade?",
+    "This upgrade will make the blender speed faster.",
+    "Cost: 20     "
+  ];
+
+  showPopup(descriptionLines, function(confirmed) {
+      if (confirmed) {
+        if (coins >= 20) {
+          coins -= 20;
+          updateCoin(); // Update the displayed coin count
+          blenderSpeed = 2000;
+          mixerClickSound = document.getElementById("mixerUpgrade");
+
+          // Disable the icon and apply the darkened style
+          const speedIcon = document.getElementById("speedIcon");
+          speedIcon.classList.add("disabled-icon");
+          speedIcon.style.pointerEvents = 'none';
+        } else {
+          alert("You don't have enough coins to buy this item.");
+        }
+      }
+    });
+  });
+
+document.getElementById("trashIcon").addEventListener("click", function() {
+  const descriptionLines = [
+    "Do you want to buy this upgrade?",
+    "This upgrade will decrease the trash can penalty.",
+    "Cost: 20     "
+  ];
+
+  showPopup(descriptionLines, function(confirmed) {
+      if (confirmed) {
+        if (coins >= 20) {
+          coins -= 20;
+          updateCoin(); // Update the displayed coin count
+
+          // Disable the icon and apply the darkened style
+          const trashIcon = document.getElementById("trashIcon");
+          trashIcon.classList.add("disabled-icon");
+          trashIcon.style.pointerEvents = 'none';
+        } else {
+          alert("You don't have enough coins to buy this item.");
+        }
+      }
+    });
+  });
+
+document.getElementById("nightIcon").addEventListener("click", function() {
+  const descriptionLines = [
+    "Do you want to buy this upgrade?",
+    "This upgrade will unlock the nighttime theme.",
+    "Cost: 10     "
+  ];
+
+  showPopup(descriptionLines, function(confirmed) {
+      if (confirmed) {
+        if (coins >= 10) {
+          coins -= 10;
+          updateCoin(); // Update the displayed coin count
+
+          // Disable the icon and apply the darkened style
+          const nightIcon = document.getElementById("nightIcon");
+          nightIcon.classList.add("disabled-icon");
+          nightIcon.style.pointerEvents = 'none';
+        } else {
+          alert("You don't have enough coins to buy this item.");
+        }
+      }
+    });
+  });
+
+// CSS class to darken the icon
+const style = document.createElement('style');
+style.innerHTML = `
+  .disabled-icon {
+    opacity: 0.5;
+  }
+`;
+document.head.appendChild(style);

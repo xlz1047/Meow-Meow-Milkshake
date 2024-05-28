@@ -62,10 +62,9 @@
 #shopPopout {
   display: none;
   position: absolute;
-  width: 50%;
-  height: 50%;
-  background-image: url(./Shop/background.png);
-  background-repeat: repeat, no-repeat;
+  width: 960px;
+  height: 460px;
+  background: url(./Shop/background.png) repeat;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 10;
   overflow-y: auto;
@@ -167,9 +166,13 @@
 .container img:hover,
 #speakBubble img:hover,
 #kitchenButtons img:hover,
+#blender:hover,
 #checkOrderButton:hover,
 #trashButton:hover,
-#shopExit:hover {
+#shopExit:hover,
+#speedIcon:hover,
+#nightIcon:hover,
+#trashIcon:hover {
   cursor: pointer;
   filter: brightness(0.8);
   transition: all 0.3s ease-in-out;
@@ -180,9 +183,6 @@
   transition: filter 0.3s ease-in-out;
 }
 
-
-
-
 #orderingScene.show #score {
   display: block;
 }
@@ -190,6 +190,7 @@
 #orderSpeakBubble {
   display: block;
 }
+
 #checkOrderButton:active + #orderingScene #orderSpeakBubble {
   display: block;
   z-index: 6;
@@ -243,9 +244,19 @@
 }
 
 
-#shop {
+#shopCoin {
   position: absolute;
-  z-index: 11;
+  top: 398px;
+  left: 990px;
+  width: 35px;
+}
+
+#shopOverlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1000px;
+  height: 500px;
 }
 
 #shopExit {
@@ -256,32 +267,62 @@
   height: 90px;
 }
 
-/* Shop Items */
-.shopItems {
-  display: flex;
+#speedIcon {
   position: absolute;
-  justify-content: space-around; /* Evenly space items */
-  align-items: center;
-  height: 400px; /* Adjust as needed */
-  z-index: 13;
+  top: 238px;
+  left: 203px;
 }
 
-/* Shop Item */
-.shopItem {
+#trashIcon {
+  position: absolute;
+  top: 247px;
+  left: 413px;
+}
+
+#nightIcon {
+  position: absolute;
+  top: 257px;
+  left: 634px;
+}
+
+/* Add this to your CSS file */
+.popup-container {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+}
+
+.popup-content {
+  background-color: #dbbfa3;
+  border: 5px solid black;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  font-size: 20px;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
   text-align: center;
 }
 
-.shopItem img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px; /* Adjust as needed */
+.popup-content p {
+  white-space: pre-wrap;
 }
 
-.shopItem p {
-  margin: 0;
+.popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
 }
 
-#itemDescription {
+#yesButton,
+#noButton {
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -292,7 +333,12 @@
   padding-right: 10px;
   background-color: #8d6e5d;
   border: 2px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
   font-size: 20px;
-  top: 20px; /* Move item description boxes down by 20 pixels */
-  align-items: center;
+}
+
+#yesButton:hover,
+#noButton:hover {
+  filter:brightness(0.8);
 }

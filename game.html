@@ -33,21 +33,19 @@
 
   <!-- Shop Popout -->
   <div id="shopPopout">
-    <img id="shop" src="./Shop/shopOverlay.png">
+    <img id="shopOverlay" src="./Shop/shopOverlay.png">
     <img id="shopExit" src="./Shop/exit.png">
-    <div class="shopItems">
-      <div class="shopItem">
-        <img src="./Shop/speed.png">
-        <p class="text" id="itemDescription">Increase Blender Speed</p>
-      </div>
-      <div class="shopItem">
-        <img src="./Shop/night.png">
-        <p class="text" id="itemDescription">Buy Nighttime Theme</p>
-      </div>
-      <div class="shopItem">
-        <img src="./Shop/trash.png">
-        <p class="text" id="itemDescription">Decrease Trash Can Penalty</p>
-      </div>
+    <img id="speedIcon" src="./Shop/speed.png">
+    <img id="trashIcon" src="./Shop/trash.png">
+    <img id="nightIcon" src="./Shop/night.png">
+  </div>
+
+  <div id="popupContainer" class="popup-container">
+    <div class="popup-content">
+      <div class="text" id="popupTextContainer"></div>
+      <img id="shopCoin" src="./Shop/coin.png">
+      <button class="text" id="yesButton">Yes</button>
+      <button class="text" id="noButton">No</button>
     </div>
   </div>
   
