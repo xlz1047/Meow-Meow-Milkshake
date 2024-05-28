@@ -528,8 +528,10 @@ var trashPenalty = 4;
 // Trash Can Functionality
 function trashOrder() {
   // Coin Penalty
-  coins -= trashPenalty;
-  updateCoin();
+  if (selectedOrder.length > 0) {
+    coins -= trashPenalty;
+    updateCoin();
+  }
 
   selectedIceCream = null;
   selectedMilk = null;
