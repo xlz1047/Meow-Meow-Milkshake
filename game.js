@@ -1,10 +1,39 @@
+function playButtonClickSound() {
+  var buttonClickSound = document.getElementById("buttonClick");
+  buttonClickSound.play();
+}
+
+var buttons = [
+  "orderButton",
+  "shopButton",
+  "shopExit",
+  "speedIcon",
+  "trashIcon",
+  "nightIcon",
+  "yesButton",
+  "noButton",
+  "checkOrderButton",
+  "trashButton",
+  "musicToggle"
+];
+
+buttons.forEach(function(buttonId) {
+  var button = document.getElementById(buttonId);
+  if (button) {
+    button.addEventListener("click", playButtonClickSound);
+  }
+});
+
 // coin variable
 var coins = 0;
 
+var volume = document.getElementById("backgroundMusic");
+volume.volume = 0.5;
 
 // Music Toggler
 function toggleMusic() {
   var music = document.getElementById("backgroundMusic");
+  music.volume = 0.5;
   var musicStatus = document.getElementById("musicStatus");
   if (music.paused) {
     music.play();
@@ -19,6 +48,7 @@ function toggleMusic() {
 document.addEventListener("click", function() {
   var audio = document.getElementById("backgroundMusic")
   audio.muted = false;
+  audio.volume = 0.5;
   audio.play();
   // Remove the click event listener after the first click
   document.removeEventListener("click", arguments.callee);
@@ -171,13 +201,6 @@ function animateCustomer() {
 animateCustomer();
 
 ////////////////////Order Functionality Section + kitchen Functionality////////////////////////
-
-// Button Sound Effects
-function playButtonClickSound() {
-  var buttonClickSound = document.getElementById("buttonClick");
-  buttonClickSound.play();
-}
-document.getElementById("orderButton").addEventListener("click", playButtonClickSound);
 
 // List for options
 const iceCreamOptions = [
