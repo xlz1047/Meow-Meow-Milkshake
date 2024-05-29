@@ -236,3 +236,13 @@ animation: zoomIn 1s ease forwards; /* Apply animation */
 }
 }
 
+
+
+#memoryCardImage {
+  left: 200px ;
+  display: none;
+  max-width: 20%; 
+  max-height: 20%; 
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out; 
+}

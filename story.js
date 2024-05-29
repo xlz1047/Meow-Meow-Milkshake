@@ -28,6 +28,9 @@ function toggleScreen(sceneId) {
     var scene = document.getElementById(scenes[i]);
     if (scenes[i] === sceneId) {
       scene.style.display = "block";
+      if (sceneId === "cardScene") {
+        displayMemoryCardImage();
+      }
     } else {
       scene.style.display = "none";
     }
@@ -442,10 +445,34 @@ function checkOrders() {
 // function to update the memory card
 let memoryCardCounter = 0;
 
+const memoryCardImages = [
+  "./Story/MemoryCards/armaanMemory.png",
+  "./Story/MemoryCards/maggieMemory.png",
+  "./Story/MemoryCards/christyMemory.png",
+  "./Story/MemoryCards/graceMemory.png",
+  "./Story/MemoryCards/xinMemory.png",
+  "./Story/MemoryCards/kiraMemory.png",
+  "./Story/MemoryCards/georgieMemory.png"
+];
+
+
 function updateMemoryCardCounter() {
   var counterElement = document.getElementById("memoryCardCounter");
   counterElement.textContent = memoryCardCounter; // Display only the count
+  displayMemoryCardImage();
 }
+
+function displayMemoryCardImage() {
+  const memoryCardImage = document.getElementById("memoryCardImage");
+
+  if (memoryCardCounter > 0 && memoryCardCounter <= memoryCardImages.length) {
+    memoryCardImage.src = memoryCardImages[memoryCardCounter - 1];
+    memoryCardImage.style.display = "block";
+  } else {
+    memoryCardImage.style.display = "none";
+  }
+}
+
 
 // Function to distribute memory card to the player
 function distributeMemoryCard(currentCustomerIndex) {
