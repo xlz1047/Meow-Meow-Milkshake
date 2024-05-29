@@ -156,18 +156,22 @@
       <img id="memoryCard" src="" alt="Memory Card" style="display: none;">
     </div>
 
-    <!-- Card Scene -->
-    <div id="cardScene" style="display: none;">
-      <img id="memoryCardImage" src="" alt="Memory Card Image" style="display: none;">
-      <img id="memoryCardX" src="Shop/exit.png" alt="X button" onclick="toggleScreen('cafeScene')">
-    </div>
+<!-- Card Scene -->
+<div id="cardScene" style="display: none;">
+  <img id="memoryCardX" src="Shop/exit.png" alt="X button" onclick="toggleScreen('cafeScene')">
+</div> 
 
 <!-- Memory card counter-->
 <div id="memoryCardDisplay">
-  <img id="memoryCardIcon" src="Story/memoryCards/letter.png" alt="Memory Card Icon" onclick="toggleScreen('cardScene')">  </button>
+  <img id="memoryCardIcon" src="Story/memoryCards/letter.png" alt="Memory Card Icon" onclick="toggleScreen('cardScene')">
   <span id="memoryCardCounter">0</span>
 </div>
 
+<!-- Popup for memory card images -->
+<div id="popup" style="display: none;">
+  <img id="popupImage" src="" alt="Memory Card Image">
+  <button onclick="hidePopup()">Close</button>
+</div>
 
 
 

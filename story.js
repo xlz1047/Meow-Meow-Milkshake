@@ -476,15 +476,6 @@ function displayMemoryCardImage() {
 
 // Function to distribute memory card to the player
 function distributeMemoryCard(currentCustomerIndex) {
-  const memoryCards = [
-    "./Story/MemoryCards/armaanMemory.png",
-    "./Story/MemoryCards/maggieMemory.png",
-    "./Story/MemoryCards/christyMemory.png",
-    "./Story/MemoryCards/graceMemory.png",
-    "./Story/MemoryCards/xinMemory.png",
-    "./Story/MemoryCards/kiraMemory.png",
-    "./Story/MemoryCards/georgieMemory.png"
-  ];
 
   // Get the memory card element
   var memoryCard = document.getElementById("memoryCard");
@@ -562,4 +553,65 @@ function displayResult(score) {
 
     var scoreContainer = document.getElementById("score");
     scoreContainer.style.display = "block";
+}
+
+
+
+function updateMemoryCardCounter() {
+  var counterElement = document.getElementById("memoryCardCounter");
+  counterElement.textContent = memoryCardCounter; // Display only the count
+  displayMemoryCards();
+}
+
+function displayMemoryCards() {
+  const cardScene = document.getElementById("cardScene");
+  cardScene.innerHTML = ''; // Clear previous content
+
+  for (let i = 0; i < memoryCardCounter; i++) {
+    let cardButton = document.createElement("button");
+    cardButton.classList.add("memoryCardButton");
+    cardButton.style.backgroundImage = `url('${memoryCardImages[i]}')`;
+    cardButton.addEventListener("click", function() {
+      showPopup(memoryCardImages[i]);
+    });
+    cardScene.appendChild(cardButton);
+  }
+  
+  let exitButton = document.createElement("img");
+  exitButton.id = "memoryCardX";
+  exitButton.src = "Shop/exit.png";
+  exitButton.alt = "X button";
+  exitButton.onclick = function() {
+    toggleScreen('cafeScene');
+  };
+  cardScene.appendChild(exitButton);
+}
+
+function showPopup(imageSrc) {
+  const popup = document.getElementById("popup");
+  const popupImage = document.getElementById("popupImage");
+  popupImage.src = imageSrc;
+  popup.style.display = "block";
+}
+
+function hidePopup() {
+  const popup = document.getElementById("popup");
+  popup.style.display = "none";
+}
+
+function distributeMemoryCard(currentCustomerIndex) {
+  const memoryCards = [
+    "./Story/MemoryCards/armaanMemory.png",
+    "./Story/MemoryCards/maggieMemory.png",
+    "./Story/MemoryCards/christyMemory.png",
+    "./Story/MemoryCards/graceMemory.png",
+    "./Story/MemoryCards/xinMemory.png",
+    "./Story/MemoryCards/kiraMemory.png",
+    "./Story/MemoryCards/georgieMemory.png"
+  ];
+
+  // Update memory card counter
+  memoryCardCounter++;
+  console.log("Memory Cards:", memoryCardCounter);
+  updateMemoryCardCounter();
 }
