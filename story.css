@@ -258,13 +258,13 @@ animation: zoomIn 1s ease forwards; /* Apply animation */
 
   /* Style for memory card buttons */
 .memoryCardButton {
-  width: 100px;
-  height: 150px;
-  background-size: cover;
-  background-position: center;
-  border: none;
-  margin: 10px;
-  cursor: pointer;
+    width: 220px;
+    height: 140px;
+    background-size: cover;
+    background-position: center;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
 }
 
 /* Style for the popup */
