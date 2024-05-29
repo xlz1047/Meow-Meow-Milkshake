@@ -382,7 +382,6 @@ function trashOrder() {
 console.log("selected:", selectedOrder);
 
 // Function to handle the check order button click event in the kitchen scene
-// Function to handle the check order button click event in the kitchen scene
 document.getElementById("checkOrderButton").addEventListener("click", function() {
   // Toggle to the orderingScene
   toggleScreen("orderingScene");
@@ -455,23 +454,6 @@ const memoryCardImages = [
   "./Story/MemoryCards/georgieMemory.png"
 ];
 
-
-function updateMemoryCardCounter() {
-  var counterElement = document.getElementById("memoryCardCounter");
-  counterElement.textContent = memoryCardCounter; // Display only the count
-  displayMemoryCardImage();
-}
-
-function displayMemoryCardImage() {
-  const memoryCardImage = document.getElementById("memoryCardImage");
-
-  if (memoryCardCounter > 0 && memoryCardCounter <= memoryCardImages.length) {
-    memoryCardImage.src = memoryCardImages[memoryCardCounter - 1];
-    memoryCardImage.style.display = "block";
-  } else {
-    memoryCardImage.style.display = "none";
-  }
-}
 
 
 // Function to distribute memory card to the player
@@ -557,10 +539,22 @@ function displayResult(score) {
 
 
 
+
 function updateMemoryCardCounter() {
   var counterElement = document.getElementById("memoryCardCounter");
   counterElement.textContent = memoryCardCounter; // Display only the count
   displayMemoryCards();
+}
+
+function displayMemoryCardImage() {
+  const memoryCardImage = document.getElementById("memoryCardImage");
+
+  if (memoryCardCounter > 0 && memoryCardCounter <= memoryCardImages.length) {
+    memoryCardImage.src = memoryCardImages[memoryCardCounter - 1];
+    memoryCardImage.style.display = "block";
+  } else {
+    memoryCardImage.style.display = "none";
+  }
 }
 
 function displayMemoryCards() {
@@ -626,6 +620,29 @@ function distributeMemoryCard(currentCustomerIndex) {
     "./Story/MemoryCards/kiraMemory.png",
     "./Story/MemoryCards/georgieMemory.png"
   ];
+// Get the memory card element
+var memoryCard = document.getElementById("memoryCard");
+
+// Set the memory card image based on the currentCustomerIndex
+memoryCard.src = memoryCards[currentCustomerIndex % memoryCards.length];
+
+// Ensure the memory card is displayed
+memoryCard.style.display = "block";
+
+// Animate the memory card to zoom in
+memoryCard.classList.add("zoomIn");
+
+// After animation, remove the zoomIn class
+memoryCard.addEventListener("animationend", function() {
+  memoryCard.classList.remove("zoomIn");
+});
+
+// Hide the memory card after a delay
+setTimeout(function() {
+  memoryCard.style.display = "none";
+}, 3000); // Adjust the delay as needed
+
+
 
   // Update memory card counter
   memoryCardCounter++;
