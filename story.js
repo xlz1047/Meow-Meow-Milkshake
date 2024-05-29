@@ -567,15 +567,32 @@ function displayMemoryCards() {
   const cardScene = document.getElementById("cardScene");
   cardScene.innerHTML = ''; // Clear previous content
 
+  //Card positions
+  const positions = [
+    {top: '100px', left: '171px' },
+    {top: '97px', left: '508px' },
+    {top: '106px', left: '846px' },
+    {top: '276px', left: '199px' },
+    {top: '282px', left: '537px' },
+    {top: '282px', left: '850px' },
+    {top: '464px', left: '180px' },
+    {top: '461px', left: '502px' },
+    {top: '466px', left: '831px' }
+  ];
+
   for (let i = 0; i < memoryCardCounter; i++) {
     let cardButton = document.createElement("button");
     cardButton.classList.add("memoryCardButton");
     cardButton.style.backgroundImage = `url('${memoryCardImages[i]}')`;
+    cardButton.style.position = 'absolute';
+    cardButton.style.top = positions[i].top;
+    cardButton.style.left = positions[i].left;
     cardButton.addEventListener("click", function() {
       showPopup(memoryCardImages[i]);
     });
     cardScene.appendChild(cardButton);
   }
+
   
   let exitButton = document.createElement("img");
   exitButton.id = "memoryCardX";
