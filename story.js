@@ -520,6 +520,9 @@ function MemoryCardButtonClick() {
   window.location.href = "cards.html";
 }
 
+// Add event listener to close shop button
+document.getElementById("shopExit").addEventListener("click", toggleShopPopout);
+
 // Function to clear the result score image and text
 function clearResult() {
   var resultImage = document.getElementById("resultImage");

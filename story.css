@@ -143,6 +143,7 @@ margin-top: 150px;
 #blender:hover,
 #checkOrderButton:hover,
 #memoryCardIcon:hover ,
+#memoryCardX:hover,
 #trashButton:hover {
 filter: brightness(0.8);
 transition: all 0.3s ease-in-out;
@@ -221,8 +222,8 @@ animation: zoomIn 1s ease forwards; /* Apply animation */
   position: absolute;
   display: flex;
   align-items: center;
-  top: 70px;
-  left: 120px;
+  top: 10px;
+  left: 148px;
   filter: brightness(100%);
 }
 
@@ -246,3 +247,10 @@ animation: zoomIn 1s ease forwards; /* Apply animation */
   cursor: pointer;
   transition: transform 0.3s ease-in-out; 
 }
+
+/* Memory Card Page Display */
+#memoryCardX {
+  position: absolute;
+  top: 10px;
+  left: 1162px;
+  }
