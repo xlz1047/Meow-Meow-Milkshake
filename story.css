@@ -367,3 +367,14 @@ video {
   color: #ffffff;
   text-shadow: 0 1px 0 var(--color-heading-shadow), 0 2px 0 var(--color-heading-shadow), 0 3px 0 var(--color-heading-shadow), 0 4px 0 var(--color-heading-shadow), 0 0 5px rgba(10, 0, 0, .05), 0 1px 3px rgba(10, 0, 0, .2), 0 3px 5px rgba(10, 0, 0, .2), 0 5px 10px rgba(10, 0, 0, .2), 0 10px 10px rgba(10, 0, 0, .2), 0 20px 20px rgba(10, 0, 0, .3);
 }
+
+.blender {
+  width: 109px; /* Width of a single frame */
+  height: 350px; /* Height of a single frame */
+  background-image: url('./Kitchen/blenderAnimation.png');
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 586px;
+  top: 75px;
+  transform: scale(1.6);
+}
