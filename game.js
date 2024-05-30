@@ -649,26 +649,26 @@ function clearResult() {
 // Function to display result images and text based on the score
 function displayResult(score) {
   var resultImage = document.getElementById("resultImage");
-  var resultText = document.getElementById("resultText");
+  var resultCoin = document.getElementById("resultCoin");
 
   if (score === 5) {
       resultImage.src = "./Assets/Reactions/heart.png";
-      resultText.textContent = "You got 5 out of 5 right!";
+      resultCoin.src = "./Shop/coin5.png";
   } else if (score === 4) {
       resultImage.src = "./Assets/Reactions/happyface.png";
-      resultText.textContent = "You got 4 out of 5 right!";
+      resultCoin.src = "./Shop/coin4.png";
   } else if (score === 3) {
       resultImage.src = "./Assets/Reactions/negativeReaction.png";
-      resultText.textContent = "You got 3 out of 5 right!";
+      resultCoin.src = "./Shop/coin3.png";
   } else if (score === 2) {
       resultImage.src = "./Assets/Reactions/negativeReaction.png";
-      resultText.textContent = "You got 2 out of 5 right!";
+      resultCoin.src = "./Shop/coin2.png";
   } else if (score === 1) {
       resultImage.src = "./Assets/Reactions/angryFace.png";
-      resultText.textContent = "You got 1 out of 5 right!";
+      resultCoin.src = "./Shop/coin1.png";
   } else {
       resultImage.src = "./Assets/Reactions/angryFace.png";
-      resultText.textContent = "You didn't score well this time.";
+      resultCoin.src = "./Shop/coin0.png";
   }
 
 var scoreContainer = document.getElementById("score");
@@ -690,7 +690,6 @@ function toggleShopPopout() {
   if (shopPopout.style.display === "none" || shopPopout.style.display === "") {
     shopPopout.style.display = "block";
     cafeScene.classList.add("dimmed");
-    document.getElementById("coinDisplay").classList.remove("dimmed"); // Ensure coinDisplay is not dimmed
   } else {
     shopPopout.style.display = "none";
     cafeScene.classList.remove("dimmed");
