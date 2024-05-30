@@ -2,6 +2,11 @@ function playButtonClickSound() {
   var buttonClickSound = document.getElementById("buttonClick");
   buttonClickSound.play();
 }
+// Function to play the cafe bell sound
+function playCafeBellSound() {
+  var cafeBellSound = document.getElementById("cafeBellSound");
+  cafeBellSound.play();
+}
 
 var buttons = [
   "orderButton",
@@ -28,12 +33,12 @@ buttons.forEach(function(buttonId) {
 var coins = 0;
 
 var volume = document.getElementById("backgroundMusic");
-volume.volume = 0.5;
+volume.volume = 0.2;
 
 // Music Toggler
 function toggleMusic() {
   var music = document.getElementById("backgroundMusic");
-  music.volume = 0.5;
+  music.volume = 0.2;
   var musicStatus = document.getElementById("musicStatus");
   if (music.paused) {
     music.play();
@@ -48,7 +53,7 @@ function toggleMusic() {
 document.addEventListener("click", function() {
   var audio = document.getElementById("backgroundMusic")
   audio.muted = false;
-  audio.volume = 0.5;
+  audio.volume = 0.2;
   audio.play();
   // Remove the click event listener after the first click
   document.removeEventListener("click", arguments.callee);
@@ -196,7 +201,7 @@ function animateCustomer() {
   const animationInterval = setInterval(animate, animationSpeed);
   const movementInterval = setInterval(moveCharacter, 20);
 }
-
+playCafeBellSound();
 // Automatically animate the customer character when the page loads
 animateCustomer();
 
@@ -620,7 +625,11 @@ function checkOrders() {
     clearResult();
 
     // Generate a new customer for the next round
-    animateCustomer();
+    setTimeout(function() {
+      playCafeBellSound();
+      // Call animateCustomer function after 1 second
+      setTimeout(animateCustomer(), 1000);
+    }, 1000);
     // Generate a new random order for the next round
     randomOrder = randomizeSelections();
     // Block the orderSpeakBubble in orderingScene
