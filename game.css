@@ -53,6 +53,13 @@
   z-index: 1;
 }
 
+#playerNameDisplay {
+  position: absolute;
+  font-size: 20px;
+  top: 30%;
+  left: 17%;
+}
+
 #counter {
   background-image: url(./Assets/Background/servingCounter.png);
   z-index: 3;

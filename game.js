@@ -85,6 +85,9 @@ function getParameterByName(name, url) {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+var playerName = getParameterByName('name');
+document.getElementById('playerNameDisplay').innerText = playerName;
+
 function setCharacterImage() {
   // Set the player character image based on the query parameter
   var characterParam = getParameterByName("character");
