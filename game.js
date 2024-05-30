@@ -614,6 +614,10 @@ function checkOrders() {
   // Update coins based on the score
   coins += score;
   updateCoin();
+  
+  setTimeout(function() {
+    playCafeBellSound();
+  }, 1200);
 
   // After displaying the result, toggle back to the cafe scene and wait before generating a new customer
   setTimeout(function() {
@@ -630,11 +634,7 @@ function checkOrders() {
     clearResult();
 
     // Generate a new customer for the next round
-    setTimeout(function() {
-      playCafeBellSound();
-      // Call animateCustomer function after 1 second
-      setTimeout(animateCustomer(), 1000);
-    }, 1000);
+    animateCustomer();
     // Generate a new random order for the next round
     randomOrder = randomizeSelections();
     // Block the orderSpeakBubble in orderingScene
