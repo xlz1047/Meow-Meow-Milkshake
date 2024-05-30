@@ -358,6 +358,7 @@ function displayImage(imageId) {
 // Saving Chosen Variables
 var selectedIceCream = null;
 var selectedMilk = null;
+var selectedBlender = null;
 var blendedIceCream = null;
 var selectedWhippedCream = null;
 var selectedSyrup = null;
@@ -492,34 +493,37 @@ var mixerClickSound = document.getElementById("mixer");
 
 // Blender Button Functionality
 function displayBlendedIceCream() {
-  if (selectedIceCream && selectedMilk) {
-    mixerClickSound.play();
-    // Disable all image buttons except the blender button
-    disableImageButtons();
-
-    // Start blender animation
-    animateBlender();
-
-    // Start a 5-second timer
-    setTimeout(function() {
-      // Stop blender animation
-      clearInterval(animationInterval);
-
-      // Re-enable all image buttons
-      enableImageButtons();
-
-      // Resetting display for all milks and ice creams.
-      for (var i = 15; i <= 25; i++) {
-        var image = document.getElementById("secondImage" + i);
-        image.style.display = 'none';
-      }
-
-      // Display the full version of the selected ice cream
-      blendedIceCream = document.getElementById(selectedIceCream + 'Blended');
-      blendedIceCream.style.display = 'block';
-    }, blenderSpeed); // 5 seconds delay
-  } else {
-    alert('Please select the ice cream and milk first.');
+  if (selectedBlender === null) {
+    if (selectedIceCream && selectedMilk) {
+      selectedBlender = true
+      mixerClickSound.play();
+      // Disable all image buttons except the blender button
+      disableImageButtons();
+  
+      // Start blender animation
+      animateBlender();
+  
+      // Start a 5-second timer
+      setTimeout(function() {
+        // Stop blender animation
+        clearInterval(animationInterval);
+  
+        // Re-enable all image buttons
+        enableImageButtons();
+  
+        // Resetting display for all milks and ice creams.
+        for (var i = 15; i <= 25; i++) {
+          var image = document.getElementById("secondImage" + i);
+          image.style.display = 'none';
+        }
+  
+        // Display the full version of the selected ice cream
+        blendedIceCream = document.getElementById(selectedIceCream + 'Blended');
+        blendedIceCream.style.display = 'block';
+      }, blenderSpeed); // 5 seconds delay
+    } else {
+      alert('Please select the ice cream and milk first.');
+  }
   }
 }
 
@@ -535,6 +539,7 @@ function trashOrder() {
 
   selectedIceCream = null;
   selectedMilk = null;
+  selectedBlender = null;
   blendedIceCream = null;
   selectedWhippedCream = null;
   selectedSyrup = null;
@@ -697,21 +702,25 @@ document.getElementById("shopButton").addEventListener("click", toggleShopPopout
 // Add event listener to close shop button
 document.getElementById("shopExit").addEventListener("click", toggleShopPopout);
 
-// Function to show the popup with the description
 function showPopup(descriptionLines, callback) {
-  const popupContainer = document.getElementById("popupContainer");
+  const popup = document.getElementById("popup");
   const popupTextContainer = document.getElementById("popupTextContainer");
+  popupTextContainer.innerHTML = ''; // Clear previous content
 
-  // Clear any existing content
-  popupTextContainer.innerHTML = '';
-
-  // Add each line of the description
-  descriptionLines.forEach(line => {
+  // Add description lines
+  descriptionLines.forEach((line, index) => {
     const p = document.createElement("p");
     p.textContent = line;
     popupTextContainer.appendChild(p);
+    // Add the coin image after the last line
+    if (index === descriptionLines.length - 1) {
+      const coinImage = document.createElement("img");
+      coinImage.id = "shopCoin";
+      coinImage.src = "./Shop/coin.png";
+      p.appendChild(coinImage);
+    }
   });
-
+  
   // Display the popup
   popupContainer.style.display = "block";
 

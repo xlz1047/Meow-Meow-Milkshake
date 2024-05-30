@@ -245,10 +245,11 @@
 
 
 #shopCoin {
+  width: 35px; /* Adjust size as needed */
+  height: auto;
   position: absolute;
-  top: 398px;
-  left: 990px;
-  width: 35px;
+  right: 135px; /* Adjust as needed */
+  top: -2px; /* Center the image vertically */
 }
 
 #shopOverlay {
@@ -319,6 +320,10 @@
   margin: 10px;
   padding: 10px 20px;
   font-size: 16px;
+}
+
+#popupTextContainer p {
+  position: relative;
 }
 
 #yesButton,
