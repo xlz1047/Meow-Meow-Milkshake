@@ -113,24 +113,6 @@ function setCharacterImage() {
 }
 window.onload = setCharacterImage;
 
-function getRandomCustomerImage() {
-  const customerImages = [
-    "armaan", 
-    "maggie", 
-    "christy", 
-    "xin",
-    "grace",
-    "mable",
-    "nana",
-    "kira",
-    "colin",
-    "georgie",
-
-    //Add more as needed
-  ];
-  return customerImages[Math.floor(Math.random() * customerImages.length)];
-}
-
 function animateCustomer() {
   var character = document.getElementById("character");
   var speakBubble = document.getElementById("speakBubble");
@@ -142,7 +124,7 @@ function animateCustomer() {
 
   // Array containing names of customer images
   const customerImages = [
-   "armaan", 
+    "armaan", 
     "maggie", 
     "christy", 
     "xin",
@@ -152,9 +134,23 @@ function animateCustomer() {
     "kira",
     "colin",
     "georgie",
-    
-    //Add more as needed
+    // Add more as needed
   ];
+
+  // Object containing top offsets for each customer
+  const offsets = {
+    "armaan": 5,
+    "maggie": 6,
+    "christy": 30,
+    "xin": 12,
+    "grace": -2,
+    "mable": 20,
+    "nana": 4,
+    "kira": 28,
+    "colin": 4,
+    "georgie": 14,
+    // Add more as needed
+  };
 
   // Set initial customer image
   var randomImage = getRandomCustomerImage();
@@ -190,7 +186,13 @@ function animateCustomer() {
 
       // Display speak bubble and order button when character reaches target position
       speakBubble.style.display = "block";
-      orderButton.style.display = "block"; // Display order button when character reaches target position
+      orderButton.style.display = "block"; 
+
+      // Set the top offset for the order button based on the selected customer
+      const topOffset = offsets[randomImage];
+      if (topOffset !== undefined) {
+        orderButton.style.top = `${topOffset}px`;
+      }
     } else {
       posX -= 5;
       character.style.left = posX + "px";
@@ -200,6 +202,11 @@ function animateCustomer() {
   // Start character animation and movement intervals
   const animationInterval = setInterval(animate, animationSpeed);
   const movementInterval = setInterval(moveCharacter, 20);
+
+  // Helper function to get a random customer image
+  function getRandomCustomerImage() {
+    return customerImages[Math.floor(Math.random() * customerImages.length)];
+  }
 }
 playCafeBellSound();
 // Automatically animate the customer character when the page loads
