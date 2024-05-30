@@ -617,7 +617,7 @@ function checkOrders() {
   
   setTimeout(function() {
     playCafeBellSound();
-  }, 1200);
+  }, 1150);
 
   // After displaying the result, toggle back to the cafe scene and wait before generating a new customer
   setTimeout(function() {
