@@ -10,6 +10,10 @@ function toggleMusic() {
     musicToggle.src = "./Assets/Buttons/musicOff.png";
   }
 }
+
+var volume = document.getElementById("backgroundMusic");
+volume.volume = 0.2;
+
 // Function to play the cafe bell sound
 function playCafeBellSound() {
   var cafeBellSound = document.getElementById("cafeBellSound");
