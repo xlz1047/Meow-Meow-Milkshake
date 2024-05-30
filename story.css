@@ -211,8 +211,8 @@ animation: zoomIn 1s ease forwards; /* Apply animation */
 
 
 #memoryCardIcon {
-  width: 55px;
-  height: 55px;
+  width: 65px;
+  height: 65px;
   margin-right: 5px;
   background: transparent;
   border: none;
@@ -231,8 +231,7 @@ animation: zoomIn 1s ease forwards; /* Apply animation */
   position: absolute;
   display: flex;
   align-items: center;
-  top: 10px;
-  left: 148px;
+  left: 15px;
   filter: brightness(100%);
 }
 
@@ -286,4 +285,85 @@ animation: zoomIn 1s ease forwards; /* Apply animation */
   margin-top: 20px;
   padding: 10px 20px;
   cursor: pointer;
+}
+
+
+/* Add this to your CSS file */
+.popout-container {
+  position: flex;
+  display: none; /* Hidden by default */
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+}
+
+.popup-content {
+  background-color: #dbbfa3;
+  border: 5px solid black;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  font-size: 20px;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.popup-content p {
+  white-space: pre-wrap;
+}
+
+.popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+#okButton {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  border-radius: 8px;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #8d6e5d;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 20px;
+}
+
+#okButton:hover {
+  filter:brightness(0.8);
+}
+
+#endScene,
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1280px;
+  height: 720px;
+  border: 5px solid #000;
+  margin: auto;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.text {
+  text-align: center;
+  font-family: "Cherry Bomb One", sans-serif;
+  color: #ffffff;
+  text-shadow: 0 1px 0 var(--color-heading-shadow), 0 2px 0 var(--color-heading-shadow), 0 3px 0 var(--color-heading-shadow), 0 4px 0 var(--color-heading-shadow), 0 0 5px rgba(10, 0, 0, .05), 0 1px 3px rgba(10, 0, 0, .2), 0 3px 5px rgba(10, 0, 0, .2), 0 5px 10px rgba(10, 0, 0, .2), 0 10px 10px rgba(10, 0, 0, .2), 0 20px 20px rgba(10, 0, 0, .3);
 }

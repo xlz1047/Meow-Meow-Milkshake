@@ -22,7 +22,7 @@ document.addEventListener("click", function() {
 
 // Screen Toggler
 function toggleScreen(sceneId) {
-  var scenes = ["cafeScene", "kitchenScene", "orderingScene", "cardScene"];
+  var scenes = ["cafeScene", "kitchenScene", "orderingScene", "cardScene", "endScene"];
   // Loop through scene elements and display the selected scene
   for (var i = 0; i < scenes.length; i++) {
     var scene = document.getElementById(scenes[i]);
@@ -80,11 +80,11 @@ window.onload = setCharacterImage;
 const customers = [
   'armaan', 
   'maggie', 
-  'christy', 
-  'grace',
-  'xin',
-  'kira',
-  'georgie'
+  // 'christy', 
+  // 'grace',
+  // 'xin',
+  // 'kira',
+  // 'georgie'
 ];
 
 const customerOrders = [
@@ -420,27 +420,34 @@ function checkOrders() {
     distributeMemoryCard(currentCustomerIndex);
   }, 2000);
 
-  // After displaying the result, toggle back to the cafe scene and wait before generating a new customer
+  // After displaying the result, handle the next steps
   setTimeout(function() {
     toggleScreen("cafeScene");
+    if (currentCustomerIndex + 1 < customers.length) {
+      // Continue with the next customer
 
-    // Clear the selected order array for the new round
-    selectedOrder = [];
+      // Clear the selected order array for the new round
+      selectedOrder = [];
 
-    // Trash the selected options
-    trashOrder();
+      // Trash the selected options
+      trashOrder();
 
-    // Clear the result score image and text
-    clearResult();
-    currentCustomerIndex++;
-    // Generate a new customer for the next round
-    animateCustomer();
-    // Generate a new random order for the next round
-    getOrder = getOrder();
-    // Block the orderSpeakBubble in orderingScene
-    document.getElementById("orderSpeakBubble").style.display = "block";
+      // Clear the result score image and text
+      clearResult();
+      currentCustomerIndex++;
+      // Generate a new customer for the next round
+      animateCustomer();
+      // Generate a new random order for the next round
+      getOrder = getOrder();
+      // Block the orderSpeakBubble in orderingScene
+      document.getElementById("orderSpeakBubble").style.display = "block";
+    } else {
+      // All customers served, show congratulations popup
+      showCongratulationsPopup();
+    }
   }, 4000); // Adjust the delay as needed
 }
+
 // function to update the memory card
 let memoryCardCounter = 0;
 
@@ -453,8 +460,6 @@ const memoryCardImages = [
   "./Story/MemoryCards/kiraMemory.png",
   "./Story/MemoryCards/georgieMemory.png"
 ];
-
-
 
 // Function to distribute memory card to the player
 function distributeMemoryCard(currentCustomerIndex) {
@@ -642,10 +647,39 @@ setTimeout(function() {
   memoryCard.style.display = "none";
 }, 3000); // Adjust the delay as needed
 
-
-
   // Update memory card counter
   memoryCardCounter++;
   console.log("Memory Cards:", memoryCardCounter);
   updateMemoryCardCounter();
 }
+
+// Function to show the congratulations popup
+function showCongratulationsPopup() {
+  var popup = document.getElementById("congratulationsPopup");
+  popup.style.display = "flex"; // Change display to flex to show the content
+  handleOkButtonClick();
+}
+
+// Attach the click event listener to the okButton after the popup is shown
+function handleOkButtonClick() {
+  const okButton = document.getElementById("okButton");
+  const endingVideo = document.getElementById("endingVideo");
+  okButton.addEventListener("click", function() {
+    toggleScreen("endScene");
+    // Mute the background music
+    var music = document.getElementById("backgroundMusic");
+    music.muted = true;
+    // Pause the music
+    music.pause();
+    // Hide music toggle
+    document.getElementById("musicToggle").style.display = "none";
+    // Hide the congraulate box
+    document.getElementById("congratulationsPopup").style.display = "none";
+    // Display the video
+    endingVideo.style.display = "block";
+    endingVideo.play().catch(function(error) {
+      console.error("Error trying to play video2:", error);
+    });
+  });
+}
+

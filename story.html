@@ -19,6 +19,11 @@
       <div id="speakBubble" style="display: none;">
         <img id="orderButton" src="./Assets/Buttons/buttonquestion.png" onclick="toggleScreen('orderingScene')">
       </div>
+      <!-- Memory card counter-->
+      <div class="text" id="memoryCardDisplay">
+        <img id="memoryCardIcon" src="Story/memoryCards/letter.png" alt="Memory Card Icon" onclick="toggleScreen('cardScene')">
+        <span id="memoryCardCounter">0</span>
+      </div>
     </div>
 
     <!-- Kitchen Scene -->
@@ -156,54 +161,62 @@
       <img id="memoryCard" src="" alt="Memory Card" style="display: none;">
     </div>
 
-<!-- Card Scene -->
-<div id="cardScene" style="display: none;">
-  <img id="memoryCardX" src="Shop/exit.png" alt="X button" onclick="toggleScreen('cafeScene')">
-</div> 
+  <!-- Card Scene -->
+  <div id="cardScene" style="display: none;">
+    <img id="memoryCardX" src="Shop/exit.png" alt="X button" onclick="toggleScreen('cafeScene')">
+  </div> 
 
-<!-- Memory card counter-->
-<div id="memoryCardDisplay">
-  <img id="memoryCardIcon" src="Story/memoryCards/letter.png" alt="Memory Card Icon" onclick="toggleScreen('cardScene')">
-  <span id="memoryCardCounter">0</span>
-</div>
+  <!-- Popup for memory card images -->
+  <div id="popup" style="display: none;">
+    <img id="popupImage" src="" alt="Memory Card Image">
+    <button onclick="hidePopup()">Close</button>
+  </div>
 
-<!-- Popup for memory card images -->
-<div id="popup" style="display: none;">
-  <img id="popupImage" src="" alt="Memory Card Image">
-  <button onclick="hidePopup()">Close</button>
-</div>
+  <div id="congratulationsPopup" class="popup" style="display: none;">
+    <div class="popup-content">
+      <p>Congratulations! You have met all the cats and received all memory cards from them.</p>
+      <button id="okButton">Ok</button>
+    </div>
+  </div>
+
+ <!-- End Scene -->
+ <div id="endScene" style="display: none;">
+    <video id="endingVideo" controls autoplay>
+      <source src="./Story/plot/" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
 
+  <!-- Credits -->
+  <img id="credits" src="./Assets/Text/names.png">
 
-    <!-- Credits -->
-    <img id="credits" src="./Assets/Text/names.png">
+  <!-- Background Music -->
+  <img id="musicToggle" src="./Assets/Buttons/musicOn.png" onclick="toggleMusic()">
+  
+  <audio id="backgroundMusic" autoplay loop>
+    <source src="./BackgroundMusic/Colorful-Flowers(Cafe).mp3" type="audio/mp3">
+  </audio>
 
-    <!-- Background Music -->
-    <img id="musicToggle" src="./Assets/Buttons/musicOn.png" onclick="toggleMusic()">
-    
-    <audio id="backgroundMusic" autoplay loop>
-      <source src="./BackgroundMusic/Colorful-Flowers(Cafe).mp3" type="audio/mp3">
-    </audio>
-
-    <!-- Sound Effects -->
-    <audio id="buttonClick">
-      <source src="./SoundEffects/buttonClick.mp3" type="audio/mp3">
-    </audio>
-    <audio id="scoop">
-      <source src="./SoundEffects/scoop.wav" type="audio/wav">
-    </audio>
-    <audio id="carton">
-      <source src="./SoundEffects/carton.wav" type="audio/wav">
-    </audio>
-    <audio id="mixer">
-      <source src="./SoundEffects/mixer.mp3" type="audio/mp3">
-    </audio>
-    <audio id="whip">
-      <source src="./SoundEffects/whip.wav" type="audio/wav">
-    </audio>
-    <audio id="toppings">
-      <source src="./SoundEffects/toppings.mp3" type="audio/mp3">
-    </audio>
+  <!-- Sound Effects -->
+  <audio id="buttonClick">
+    <source src="./SoundEffects/buttonClick.mp3" type="audio/mp3">
+  </audio>
+  <audio id="scoop">
+    <source src="./SoundEffects/scoop.wav" type="audio/wav">
+  </audio>
+  <audio id="carton">
+    <source src="./SoundEffects/carton.wav" type="audio/wav">
+  </audio>
+  <audio id="mixer">
+    <source src="./SoundEffects/mixer.mp3" type="audio/mp3">
+  </audio>
+  <audio id="whip">
+    <source src="./SoundEffects/whip.wav" type="audio/wav">
+  </audio>
+  <audio id="toppings">
+    <source src="./SoundEffects/toppings.mp3" type="audio/mp3">
+  </audio>
 </body>
 <script src="story.js"></script>
 </html>
