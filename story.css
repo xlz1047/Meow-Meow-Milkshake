@@ -180,15 +180,6 @@ height: 350px;
 z-index: 8;
 }
 
-#resultText {
-position: absolute;
-top: -200px;
-left: 370px;
-font-size: 20px; /* Adjust font size as needed */
-font-weight: bold;
-z-index: 8;
-}
-
 #memoryCard {
 position: absolute;
 top: 25%;

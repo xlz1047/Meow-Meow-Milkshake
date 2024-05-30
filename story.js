@@ -489,6 +489,10 @@ function checkOrders() {
     distributeMemoryCard(currentCustomerIndex);
   }, 2000);
 
+  setTimeout(function() {
+    playCafeBellSound();
+  }, 3150);
+
   // After displaying the result, handle the next steps
   setTimeout(function() {
     toggleScreen("cafeScene");
@@ -505,11 +509,7 @@ function checkOrders() {
       clearResult();
       currentCustomerIndex++;
       // Generate a new customer for the next round
-      setTimeout(function() {
-        playCafeBellSound();
-        // Call animateCustomer function after 1 second
-        setTimeout(animateCustomer(), 1000);
-      }, 1000);
+      animateCustomer();
       // Generate a new random order for the next round
       getOrder = getOrder();
       // Block the orderSpeakBubble in orderingScene
@@ -577,10 +577,8 @@ document.getElementById("shopExit").addEventListener("click", toggleShopPopout);
 // Function to clear the result score image and text
 function clearResult() {
   var resultImage = document.getElementById("resultImage");
-  var resultText = document.getElementById("resultText");
 
   resultImage.src = "";
-  resultText.textContent = "";
 
   // Hide the result container
   document.getElementById("score").style.display = "none";
@@ -589,26 +587,19 @@ function clearResult() {
 // Function to display result images and text based on the score
 function displayResult(score) {
   var resultImage = document.getElementById("resultImage");
-  var resultText = document.getElementById("resultText");
 
   if (score === 5) {
       resultImage.src = "./Assets/Reactions/heart.png";
-      resultText.textContent = "You got 5 out of 5 right!";
   } else if (score === 4) {
       resultImage.src = "./Assets/Reactions/happyface.png";
-      resultText.textContent = "You got 4 out of 5 right!";
   } else if (score === 3) {
       resultImage.src = "./Assets/Reactions/negativeReaction.png";
-      resultText.textContent = "You got 3 out of 5 right!";
   } else if (score === 2) {
       resultImage.src = "./Assets/Reactions/negativeReaction.png";
-      resultText.textContent = "You got 2 out of 5 right!";
   } else if (score === 1) {
       resultImage.src = "./Assets/Reactions/angryFace.png";
-      resultText.textContent = "You got 1 out of 5 right!";
   } else {
       resultImage.src = "./Assets/Reactions/angryFace.png";
-      resultText.textContent = "You didn't score well this time.";
   }
 
     var scoreContainer = document.getElementById("score");
