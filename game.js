@@ -636,10 +636,10 @@ function checkOrders() {
 // Function to clear the result score image and text
 function clearResult() {
   var resultImage = document.getElementById("resultImage");
-  var resultText = document.getElementById("resultText");
+  var resultCoin = document.getElementById("resultCoin");
 
   resultImage.src = "";
-  resultText.textContent = "";
+  resultCoin.src = "";
 
   // Hide the result container
   document.getElementById("score").style.display = "none";
