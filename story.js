@@ -57,6 +57,8 @@ function getParameterByName(name, url) {
   if (!results[2]) return "";
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+var playerName = getParameterByName('name');
+document.getElementById('playerNameDisplay').innerText = playerName;
 
 function setCharacterImage() {
   // Set the player character image based on the query parameter
@@ -506,22 +508,21 @@ function checkOrders() {
 
   // Display the result based on the score
   displayResult(score);
-
   // Display memory card after 2 seconds
   setTimeout(function() {
-    distributeMemoryCard(currentCustomerIndex);
+    document.getElementById("score").style.display = "none";
+    displayResponse(score);
   }, 2000);
 
-  setTimeout(function() {
-    playCafeBellSound();
-  }, 3150);
 
   // After displaying the result, handle the next steps
   setTimeout(function() {
     toggleScreen("cafeScene");
     if (currentCustomerIndex + 1 < customers.length) {
       // Continue with the next customer
-
+      setTimeout(function() {
+        playCafeBellSound();
+      }, 3150);
       // Clear the selected order array for the new round
       selectedOrder = [];
 
@@ -541,7 +542,30 @@ function checkOrders() {
       // All customers served, show congratulations popup
       showCongratulationsPopup();
     }
-  }, 4000); // Adjust the delay as needed
+  }, 10000); // Adjust the delay as needed
+}
+
+function displayResponse(score) {
+  const responses = {
+    armaan: "[Thanks!🥰/Thank…👺] Don't know if you remember, you beat me at Smash Bros, but I'll always remember that!👽",
+    maggie: "[Thanks!🥰/Thank…👺] Don't know if you remember, but I'll always remember that day at the pond near the forest. I had a great time with you.😊",
+    christy: "[Thanks!🥰/Thank…👺] Don't know if you remember, but I'll always remember that night on the swing we talked deeply about our futures.😝",
+    grace: "[Thanks!🥰/Thank…👺] Don't know if you remember, but I'll always remember that day with you, me, and that delicious hot pot! 🤤",
+    xin: "[Thanks!🥰/Thank…👺] Don't know if you remember, but I'll always remember that sunset, you and me at the flower field.🌷🌷",
+    kira: "[Thanks!🥰/Thank…👺] Meow~ Don't know if you remember that night, that window I always wanted to jump from, but I'll always remember the frightened look on your face.😝",
+    georgie: "[Thanks!🥰/Thank…👺] Meow~ Don't know if you remember that cat tree tower you always watched me sleep on, but I'll always remember you and your sweet smile. 😊"
+  };
+
+  const customerName = customers[currentCustomerIndex % customers.length];
+  const responseTemplate = responses[customerName];
+  const response = score >= 4 ? responseTemplate.replace("[Thanks!🥰/Thank…👺]", "Thanks!🥰") : responseTemplate.replace("[Thanks!🥰/Thank…👺]", "Thank…👺");
+
+  document.getElementById("responseText").innerText = response;
+  document.getElementById("responseContainer").style.display = "block";
+
+  nextButton.onclick = function() {
+    distributeMemoryCard(currentCustomerIndex);
+  };
 }
 
 // function to update the memory card
@@ -600,8 +624,9 @@ document.getElementById("shopExit").addEventListener("click", toggleShopPopout);
 // Function to clear the result score image and text
 function clearResult() {
   var resultImage = document.getElementById("resultImage");
-
   resultImage.src = "";
+  document.getElementById("responseContainer").style.display = "none";
+  responses = "";
 
   // Hide the result container
   document.getElementById("score").style.display = "none";
@@ -610,27 +635,29 @@ function clearResult() {
 // Function to display result images and text based on the score
 function displayResult(score) {
   var resultImage = document.getElementById("resultImage");
-
+  var resultText = document.getElementById("resultText");
   if (score === 5) {
       resultImage.src = "./Assets/Reactions/heart.png";
+      resultText.textContent = "You got 5 out of 5 right!";
   } else if (score === 4) {
       resultImage.src = "./Assets/Reactions/happyface.png";
+      resultText.textContent = "You got 4 out of 5 right!";
   } else if (score === 3) {
       resultImage.src = "./Assets/Reactions/negativeReaction.png";
+      resultText.textContent = "You got 3 out of 5 right!";
   } else if (score === 2) {
       resultImage.src = "./Assets/Reactions/negativeReaction.png";
+      resultText.textContent = "You got 2 out of 5 right!";
   } else if (score === 1) {
       resultImage.src = "./Assets/Reactions/angryFace.png";
+      resultText.textContent = "You got 1 out of 5 right!";
   } else {
       resultImage.src = "./Assets/Reactions/angryFace.png";
+      resultText.textContent = "You didn't score well this time.";
   }
-
     var scoreContainer = document.getElementById("score");
     scoreContainer.style.display = "block";
 }
-
-
-
 
 function updateMemoryCardCounter() {
   var counterElement = document.getElementById("memoryCardCounter");
@@ -747,12 +774,11 @@ function showCongratulationsPopup() {
   handleOkButtonClick();
 }
 
-// Attach the click event listener to the okButton after the popup is shown
 function handleOkButtonClick() {
   const okButton = document.getElementById("okButton");
-  const endingVideo = document.getElementById("endingVideo");
   okButton.addEventListener("click", function() {
     toggleScreen("endScene");
+
     // Mute the background music
     var music = document.getElementById("backgroundMusic");
     music.muted = true;
@@ -760,13 +786,68 @@ function handleOkButtonClick() {
     music.pause();
     // Hide music toggle
     document.getElementById("musicToggle").style.display = "none";
-    // Hide the congraulate box
+    // Hide the congratulations box
     document.getElementById("congratulationsPopup").style.display = "none";
-    // Display the video
-    endingVideo.style.display = "block";
-    endingVideo.play().catch(function(error) {
-      console.error("Error trying to play video2:", error);
+
+    // Play the first video
+    const endingVideo1 = document.getElementById("endingVideo1");
+    const next1 = document.getElementById("next1");
+    const nextButton1 = document.getElementById("nextButton1");
+    
+    endingVideo1.style.display = "block";
+    endingVideo1.play();
+
+    endingVideo1.onended = function() {
+      next1.style.display = "block";
+    };
+
+    nextButton1.addEventListener("click", function() {
+      next1.style.display = "none";
+      endingVideo1.style.display = "none";
+      playNextVideo("endingVideo2", "next2", "nextButton2", "endingVideo3", "next3", "nextButton3", "endingVideo4");
     });
   });
 }
 
+function playNextVideo(currentVideoId, nextContainerId, nextButtonId, nextVideoId, nextContainerId2, nextButtonId2, nextVideoId2) {
+  const currentVideo = document.getElementById(currentVideoId);
+  const nextContainer = document.getElementById(nextContainerId);
+  const nextButton = document.getElementById(nextButtonId);
+  
+  currentVideo.style.display = "block";
+  currentVideo.play();
+
+  currentVideo.onended = function() {
+    nextContainer.style.display = "block";
+  };
+
+  nextButton.addEventListener("click", function() {
+    nextContainer.style.display = "none";
+    currentVideo.style.display = "none";
+    playFinalVideo(nextVideoId, nextContainerId2, nextButtonId2, nextVideoId2);
+  });
+}
+
+function playFinalVideo(currentVideoId, nextContainerId, nextButtonId, finalVideoId) {
+  const currentVideo = document.getElementById(currentVideoId);
+  const nextContainer = document.getElementById(nextContainerId);
+  const nextButton = document.getElementById(nextButtonId);
+  
+  currentVideo.style.display = "block";
+  currentVideo.play();
+
+  currentVideo.onended = function() {
+    nextContainer.style.display = "block";
+  };
+
+  nextButton.addEventListener("click", function() {
+    nextContainer.style.display = "none";
+    currentVideo.style.display = "none";
+    const finalVideo = document.getElementById(finalVideoId);
+    finalVideo.style.display = "block";
+    finalVideo.play();
+    finalVideo.onended = function() {
+      window.location.href = 'index.html';
+    };
+  });
+}

@@ -203,9 +203,9 @@
       video2.addEventListener("ended", function() {
         // Retrieve the selected character's name from the URL
         var selectedCharacter = getParameterByName("character");
-
+        var playerName = getParameterByName("name");
         // Navigate to story.html with selected character's name as a query parameter
-        window.location.href = "story.html" + '?character=' + encodeURIComponent(selectedCharacter) ;
+        window.location.href = "story.html" + '?character=' + encodeURIComponent(selectedCharacter) + '&name=' + encodeURIComponent(playerName);
       });
     });
   </script>

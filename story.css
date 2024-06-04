@@ -47,6 +47,13 @@ background-image: url(./Assets/Background/servingDay.png);
 z-index: 1;
 }
 
+#playerNameDisplay {
+  position: absolute;
+  font-size: 20px;
+  top: -7%;
+  left: 39%;
+}
+
 #counter {
 background-image: url(./Assets/Background/servingCounter.png);
 z-index: 3;
@@ -120,13 +127,13 @@ margin-top: 20%;
 }
 
 #player {
-position: absolute;
-top: 220px;
-left: 150px;
+  position: absolute;
+  top: 230px;
+  left: 150px;
 }
 
 #player img {
-height: 300px;
+  width: 200px;
 }
 
 #speakBubble img {
@@ -181,15 +188,24 @@ height: 350px;
 z-index: 8;
 }
 
+#resultText {
+  position: absolute;
+  top: -200px;
+  left: 370px;
+  font-size: 20px; /* Adjust font size as needed */
+  font-weight: bold;
+  z-index: 8;
+}
+
 #memoryCard {
-position: absolute;
-top: 25%;
-left: 25%;
-width: 500px;
-height: 300px;
-transform: translate(-50%, -50%);
-z-index: 10;
-animation: zoomIn 1s ease forwards; /* Apply animation */
+  position: absolute;
+  top: 25%;
+  left: 24%;
+  width: 590px;
+  height: 380px;
+  transform: translate(-50%, -50%);
+  z-index: 26;
+  animation: zoomIn 1s ease forwards; /* Apply animation */
 }
 
 @keyframes zoomIn {
@@ -241,18 +257,18 @@ animation: zoomIn 1s ease forwards; /* Apply animation */
   position: absolute;
   top: 10px;
   left: 1162px;
-  }
+}
 
 
-  /* Style for memory card buttons */
+/* Style for memory card buttons */
 .memoryCardButton {
-    background-size: cover;
-    background-position: center;
-    width: 248px;
-    height: 139px;
-    border: none;
-    margin: 10px;
-    cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  width: 248px;
+  height: 139px;
+  border: none;
+  margin: 10px;
+  cursor: pointer;
 }
 
 /* Style for the popup */
@@ -343,7 +359,7 @@ video {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1280px;
+  width: 1279px;
   height: 720px;
   border: 5px solid #000;
   margin: auto;
@@ -376,3 +392,74 @@ video {
   filter: brightness(0.8);
   transition: filter 0.3s ease-in-out;
 }
+#responseContainer {
+  width: 200px;
+  position: absolute;
+  top: 70px;
+  left: 850px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 20;
+}
+
+#nextButton {
+  position: absolute;
+  margin-top: 204px;
+  right: -55px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(186, 186, 186);
+  color: black;
+  cursor: pointer;
+  z-index: 20;
+}
+
+#responseText {
+  position: absolute;
+  top: 93px;
+  width: 204px;
+  right: -67px;
+  z-index: 25;
+}
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1280px;
+  height: 720px;
+  border: 5px solid #000;
+  margin: auto;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Next Button */
+#nextButton1,
+#nextButton2,
+#nextButton3 {
+  position: absolute;
+  top: 80%;
+  right: 10%;
+  z-index: 6;
+  color: black;
+  background-color: gray;
+  font-family: 'Belanosima', sans-serif;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+/* Next Button */
+#talkBox {
+  position: absolute;
+  top: 68%;
+  width: 100%;
+  z-index: 5;
+}
+
