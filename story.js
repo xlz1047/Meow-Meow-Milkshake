@@ -170,12 +170,26 @@ animateCustomer();
 
 ////////////////////Order Functionality Section + kitchen Functionality////////////////////////
 
-// Button Sound Effects
 function playButtonClickSound() {
   var buttonClickSound = document.getElementById("buttonClick");
   buttonClickSound.play();
 }
-document.getElementById("orderButton").addEventListener("click", playButtonClickSound);
+
+var buttons = [
+  "orderButton",
+  "checkOrderButton",
+  "trashButton",
+  "musicToggle",
+  "memoryCardIcon",
+  "memoryCardX"
+];
+
+buttons.forEach(function(buttonId) {
+  var button = document.getElementById(buttonId);
+  if (button) {
+    button.addEventListener("click", playButtonClickSound);
+  }
+});
 
 function getOrder() {
   return customerOrders[currentCustomerIndex % customerOrders.length];
@@ -260,6 +274,7 @@ function displayImage(imageId) {
 // Saving Chosen Variables
 var selectedIceCream = null;
 var selectedMilk = null;
+var selectedBlender = null;
 var blendedIceCream = null;
 var selectedWhippedCream = null;
 var selectedSyrup = null;
@@ -394,34 +409,37 @@ mixerClickSound = document.getElementById("mixerUpgrade");
 
 // Blender Button Functionality
 function displayBlendedIceCream() {
-  if (selectedIceCream && selectedMilk) {
-    mixerClickSound.play();
-    // Disable all image buttons except the blender button
-    disableImageButtons();
-
-    // Start blender animation
-    animateBlender();
-
-    // Start a 5-second timer
-    setTimeout(function() {
-      // Stop blender animation
-      clearInterval(animationInterval);
-
-      // Re-enable all image buttons
-      enableImageButtons();
-
-      // Resetting display for all milks and ice creams.
-      for (var i = 15; i <= 25; i++) {
-        var image = document.getElementById("secondImage" + i);
-        image.style.display = 'none';
-      }
-
-      // Display the full version of the selected ice cream
-      blendedIceCream = document.getElementById(selectedIceCream + 'Blended');
-      blendedIceCream.style.display = 'block';
-    }, blenderSpeed); // 5 seconds delay
-  } else {
-    alert('Please select the ice cream and milk first.');
+  if (selectedBlender === null) {
+    if (selectedIceCream && selectedMilk) {
+      selectedBlender = true
+      mixerClickSound.play();
+      // Disable all image buttons except the blender button
+      disableImageButtons();
+  
+      // Start blender animation
+      animateBlender();
+  
+      // Start a 5-second timer
+      setTimeout(function() {
+        // Stop blender animation
+        clearInterval(animationInterval);
+  
+        // Re-enable all image buttons
+        enableImageButtons();
+  
+        // Resetting display for all milks and ice creams.
+        for (var i = 15; i <= 25; i++) {
+          var image = document.getElementById("secondImage" + i);
+          image.style.display = 'none';
+        }
+  
+        // Display the full version of the selected ice cream
+        blendedIceCream = document.getElementById(selectedIceCream + 'Blended');
+        blendedIceCream.style.display = 'block';
+      }, blenderSpeed); // 5 seconds delay
+    } else {
+      alert('Please select the ice cream and milk first.');
+  }
   }
 }
 
@@ -429,6 +447,7 @@ function displayBlendedIceCream() {
 function trashOrder() {
   selectedIceCream = null;
   selectedMilk = null;
+  selectedBlender = null;
   blendedIceCream = null;
   selectedWhippedCream = null;
   selectedSyrup = null;

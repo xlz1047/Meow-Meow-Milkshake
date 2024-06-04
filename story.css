@@ -154,6 +154,7 @@ margin-top: 150px;
 #trashButton:hover {
 filter: brightness(0.8);
 transition: all 0.3s ease-in-out;
+cursor: pointer;
 }
 
 #orderingScene.show #score {
@@ -386,6 +387,11 @@ video {
   transform: scale(1.6);
 }
 
+.blender:hover {
+  cursor: pointer;
+  filter: brightness(0.8);
+  transition: filter 0.3s ease-in-out;
+}
 #responseContainer {
   width: 200px;
   position: absolute;
