@@ -93,7 +93,7 @@ const customers = [
   // 'maggie', 
   // 'christy', 
   // 'grace',
-  // // 'xin',
+  // 'xin',
   // 'kira',
   'georgie'
 ];
@@ -522,7 +522,7 @@ function checkOrders() {
       // Continue with the next customer
       setTimeout(function() {
         playCafeBellSound();
-      }, 3150);
+      }, 3000);
       // Clear the selected order array for the new round
       selectedOrder = [];
 
