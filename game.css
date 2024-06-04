@@ -142,12 +142,12 @@
 
 #player {
   position: absolute;
-  top: 220px;
+  top: 250px;
   left: 150px;
 }
 
 #player img {
-  height: 300px;
+  width: 180px;
 }
 
 #speakBubble img {

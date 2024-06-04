@@ -13,6 +13,7 @@
     <!-- Cafe Scene -->
     <div id="cafeScene">
       <div id="player">
+        <div class="text" id="playerNameDisplay"></div>
         <img id="characterImage">
       </div>
       <div class="character" id="character"></div>
@@ -154,7 +155,13 @@
       <div id="randomOrderImg" style="display: none;"></div>
       <div id="score" style="display: none;">
         <img id="resultImage" src="">
+        <div id="resultText"></div>
       </div>
+      <div id="responseContainer" style="display:none;">
+        <img id="orderSpeakBubble" src="./Assets/Buttons/buttonBlank.png" style="display: block;">
+        <p id="responseText"></p>
+        <button id="nextButton" onclick="showMemoryCard()">???</button>
+      </div>      
       <img id="memoryCard" src="" style="display: none;">
     </div>
 
@@ -179,11 +186,32 @@
 
  <!-- End Scene -->
  <div id="endScene" style="display: none;">
-    <video id="endingVideo" controls autoplay>
-      <source src="./Story/plot/" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+  <video id="endingVideo1" controls="false" autoplay="autoplay">
+    <source src="./Story/plot/End1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div id="next1" style="display: none;">
+    <img id="talkBox" id="talkBox1" src="./Story/plot/talkBox.png">
+    <button id="nextButton1">Look Around.</button>
   </div>
+  <video id="endingVideo2" controls="false" style="display: none;">
+    <source src="./Story/plot/End2.mp4" type="video/mp4">
+  </video>
+  <div id="next2" style="display: none;">
+    <img id="talkBox" id="talkBox2" src="./Story/plot/talkBox.png">
+    <button id="nextButton2">Follow the sound.</button>
+  </div>
+  <video id="endingVideo3" controls="false" style="display: none;">
+    <source src="./Story/plot/End3.mp4" type="video/mp4">
+  </video>
+  <div id="next3" style="display: none;">
+    <img id="talkBox" id="talkBox3" src="./Story/plot/talkBox.png">
+    <button id="nextButton3">Discover...</button>
+  </div>
+  <video id="endingVideo4" controls="false" style="display: none;">
+    <source src="./Story/plot/End4.mp4" type="video/mp4">
+  </video>
+</div>
 
 
   <!-- Credits -->
