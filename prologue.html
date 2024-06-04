@@ -29,12 +29,28 @@
       transform: translate(-50%, -50%);
       width: 1280px;
       height: 720px;
-      border: 5px solid #000;
       margin: auto;
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
       overflow: hidden;
+      z-index: 2;
+    }
+
+    #border {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1278px;
+      height: 720px;
+      margin: auto;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      border: 5px solid #000;
+      z-index: 1;
     }
 
     /* Next Button */
@@ -92,6 +108,7 @@
       </video>
     </div>
   </div>
+  <div id="border"></div>
 
   <!-- Play Button -->
   <button id="playButton">Start Story</button>
