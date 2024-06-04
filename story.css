@@ -433,6 +433,17 @@ video {
   overflow: hidden;
 }
 
+/* CSS to hide video controls */
+video::-webkit-media-controls {
+  display: none !important;
+}
+video::-moz-media-controls {
+  display: none !important;
+}
+video {
+  controls: false;
+}
+
 /* Next Button */
 #nextButton1,
 #nextButton2,

@@ -89,12 +89,12 @@ function setCharacterImage() {
 window.onload = setCharacterImage;
 
 const customers = [
-  'armaan', 
-  'maggie', 
-  'christy', 
-  'grace',
-  'xin',
-  'kira',
+  // 'armaan', 
+  // 'maggie', 
+  // 'christy', 
+  // 'grace',
+  // // 'xin',
+  // 'kira',
   'georgie'
 ];
 
