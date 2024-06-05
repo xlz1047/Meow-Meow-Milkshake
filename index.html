@@ -63,6 +63,10 @@
 
   <!---------------------------- Script Section ---------------------------->
   <script>
+    document.querySelectorAll('img').forEach(img => {
+      img.setAttribute('draggable', 'false');
+    });
+    
     // Music Toggler
     function toggleMusic() {
       var music = document.getElementById("backgroundMusic");

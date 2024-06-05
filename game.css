@@ -53,11 +53,18 @@
   z-index: 1;
 }
 
-#playerNameDisplay {
+#playerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
+  top: 245px;
+  left: 150px;
+}
+
+#playerNameDisplay {
+  text-align: center;
   font-size: 20px;
-  top: 30%;
-  left: 17%;
 }
 
 #counter {
@@ -141,9 +148,8 @@
 }
 
 #player {
-  position: absolute;
-  top: 250px;
-  left: 150px;
+  display: flex;
+  justify-content: center;
 }
 
 #player img {

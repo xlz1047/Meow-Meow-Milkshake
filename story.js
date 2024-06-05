@@ -1,3 +1,7 @@
+document.querySelectorAll('img').forEach(img => {
+  img.setAttribute('draggable', 'false');
+});
+
 // Music Toggler
 function toggleMusic() {
   var music = document.getElementById("backgroundMusic");
@@ -89,12 +93,12 @@ function setCharacterImage() {
 window.onload = setCharacterImage;
 
 const customers = [
-  // 'armaan', 
-  // 'maggie', 
-  // 'christy', 
-  // 'grace',
-  // 'xin',
-  // 'kira',
+  'armaan', 
+  'maggie', 
+  'christy', 
+  'grace',
+  'xin',
+  'kira',
   'georgie'
 ];
 
@@ -119,6 +123,21 @@ function animateCustomer() {
   orderButton.style.display = "none";
   speakBubble.style.display = "none"; 
 
+  // Object containing top offsets for each customer
+  const offsets = {
+    "armaan": 5,
+    "maggie": 6,
+    "christy": 30,
+    "xin": 12,
+    "grace": -2,
+    "mable": 20,
+    "nana": 4,
+    "kira": 28,
+    "colin": 4,
+    "georgie": 14,
+    // Add more as needed
+  };
+  
   // Get the next customer in order
   var customerImage = customers[currentCustomerIndex % customers.length];
   character.style.backgroundImage = `url('./CatCustomer/${customerImage}Walk.png')`;
@@ -154,6 +173,11 @@ function animateCustomer() {
       // Display speak bubble and order button when character reaches target position
       speakBubble.style.display = "block";
       orderButton.style.display = "block"; // Display order button when character reaches target position
+      // Set the top offset for the order button based on the selected customer
+      const topOffset = offsets[customerImage];
+      if (topOffset !== undefined) {
+        orderButton.style.top = `${topOffset}px`;
+      }
     } else {
       posX -= 5;
       character.style.left = posX + "px";
@@ -164,7 +188,6 @@ function animateCustomer() {
   const animationInterval = setInterval(animate, animationSpeed);
   const movementInterval = setInterval(moveCharacter, 20);
 }
-
 // Automatically animate the customer character when the page loads
 animateCustomer();
 
@@ -181,7 +204,10 @@ var buttons = [
   "trashButton",
   "musicToggle",
   "memoryCardIcon",
-  "memoryCardX"
+  "memoryCardX",
+  "popupButton",
+  "nextButton",
+  "okButton"
 ];
 
 buttons.forEach(function(buttonId) {
@@ -513,58 +539,29 @@ function checkOrders() {
     document.getElementById("score").style.display = "none";
     displayResponse(score);
   }, 2000);
-
-
-  // After displaying the result, handle the next steps
-  setTimeout(function() {
-    toggleScreen("cafeScene");
-    if (currentCustomerIndex + 1 < customers.length) {
-      // Continue with the next customer
-      setTimeout(function() {
-        playCafeBellSound();
-      }, 3000);
-      // Clear the selected order array for the new round
-      selectedOrder = [];
-
-      // Trash the selected options
-      trashOrder();
-
-      // Clear the result score image and text
-      clearResult();
-      currentCustomerIndex++;
-      // Generate a new customer for the next round
-      animateCustomer();
-      // Generate a new random order for the next round
-      getOrder = getOrder();
-      // Block the orderSpeakBubble in orderingScene
-      document.getElementById("orderSpeakBubble").style.display = "block";
-    } else {
-      // All customers served, show congratulations popup
-      showCongratulationsPopup();
-    }
-  }, 10000); // Adjust the delay as needed
 }
 
 function displayResponse(score) {
   const responses = {
-    armaan: "[Thanks!🥰/Thank…👺] Don't know if you remember, you beat me at Smash Bros, but I'll always remember that!👽",
-    maggie: "[Thanks!🥰/Thank…👺] Don't know if you remember, but I'll always remember that day at the pond near the forest. I had a great time with you.😊",
-    christy: "[Thanks!🥰/Thank…👺] Don't know if you remember, but I'll always remember that night on the swing we talked deeply about our futures.😝",
-    grace: "[Thanks!🥰/Thank…👺] Don't know if you remember, but I'll always remember that day with you, me, and that delicious hot pot! 🤤",
-    xin: "[Thanks!🥰/Thank…👺] Don't know if you remember, but I'll always remember that sunset, you and me at the flower field.🌷🌷",
-    kira: "[Thanks!🥰/Thank…👺] Meow~ Don't know if you remember that night, that window I always wanted to jump from, but I'll always remember the frightened look on your face.😝",
-    georgie: "[Thanks!🥰/Thank…👺] Meow~ Don't know if you remember that cat tree tower you always watched me sleep on, but I'll always remember you and your sweet smile. 😊"
+    armaan: "[Thanks!🥰/Thanks…👺] Don't know if you remember, you always used to beat me at Smash Bros, but I'll always remember that!👽",
+    maggie: "[Thanks!🥰/Thanks…👺] Don't know if you remember, but I'll always recall that day at the pond near the forest. I had a great time with you.😊",
+    christy: "[Thanks!🥰/Thanks…👺] Don't know if you remember, but I'll always recall that night on the swing we talked deeply about our futures.😝",
+    grace: "[Thanks!🥰/Thanks…👺] Don't know if you remember, but I'll always recall that day with you, me, and that delicious hot pot! 🤤",
+    xin: "[Thanks!🥰/Thanks…👺] Don't know if you remember, but I'll always recall that sunset, you and me at the flower field.🌷🌷",
+    kira: "[Thanks!🥰/Thanks…👺] Meow~ Don't know if you remember, that window I wanted to jump from, but I'll always recall the frightened look on your face.😝",
+    georgie: "[Thanks!🥰/Thanks…👺] Meow~ Don't know if you remember that cat tree tower you always watched me sleep on, but I'll always recall your sweet smile. 😊"
   };
 
   const customerName = customers[currentCustomerIndex % customers.length];
   const responseTemplate = responses[customerName];
-  const response = score >= 4 ? responseTemplate.replace("[Thanks!🥰/Thank…👺]", "Thanks!🥰") : responseTemplate.replace("[Thanks!🥰/Thank…👺]", "Thank…👺");
+  const response = score >= 4 ? responseTemplate.replace("[Thanks!🥰/Thanks…👺]", "Thanks!🥰") : responseTemplate.replace("[Thanks!🥰/Thanks…👺]", "Thanks…👺");
 
   document.getElementById("responseText").innerText = response;
   document.getElementById("responseContainer").style.display = "block";
 
   nextButton.onclick = function() {
     distributeMemoryCard(currentCustomerIndex);
+    nextOrder();
   };
 }
 
@@ -580,38 +577,6 @@ const memoryCardImages = [
   "./Story/MemoryCards/kiraMemory.png",
   "./Story/MemoryCards/georgieMemory.png"
 ];
-
-// Function to distribute memory card to the player
-function distributeMemoryCard(currentCustomerIndex) {
-
-  // Get the memory card element
-  var memoryCard = document.getElementById("memoryCard");
-
-  // Set the memory card image based on the currentCustomerIndex
-  memoryCard.src = memoryCards[currentCustomerIndex % memoryCards.length];
-
-  // Ensure the memory card is displayed
-  memoryCard.style.display = "block";
-
-  // Animate the memory card to zoom in
-  memoryCard.classList.add("zoomIn");
-
-  // After animation, remove the zoomIn class
-  memoryCard.addEventListener("animationend", function() {
-    memoryCard.classList.remove("zoomIn");
-  });
-
-  // Hide the memory card after a delay
-  setTimeout(function() {
-    memoryCard.style.display = "none";
-  }, 3000); // Adjust the delay as needed
-
-    //updates memory card counter
-    memoryCardCounter++;
-    console.log("Memory Cards:" + memoryCardCounter);
-    updateMemoryCardCounter();
-
-}
 
 //function to go to new page for memory card display
 function MemoryCardButtonClick() {
@@ -635,25 +600,18 @@ function clearResult() {
 // Function to display result images and text based on the score
 function displayResult(score) {
   var resultImage = document.getElementById("resultImage");
-  var resultText = document.getElementById("resultText");
   if (score === 5) {
       resultImage.src = "./Assets/Reactions/heart.png";
-      resultText.textContent = "You got 5 out of 5 right!";
   } else if (score === 4) {
       resultImage.src = "./Assets/Reactions/happyface.png";
-      resultText.textContent = "You got 4 out of 5 right!";
   } else if (score === 3) {
       resultImage.src = "./Assets/Reactions/negativeReaction.png";
-      resultText.textContent = "You got 3 out of 5 right!";
   } else if (score === 2) {
       resultImage.src = "./Assets/Reactions/negativeReaction.png";
-      resultText.textContent = "You got 2 out of 5 right!";
   } else if (score === 1) {
       resultImage.src = "./Assets/Reactions/angryFace.png";
-      resultText.textContent = "You got 1 out of 5 right!";
   } else {
       resultImage.src = "./Assets/Reactions/angryFace.png";
-      resultText.textContent = "You didn't score well this time.";
   }
     var scoreContainer = document.getElementById("score");
     scoreContainer.style.display = "block";
@@ -729,6 +687,38 @@ function hidePopup() {
   popup.style.display = "none";
 }
 
+function nextOrder() {
+  if (currentCustomerIndex + 1 < customers.length) {
+    setTimeout(function() {
+      playCafeBellSound();
+    }, 2150);
+  }
+  // After displaying the result, handle the next steps
+  setTimeout(function() {
+    toggleScreen("cafeScene");
+    if (currentCustomerIndex + 1 < customers.length) {
+      // Clear the selected order array for the new round
+      selectedOrder = [];
+
+      // Trash the selected options
+      trashOrder();
+
+      // Clear the result score image and text
+      clearResult();
+      currentCustomerIndex++;
+      // Generate a new customer for the next round
+      animateCustomer();
+      // Generate a new random order for the next round
+      getOrder = getOrder();
+      // Block the orderSpeakBubble in orderingScene
+      document.getElementById("orderSpeakBubble").style.display = "block";
+    } else {
+      // All customers served, show congratulations popup
+      showCongratulationsPopup();
+    }
+  }, 3000); // Adjust the delay as needed
+}
+
 function distributeMemoryCard(currentCustomerIndex) {
   const memoryCards = [
     "./Story/MemoryCards/armaanMemory.png",
@@ -777,6 +767,8 @@ function showCongratulationsPopup() {
 function handleOkButtonClick() {
   const okButton = document.getElementById("okButton");
   okButton.addEventListener("click", function() {
+    var border = document.getElementById("border");
+    border.style.display = "block";
     toggleScreen("endScene");
 
     // Mute the background music

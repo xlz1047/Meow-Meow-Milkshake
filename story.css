@@ -33,6 +33,7 @@ margin: auto;
 background-size: contain;
 background-position: center;
 background-repeat: no-repeat;
+z-index: 2;
 }
 
 #cafeScene {
@@ -47,11 +48,18 @@ background-image: url(./Assets/Background/servingDay.png);
 z-index: 1;
 }
 
-#playerNameDisplay {
+#playerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
+  top: 245px;
+  left: 150px;
+}
+
+#playerNameDisplay {
+  text-align: center;
   font-size: 20px;
-  top: -7%;
-  left: 39%;
 }
 
 #counter {
@@ -61,7 +69,7 @@ z-index: 3;
 
 
 #cardScene {
-background-image: url(./Story/memoryCards/memoryCardBackground.png);
+background-image: url(./Story/MemoryCards/memoryCardBackground.png);
 }
 .characterCounter {
 position: absolute;
@@ -127,13 +135,12 @@ margin-top: 20%;
 }
 
 #player {
-  position: absolute;
-  top: 230px;
-  left: 150px;
+  display: flex;
+  justify-content: center;
 }
 
 #player img {
-  width: 200px;
+  width: 180px;
 }
 
 #speakBubble img {
@@ -361,7 +368,6 @@ video {
   transform: translate(-50%, -50%);
   width: 1279px;
   height: 720px;
-  border: 5px solid #000;
   margin: auto;
   background-size: contain;
   background-position: center;
@@ -405,23 +411,44 @@ video {
 
 #nextButton {
   position: absolute;
-  margin-top: 204px;
-  right: -55px;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: rgb(186, 186, 186);
-  color: black;
+  margin-top: 272px;
+  right: -65px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  border-radius: 8px;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #8d6e5d;
+  border: 2px solid black;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
   z-index: 20;
+  font-size: 20px;
+}
+
+#popupButton {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  border-radius: 8px;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #8d6e5d;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  z-index: 20;
+  font-size: 20px;
 }
 
 #responseText {
   position: absolute;
-  top: 93px;
-  width: 204px;
-  right: -67px;
+  top: 90px;
+  width: 262px;
+  right: -98px;
   z-index: 25;
+  color: black;
+  font-family: "Cherry Bomb One", sans-serif;
+  font-size: 20px;
 }
 
 video {
@@ -446,9 +473,6 @@ video::-webkit-media-controls {
 video::-moz-media-controls {
   display: none !important;
 }
-video {
-  controls: false;
-}
 
 /* Next Button */
 #nextButton1,
@@ -458,12 +482,12 @@ video {
   top: 80%;
   right: 10%;
   z-index: 6;
-  color: black;
-  background-color: gray;
-  font-family: 'Belanosima', sans-serif;
+  font-family: "Cherry Bomb One", sans-serif;
   width: 200px;
   height: 50px;
   border-radius: 25px;
+  font-size: 17px;
+  cursor: pointer;
 }
 
 /* Next Button */
@@ -474,3 +498,20 @@ video {
   z-index: 5;
 }
 
+#border {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1275px;
+  height: 720px;
+  margin: auto;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  border: 5px solid #000;
+  pointer-events: none;
+  z-index: 1;
+}

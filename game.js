@@ -1,3 +1,7 @@
+document.querySelectorAll('img').forEach(img => {
+  img.setAttribute('draggable', 'false');
+});
+
 function playButtonClickSound() {
   var buttonClickSound = document.getElementById("buttonClick");
   buttonClickSound.play();
